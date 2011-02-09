@@ -1,4 +1,4 @@
-\documentclass[10pt,final]{beamer}
+\documentclass[10pt,final,handout]{beamer}
 \mode<presentation>
 \usetheme{lucasdeb}
 \usepackage{paralist}
@@ -7,7 +7,6 @@
 \definecolor{darkred}{rgb}{.7,0,0}
 \newcommand{\Smiley}{{\color{darkgreen}\smiley}}
 \newcommand{\Frownie}{{\color{darkred}\frownie}}
-\usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{helvet}
 \usepackage[OT1]{fontenc}
@@ -26,6 +25,7 @@
 \newcommand{\arr}{\textbf{$\rightarrow$}\xspace}
 \newcommand{\fixme}[1]{ {\color{red}\footnotesize\bf #1}}
 \usepackage{listings}
+\usepackage{tikz}
 
 \renewcommand{\ttdefault}{aett}
 \usepackage{aecompl}
@@ -58,18 +58,25 @@ Copyright \copyright 2011 Lucas Nussbaum -- lucas@debian.org
 This document is free software: you can redistribute it and/or modify
 it under either (at your option):
 \begin{itemize}
-\item the terms of the GNU General Public License as published by
+\item The terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.\\
     \url{http://www.gnu.org/licenses/gpl.html}
     \hbr
-\item the terms of the Creative Commons Attribution-ShareAlike 3.0 Unported License.\\
+\item The terms of the Creative Commons Attribution-ShareAlike 3.0 Unported License.\\
 	\url{http://creativecommons.org/licenses/by-sa/3.0/}
 \end{itemize}
 }
-
-\br
-\fixme{Add pointer to website / git repo}
+\centerline{\rule{0.7\linewidth}{0.3mm}}
+\begin{itemize}
+\item Latest version:\\
+\url{http://git.debian.org/?p=users/lucas/packaging-tutorial.git}
+	\br
+\item Contribute:\\
+	\texttt{git clone git://git.debian.org/\~{}lucas/packaging-tutorial.git}
+	\br
+\item Feedback: \href{mailto:lucas@debian.org}{\textbf{\texttt{lucas@debian.org}}}
+\end{itemize}
 \end{frame}
 
 \subsection{The Deb package format}
@@ -102,13 +109,131 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \centerline{\textbf{This tutorial: create Debian packages, the Debian way}}
 \end{frame}
 
+\begin{frame}{Tools you will need}
+	\begin{itemize}
+		\item A Debian (or Ubuntu) system
+			\br
+		\item \textbf{build-essential} package: has dependencies on the packages that will be assumed to be available on the developers' machine (no need to specify them in the \texttt{Build-Depends:} control field)
+		\begin{itemize}
+			\item includes a dependency on \textbf{dpkg-dev}, which contains basic Debian-specific tools to create packages
+		\end{itemize}
+		\br
+	\item \textbf{devscripts} package: contains many useful scripts for Debian maintainers
+	\end{itemize}
+
+	\br
+	Many other tools will also be mentioned later, such as \textbf{debhelper}, \textbf{cdbs}, \textbf{quilt}, \textbf{pbuilder}, \textbf{sbuild}, \textbf{svn-buildpackage}, \textbf{git-buildpackage}, \ldots
+\end{frame}
+
+\begin{frame}{General packaging workflow}
+\begin{center}
+\begin{tikzpicture}[
+	node1/.style={shape=rectangle,draw=rouge,fill=debianbackgroundblue,thick},
+	arr/.style={very thick},
+	command/.style={text=rouge,font=\ttfamily},
+]
+	\node[node1] (us) at (0, 0) {upstream source};
+	\node[node1] (sp) at (0, -1.5) {source package};
+	\draw[arr,<-,dashed] (sp) -- (2.5,-1.5) node[right=0cm,text width=2.98cm,text centered,font=\small] {where most of the manual work is done};
+	\node[node1] (b1) at (-1.5, -3) {binary package};
+	\node[node1] (b2) at (1.5, -3) {binary package};
+	\draw[arr,<-,dashed] (b2) -- (3.5,-3) node[right,text centered,font=\ttfamily] {.deb\normalfont};
+	\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\_make};
+	\draw[arr,->] (sp) -- (b1);
+	\draw[arr,->] (sp) -- (b2) node[pos=0.5,right,command] {debuild};
+	\node (dot) at (0,-4.5) {};
+	\draw[fill=black] (dot) circle (.05cm);
+	\draw[arr,->] (0,-3.5) -- (dot) node[pos=0.5,right] {test (\texttt{\color{rouge}lintian})};
+	\draw[arr,->] (dot) -- (-1,-5.5) node[pos=0.5,left] {install (\texttt{\color{rouge}debi})};
+	\draw[arr,->] (dot) -- (1,-5.5) node[pos=0.5,right] {upload (\texttt{\color{rouge}dput})};
+	\useasboundingbox (-3,-6) rectangle (6,0); % hack hack hack
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Source package}
+\begin{itemize}
+	\item One source package can generate several binary packages\\
+		{\small the \texttt{\bfseries libtar} source generates the \texttt{\bfseries libtar} and \texttt{\bfseries libtar-dev} binary packages}
+		\hbr
+	\item Two kinds of packages: (if unsure, use non-native)
+		\begin{itemize}
+				\small
+			\item Native packages: software developed inside Debian (\textsl{dpkg}, \textsl{apt})
+			\item Non-native packages: software developed outside Debian
+		\end{itemize}
+		\hbr
+	\item Main file: \texttt{.dsc} (metadata)
+		\hbr
+	\item Other files depending on the source format version
+	\begin{itemize}
+		\item 1.0 -- native: \texttt{package\_version.tar.gz}
+		\hbr
+		\item 1.0 -- non-native:
+		\begin{itemize}
+			\item \texttt{pkg\_ver.orig.tar.gz} : upstream source
+			\item \texttt{pkg\_debver.diff.gz} : patch to add Debian-specific changes
+		\end{itemize}
+		\hbr
+		\item 3.0 (quilt) -- also non-native, more recent:
+		\begin{itemize}
+			\item \texttt{pkg\_ver.orig.tar.gz} : upstream source
+			\item \texttt{pkg\_debver.debian.tar.gz} : tarball with the Debian changes
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\br
+(See \texttt{dpkg-source(1)} for exact details)
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Source package example (wget\_1.12-2.1.dsc)}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Format: 3.0 (quilt)
+Source: wget
+Binary: wget
+Architecture: any
+Version: 1.12-2.1
+Maintainer: Noel Kothe <noel@debian.org>
+Homepage: http://www.gnu.org/software/wget/
+Standards-Version: 3.8.4
+Build-Depends: debhelper (>> 5.0.0), gettext, texinfo, libssl-dev (>= 0.9.8), dpatch, info2man
+Checksums-Sha1: 
+ 50d4ed2441e67db7aa5061d8a4dde41ee0e94248 2464747 wget_1.12.orig.tar.gz
+ d4c1c8bbe431d6131cbd7ed2e4fc37dd7cef3611 48308 wget_1.12-2.1.debian.tar.gz
+Checksums-Sha256: 
+ 7578ed0974e12caa71120581fa3962ee5a69f7175ddc3d6a6db0ecdcba65b572 2464747 wget_1.12.orig.tar.gz
+ 1e9b0c4c00eae6b4172baae219a14857f4002382b9d7a289de7ab789c402ad78 48308 wget_1.12-2.1.debian.tar.gz
+Files: 
+ 141461b9c04e454dc8933c9d1f2abf83 2464747 wget_1.12.orig.tar.gz
+ e93123c934e3c141916f472f380278c2 48308 wget_1.12-2.1.debian.tar.gz
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Retrieving an existing source package}
+\begin{itemize}
+\item From the Debian archive:
+	\begin{itemize}
+		\item \texttt{apt-get source \textsl{package}}
+		\item \texttt{apt-get source \textsl{package=version}}
+		\item \texttt{apt-get source \textsl{package/release}}
+	\end{itemize}
+	\br
+\item From the Internet:
+	\begin{itemize}
+		\item \texttt{dget \textsl{url-to-.dsc}}
+		\item \texttt{dget http://snapshot.debian.org/archive/debian-archive/\\20090802T004153Z/debian/dists/bo/main/source/web/\\wget\_1.4.4-6.dsc}\\
+			\href{http://snapshot.debian.org/}{\ttfamily snapshot.d.o} provides the history of Debian since 2005
+	\end{itemize}
+\br
+\item Once downloaded, extract with \texttt{dpkg-source -x \textsl{file.dsc}}
+\end{itemize}
+\end{frame}
 \begin{frame}
 	\frametitle{Ideas dump}
 \begin{itemize}
-\item Tools you will need
-\item General packaging workflow / source package - binary packages
-
-\item Downloading the source
 \item Creating a basic Debian source package
 \item Debian source package -- files in debian/
 \item Example: removing IPv6 support from wget
