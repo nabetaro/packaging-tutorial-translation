@@ -1,0 +1,146 @@
+\documentclass[10pt,final]{beamer}
+\mode<presentation>
+\usetheme{lucasdeb}
+\usepackage{paralist}
+\usepackage{wasysym}
+\definecolor{darkgreen}{rgb}{0,.7,0}
+\definecolor{darkred}{rgb}{.7,0,0}
+\newcommand{\Smiley}{{\color{darkgreen}\smiley}}
+\newcommand{\Frownie}{{\color{darkred}\frownie}}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\usepackage[OT1]{fontenc}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{comment}
+\usepackage{tabularx}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily}
+\beamertemplatetransparentcovereddynamic
+\setbeamercovered{invisible}
+\newcommand{\br}{\vskip 1em}
+\newcommand{\hbr}{\vskip 0.5em}
+\newcommand{\hhbr}{\vskip 0.25em}
+\newcommand{\Arr}{\textbf{$\Rightarrow$}\xspace}
+\newcommand{\arr}{\textbf{$\rightarrow$}\xspace}
+\newcommand{\fixme}[1]{ {\color{red}\footnotesize\bf #1}}
+\usepackage{listings}
+
+\renewcommand{\ttdefault}{aett}
+\usepackage{aecompl}
+
+\newcommand{\pedp}{\NoAutoSpaceBeforeFDP}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{figs/dslide8.pdf}}
+\logo{\includegraphics[viewport=274 335 360 440,width=0.5cm]{figs/openlogo-nd.pdf}}
+\hypersetup{pdftitle={An Introduction to Debian Packaging},bookmarks}
+\title{An Introduction to Debian Packaging}
+\author[]{Lucas Nussbaum\\{\small\texttt{lucas@debian.org}}}
+\institute{\includegraphics[viewport=274 335 360 440,width=1cm]{figs/openlogo-nd.pdf}}
+\date{}
+
+\newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}%
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Introduction}
+\subsection{About this document}
+\begin{frame}
+\frametitle{About this document}
+
+Copyright \copyright 2011 Lucas Nussbaum -- lucas@debian.org
+\br
+
+{\small 
+This document is free software: you can redistribute it and/or modify
+it under either (at your option):
+\begin{itemize}
+\item the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.\\
+    \url{http://www.gnu.org/licenses/gpl.html}
+    \hbr
+\item the terms of the Creative Commons Attribution-ShareAlike 3.0 Unported License.\\
+	\url{http://creativecommons.org/licenses/by-sa/3.0/}
+\end{itemize}
+}
+
+\br
+\fixme{Add pointer to website / git repo}
+\end{frame}
+
+\subsection{The Deb package format}
+\begin{frame}[fragile]
+	\frametitle{Introduction: the Deb package format}
+\begin{itemize}
+	\item One of the two most common packages format (with RPM)
+	\item Used by Debian and its derivatives (including Ubuntu)
+	\item A very powerful and convenient way to distribute software to users
+		\pause
+	\item \texttt{.deb} file: an \texttt{ar} archive
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+$ ar tv wget_1.12-2.1_i386.deb
+rw-r--r-- 0/0      4 Sep  5 15:43 2010 debian-binary
+rw-r--r-- 0/0   2403 Sep  5 15:43 2010 control.tar.gz
+rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
+\end{lstlisting}
+\begin{itemize}
+	\item \texttt{debian-binary}: version of the deb file format, \texttt{"2.0\textbackslash{}n"}
+	\item \texttt{control.tar.gz}: metadata about the package\\
+		{\small \texttt{\textbf{control}, md5sums, (pre|post)(rm|inst), triggers, shlibs}, \ldots}
+	\item \texttt{data.tar.gz}: data files of the package
+\end{itemize}
+		\pause
+\item You could create your \texttt{.deb} files manually\\
+	{\footnotesize \url{http://tldp.org/HOWTO/html\_single/Debian-Binary-Package-Building-HOWTO/}}
+\item But most people don't do it that way
+\end{itemize}
+\hbr
+\centerline{\textbf{This tutorial: create Debian packages, the Debian way}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ideas dump}
+\begin{itemize}
+\item Tools you will need
+\item General packaging workflow / source package - binary packages
+
+\item Downloading the source
+\item Creating a basic Debian source package
+\item Debian source package -- files in debian/
+\item Example: removing IPv6 support from wget
+\item Debhelper7
+\item CDBS
+\item New source formats
+\item Modifying the upstream source Patch systems
+\item Per-language policies and packaging helpers
+\item Maintainer scripts
+\item Building packages -- dpkg-buildpackage pbuilder sbuild
+\item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
+\item Uploading debsign / dput -- private archive -- reprepro
+\item Contributing the package to Debian and Ubuntu
+
+\item Contributing new stuff vs adopting (WNPP, etc) vs co-maintaining
+\end{itemize}
+\end{frame}
+
+\section{Links}
+\begin{frame}{Links}
+
+http://wiki.debian.org/IntroDebianPackaging
+http://www.debian.org/devel/
+http://www.debian.org/doc/debian-policy/
+http://www.debian.org/doc/developers-reference/
+http://www.debian.org/doc/maint-guide/
+https://wiki.ubuntu.com/PackagingGuide
+lp:ubuntu-packaging-guide
+debian-mentors
+mentors.debian.net
+library packaging guide
+debhelper 7 slides
+\end{frame}
+
+\end{document}
