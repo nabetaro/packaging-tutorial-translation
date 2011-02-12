@@ -47,9 +47,9 @@
 \frame{\titlepage}
 
 \section{Introduction}
-\subsection{About this document}
+\subsection{Legal stuff}
 \begin{frame}
-\frametitle{About this document}
+\frametitle{Legal stuff}
 
 Copyright \copyright 2011 Lucas Nussbaum -- lucas@debian.org
 \br
@@ -67,7 +67,22 @@ it under either (at your option):
 	\url{http://creativecommons.org/licenses/by-sa/3.0/}
 \end{itemize}
 }
-\centerline{\rule{0.7\linewidth}{0.3mm}}
+\end{frame}
+
+\subsection{About this tutorial}
+\begin{frame}{About this tutorial}
+\begin{itemize}
+\item Goal: tell you what you really need to know about Debian packaging
+	\br
+\item Tries to keep a reasonable size
+	\begin{itemize}
+	\hbr
+		\item No attempt to be complete
+			\hbr
+		\item You might need to read more documentation
+	\end{itemize}
+\end{itemize}
+\vfill
 \begin{itemize}
 \item Latest version:\\
 \url{http://git.debian.org/?p=users/lucas/packaging-tutorial.git}
@@ -109,6 +124,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \centerline{\textbf{This tutorial: create Debian packages, the Debian way}}
 \end{frame}
 
+\subsection{Tools you will need}
 \begin{frame}{Tools you will need}
 	\begin{itemize}
 		\item A Debian (or Ubuntu) system
@@ -125,6 +141,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	Many other tools will also be mentioned later, such as \textbf{debhelper}, \textbf{cdbs}, \textbf{quilt}, \textbf{pbuilder}, \textbf{sbuild}, \textbf{svn-buildpackage}, \textbf{git-buildpackage}, \ldots
 \end{frame}
 
+\subsection{General packaging workflow}
 \begin{frame}{General packaging workflow}
 \begin{center}
 \begin{tikzpicture}[
@@ -132,13 +149,15 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	arr/.style={very thick},
 	command/.style={text=rouge,font=\ttfamily},
 ]
-	\node[node1] (us) at (0, 0) {upstream source};
+	\node[node1] (us) at (1.5, 0) {upstream source};
+	\node[node1] (da) at (-1.5, 0) {Debian mirror};
 	\node[node1] (sp) at (0, -1.5) {source package};
 	\draw[arr,<-,dashed] (sp) -- (2.5,-1.5) node[right=0cm,text width=2.98cm,text centered,font=\small] {where most of the manual work is done};
 	\node[node1] (b1) at (-1.5, -3) {binary package};
 	\node[node1] (b2) at (1.5, -3) {binary package};
 	\draw[arr,<-,dashed] (b2) -- (3.5,-3) node[right,text centered,font=\ttfamily] {.deb\normalfont};
 	\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\_make};
+	\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get source};
 	\draw[arr,->] (sp) -- (b1);
 	\draw[arr,->] (sp) -- (b2) node[pos=0.5,right,command] {debuild};
 	\node (dot) at (0,-4.5) {};
@@ -146,11 +165,13 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	\draw[arr,->] (0,-3.5) -- (dot) node[pos=0.5,right] {test (\texttt{\color{rouge}lintian})};
 	\draw[arr,->] (dot) -- (-1,-5.5) node[pos=0.5,left] {install (\texttt{\color{rouge}debi})};
 	\draw[arr,->] (dot) -- (1,-5.5) node[pos=0.5,right] {upload (\texttt{\color{rouge}dput})};
-	\useasboundingbox (-3,-6) rectangle (6,0); % hack hack hack
+	\useasboundingbox (-4,-6) rectangle (6,0); % hack hack hack
 \end{tikzpicture}
 \end{center}
 \end{frame}
 
+\section{Creating source packages}
+\subsection{Source packages formats}
 \begin{frame}
 \frametitle{Source package}
 \begin{itemize}
@@ -187,6 +208,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 (See \texttt{dpkg-source(1)} for exact details)
 \end{frame}
 
+\subsection{Source package example}
 \begin{frame}[fragile]
 	\frametitle{Source package example (wget\_1.12-2.1.dsc)}
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -211,6 +233,7 @@ Files:
 \end{lstlisting}
 \end{frame}
 
+\subsection{Retrieving source packages}
 \begin{frame}
 \frametitle{Retrieving an existing source package}
 \begin{itemize}
@@ -220,36 +243,144 @@ Files:
 		\item \texttt{apt-get source \textsl{package=version}}
 		\item \texttt{apt-get source \textsl{package/release}}
 	\end{itemize}
+	(You need \texttt{deb-src} lines in \texttt{sources.list})
 	\br
 \item From the Internet:
 	\begin{itemize}
-		\item \texttt{dget \textsl{url-to-.dsc}}
+		\item \texttt{dget \textsl{url-to.dsc}}
 		\item \texttt{dget http://snapshot.debian.org/archive/debian-archive/\\20090802T004153Z/debian/dists/bo/main/source/web/\\wget\_1.4.4-6.dsc}\\
-			\href{http://snapshot.debian.org/}{\ttfamily snapshot.d.o} provides the history of Debian since 2005
+			(\href{http://snapshot.debian.org/}{\ttfamily snapshot.d.o} provides all packages from Debian since 2005)
 	\end{itemize}
 \br
 \item Once downloaded, extract with \texttt{dpkg-source -x \textsl{file.dsc}}
 \end{itemize}
 \end{frame}
+
+\subsection{Creating a basic source package}
+\begin{frame}
+\frametitle{Creating a basic source package}
+\begin{itemize}
+	\item Download the upstream source
+		\hbr
+	\item Rename to \texttt{\textsl{source\_package}\_\textsl{upstream\_version}.orig.tar.gz}
+		\hbr
+	\item Untar it
+		\hbr
+	\item \texttt{cd \textsl{upstream\_source} \&\& dh\_make} (from the \textbf{dh-make} package)
+		\hbr
+	\item \texttt{debian/} directory created, with lots of files in it
+		\begin{itemize}
+				\small
+			\item That's where all the work will be done
+		\end{itemize}
+		\hbr
+	\item There are some alternatives to \texttt{dh\_make} that target more specific sets of packages: \textbf{dh-make-perl}, \textbf{dh-make-php}, \ldots
+\end{itemize}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Ideas dump}
 \begin{itemize}
-\item Creating a basic Debian source package
 \item Debian source package -- files in debian/
 \item Example: removing IPv6 support from wget
-\item Debhelper7
-\item CDBS
+\item Packaging helpers: Debhelper7, CDBS
 \item New source formats
-\item Modifying the upstream source Patch systems
+\item Modifying the upstream source + patch systems
 \item Per-language policies and packaging helpers
 \item Maintainer scripts
 \item Building packages -- dpkg-buildpackage pbuilder sbuild
-\item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
-\item Uploading debsign / dput -- private archive -- reprepro
-\item Contributing the package to Debian and Ubuntu
-
-\item Contributing new stuff vs adopting (WNPP, etc) vs co-maintaining
 \end{itemize}
+\end{frame}
+
+\section{Maintaining packages}
+\begin{frame}
+	\frametitle{Ideas dump 2}
+\begin{itemize}
+\item Uploading debsign / dput -- private archive -- reprepro
+\item Uploading new packages in Debian and Ubuntu
+\item Joining teams
+\item Adopting packages
+\item Contributing new stuff vs adopting (WNPP, etc) vs co-maintaining
+\item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Becoming a Debian contributor}
+Several ways to contribute:
+\hbr
+\begin{itemize}
+\item Bring new software to Debian
+\begin{itemize}
+\item Is that new software interesting/useful enough?
+\item Are there alternatives already packaged in Debian?
+\end{itemize}
+\br
+\item Adopt existing unmaintained packages
+\begin{itemize}
+	\item Many unmaintained packages in Debian
+	\item Including some that you rely on, probably
+	\item Use \texttt{wnpp-alert} to find out if you have some installed
+\end{itemize}
+\br
+\item Get involved in packaging teams
+\begin{itemize}
+\item Many teams that focus on set of packages
+\item Full list on \url{http://wiki.debian.org/Teams}
+\item An excellent way to work with more experienced contributors
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{More interested in Ubuntu?}
+\begin{itemize}
+	\item Ubuntu mainly manages the divergence with Debian
+	\br
+	\item Do not really focus on specific packages\\
+		Instead, collaborate with Debian teams
+	\br
+	\item Recommend uploading new packages to Debian first\\
+	\fixme{ref}
+	\br
+	\item Possibly a better plan:
+	\begin{itemize}
+		\item Get involved in a Debian team and act as a bridge with Ubuntu
+			\hbr
+		\item Help reduce divergence, triage bugs in Launchpad
+			\hbr
+		\item Many Debian tools can help:
+		\begin{itemize}
+		\item Ubuntu column on the Developer' packages overview
+		\item Ubuntu box on the Packages Tracking System
+		\item Receive launchpad bugmail via the PTS
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Adopting orphaned packages}
+\begin{frame}{Adopting orphaned packages}
+\begin{itemize}
+	\item Full list: \fixme{ref}
+	\item Installed on your machine: \texttt{wnpp-alert}
+	\item Different states:
+	\begin{itemize}
+		\item \textbf{O}rphaned: the package is unmaintained\\
+			Feel free to adopt it
+		\item \textbf{RFA}: \textbf{R}equest \textbf{F}or \textbf{A}dopter\\
+			Maintainer looking for adopter, but continues work in the meantime\\
+			Feel free to adopt it. A mail to the current maintainer is polite
+		\item \textbf{ITA}: \textbf{I}ntent \textbf{T}o \textbf{A}dopt\\
+			Someone intends to adopt the package\\
+			You could propose your help!
+		\item \textbf{RFH} (\textbf{R}equest \textbf{F}or \textbf{H}elp\\
+			The maintainer is looking for help
+	\end{itemize}
+	\item Some unmaintained packages not detected \arr Not orphaned yet
+	\item Some packages are stalled in \textbf{ITA} state
+	\item When in doubt, ask \texttt{debian-qa@lists.debian.org}
+	\end{itemize}
 \end{frame}
 
 \section{Links}
