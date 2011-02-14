@@ -129,12 +129,14 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	\begin{itemize}
 		\item A Debian (or Ubuntu) system
 			\br
-		\item \textbf{build-essential} package: has dependencies on the packages that will be assumed to be available on the developers' machine (no need to specify them in the \texttt{Build-Depends:} control field)
+		\item \textbf{build-essential} package: has dependencies on the packages that will be assumed to be available on the developers' machine (no need to specify them in the \texttt{Build-Depends:} control field of your package)
 		\begin{itemize}
 			\item includes a dependency on \textbf{dpkg-dev}, which contains basic Debian-specific tools to create packages
 		\end{itemize}
-		\br
+		\hbr
 	\item \textbf{devscripts} package: contains many useful scripts for Debian maintainers
+		\hbr
+	\item \textbf{lintian}: package checker
 	\end{itemize}
 
 	\br
@@ -151,20 +153,17 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 ]
 	\node[node1] (us) at (1.5, 0) {upstream source};
 	\node[node1] (da) at (-1.5, 0) {Debian mirror};
-	\node[node1] (sp) at (0, -1.5) {source package};
-	\draw[arr,<-,dashed] (sp) -- (2.5,-1.5) node[right=0cm,text width=2.98cm,text centered,font=\small] {where most of the manual work is done};
-	\node[node1] (b1) at (-1.5, -3) {binary package};
-	\node[node1] (b2) at (1.5, -3) {binary package};
-	\draw[arr,<-,dashed] (b2) -- (3.5,-3) node[right,text centered,font=\ttfamily] {.deb\normalfont};
+	\node[node1] (sp) at (0, -2) {source package};
+	\draw[arr,<-,dashed] (sp) -- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\small] {where most of the manual work is done};
+	\node[node1] (b1) at (-1.5, -4) {binary package};
+	\node[node1] (b2) at (1.5, -4) {binary package};
+	\draw[arr,<-,dashed] (b2) -- (3.5,-4) node[right,text centered,font=\ttfamily] {.deb\normalfont};
 	\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\_make};
 	\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get source};
 	\draw[arr,->] (sp) -- (b1);
-	\draw[arr,->] (sp) -- (b2) node[pos=0.5,right,command] {debuild};
-	\node (dot) at (0,-4.5) {};
-	\draw[fill=black] (dot) circle (.05cm);
-	\draw[arr,->] (0,-3.5) -- (dot) node[pos=0.5,right] {test (\texttt{\color{rouge}lintian})};
-	\draw[arr,->] (dot) -- (-1,-5.5) node[pos=0.5,left] {install (\texttt{\color{rouge}debi})};
-	\draw[arr,->] (dot) -- (1,-5.5) node[pos=0.5,right] {upload (\texttt{\color{rouge}dput})};
+	\draw[arr,->] (sp) -- (b2) node[pos=0.5,right] {\texttt{\color{rouge}debuild} (build and test with \texttt{\color{rouge}lintian})};
+	\draw[arr,->] (0,-4.5) -- (-1,-6) node[pos=0.5,left] {install (\texttt{\color{rouge}debi})};
+	\draw[arr,->] (0,-4.5) -- (1,-6) node[pos=0.5,right] {upload (\texttt{\color{rouge}dput})};
 	\useasboundingbox (-4,-6) rectangle (6,0); % hack hack hack
 \end{tikzpicture}
 \end{center}
@@ -278,33 +277,8 @@ Files:
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Ideas dump}
-\begin{itemize}
-\item Debian source package -- files in debian/
-\item Example: removing IPv6 support from wget
-\item Packaging helpers: Debhelper7, CDBS
-\item New source formats
-\item Modifying the upstream source + patch systems
-\item Per-language policies and packaging helpers
-\item Maintainer scripts
-\item Building packages -- dpkg-buildpackage pbuilder sbuild
-\end{itemize}
-\end{frame}
-
 \section{Maintaining packages}
-\begin{frame}
-	\frametitle{Ideas dump 2}
-\begin{itemize}
-\item Uploading debsign / dput -- private archive -- reprepro
-\item Uploading new packages in Debian and Ubuntu
-\item Joining teams
-\item Adopting packages
-\item Contributing new stuff vs adopting (WNPP, etc) vs co-maintaining
-\item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
-\end{itemize}
-\end{frame}
-
+\subsection{Becoming a Debian contributor}
 \begin{frame}
 \frametitle{Becoming a Debian contributor}
 Several ways to contribute:
@@ -325,7 +299,7 @@ Several ways to contribute:
 \br
 \item Get involved in packaging teams
 \begin{itemize}
-\item Many teams that focus on set of packages
+\item Many teams that focus on set of packages, and need help
 \item Full list on \url{http://wiki.debian.org/Teams}
 \item An excellent way to work with more experienced contributors
 \end{itemize}
@@ -340,8 +314,8 @@ Several ways to contribute:
 	\item Do not really focus on specific packages\\
 		Instead, collaborate with Debian teams
 	\br
-	\item Recommend uploading new packages to Debian first\\
-	\fixme{ref}
+	\item Usually recommend uploading new packages to Debian first\\
+		\url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages/}
 	\br
 	\item Possibly a better plan:
 	\begin{itemize}
@@ -362,7 +336,7 @@ Several ways to contribute:
 \subsection{Adopting orphaned packages}
 \begin{frame}{Adopting orphaned packages}
 \begin{itemize}
-	\item Full list: \fixme{ref}
+	\item Full list: \url{http://www.debian.org/devel/wnpp/}
 	\item Installed on your machine: \texttt{wnpp-alert}
 	\item Different states:
 	\begin{itemize}
@@ -377,26 +351,84 @@ Several ways to contribute:
 		\item \textbf{RFH} (\textbf{R}equest \textbf{F}or \textbf{H}elp\\
 			The maintainer is looking for help
 	\end{itemize}
-	\item Some unmaintained packages not detected \arr Not orphaned yet
-	\item Some packages are stalled in \textbf{ITA} state
+	\item Some unmaintained packages not detected \arr not orphaned yet
 	\item When in doubt, ask \texttt{debian-qa@lists.debian.org}
 	\end{itemize}
 \end{frame}
 
-\section{Links}
-\begin{frame}{Links}
-
-http://wiki.debian.org/IntroDebianPackaging
-http://www.debian.org/devel/
-http://www.debian.org/doc/debian-policy/
-http://www.debian.org/doc/developers-reference/
-http://www.debian.org/doc/maint-guide/
-https://wiki.ubuntu.com/PackagingGuide
-lp:ubuntu-packaging-guide
-debian-mentors
-mentors.debian.net
-library packaging guide
-debhelper 7 slides
+\subsection{Where to get help?}
+\begin{frame}
+\frametitle{Where to get help?}
+Help you will need:
+\begin{itemize}
+	\item Various advices and answers to your questions, code reviews
+	\item Sponsorship of your uploads, when your package is ready
+\end{itemize}
+\br
+You can get help from:
+\begin{itemize}
+	\item Other members of a packaging team $\leftarrow$ the best solution
+		\begin{itemize}
+			\item They know the specifics of your package
+			\item You can become a member of the team
+			\item See \url{http://wiki.debian.org/Teams}
+		\end{itemize}
+	\hbr
+	\item The Debian Mentors group (if your package doesn't fit in a team)
+		\begin{itemize}
+			\item \url{http://wiki.debian.org/DebianMentorsFaq}
+			\item Mailing list: \url{debian-mentors@lists.debian.org}
+			\item IRC: \texttt{\#debian-mentors} on \texttt{irc.debian.org}
+			\item \url{http://mentors.debian.net/}
+		\end{itemize}
+\end{itemize}
 \end{frame}
+
+
+\section{Resources}
+\begin{frame}{Resources}
+	\begin{itemize}
+		\item Debian Developers' Corner\\
+			\url{http://www.debian.org/devel/}\\
+			{\small Links to many resources about Debian development}
+			\hbr
+		\item Debian New Maintainers' Guide\\
+			\url{http://www.debian.org/doc/maint-guide/}\\
+			{\small An introduction to Debian packaging, but could use an update}
+			\hbr
+		\item Debian Developer's Reference\\
+		      \url{http://www.debian.org/doc/developers-reference/}\\
+		      {\small Mostly about Debian procedures, but also some best packaging practices (part 6)}
+			\hbr
+
+	      \item Debian Policy\\
+		    \url{http://www.debian.org/doc/debian-policy/}\\
+		    {\small All the requirements that every package must satisfy}
+			\hbr
+
+		\item Ubuntu Packaging Guide\\
+			\url{https://wiki.ubuntu.com/PackagingGuide}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Things not covered (yet)}
+\begin{itemize}
+\item Debian source package -- files in debian/
+\item Example: removing IPv6 support from wget
+\item Packaging helpers: Debhelper7, CDBS
+\item New source formats
+\item Modifying the upstream source + patch systems
+\item Per-language policies and packaging helpers
+\item Maintainer scripts
+\item Building packages -- dpkg-buildpackage pbuilder sbuild
+\br
+
+\item Uploading debsign / dput -- private archive -- reprepro
+\item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
+\item link to debhelper 7 slides
+\end{itemize}
+\end{frame}
+
 
 \end{document}
