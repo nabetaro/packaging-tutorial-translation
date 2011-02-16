@@ -16,3 +16,4 @@ IO::read("dhstats.txt").split(/\n\n/).each do |par|
   f.puts "#{date} #{dh - dh7 - cdbs} #{dh7} #{cdbs}"
 end
 f.close
+system("rm dhstats.txt")
