@@ -1,7 +1,6 @@
-\documentclass[10pt,final,handout]{beamer}
+\documentclass[10pt,final]{beamer}
 \mode<presentation>
 \usetheme{lucasdeb}
-\usepackage{paralist}
 \usepackage{wasysym}
 \definecolor{darkgreen}{rgb}{0,.7,0}
 \definecolor{darkred}{rgb}{.7,0,0}
@@ -26,6 +25,8 @@
 \newcommand{\fixme}[1]{ {\color{red}\footnotesize\bf #1}}
 \usepackage{listings}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{dateplot}
 
 \renewcommand{\ttdefault}{aett}
 \usepackage{aecompl}
@@ -42,6 +43,14 @@
 
 \newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}%
 
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[hideothersubsections]
+  \end{frame}
+}
+
 \begin{document}
 
 \frame{\titlepage}
@@ -55,14 +64,15 @@ Copyright \copyright 2011 Lucas Nussbaum -- lucas@debian.org
 \br
 
 {\small 
-This document is free software: you can redistribute it and/or modify
+\textbf{This document is free software}: you can redistribute it and/or modify
 it under either (at your option):
+\hbr
 \begin{itemize}
 \item The terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.\\
     \url{http://www.gnu.org/licenses/gpl.html}
-    \hbr
+    \br
 \item The terms of the Creative Commons Attribution-ShareAlike 3.0 Unported License.\\
 	\url{http://creativecommons.org/licenses/by-sa/3.0/}
 \end{itemize}
@@ -101,7 +111,6 @@ it under either (at your option):
 	\item One of the two most common packages format (with RPM)
 	\item Used by Debian and its derivatives (including Ubuntu)
 	\item A very powerful and convenient way to distribute software to users
-		\pause
 	\item \texttt{.deb} file: an \texttt{ar} archive
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 $ ar tv wget_1.12-2.1_i386.deb
@@ -115,7 +124,6 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 		{\small \texttt{\textbf{control}, md5sums, (pre|post)(rm|inst), triggers, shlibs}, \ldots}
 	\item \texttt{data.tar.gz}: data files of the package
 \end{itemize}
-		\pause
 \item You could create your \texttt{.deb} files manually\\
 	{\footnotesize \url{http://tldp.org/HOWTO/html\_single/Debian-Binary-Package-Building-HOWTO/}}
 \item But most people don't do it that way
@@ -129,14 +137,17 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	\begin{itemize}
 		\item A Debian (or Ubuntu) system
 			\br
-		\item \textbf{build-essential} package: has dependencies on the packages that will be assumed to be available on the developers' machine (no need to specify them in the \texttt{Build-Depends:} control field of your package)
+		\item Some packages:
+	\begin{itemize}
+		\item \textbf{build-essential}: has dependencies on the packages that will be assumed to be available on the developers' machine (no need to specify them in the \texttt{Build-Depends:} control field of your package)
 		\begin{itemize}
 			\item includes a dependency on \textbf{dpkg-dev}, which contains basic Debian-specific tools to create packages
 		\end{itemize}
 		\hbr
-	\item \textbf{devscripts} package: contains many useful scripts for Debian maintainers
+	\item \textbf{devscripts}: contains many useful scripts for Debian maintainers
 		\hbr
-	\item \textbf{lintian}: package checker
+	\item \textbf{lintian}: package checker (static analyzer)
+	\end{itemize}
 	\end{itemize}
 
 	\br
@@ -170,12 +181,12 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \end{frame}
 
 \section{Creating source packages}
-\subsection{Source packages formats}
+\subsection{Source packages basics}
 \begin{frame}
 \frametitle{Source package}
 \begin{itemize}
 	\item One source package can generate several binary packages\\
-		{\small the \texttt{\bfseries libtar} source generates the \texttt{\bfseries libtar} and \texttt{\bfseries libtar-dev} binary packages}
+		{\small e.g the \texttt{\bfseries libtar} source generates the \texttt{\bfseries libtar} and \texttt{\bfseries libtar-dev} binary packages}
 		\hbr
 	\item Two kinds of packages: (if unsure, use non-native)
 		\begin{itemize}
@@ -207,10 +218,9 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 (See \texttt{dpkg-source(1)} for exact details)
 \end{frame}
 
-\subsection{Source package example}
 \begin{frame}[fragile]
 	\frametitle{Source package example (wget\_1.12-2.1.dsc)}
-\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+\begin{lstlisting}[basicstyle=\ttfamily\small]
 Format: 3.0 (quilt)
 Source: wget
 Binary: wget
@@ -267,17 +277,376 @@ Files:
 		\hbr
 	\item \texttt{cd \textsl{upstream\_source} \&\& dh\_make} (from the \textbf{dh-make} package)
 		\hbr
-	\item \texttt{debian/} directory created, with lots of files in it
-		\begin{itemize}
-				\small
-			\item That's where all the work will be done
-		\end{itemize}
+	\item There are some alternatives to \texttt{dh\_make} for specific sets of packages: \textbf{dh-make-perl}, \textbf{dh-make-php}, \ldots
 		\hbr
-	\item There are some alternatives to \texttt{dh\_make} that target more specific sets of packages: \textbf{dh-make-perl}, \textbf{dh-make-php}, \ldots
+	\item \texttt{debian/} directory created, with a lot of files in it
 \end{itemize}
 \end{frame}
 
-\section{Maintaining packages}
+\subsection{Files in debian/}
+\begin{frame}{Files in debian/}
+	All the packaging work should usually be made by modifying files in \texttt{debian/}
+\hbr
+\begin{itemize}
+	\item Main files:
+	\begin{itemize}
+		\item changelog
+		\item copyright
+		\item control
+		\item rules
+	\end{itemize}
+	\hbr
+	\item Optional files:
+	\begin{itemize}
+		\item compat
+		\item watch
+		\item dh\_install* targets\\
+			{\small *.dirs, *.docs, *.manpages, \ldots}
+		\item maintainer scripts\\
+			{\small *.postinst, *.prerm, \ldots}
+		\item source/format
+		\item patches
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{debian/changelog}
+	\begin{itemize}
+		\item Lists the Debian packaging changes
+		\item Edited manually or with \texttt{dch}
+		\item Special format to automatically close Debian or Ubuntu bugs\\
+			Debian: \texttt{Closes:~\#595268} ; Ubuntu: \texttt{LP:~\#616929}
+		\item Installed as \texttt{/usr/share/doc/\textit{package}/changelog.Debian.gz} in your package
+	\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+mpich2 (1.2.1.1-5) unstable; urgency=low
+
+  * Use /usr/bin/python instead of /usr/bin/python2.5. Allow
+    to drop dependency on python2.5.  Closes: #595268
+  * Make /usr/bin/mpdroot setuid. This is the default after
+    the installation of mpich2 from source, too. LP: #616929
+    + Add corresponding lintian override.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Wed, 15 Sep 2010 18:13:44 +0200
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{debian/copyright}
+	\hbr
+	\begin{itemize}
+		\item Copyright and license information for the source and the packaging
+		\item Traditionally written as a text file
+		\item New machine-readable format: \url{http://dep.debian.net/deps/dep5/}
+	\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Format: <VERSIONED_FORMAT_URL>
+Upstream-Name: X Solitaire
+Source: ftp://ftp.example.com/pub/games
+
+Files: *
+Copyright: Copyright 1998 John Doe <jdoe@example.com>
+License: GPL-2+
+ This program is free software; you can redistribute it
+ [...]
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+Files: debian/*
+Copyright: Copyright 1998 Jane Smith <jsmith@example.net>
+License:
+ [LICENSE TEXT]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{debian/control}
+	\hbr
+	\begin{itemize}
+		\item Package metadata
+			\begin{itemize}
+				\item For the source package itself
+				\item For each binary package built from this source
+			\end{itemize}
+			\hbr
+		\item Package name, section, priority, maintainer, uploaders, build-dependencies, dependencies, description, homepage, \ldots
+			\hbr
+		\item Documentation: Debian Policy chapter 5\\
+			\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
+	\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Source: wget
+Section: web
+Priority: important
+Maintainer: Noel Kothe <noel@debian.org>
+Build-Depends: debhelper (>> 5.0.0), gettext, texinfo,
+ libssl-dev (>= 0.9.8), dpatch, info2man
+Standards-Version: 3.8.4
+Homepage: http://www.gnu.org/software/wget/
+
+Package: wget
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: retrieves files from the web
+ Wget is a network utility to retrieve files from the Web
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Architecture: all or any}
+Two kinds of binary packages:
+\hbr
+\begin{itemize}
+	\item Packages with a different content on each Debian architecture
+	\begin{itemize}
+	\item Example: C program
+	\item \texttt{Architecture:\ any} in \texttt{debian/control}
+		\begin{itemize}
+			\item Or, if it only works on a subset of architectures:\\
+				\texttt{Architecture:\ amd64 i386 ia64 hurd-i386}
+		\end{itemize}
+	\item Packages for other architectures built by the Debian infrastructure
+	\item Named \texttt{\textsl{package}\_\textsl{version}\_\textsl{architecture}.deb}
+	\end{itemize}
+\br
+	\item Packages with the same content on all architectures
+	\begin{itemize}
+	\item Example: Perl library
+	\item \texttt{Architecture:\ all} in \texttt{debian/control}
+	\item Named \texttt{\textsl{package}\_\textsl{version}\_\textbf{all}.deb}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{debian/rules}
+	\hbr
+	\begin{itemize}
+		\item Makefile
+			\br
+		\item Interface used to build Debian packages
+			\br
+		\item Documented in Debian Policy, chapter 4.8\\
+			{\small \texttt{http://www.debian.org/doc/debian-policy/ch-source.html\#s-debianrules}}
+			\br
+		\item Five required targets:
+		\begin{itemize}
+			\item \texttt{build}: should perform all the configuration and compilation of the package
+				\hbr
+			\item \texttt{binary, binary-arch, binary-indep}: build the binary packages produced by this source package
+				\begin{itemize}
+					\item \texttt{dpkg-buildpackage} will call \texttt{binary} to build all the packages, or \texttt{binary-arch} to build only the \texttt{Architecture:~any} packages
+				\end{itemize}
+				\hbr
+			\item \texttt{clean}: clean up the source directory
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\subsection{Packaging helpers}
+\begin{frame}{Packaging helpers -- debhelper}
+\begin{itemize}
+	\item You could write shell code in \texttt{debian/rules} directly
+	\begin{itemize}
+		\item See the \texttt{adduser} package for example
+	\end{itemize}
+	\hbr
+	\item But most packages in Debian use a \textsl{Packaging helper}
+	\hbr
+	\item Most popular one: \textbf{debhelper} (used by 98\% of packages)
+	\hbr
+	\item Goal: factor the common tasks in external tools used by all packages\\
+		{\footnotesize dh\_installdirs, dh\_installchangelogs, dh\_installdocs, dh\_installexamples, dh\_install, dh\_installdebconf, dh\_installinit, dh\_link, dh\_strip, dh\_compress, dh\_fixperms, dh\_perl, dh\_makeshlibs, dh\_installdeb, dh\_shlibdeps, dh\_gencontrol, dh\_md5sums, dh\_builddeb, \ldots}
+		\begin{itemize}
+			\item Called from \texttt{debian/rules}
+			\item Behaviour changed using command parameters or files in \texttt{debian/}\\
+				{\footnotesize \ttfamily dirs, package.docs, package.examples, package.install, package.menu, package.logrotate, package.manpages, \ldots}
+		\end{itemize}
+	\hbr
+\item Third-party helpers for sets of packages: \textbf{python-support}, \textbf{dh\_ocaml}, \ldots
+	\hbr
+\item Gotcha: \texttt{debian/compat}: Debhelper compatibility version (use "7")
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{debian/rules using debhelper (1/2)}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build: 
+        $(MAKE)
+        #docbook-to-man debian/packagename.sgml > packagename.1
+
+clean: 
+        dh_testdir
+        dh_testroot
+        rm -f build-stamp configure-stamp
+        $(MAKE) clean
+        dh_clean 
+
+install: build
+        dh_testdir
+        dh_testroot
+        dh_clean -k 
+        dh_installdirs
+        # Add here commands to install the package into debian/packagename.
+        $(MAKE) DESTDIR=$(CURDIR)/debian/packagename install
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{debian/rules using debhelper (2/2)}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+
+# Build architecture-independent files here.
+binary-indep: build install
+
+# Build architecture-dependent files here.
+binary-arch: build install
+        dh_testdir
+        dh_testroot
+        dh_installchangelogs 
+        dh_installdocs
+        dh_installexamples
+#       dh_install
+        dh_installman
+        dh_link
+        dh_strip
+        dh_compress
+        dh_fixperms
+        dh_installdeb
+        dh_shlibdeps
+        dh_gencontrol
+        dh_md5sums
+        dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{CDBS}
+\hbr
+\begin{itemize}
+\item Still a lot of redundancy between packages
+\hbr
+\item Second-level helpers that factor what packages typically require
+	\begin{itemize}
+	\item Building with \texttt{./configure \&\& make \&\& make install}, CMake
+	\item Support for Perl, Python, Ruby, GNOME, KDE, Java, Haskell, \ldots
+	\end{itemize}
+\hbr
+\item CDBS:
+	\begin{itemize}
+		\item Introduced in 2005, based on advanced \textsl{GNU make} magic
+		\item Documentation: \texttt{/usr/share/doc/cdbs/}
+		\item But some people hate it:
+			\begin{itemize}
+				\item Sometimes difficult to customize package builds:\\
+				"\textsl{twisty maze of makefiles, environment vars and black magic}"
+				\item Slower than plain debhelper (many useless calls to dh\_*)
+			\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+#!/usr/bin/make -f
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+# add an action after the build
+build/mypackage::
+    /bin/bash debian/scripts/foo.sh
+\end{lstlisting}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Debhelper 7 (aka dh7, or just dh)}
+\begin{itemize}
+\item Introduced in 2008 as a \textsl{CDBS killer}
+\hbr
+\item \textbf{dh} command that calls \texttt{dh\_*}
+\hbr
+\item Simple \textsl{debian/rules}, listing only overrides
+\hbr
+\item Easier to customize than CDBS
+\hbr
+\item Doc: slides from Joey Hess' Debconf9 talk\\\
+	\url{http://kitenet.net/~joey/talks/debhelper/debhelper-slides.pdf}
+	\br
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+#!/usr/bin/make -f
+%:
+    dh $@
+
+override_dh_auto_configure:
+     dh_auto_configure -- --with-kitchen-sink
+
+override_dh_auto_build:
+     make world
+
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Plain debhelper vs CDBS vs debhelper 7}
+	\hbr
+\begin{itemize}
+\item Market shares: (feb'11)\\
+Plain debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  debhelper7: 29\%
+\hbr
+\item Which one should I learn?
+\begin{itemize}
+	\item Probably all of them
+	\item You need to know debhelper to use CDBS and dh7
+	\item You might have to modify CDBS packages
+\end{itemize}
+\hbr
+\item Which one should I use for a new package?
+\begin{itemize}
+	\item Debhelper 7 (only solution with an increasing market share)
+\end{itemize}
+\end{itemize}
+
+\hbr
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[small,label style={font=\footnotesize},xlabel={\small Time},ylabel={\small Market share (\%)},
+	date coordinates in=x,height=4.85cm,width=9cm,xticklabel={\month/\year},
+	     legend style={font=\footnotesize,at={(1.02,1)},anchor=north west},max space between ticks=82,try min ticks=5,ymin=0]
+	\addplot[mark=none,blue,thick] table[x=date,y=dh] {cdbs-dh7.txt};
+	\addplot[mark=none,red,thick] table[x=date,y=dh7] {cdbs-dh7.txt};
+	\addplot[mark=none,green,thick] table[x=date,y=cdbs] {cdbs-dh7.txt};
+	\legend{debhelper, dh7, CDBS}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\section{Building and testing packages}
+\subsection{Building packages}
+\subsection{Testing packages}
+
+\section{Practical session 1 : modifying the wget package}
+\begin{frame}{Practical session 1: modifying the wget package}
+\begin{enumerate}
+	\item Go to \url{http://ftp.debian.org/debian/pool/main/w/wget/} and
+		download version 1.12-2.1 of the package
+	\item Look at the files in \texttt{debian/}.
+		\begin{itemize}
+			\item 		How many binary packages are generated by this source package?
+			\item 		Which packaging helper does this package use?
+		\end{itemize}
+	\item Build the package
+	\item We are now going to modify the package. Add a changelog entry and increase the version number.
+	\item The lintian warning \textsl{more-than-one-patch-system} is caused by the build-dependency on \texttt{dpatch}. Remove it, and add an appropriate changelog entry.
+	\item Now disable IPv6 support (it is a \texttt{./configure} option)
+	\item Rebuild the package
+	\item Install the newly built package
+	\item Compare the original and the new package with debdiff
+\end{enumerate}
+\end{frame}
+
+\section{Maintaining packages in Debian}
 \subsection{Becoming a Debian contributor}
 \begin{frame}
 \frametitle{Becoming a Debian contributor}
@@ -306,6 +675,7 @@ Several ways to contribute:
 \end{itemize}
 \end{frame}
 
+\subsection{More interested in Ubuntu?}
 \begin{frame}
 \frametitle{More interested in Ubuntu?}
 \begin{itemize}
@@ -356,9 +726,11 @@ Several ways to contribute:
 	\end{itemize}
 \end{frame}
 
-\subsection{Where to get help?}
+
+\section{Resources}
+\subsection{Where to find help?}
 \begin{frame}
-\frametitle{Where to get help?}
+\frametitle{Where to find help?}
 Help you will need:
 \begin{itemize}
 	\item Various advices and answers to your questions, code reviews
@@ -384,9 +756,8 @@ You can get help from:
 \end{itemize}
 \end{frame}
 
-
-\section{Resources}
-\begin{frame}{Resources}
+\subsection{Official documentation}
+\begin{frame}{Official documentation}
 	\begin{itemize}
 		\item Debian Developers' Corner\\
 			\url{http://www.debian.org/devel/}\\
@@ -411,22 +782,23 @@ You can get help from:
 	\end{itemize}
 \end{frame}
 
+\section{TODO}
 \begin{frame}
 	\frametitle{Things not covered (yet)}
+Packaging:
 \begin{itemize}
-\item Debian source package -- files in debian/
 \item Example: removing IPv6 support from wget
-\item Packaging helpers: Debhelper7, CDBS
 \item New source formats
 \item Modifying the upstream source + patch systems
-\item Per-language policies and packaging helpers
 \item Maintainer scripts
-\item Building packages -- dpkg-buildpackage pbuilder sbuild
-\br
-
+\item Debconf
+\item watch
+\end{itemize}
+Processes:
+\begin{itemize}
+\item Building packages -- dpkg-buildpackage pbuilder sbuild debi lintian debdiff debc
 \item Uploading debsign / dput -- private archive -- reprepro
 \item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
-\item link to debhelper 7 slides
 \end{itemize}
 \end{frame}
 
