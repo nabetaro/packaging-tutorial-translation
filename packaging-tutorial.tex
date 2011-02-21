@@ -27,6 +27,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{dateplot}
+\newcommand{\textttc}[1]{\texttt{\color{rouge}#1}}
 
 \renewcommand{\ttdefault}{aett}
 \usepackage{aecompl}
@@ -191,9 +192,9 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	\draw[arr,<-,dashed] (bin) -- (3.5,-4) node[right,text centered,font=\ttfamily] {.deb\normalfont};
 	\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\_make};
 	\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get source};
-	\draw[arr,->] (sp) -- (bin) node[pos=0.5,right] {\texttt{\color{rouge}debuild} (build and test with \texttt{\color{rouge}lintian})};
-	\draw[arr,->] (bin) -- (-1,-6) node[pos=0.5,left] {install (\texttt{\color{rouge}debi})};
-	\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,right] {upload (\texttt{\color{rouge}dput})};
+	\draw[arr,->] (sp) -- (bin) node[pos=0.5,right] {\textttc{debuild} (build and test with \textttc{lintian})};
+	\draw[arr,->] (bin) -- (-1,-6) node[pos=0.5,left] {install (\textttc{debi})};
+	\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,right] {upload (\textttc{dput})};
 	\useasboundingbox (-4,-6) rectangle (6,0); % hack hack hack
 \end{tikzpicture}
 \end{center}
@@ -643,10 +644,50 @@ Plain debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  debhelper7: 29\%
 
 \section{Building and testing packages}
 \subsection{Building packages}
-\subsection{Testing packages}
-
-\section{Practical session 1 : modifying the wget package}
-\begin{frame}{Practical session 1: modifying the wget package}
+\begin{frame}{Building packages}
+\begin{itemize}
+	\item \textttc{apt-get build-dep mypackage}\\
+		Installs the \textsl{build-dependencies} (for a package in the archive)
+		
+		\br
+	\item \textttc{debuild}: build, test with \texttt{lintian}, sign with GPG
+		\br
+	\item Also possible to call \textttc{dpkg-buildpackage} directly
+		\begin{itemize}
+			\item Usually with \texttt{dpkg-buildpackage -us -uc}
+		\end{itemize}
+		\br
+	\item It is better to build packages in a clean \& minimal environment
+		\begin{itemize}
+			\item \textttc{pbuilder} -- helper to build packages in a \textsl{chroot}\\
+				Good documentation: \url{https://wiki.ubuntu.com/PbuilderHowto}
+			\hbr
+		\item \textttc{schroot} and \textttc{sbuild}: used on the Debian build daemons\\
+			(not as easy to use as \texttt{pbuilder})
+		\end{itemize}
+		\br
+	\item Generate \texttt{.deb} files and a \texttt{.changes} file
+		\begin{itemize}
+			\item \texttt{.changes}: describes what was built ; used to upload the package
+		\end{itemize}
+\end{itemize}
+\end{frame}
+\subsection{Installing and testing packages}
+\begin{frame}{Installing and testing packages}
+\begin{itemize}
+	\item Install the package locally: \textttc{debi} (will use \texttt{.changes} to know what to install)
+		\br
+	\item List the content of the package: \texttt{{\color{rouge}debc} ../mypackage<TAB>.changes}
+		\br
+	\item Compare the package with a previous version:\\
+		\texttt{{\color{rouge}debdiff} ../mypackage\_1\_*.changes ../mypackage\_2\_*.changes}
+		\br
+	\item Check the package with \texttt{lintian} (static analyzer):\\
+		\texttt{{\color{rouge}lintian} ../mypackage<TAB>.changes}
+\end{itemize}
+\end{frame}
+\section{Practical session: modifying the wget package}
+\begin{frame}{Practical session: modifying the wget package}
 \begin{enumerate}
 	\item Go to \url{http://ftp.debian.org/debian/pool/main/w/wget/} and
 		download version 1.12-2.1 of the package
@@ -805,7 +846,6 @@ You can get help from:
 	\frametitle{Things not covered (yet)}
 Packaging:
 \begin{itemize}
-\item Example: removing IPv6 support from wget
 \item New source formats
 \item Modifying the upstream source + patch systems
 \item Maintainer scripts
@@ -814,7 +854,6 @@ Packaging:
 \end{itemize}
 Processes:
 \begin{itemize}
-\item Building packages -- dpkg-buildpackage pbuilder sbuild debi lintian debdiff debc
 \item Uploading debsign / dput -- private archive -- reprepro
 \item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
 \end{itemize}
