@@ -1,0 +1,46 @@
+\usepackage{wasysym}
+\definecolor{darkgreen}{rgb}{0,.7,0}
+\definecolor{darkred}{rgb}{.7,0,0}
+\newcommand{\Smiley}{{\color{darkgreen}\smiley}}
+\newcommand{\Frownie}{{\color{darkred}\frownie}}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\usepackage[OT1]{fontenc}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{comment}
+\usepackage{tabularx}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily}
+\beamertemplatetransparentcovereddynamic
+\setbeamercovered{invisible}
+\newcommand{\br}{\vskip 1em}
+\newcommand{\hbr}{\vskip 0.5em}
+\newcommand{\hhbr}{\vskip 0.25em}
+\newcommand{\Arr}{\textbf{$\Rightarrow$}\xspace}
+\newcommand{\arr}{\textbf{$\rightarrow$}\xspace}
+\newcommand{\fixme}[1]{ {\color{red}\footnotesize\bf #1}}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{dateplot}
+\newcommand{\textttc}[1]{\texttt{\color{rouge}#1}}
+
+\renewcommand{\ttdefault}{aett}
+\usepackage{aecompl}
+
+\newcommand{\pedp}{\NoAutoSpaceBeforeFDP}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{figs/dslide8.pdf}}
+\logo{\includegraphics[viewport=274 335 360 440,width=0.5cm]{figs/openlogo-nd.pdf}}
+\newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}%
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[hideothersubsections]
+  \end{frame}
+}
+
+
