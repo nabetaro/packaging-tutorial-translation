@@ -535,7 +535,7 @@ build/mypackage::
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Debhelper 7 (aka dh7, or just dh)}
+\begin{frame}[fragile]{Dh (aka Debhelper 7, or dh7)}
 \begin{itemize}
 \item Introduced in 2008 as a \textsl{CDBS killer}
 \hbr
@@ -545,7 +545,7 @@ build/mypackage::
 \hbr
 \item Easier to customize than CDBS
 \hbr
-\item Doc: slides from Joey Hess' Debconf9 talk\\\
+\item Doc: manpages (\texttt{debhelper(7)}, \texttt{dh(1)}) + slides from DC9 talk\\
 	\url{http://kitenet.net/~joey/talks/debhelper/debhelper-slides.pdf}
 	\br
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -563,22 +563,22 @@ override_dh_auto_build:
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Plain debhelper vs CDBS vs debhelper 7}
+\begin{frame}{Classic debhelper vs CDBS vs dh}
 	\hbr
 \begin{itemize}
 \item Market shares: (feb'11)\\
-Plain debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  debhelper7: 29\%
+Classic debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  dh: 29\%
 \hbr
 \item Which one should I learn?
 \begin{itemize}
 	\item Probably all of them
-	\item You need to know debhelper to use CDBS and dh7
+	\item You need to know debhelper to use CDBS and dh
 	\item You might have to modify CDBS packages
 \end{itemize}
 \hbr
 \item Which one should I use for a new package?
 \begin{itemize}
-	\item Debhelper 7 (only solution with an increasing market share)
+	\item \textbf{dh} (only solution with an increasing market share)
 \end{itemize}
 \end{itemize}
 
@@ -591,7 +591,7 @@ Plain debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  debhelper7: 29\%
 	\addplot[mark=none,blue,thick] table[x=date,y=dh] {cdbs-dh7.txt};
 	\addplot[mark=none,red,thick] table[x=date,y=dh7] {cdbs-dh7.txt};
 	\addplot[mark=none,green,thick] table[x=date,y=cdbs] {cdbs-dh7.txt};
-	\legend{debhelper, dh7, CDBS}
+	\legend{debhelper, dh, CDBS}
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -664,12 +664,127 @@ Plain debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  debhelper7: 29\%
 \end{enumerate}
 \end{frame}
 
-\section{Maintaining packages in Debian}
-\subsection{Becoming a Debian contributor}
-\begin{frame}
-\frametitle{Becoming a Debian contributor}
-Several ways to contribute:
+\section{Advanced packaging topics}
+\subsection{Modifying the upstream source}
+\begin{frame}{Modifying the upstream source}
+Often needed:
+\begin{itemize}
+\item Fix bugs or add customizations that are specific to Debian
 \hbr
+\item Backport fixes from a newer upstream release
+\end{itemize}
+\br
+Several methods to do it:
+\begin{itemize}
+\item Modifying the files directly
+	\begin{itemize}
+		\item Simple
+		\item But no way to keep track and document the changes
+	\end{itemize}
+	\hbr
+\item Using patch systems
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Patch systems}
+\begin{itemize}
+\item Principle: changes are stored as patches in \texttt{debian/patches/}
+		\hbr
+\item Applied and unapplied during build
+		\hbr
+\item Several implementations: \textsl{simple-patchsys} (\textsl{cdbs} only), \textsl{dpatch}, \textbf{\textsl{quilt}}
+	\hbr
+\item Each supports two \texttt{debian/rules} targets:
+	\begin{itemize}
+		\item \texttt{debian/rules patch}: apply all patches
+		\item \texttt{debian/rules unpatch}: de-apply all patches
+	\end{itemize}
+	\hbr
+\item More documentation: \url{http://wiki.debian.org/debian/patches}
+\end{itemize}
+\br
+Future: new source package format with built-in patch system: \textbf{3.0 (quilt)}
+\begin{itemize}
+	\item Recommended solution
+	\item You need to learn \textsl{quilt}\\
+		\url{http://pkg-perl.alioth.debian.org/howto/quilt.html}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Documentation of patches}
+\begin{itemize}
+	\item Standard headers
+		\hbr
+	\item Documented in DEP3 - Patch Tagging Guidelines\\
+		\url{http://dep.debian.net/deps/dep3/}
+\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Description: Fix widget frobnication speeds
+ Frobnicating widgets too quickly tended to cause explosions.
+Forwarded: http://lists.example.com/2010/03/1234.html
+Author: John Doe <johndoe-guest@users.alioth.debian.org>
+Applied-Upstream: 1.2, http://bzr.foo.com/frobnicator/revision/123
+Last-Update: 2010-03-29
+\end{lstlisting}
+\end{frame}
+
+\subsection{Doing things during installation and removal}
+\begin{frame}{Doing things during installation and removal}
+\begin{itemize}
+\item Decompressing the package is sometimes not enough
+\hbr
+\item Create/remove system users, start/stop services, manage \textsl{alternatives}
+\hbr
+\item Done in \textsl{maintainer scripts}\\
+	\texttt{preinst, postinst, prerm, postrm}
+\hbr
+\item Documentation:
+	\begin{itemize}
+		\item Debian Policy Manual, chapter 6\\
+			{\footnotesize \url{http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html}}
+			
+			\hbr
+		\item Debian Developer's Reference, chapter 6.4\\
+			{\scriptsize \url{http://www.debian.org/doc/developers-reference/best-pkging-practices.html}}
+			\hbr
+		\item {\footnotesize \url{http://people.debian.org/~srivasta/MaintainerScripts.html}}
+	\end{itemize}
+\br
+\item Prompting the user
+\begin{itemize}
+	\item Must be done with \textbf{debconf}
+		\hbr
+	\item Documentation: \texttt{debconf-devel(7)} (\texttt{debconf-doc} package)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Monitoring upstream versions}
+\begin{itemize}
+\item Specify where to look in \texttt{debian/watch} (see \texttt{uscan(1)})
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+version=3
+
+http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
+  Twisted-([\d\.]*)\.tar\.bz2
+\end{lstlisting}
+	\br
+\item Debian infrastructure that uses \texttt{debian/watch}:\\
+	\textbf{Debian External Health Status}\\
+	\url{http://dehs.alioth.debian.org/}
+	\br
+\item Maintainer warned by emails sent to the Packages Tracking System
+\br
+\item \texttt{uscan}: run a manual check
+\br
+\item \texttt{uupdate}: try to update your package to the latest upstream version
+\end{itemize}
+\end{frame}
+
+\section{Maintaining packages in Debian}
+\subsection{Several ways to contribute to Debian}
+\begin{frame}{Several ways to contribute to Debian}
 \begin{itemize}
 \item Bring new software to Debian
 \begin{itemize}
@@ -724,7 +839,9 @@ Several ways to contribute:
 \begin{frame}{Adopting orphaned packages}
 \begin{itemize}
 	\item Full list: \url{http://www.debian.org/devel/wnpp/}
+		\hbr
 	\item Installed on your machine: \texttt{wnpp-alert}
+		\hbr
 	\item Different states:
 	\begin{itemize}
 		\item \textbf{O}rphaned: the package is unmaintained\\
@@ -738,7 +855,9 @@ Several ways to contribute:
 		\item \textbf{RFH} (\textbf{R}equest \textbf{F}or \textbf{H}elp\\
 			The maintainer is looking for help
 	\end{itemize}
+		\hbr
 	\item Some unmaintained packages not detected \arr not orphaned yet
+		\hbr
 	\item When in doubt, ask \texttt{debian-qa@lists.debian.org}
 	\end{itemize}
 \end{frame}
@@ -756,7 +875,7 @@ Help you will need:
 \br
 You can get help from:
 \begin{itemize}
-	\item Other members of a packaging team $\leftarrow$ the best solution
+	\item Other members of a packaging team: the best solution
 		\begin{itemize}
 			\item They know the specifics of your package
 			\item You can become a member of the team
@@ -799,17 +918,21 @@ You can get help from:
 	\end{itemize}
 \end{frame}
 
+\section{Conclusion}
+\begin{frame}{Conclusion}
+\begin{itemize}
+	\item Best practices have evolved over the years
+		\begin{itemize}
+			\item If unsure, use \textbf{dh} and \textbf{3.0 (quilt)}
+		\end{itemize}
+\end{itemize}
+\vfill
+\centerline{\large Feedback: \textbf{lucas@debian.org}}
+\end{frame}
+
 \section{TODO}
 \begin{frame}
 	\frametitle{Things not covered (yet)}
-Packaging:
-\begin{itemize}
-\item New source formats
-\item Modifying the upstream source + patch systems
-\item Maintainer scripts
-\item Debconf
-\item watch + uupdate
-\end{itemize}
 Processes:
 \begin{itemize}
 \item Uploading debsign / dput -- private archive -- reprepro
