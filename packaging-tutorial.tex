@@ -140,15 +140,17 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	arr/.style={very thick},
 	command/.style={text=rouge,font=\ttfamily},
 ]
-	\node[node1] (us) at (1.5, 0) {upstream source};
-	\node[node1] (da) at (-1.5, 0) {Debian mirror};
+	\node[node1] (www) at (0, 0) {Web};
+	\node[node1] (us) at (2.5, 0) {upstream source};
+	\node[node1] (da) at (-2.5, 0) {Debian mirror};
 	\node[node1] (sp) at (0, -2) {source package};
 	\draw[arr,<-,dashed] (sp) -- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\small] {where most of the manual work is done};
 	\node[node1] (bin) at (0, -4) {one or several binary packages};
 	\draw[arr,<-,dashed] (bin) -- (3.5,-4) node[right,text centered,font=\ttfamily] {.deb\normalfont};
 	\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\_make};
 	\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get source};
-	\draw[arr,->] (sp) -- (bin) node[pos=0.5,right] {\textttc{debuild} (build and test with \textttc{lintian})};
+	\draw[arr,->] (www) -- (sp) node[pos=0.5,left,command] {dget};
+	\draw[arr,->] (sp) -- (bin) node[pos=0.5,right,text width=6cm] {\textttc{debuild} (build and test with \textttc{lintian}) or \textttc{dpkg-buildpackage}};
 	\draw[arr,->] (bin) -- (-1,-6) node[pos=0.5,left] {install (\textttc{debi})};
 	\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,right] {upload (\textttc{dput})};
 	\useasboundingbox (-4,-6) rectangle (6,0); % hack hack hack
@@ -171,7 +173,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 			\item Non-native packages: software developed outside Debian
 		\end{itemize}
 		\hbr
-	\item Main file: \texttt{.dsc} (metadata)
+	\item Main file: \texttt{.dsc} (meta-data)
 		\hbr
 	\item Other files depending on the version of the source format
 	\begin{itemize}
@@ -292,7 +294,7 @@ Files:
 		\item Edited manually or with \texttt{dch}
 		\item Special format to automatically close Debian or Ubuntu bugs\\
 			Debian: \texttt{Closes:~\#595268} ; Ubuntu: \texttt{LP:~\#616929}
-		\item Installed as \texttt{/usr/share/doc/\textit{package}/changelog.Debian.gz} in your package
+		\item Installed as \texttt{/usr/share/doc/\textit{package}/changelog.Debian.gz}
 	\end{itemize}
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 mpich2 (1.2.1.1-5) unstable; urgency=low
@@ -429,11 +431,11 @@ Two kinds of binary packages:
 	\hbr
 	\item Most popular one: \textbf{debhelper} (used by 98\% of packages)
 	\hbr
-	\item Goal: factor the common tasks in external tools used by all packages\\
+	\item Goal: factor the common tasks in standard tools used by all packages\\
 		{\footnotesize dh\_installdirs, dh\_installchangelogs, dh\_installdocs, dh\_installexamples, dh\_install, dh\_installdebconf, dh\_installinit, dh\_link, dh\_strip, dh\_compress, dh\_fixperms, dh\_perl, dh\_makeshlibs, dh\_installdeb, dh\_shlibdeps, dh\_gencontrol, dh\_md5sums, dh\_builddeb, \ldots}
 		\begin{itemize}
 			\item Called from \texttt{debian/rules}
-			\item Behaviour changed using command parameters or files in \texttt{debian/}\\
+			\item Configurable using command parameters or files in \texttt{debian/}\\
 				{\footnotesize \ttfamily dirs, package.docs, package.examples, package.install, package.menu, package.logrotate, package.manpages, \ldots}
 		\end{itemize}
 	\hbr
@@ -643,6 +645,12 @@ Classic debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  dh: 29\%
 	\item Check the package with \texttt{lintian} (static analyzer):\\
 		\texttt{{\color{rouge}lintian} ../mypackage<TAB>.changes}\\
 		\texttt{lintian -i}: gives more information about the errors
+		\br
+	\item Upload the package to Debian (\textttc{dput})
+		\br
+	\item Manage a private Debian archive with \textttc{reprepro}\\
+		Documentation: \url{http://mirrorer.alioth.debian.org/}
+
 \end{itemize}
 \end{frame}
 \section{Practical session: modifying the grep package}
@@ -679,7 +687,7 @@ Several methods to do it:
 \item Modifying the files directly
 	\begin{itemize}
 		\item Simple
-		\item But no way to keep track and document the changes
+		\item But no way to track and document the changes
 	\end{itemize}
 	\hbr
 \item Using patch systems
@@ -770,7 +778,7 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
   Twisted-([\d\.]*)\.tar\.bz2
 \end{lstlisting}
 	\br
-\item Debian infrastructure that uses \texttt{debian/watch}:\\
+\item Debian infrastructure that makes use of \texttt{debian/watch}:\\
 	\textbf{Debian External Health Status}\\
 	\url{http://dehs.alioth.debian.org/}
 	\br
@@ -779,6 +787,35 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
 \item \texttt{uscan}: run a manual check
 \br
 \item \texttt{uupdate}: try to update your package to the latest upstream version
+\end{itemize}
+\end{frame}
+
+\subsection{Packaging with a VCS (SVN, Git \& friends)}
+\begin{frame}[fragile]{Packaging with a VCS (SVN, Git \& friends)}
+\begin{itemize}
+\item Several tools to help manage branches and tags for your packaging work:\\
+\texttt{svn-buildpackage}, \texttt{git-buildpackage}
+\hbr
+\item Example: \texttt{git-buildpackage}
+	\begin{itemize}
+		\item \texttt{upstream} branch to track upstream with \texttt{upstream/\textsl{version}} tags
+		\item \texttt{master} branch tracks the Debian package
+		\item \texttt{debian/\textsl{version}} tags for each upload
+		\item \texttt{pristine-tar} branch to be able to rebuild the upstream tarball
+	\end{itemize}
+\hbr
+\item \texttt{Vcs-*} fields in \texttt{debian/control} to locate the repository
+\end{itemize}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Vcs-Browser: http://git.debian.org/?p=devscripts/devscripts.git
+Vcs-Git: git://git.debian.org/devscripts/devscripts.git
+
+Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/
+Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
+\end{lstlisting}
+\begin{itemize}
+	\item VCS-agnostic interface: \texttt{debcheckout}, \texttt{debcommit}, \texttt{debrelease}\\
+		\texttt{debcheckout devscripts} $\rightarrow$ check out the source package from Git
 \end{itemize}
 \end{frame}
 
@@ -862,7 +899,6 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
 	\end{itemize}
 \end{frame}
 
-
 \section{Resources}
 \subsection{Where to find help?}
 \begin{frame}
@@ -898,20 +934,19 @@ You can get help from:
 		\item Debian Developers' Corner\\
 			\url{http://www.debian.org/devel/}\\
 			{\small Links to many resources about Debian development}
-			\hbr
+			\br
 		\item Debian New Maintainers' Guide\\
 			\url{http://www.debian.org/doc/maint-guide/}\\
 			{\small An introduction to Debian packaging, but could use an update}
-			\hbr
+			\br
 		\item Debian Developer's Reference\\
 		      \url{http://www.debian.org/doc/developers-reference/}\\
 		      {\small Mostly about Debian procedures, but also some best packaging practices (part 6)}
-			\hbr
-
+			\br
 	      \item Debian Policy\\
 		    \url{http://www.debian.org/doc/debian-policy/}\\
 		    {\small All the requirements that every package must satisfy}
-			\hbr
+			\br
 
 		\item Ubuntu Packaging Guide\\
 			\url{https://wiki.ubuntu.com/PackagingGuide}
@@ -921,28 +956,57 @@ You can get help from:
 \section{Conclusion}
 \begin{frame}{Conclusion}
 \begin{itemize}
+	\item You now have a full overview of Debian packaging
+		\br
+	\item But you will need to read more documentation
+		\br
 	\item Best practices have evolved over the years
 		\begin{itemize}
-			\item If unsure, use \textbf{dh} and \textbf{3.0 (quilt)}
+			\item If not sure, use the \textbf{dh} packaging helper, and the \textbf{3.0 (quilt)} format
 		\end{itemize}
 \end{itemize}
 \vfill
 \centerline{\large Feedback: \textbf{lucas@debian.org}}
 \end{frame}
 
-\section{TODO}
+\backupbegin
+
 \begin{frame}
-	\frametitle{Things not covered (yet)}
-Processes:
+	\frametitle{TODO}
 \begin{itemize}
-\item Uploading debsign / dput -- private archive -- reprepro
-\item Packaging with VCSes debcheckout debcommit debrelease git-buildpackage svn-buildpackage
-\end{itemize}
-Various:
-\begin{itemize}
+\item Fix background with N900 PDF viewer
+\item more practical sessions
 \item debc and lintian should really pick-up the .changes file automatically
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Debian branches (\textsl{suites})}
+		\begin{itemize}
+			\item \textbf{stable} (currently codenamed \textbf{squeeze}): stable and supported. Only important bug fixes.
+			\br
+			\item \textbf{testing} (currently codenamed \textbf{wheezy}): the future stable release.
+			\br
+			\item \textbf{unstable} (always codenamed \textbf{sid}): where most of the work occurs, and where packages are uploaded. Packages migrate automatically from \textsl{unstable} to \textsl{testing} according to some rules.
+			\br
+			\item \textbf{experimental}: for experimental packages that are not suited for a stable release.
+		\end{itemize}
+		\hbr
+		Developers mostly run \textsl{unstable} or \textsl{testing} (with \textsl{APT pinning})
+		\hbr
+
+		Packages can be \textbf{backported} from \textsl{testing/unstable} to \textsl{stable}. See \url{http://backports.debian.org/}
+\end{frame}
+
+\begin{frame}{Debian portals for maintainers}
+		\begin{itemize}
+			\item Source package centric: Packages Tracking System\\
+			\url{http://packages.qa.debian.org/dpkg}
+			\br
+			\item Maintainer/team centric: Developer's Packages Overview\\
+			\url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-maintainers@lists.alioth.debian.org}
+		\end{itemize}
+\end{frame}
+
+\backupend
 
 \end{document}
