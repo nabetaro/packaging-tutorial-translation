@@ -103,15 +103,17 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 	\node[node1] (us) at (2.5, 0) {upstream source};
 	\node[node1] (da) at (-2.5, 0) {Debian mirror};
 	\node[node1] (sp) at (0, -2) {source package};
-	\draw[arr,<-,dashed] (sp) -- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\small] {where most of the manual work is done};
+	\draw[arr,<-,dashed,thick] (sp) -- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\small\sl] {where most of the manual work is done};
 	\node[node1] (bin) at (0, -4) {one or several binary packages};
-	\draw[arr,<-,dashed] (bin) -- (3.5,-4) node[right,text centered,font=\ttfamily] {.deb\normalfont};
+	\draw[arr,<-,dashed,thick] (bin) -- (3.5,-4) node[right,text centered,font=\small\ttfamily\sl] {.deb\normalfont};
 	\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\_make};
 	\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get source};
 	\draw[arr,->] (www) -- (sp) node[pos=0.5,left,command] {dget};
 	\draw[arr,->] (sp) -- (bin) node[pos=0.5,right,text width=6cm] {\textttc{debuild} (build and test with \textttc{lintian}) or \textttc{dpkg-buildpackage}};
-	\draw[arr,->] (bin) -- (-1,-6) node[pos=0.5,left] {install (\textttc{debi})};
-	\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,right] {upload (\textttc{dput})};
+	\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,right] {install (\textttc{debi})};
+%	\draw[arr,->] (bin) -- (-1,-6) node[pos=0.5,left] {upload (\textttc{dput})};
+	\draw[transparent] (bin) -- (-1,-6) node[pos=0.5,left,opaque] {upload (\textttc{dput})};
+	\draw[arr,->,rounded corners] (bin) -- (-1,-6) -- (-4.5,-6) -- (-4.5,0) -- (da);
 	\useasboundingbox (-4,-6) rectangle (6,0); % hack hack hack
 \end{tikzpicture}
 \end{center}
