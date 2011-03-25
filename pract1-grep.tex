@@ -28,6 +28,7 @@
 	\item Rebuild the package
 	\item Compare the original and the new package with debdiff
 	\item Install the newly built package
+	\item Cry if you messed up ;)
 \end{enumerate}
 \end{frame}
 
@@ -144,8 +145,16 @@
 	\hbr
 		\item \texttt{grep -P foo} no longer works!
 	\end{itemize}
+\br
+\begin{enumerate}
+		\setcounter{enumi}{8}
+	\item Cry if you messed up ;)
+\end{enumerate}
+\hbr
+Or not: reinstall the previous version of the package:
+\begin{itemize}
+	\item \texttt{apt-get install --reinstall grep=2.6.3-3} \textit{(= previous version)}
+\end{itemize}
 \end{frame}
-
-
 
 \end{document}
