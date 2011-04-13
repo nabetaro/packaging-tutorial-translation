@@ -15,21 +15,18 @@
 
 \begin{frame}{About this tutorial}
 \begin{itemize}
-\item Goal: tell you what you really need to know about Debian packaging
+	\item Goal: \textbf{tell you what you really need to know about Debian packaging}
 \begin{itemize}
 			\hbr
-\item To modify existing packages
+\item Modify existing packages
 			\hbr
-\item To create your own packages
+\item Create your own packages
 			\hbr
-\item To become a Debian power-user
+\item Become a Debian power-user
 \end{itemize}
 \br
-\item Tries to keep a reasonable size
+\item Covers the most important points, but is not complete
 	\begin{itemize}
-			\hbr
-		\item No attempt to be complete
-			\hbr
 		\item You will need to read more documentation
 	\end{itemize}
 \br
@@ -41,9 +38,18 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideallsubsections]
+\end{frame}
 
 \section{Introduction}
+
+\subsection{About this tutorial}
+
+
 \subsection{The Deb package format}
+
 \begin{frame}[fragile]
 	\frametitle{Introduction: the Deb package format}
 \begin{itemize}
@@ -168,16 +174,17 @@ Version: 1.12-2.1
 Maintainer: Noel Kothe <noel@debian.org>
 Homepage: http://www.gnu.org/software/wget/
 Standards-Version: 3.8.4
-Build-Depends: debhelper (>> 5.0.0), gettext, texinfo, libssl-dev (>= 0.9.8), dpatch, info2man
+Build-Depends: debhelper (>> 5.0.0), gettext, texinfo,
+ libssl-dev (>= 0.9.8), dpatch, info2man
 Checksums-Sha1: 
- 50d4ed2441e67db7aa5061d8a4dde41ee0e94248 2464747 wget_1.12.orig.tar.gz
- d4c1c8bbe431d6131cbd7ed2e4fc37dd7cef3611 48308 wget_1.12-2.1.debian.tar.gz
+ 50d4ed2441e67[..]1ee0e94248 2464747 wget_1.12.orig.tar.gz
+ d4c1c8bbe431d[..]dd7cef3611 48308 wget_1.12-2.1.debian.tar.gz
 Checksums-Sha256: 
- 7578ed0974e12caa71120581fa3962ee5a69f7175ddc3d6a6db0ecdcba65b572 2464747 wget_1.12.orig.tar.gz
- 1e9b0c4c00eae6b4172baae219a14857f4002382b9d7a289de7ab789c402ad78 48308 wget_1.12-2.1.debian.tar.gz
+ 7578ed0974e12[..]dcba65b572 2464747 wget_1.12.orig.tar.gz
+ 1e9b0c4c00eae[..]89c402ad78 48308 wget_1.12-2.1.debian.tar.gz
 Files: 
- 141461b9c04e454dc8933c9d1f2abf83 2464747 wget_1.12.orig.tar.gz
- e93123c934e3c141916f472f380278c2 48308 wget_1.12-2.1.debian.tar.gz
+ 141461b9c04e4[..]9d1f2abf83 2464747 wget_1.12.orig.tar.gz
+ e93123c934e3c[..]2f380278c2 48308 wget_1.12-2.1.debian.tar.gz
 \end{lstlisting}
 \end{frame}
 
@@ -208,9 +215,11 @@ Files:
 \begin{frame}
 \frametitle{Creating a basic source package}
 \begin{itemize}
-	\item Download the upstream source
+	\item Download the upstream source\\
+		(\textsl{upstream source} = the one from the software's original developers)
 		\hbr
-	\item Rename to \texttt{\textsl{source\_package}\_\textsl{upstream\_version}.orig.tar.gz}
+	\item Rename to \texttt{<\textsl{source\_package}>\_<\textsl{upstream\_version}>.orig.tar.gz}\\
+		(example: \texttt{simgrid\_3.6.orig.tar.gz})
 		\hbr
 	\item Untar it
 		\hbr
@@ -224,15 +233,15 @@ Files:
 
 \subsection{Files in debian/}
 \begin{frame}{Files in debian/}
-	All the packaging work should usually be made by modifying files in \texttt{debian/}
+	All the packaging work should be made by modifying files in \texttt{debian/}
 \hbr
 \begin{itemize}
 	\item Main files:
 	\begin{itemize}
-		\item changelog
-		\item copyright
-		\item control
-		\item rules
+		\item \textbf{changelog} -- history of the Debian package
+		\item \textbf{copyright} -- copyright information for the package
+		\item \textbf{control} -- meta-data about the package (dependencies, etc)
+		\item \textbf{rules} -- specifies how to build the package
 	\end{itemize}
 	\hbr
 	\item Optional files:
@@ -244,8 +253,10 @@ Files:
 		\item maintainer scripts\\
 			{\small *.postinst, *.prerm, \ldots}
 		\item source/format
-		\item patches
+		\item patches -- if you need to modify the upstream sources
 	\end{itemize}
+	\hbr
+\item Most of the files use a format based on RFC 822 (mail headers)
 \end{itemize}
 \end{frame}
 
@@ -368,9 +379,9 @@ Two kinds of binary packages:
 			\br
 		\item Five required targets:
 		\begin{itemize}
-			\item \texttt{build}: should perform all the configuration and compilation of the package
+			\item \texttt{build}: should perform all the configuration and compilation
 				\hbr
-			\item \texttt{binary, binary-arch, binary-indep}: build the binary packages produced by this source package
+			\item \texttt{binary, binary-arch, binary-indep}: build the binary packages
 				\begin{itemize}
 					\item \texttt{dpkg-buildpackage} will call \texttt{binary} to build all the packages, or \texttt{binary-arch} to build only the \texttt{Architecture:~any} packages
 				\end{itemize}
@@ -388,17 +399,21 @@ Two kinds of binary packages:
 		\item See the \texttt{adduser} package for example
 	\end{itemize}
 	\hbr
-	\item But most packages in Debian use a \textsl{Packaging helper}
+	\item Better practice (used by most packages): use a \textsl{Packaging helper}
 	\hbr
 	\item Most popular one: \textbf{debhelper} (used by 98\% of packages)
 	\hbr
-	\item Goal: factor the common tasks in standard tools used by all packages\\
+	\item Goals:
+		\begin{itemize}
+			\item Factor the common tasks in standard tools used by all packages
+			\item Fix some packaging bugs once for all packages
+		\end{itemize}
 		{\footnotesize dh\_installdirs, dh\_installchangelogs, dh\_installdocs, dh\_installexamples, dh\_install, dh\_installdebconf, dh\_installinit, dh\_link, dh\_strip, dh\_compress, dh\_fixperms, dh\_perl, dh\_makeshlibs, dh\_installdeb, dh\_shlibdeps, dh\_gencontrol, dh\_md5sums, dh\_builddeb, \ldots}
 		\begin{itemize}
 			\item Called from \texttt{debian/rules}
-			\item Configurable using command parameters or files in \texttt{debian/}\\
-				{\footnotesize \ttfamily dirs, package.docs, package.examples, package.install, package.menu, package.logrotate, package.manpages, \ldots}
+			\item Configurable using command parameters or files in \texttt{debian/}
 		\end{itemize}
+				{\footnotesize \ttfamily dirs, package.docs, package.examples, package.install, package.manpages, \ldots}
 	\hbr
 \item Third-party helpers for sets of packages: \textbf{python-support}, \textbf{dh\_ocaml}, \ldots
 	\hbr
@@ -508,7 +523,7 @@ build/mypackage::
 \hbr
 \item Easier to customize than CDBS
 \hbr
-\item Doc: manpages (\texttt{debhelper(7)}, \texttt{dh(1)}) + slides from DC9 talk\\
+\item Doc: manpages (\texttt{debhelper(7)}, \texttt{dh(1)}) + slides from DebConf'9 talk\\
 	\url{http://kitenet.net/~joey/talks/debhelper/debhelper-slides.pdf}
 	\br
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -535,7 +550,7 @@ Classic debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  dh: 29\%
 \item Which one should I learn?
 \begin{itemize}
 	\item Probably all of them
-	\item You need to know debhelper to use CDBS and dh
+	\item You need to know debhelper to use dh and CDBS
 	\item You might have to modify CDBS packages
 \end{itemize}
 \hbr
@@ -607,7 +622,7 @@ Classic debhelper: 45\% \hskip 1em CDBS: 24\% \hskip 1em  dh: 29\%
 		\texttt{{\color{rouge}lintian} ../mypackage<TAB>.changes}\\
 		\texttt{lintian -i}: gives more information about the errors
 		\br
-	\item Upload the package to Debian (\textttc{dput})
+	\item Upload the package to Debian (\textttc{dput}) (needs configuration)
 		\br
 	\item Manage a private Debian archive with \textttc{reprepro}\\
 		Documentation: \url{http://mirrorer.alioth.debian.org/}
@@ -653,6 +668,12 @@ Several methods to do it:
 	\end{itemize}
 	\hbr
 \item Using patch systems
+	\begin{itemize}
+		\item Eases contributing your changes to upstream
+		\item Helps sharing the fixes with derivatives
+		\item Gives more exposure to the changes\\
+			\url{http://patch-tracker.debian.org/}
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -785,16 +806,23 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \subsection{Several ways to contribute to Debian}
 \begin{frame}{Several ways to contribute to Debian}
 \begin{itemize}
+	\item \textbf{Worst} way to contribute:
+		\begin{itemize}
+			\item Package your own application
+			\item Get it into Debian
+			\item Disappear
+		\end{itemize}
+\br
 \item Bring new software to Debian
 \begin{itemize}
-\item Is that new software interesting/useful enough?
+\item Only if it's interesting/useful enough, please
 \item Are there alternatives already packaged in Debian?
 \end{itemize}
 \br
 \item Adopt existing unmaintained packages (\textsl{orphaned packages})
 \begin{itemize}
 	\item Many unmaintained packages in Debian
-	\item Including some that you rely on, probably
+	\item Including some that you use daily!
 \end{itemize}
 \br
 \item Get involved in packaging teams
@@ -812,11 +840,11 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \begin{itemize}
 	\item Ubuntu mainly manages the divergence with Debian
 	\br
-	\item Do not really focus on specific packages\\
-		Instead, collaborate with Debian teams
+	\item No real focus on specific packages\\
+		Instead, collaboration with Debian teams
 	\br
 	\item Usually recommend uploading new packages to Debian first\\
-		\url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages/}
+		\url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages}
 	\br
 	\item Possibly a better plan:
 	\begin{itemize}
@@ -851,13 +879,15 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 		\item \textbf{ITA}: \textbf{I}ntent \textbf{T}o \textbf{A}dopt\\
 			Someone intends to adopt the package\\
 			You could propose your help!
-		\item \textbf{RFH} (\textbf{R}equest \textbf{F}or \textbf{H}elp\\
+		\item \textbf{RFH}: (\textbf{R}equest \textbf{F}or \textbf{H}elp\\
 			The maintainer is looking for help
 	\end{itemize}
 		\hbr
 	\item Some unmaintained packages not detected \arr not orphaned yet
 		\hbr
-	\item When in doubt, ask \texttt{debian-qa@lists.debian.org}
+	\item When in doubt, ask \texttt{debian-qa@lists.debian.org} \\
+		or \texttt{\#debian-qa} on \texttt{irc.debian.org}
+
 	\end{itemize}
 \end{frame}
 
@@ -907,7 +937,11 @@ You can get help from:
 			\br
 	      \item Debian Policy\\
 		    \url{http://www.debian.org/doc/debian-policy/}\\
-		    {\small All the requirements that every package must satisfy}
+
+		    {\small \begin{itemize}
+				   \item \small All the requirements that every package must satisfy
+				   \item \small Specific policies for Perl, Java, Python, \ldots
+			   \end{itemize}}
 			\br
 
 		\item Ubuntu Packaging Guide\\
@@ -927,6 +961,8 @@ You can get help from:
 		\begin{itemize}
 			\item If not sure, use the \textbf{dh} packaging helper, and the \textbf{3.0 (quilt)} format
 		\end{itemize}
+		\br
+	\item Debian is not only a technical project, it's also a community
 \end{itemize}
 \vfill
 \centerline{\large Feedback: \textbf{lucas@debian.org}}
@@ -978,9 +1014,13 @@ it under either (at your option):
 \begin{frame}
 	\frametitle{TODO}
 \begin{itemize}
-\item Fix background with N900 PDF viewer
 \item more practical sessions
 \item debc and lintian should really pick-up the .changes file automatically
+\item UCF
+\item Blends
+\item BTS
+\item security
+\item volatiles
 \end{itemize}
 \end{frame}
 
@@ -1001,7 +1041,7 @@ it under either (at your option):
 		Packages can be \textbf{backported} from \textsl{testing/unstable} to \textsl{stable}. See \url{http://backports.debian.org/}
 \end{frame}
 
-\begin{frame}{Debian portals for maintainers}
+\begin{frame}{Debian dashboards for maintainers}
 		\begin{itemize}
 			\item Source package centric: Packages Tracking System\\
 			\url{http://packages.qa.debian.org/dpkg}
