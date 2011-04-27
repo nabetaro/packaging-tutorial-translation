@@ -659,8 +659,8 @@ override_dh_auto_build:
     Documentation: \url{http://mirrorer.alioth.debian.org/}
   \end{itemize}
 \end{frame}
-\section{Practical session: modifying the grep package}
-\begin{frame}{Practical session: modifying the grep package}
+\section{Practical session 1: modifying the grep package}
+\begin{frame}{Practical session 1: modifying the grep package}
   \begin{enumerate}
   \item Go to \url{http://ftp.debian.org/debian/pool/main/g/grep/} and
     download version 2.6.3-3 of the package
@@ -980,6 +980,16 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Debian dashboards for maintainers}
+  \begin{itemize}
+	  \item \textbf{Source package centric}: Packages Tracking System\\
+    \url{http://packages.qa.debian.org/dpkg}
+    \br
+  \item \textbf{Maintainer/team centric}: Developer's Packages Overview\\
+    \url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-maintainers@lists.alioth.debian.org}
+  \end{itemize}
+\end{frame}
+
 \section{Conclusion}
 \subsection{Conclusion}
 \begin{frame}{Conclusion}
@@ -1041,21 +1051,33 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \end{itemize}
 \end{frame}
 
-\backupbegin
-
-\begin{frame}{TODO}
-  \begin{itemize}
-  \item more practical sessions
-  \item debc and lintian should really pick-up the .changes file automatically
-  \item UCF
-  \item Blends
-  \item BTS
-  \item security
-  \item volatiles
-  \end{itemize}
+\section{Practical session 2: packaging GNUjump}
+\begin{frame}{Practical session 2: packaging GNUjump}
+\begin{enumerate}
+	\item Download GNUjump 1.0.6 from
+		\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+		\br
+	\item Create a Debian package for it
+		\begin{itemize}
+			\item Install build-dependencies so that you can build the package
+			\item Get a basic working package
+			\item Finish filling \texttt{debian/control} and other files
+		\end{itemize}
+		\br
+	\item Enjoy
+\end{enumerate}
+\centerline{\includegraphics[width=5cm]{gnujump.png}}
 \end{frame}
 
-\begin{frame}{Debian branches (\textsl{suites})}
+\backupbegin
+
+\begin{frame}
+\vfill
+\centerline{\Huge Bonus slides}
+\vfill
+\end{frame}
+
+\begin{frame}{Debian branches (or \textsl{suites}, \textsl{components})}
   \begin{itemize}
   \item \textbf{stable} (currently codenamed \textbf{squeeze}): stable and
     supported. Only important bug fixes.  \br
@@ -1064,7 +1086,7 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \item \textbf{unstable} (always codenamed \textbf{sid}): where most of the
     work occurs, and where packages are uploaded. Packages migrate
     automatically from \textsl{unstable} to \textsl{testing} according to some
-    rules.  \br
+    rules (no new critical bug, at least 10 days spent in \textsl{unstable}, etc.)  \br
   \item \textbf{experimental}: for experimental packages that are not suited
     for a stable release.
   \end{itemize}
@@ -1076,13 +1098,15 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \textsl{stable}. See \url{http://backports.debian.org/}
 \end{frame}
 
-\begin{frame}{Debian dashboards for maintainers}
+\begin{frame}{TODO}
   \begin{itemize}
-  \item Source package centric: Packages Tracking System\\
-    \url{http://packages.qa.debian.org/dpkg}
-    \br
-  \item Maintainer/team centric: Developer's Packages Overview\\
-    \url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-maintainers@lists.alioth.debian.org}
+  \item more practical sessions
+  \item debc and lintian should really pick-up the .changes file automatically
+  \item UCF
+  \item Blends
+  \item BTS
+  \item security
+  \item volatiles
   \end{itemize}
 \end{frame}
 

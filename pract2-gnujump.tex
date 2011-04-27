@@ -13,7 +13,7 @@
 
 \frame{\titlepage}
 
-\begin{frame}{Practical session: packaging GNUjump}
+\begin{frame}{Practical session 2: packaging GNUjump}
 \begin{enumerate}
 	\item Download GNUjump 1.0.6 from
 		\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
@@ -27,8 +27,7 @@
 		\br
 	\item Enjoy
 \end{enumerate}
-\vfill
-\centerline{\includegraphics[width=6cm]{gnujump.png}}
+\centerline{\includegraphics[width=5cm]{gnujump.png}}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -64,10 +63,13 @@ gnujump.cron.d.ex   postrm.ex
 \begin{frame}[fragile]
 \frametitle{Step by step \ldots (2)}
 \begin{itemize}
-	\item Look at \texttt{debian/changelog}, \texttt{debian/rules}, \texttt{debian/control} (auto-filled by \textbf{dh\_make})
+	\item Look at \texttt{debian/changelog}, \texttt{debian/rules}, \texttt{debian/control}\\
+		(auto-filled by \textbf{dh\_make})
+		\hbr
 	\item In \texttt{debian/control}:\\
-		\texttt{Build-Depends: debhelper (>= 7.0.50~), autotools-dev}
-		This field lists the \textsl{build-dependencies}: packages needed to build the package
+		\texttt{Build-Depends: debhelper (>= 7.0.50~), autotools-dev}\\
+		Lists the \textsl{build-dependencies} = packages needed to build the package
+		\hbr
 	\item Try to build the package as-is (thanks to \textbf{dh} magic)
 		\begin{itemize}
 			\item And add build-dependencies, until it builds
@@ -80,6 +82,8 @@ checking for SDL - version >= 1.2.0... no
 configure: error: *** SDL version 1.2.0 not found!
 \end{lstlisting}
 $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
+		\hbr
+	\item Better: use \textbf{pbuilder} to build in a clean environment
 		\end{itemize}
 \end{itemize}
 \end{frame}
