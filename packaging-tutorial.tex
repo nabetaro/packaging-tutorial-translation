@@ -1003,13 +1003,20 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
     \item If not sure, use the \textbf{dh} packaging helper, and the \textbf{3.0 (quilt)} format
     \end{itemize}
     \br
-  \item Debian is not only a technical project, it's also a community
+  \item Things that were not covered in this tutorial:
+    \begin{itemize}
+	\item UCF -- manage user changes to configuration files when upgrading
+		\hbr
+	\item Debian development organization:
+		\begin{itemize}
+			\item Bug Tracking System (BTS)
+			\item Suites: stable, testing, unstable, experimental, security, volatile, backports, \ldots
+			\item Debian Blends -- subsets of Debian targetting specific groups
+		\end{itemize}
+		\end{itemize}
   \end{itemize}
   \vfill
   \centerline{\large Feedback: \textbf{lucas@debian.org}}
-  \vfill
-
-  \centerline{\includegraphics[height=2.8cm]{figs/debconf10}}
 \end{frame}
 
 \subsection{Legal stuff}
@@ -1091,43 +1098,6 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \end{frame}
 
 \backupbegin
-
-\begin{frame}
-\vfill
-\centerline{\Huge Bonus slides}
-\vfill
-\end{frame}
-
-\begin{frame}{Debian branches (or \textsl{suites}, \textsl{components})}
-  \begin{itemize}
-  \item \textbf{stable} (currently codenamed \textbf{squeeze}): stable and
-    supported. Only important bug fixes.  \br
-  \item \textbf{testing} (currently codenamed \textbf{wheezy}): the future
-    stable release.  \br
-  \item \textbf{unstable} (always codenamed \textbf{sid}): where most of the
-    work occurs, and where packages are uploaded. Packages migrate
-    automatically from \textsl{unstable} to \textsl{testing} according to some
-    rules (no new critical bug, at least 10 days spent in \textsl{unstable}, etc.)  \br
-  \item \textbf{experimental}: for experimental packages that are not suited
-    for a stable release.
-  \end{itemize}
-  \hbr 
-  Developers mostly run \textsl{unstable} or \textsl{testing} (with
-  \textsl{APT pinning}) \hbr
-  
-  Packages can be \textbf{backported} from \textsl{testing/unstable} to
-  \textsl{stable}. See \url{http://backports.debian.org/}
-\end{frame}
-
-\begin{frame}{TODO}
-  \begin{itemize}
-  \item UCF
-  \item Blends
-  \item BTS
-  \item security
-  \item volatiles
-  \end{itemize}
-\end{frame}
 
 \backupend
 
