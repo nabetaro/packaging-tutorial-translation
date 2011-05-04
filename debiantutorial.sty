@@ -28,8 +28,8 @@
 \usepackage{aecompl}
 
 \newcommand{\pedp}{\NoAutoSpaceBeforeFDP}
-
-\logo{\includegraphics[viewport=274 335 360 440,width=0.5cm]{figs/openlogo-nd.pdf}}
+\pgfdeclareimage[width=0.5cm]{openlogo}{figs/openlogo-nd.pdf} 
+\logo{\pgfuseimage{openlogo}}
 \newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}%
 
 \AtBeginSection[]
