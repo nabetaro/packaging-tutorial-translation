@@ -5,7 +5,7 @@ Abstract:
  This tutorial is an introduction to Debian packaging. It teaches prospective
  developers how to modify existing packages, how to create their own packages,
  and how to interact with the Debian community.
-Section: devel
+Section: Debian
 
-Format: pdf
-Files: /usr/share/doc/packaging-tutorial/*.pdf
+Format: PDF
+Files: /usr/share/doc/packaging-tutorial/packaging-tutorial.pdf
