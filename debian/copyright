@@ -1,0 +1,16 @@
+Format: http://dep.debian.net/deps/dep5
+Upstream-Name: packaging-tutorial
+
+Files: *
+Copyright: 2011 Lucas Nussbaum <lucas@debian.org>
+License: GPL-3.0+ or CC BY-SA 3.0 Unported
+ This document is free software: you can redistribute it and/or modify it under
+ either (at your option):
+ - The terms of the GNU General Public License as published by the Free Software
+   Foundation, either version 3 of the License, or (at your option) any later
+   version.
+   On Debian systems, the complete text of the GNU General
+   Public License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+   It can also be found on the web: http://www.gnu.org/licenses/gpl.html
+ - The terms of the Creative Commons Attribution-ShareAlike 3.0 Unported License,
+   which can be found at http://creativecommons.org/licenses/by-sa/3.0/legalcode.
