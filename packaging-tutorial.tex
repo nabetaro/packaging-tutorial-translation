@@ -6,8 +6,7 @@
 \hypersetup{pdftitle={Debian Packaging Tutorial},bookmarks}
 \title{Debian Packaging Tutorial}
 \author[]{Lucas Nussbaum\\{\small\texttt{lucas@debian.org}}}
-\institute{\includegraphics[viewport=274 335 360 440,width=1cm]{figs/openlogo-nd.pdf}}
-\date{}
+\date{\footnotesize version 0.1 - 2011-05-05}
 
 \begin{document}
 
@@ -712,34 +711,37 @@ override_dh_auto_build:
 \begin{frame}{Patch systems}
   \begin{itemize}
   \item Principle: changes are stored as patches in \texttt{debian/patches/}
-    \hbr
+    \br
   \item Applied and unapplied during build
-    \hbr
-  \item Several implementations: \textsl{simple-patchsys} (\textsl{cdbs} only),
-    \textsl{dpatch}, \textbf{\textsl{quilt}} \hbr
+    \br
+  \item Past: several implementations -- \textsl{simple-patchsys} (\textsl{cdbs}),
+    \textsl{dpatch}, \textbf{\textsl{quilt}}
+    \begin{itemize}
   \item Each supports two \texttt{debian/rules} targets:
     \begin{itemize}
     \item \texttt{debian/rules patch}: apply all patches
     \item \texttt{debian/rules unpatch}: de-apply all patches
     \end{itemize}
-    \hbr
+	  \hbr
   \item More documentation: \url{http://wiki.debian.org/debian/patches}
   \end{itemize}
   \br
-  Future: new source package format with built-in patch system: \textbf{3.0 (quilt)}
+  \item \textbf{New source package format with built-in patch system: 3.0 (quilt)}
   \begin{itemize}
   \item Recommended solution
+	  \hbr
   \item You need to learn \textsl{quilt}\\
     \url{http://pkg-perl.alioth.debian.org/howto/quilt.html}
     
+  \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Documentation of patches}
   \begin{itemize}
-  \item Standard headers
+	  \item Standard headers at the beginning of the patch
     \hbr
-  \item Documented in DEP3 - Patch Tagging Guidelines\\
+  \item Documented in DEP-3 - Patch Tagging Guidelines\\
     \url{http://dep.debian.net/deps/dep3/}
   \end{itemize}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -749,7 +751,14 @@ Forwarded: http://lists.example.com/2010/03/1234.html
 Author: John Doe <johndoe-guest@users.alioth.debian.org>
 Applied-Upstream: 1.2, http://bzr.foo.com/frobnicator/revision/123
 Last-Update: 2010-03-29
+
+--- a/src/widgets.c
++++ b/src/widgets.c
+@@ -101,9 +101,6 @@ struct {
 \end{lstlisting}
+\begin{itemize}
+\item All patches are published on \url{http://patch-tracker.debian.org/}
+\end{itemize}
 \end{frame}
 
 \subsection{Doing things during installation and removal}
