@@ -820,7 +820,7 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
 \end{frame}
 
 \subsection{Packaging with a VCS (SVN, Git \& friends)}
-\begin{frame}[fragile]{Packaging with a VCS (SVN, Git \& friends)}
+\begin{frame}[fragile]{Packaging with a VCS (SVN, Git, etc.)}
   \begin{itemize}
   \item Several tools to help manage branches and tags for your packaging work:\\
     \texttt{svn-buildpackage}, \texttt{git-buildpackage}
@@ -834,19 +834,26 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
     \end{itemize}
     \hbr
   \item \texttt{Vcs-*} fields in \texttt{debian/control} to locate the repository
-  \end{itemize}
+	  \begin{itemize}
+		\item \url{http://wiki.debian.org/Alioth/Git}
+		\item \url{http://wiki.debian.org/Alioth/Svn}
+	\end{itemize}
+\end{itemize}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 Vcs-Browser: http://git.debian.org/?p=devscripts/devscripts.git
 Vcs-Git: git://git.debian.org/devscripts/devscripts.git
-
+  \end{lstlisting}
+  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/
 Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \end{lstlisting}
   \begin{itemize}
   \item VCS-agnostic interface: \texttt{debcheckout}, \texttt{debcommit},
     \texttt{debrelease}\\
-    \texttt{debcheckout devscripts} $\rightarrow$ check out the source package
+    \begin{itemize}
+	    \item     \texttt{debcheckout grep} $\rightarrow$ checks out the source package
     from Git
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
