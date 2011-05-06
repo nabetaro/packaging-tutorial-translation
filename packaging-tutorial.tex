@@ -51,11 +51,11 @@
 	\begin{itemize}
 		\item \textbf{GNU/Linux distribution}
 			\br
-		\item 1st major distro developed "openly in the spirit of GNU"
+		\item 1st major distro developed ``openly in the spirit of GNU''
 			\br
-		\item \textbf{Non-commercial}, built collaboratively by more than 1000 volunteers
+		\item \textbf{Non-commercial}, built collaboratively by more than 1'000 volunteers
 			\br
-		\item 30000 binary packages ; 12 ports (inc. 2 non-Linux) ; 120 derivatives
+		\item 30'000 binary packages ; 12 ports (inc. 2 non-Linux) ; 120 derivatives
 			\br
 		\item 3 main features:
 			\begin{itemize}
@@ -166,7 +166,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   \item Two kinds of packages: (if unsure, use non-native)
     \begin{itemize}
       \small
-    \item Native packages: software developed inside Debian (\textsl{dpkg}, \textsl{apt})
+    \item Native packages: software developed solely for Debian (\textsl{dpkg}, \textsl{apt})
     \item Non-native packages: software developed outside Debian
     \end{itemize}
     \hbr
@@ -236,6 +236,11 @@ Files:
       (\href{http://snapshot.debian.org/}{\ttfamily snapshot.d.o} provides all packages from Debian since 2005)
     \end{itemize}
     \br
+  \item From the (declared) version control system:
+    \begin{itemize}
+    \item \texttt{debcheckout \textsl{package}}
+    \end{itemize}
+    \br
   \item Once downloaded, extract with \texttt{dpkg-source -x \textsl{file.dsc}}
   \end{itemize}
 \end{frame}
@@ -266,13 +271,13 @@ Files:
   \begin{itemize}
   \item Main files:
     \begin{itemize}
-    \item \textbf{changelog} -- history of the Debian package
-    \item \textbf{copyright} -- copyright information for the package
     \item \textbf{control} -- meta-data about the package (dependencies, etc)
     \item \textbf{rules} -- specifies how to build the package
+    \item \textbf{copyright} -- copyright information for the package
+    \item \textbf{changelog} -- history of the Debian package
     \end{itemize}
     \hbr
-  \item Optional files:
+  \item Other files:
     \begin{itemize}
     \item compat
     \item watch
@@ -281,7 +286,7 @@ Files:
     \item maintainer scripts\\
       {\small *.postinst, *.prerm, \ldots}
     \item source/format
-    \item patches -- if you need to modify the upstream sources
+    \item patches/ -- if you need to modify the upstream sources
     \end{itemize}
     \hbr
   \item Several files use a format based on RFC 822 (mail headers)
@@ -811,7 +816,8 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
     \textbf{Debian External Health Status}\\
     \url{http://dehs.alioth.debian.org/}
     \br
-  \item Maintainer warned by emails sent to the Packages Tracking System
+  \item Maintainer warned by emails sent to the Package Tracking System\\
+    \url{http://packages.qa.debian.org/}
     \br
   \item \texttt{uscan}: run a manual check
     \br
@@ -877,8 +883,8 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \item Get involved in packaging teams
     \begin{itemize}
     \item Many teams that focus on set of packages, and need help
-    \item Full list on \url{http://wiki.debian.org/Teams}
-    \item An excellent way to work with more experienced contributors
+    \item List available at \url{http://wiki.debian.org/Teams}
+    \item An excellent way to learn from more experienced contributors
     \end{itemize}
     \br
   \item Bring new software to Debian
@@ -909,7 +915,7 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
     \item Many Debian tools can help:
       \begin{itemize}
       \item Ubuntu column on the Developer' packages overview
-      \item Ubuntu box on the Packages Tracking System
+      \item Ubuntu box on the Package Tracking System
       \item Receive launchpad bugmail via the PTS
       \end{itemize}
     \end{itemize}
@@ -1005,10 +1011,10 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 
 \begin{frame}{Debian dashboards for maintainers}
   \begin{itemize}
-	  \item \textbf{Source package centric}: Packages Tracking System\\
+	  \item \textbf{Source package centric}: Package Tracking System (PTS)\\
     \url{http://packages.qa.debian.org/dpkg}
     \br
-  \item \textbf{Maintainer/team centric}: Developer's Packages Overview\\
+  \item \textbf{Maintainer/team centric}: Developer's Packages Overview (DDPO)\\
     \url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-maintainers@lists.alioth.debian.org}
   \end{itemize}
 \end{frame}
@@ -1035,7 +1041,7 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 	\item Debian development organization:
 		\begin{itemize}
 			\item Bug Tracking System (BTS)
-			\item Suites: stable, testing, unstable, experimental, security, volatile, backports, \ldots
+			\item Suites: stable, testing, unstable, experimental, security, *-updates, backports, \ldots
 			\item Debian Blends -- subsets of Debian targetting specific groups
 		\end{itemize}
 		\end{itemize}

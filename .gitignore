@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.mk
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+packaging-tutorial.pdf
+pract*.pdf
