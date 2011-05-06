@@ -165,7 +165,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   \item Two kinds of packages: (if unsure, use non-native)
     \begin{itemize}
       \small
-    \item Native packages: software developed inside Debian (\textsl{dpkg}, \textsl{apt})
+    \item Native packages: software developed solely for Debian (\textsl{dpkg}, \textsl{apt})
     \item Non-native packages: software developed outside Debian
     \end{itemize}
     \hbr
@@ -265,13 +265,13 @@ Files:
   \begin{itemize}
   \item Main files:
     \begin{itemize}
-    \item \textbf{changelog} -- history of the Debian package
-    \item \textbf{copyright} -- copyright information for the package
     \item \textbf{control} -- meta-data about the package (dependencies, etc)
     \item \textbf{rules} -- specifies how to build the package
+    \item \textbf{copyright} -- copyright information for the package
+    \item \textbf{changelog} -- history of the Debian package
     \end{itemize}
     \hbr
-  \item Optional files:
+  \item Other files:
     \begin{itemize}
     \item compat
     \item watch
@@ -283,7 +283,7 @@ Files:
     \item patches/ -- if you need to modify the upstream sources
     \end{itemize}
     \hbr
-  \item Most of the files use a format based on RFC 822 (mail headers)
+  \item Several files use a format based on RFC 822 (mail headers)
   \end{itemize}
 \end{frame}
 
@@ -860,8 +860,8 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \item Get involved in packaging teams
     \begin{itemize}
     \item Many teams that focus on set of packages, and need help
-    \item Full list on \url{http://wiki.debian.org/Teams}
-    \item An excellent way to work with more experienced contributors
+    \item List available at \url{http://wiki.debian.org/Teams}
+    \item An excellent way to learn from more experienced contributors
     \end{itemize}
   \end{itemize}
 \end{frame}
