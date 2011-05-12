@@ -1,0 +1,43 @@
+\documentclass[10pt,final]{beamer}
+\mode<presentation>
+\usetheme{debian}
+\usepackage{debiantutorial}
+
+\hypersetup{pdftitle={Practical session 0: dash},bookmarks}
+\title[Practical session 0: dash]{Practical session 0:\\ Simple rebuild of the Dash package}
+\author[]{Philip Hands\\{\small\texttt{phil@hands.com}}}
+\institute{\includegraphics[viewport=274 335 360 440,width=1cm]{figs/openlogo-nd.pdf}}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Practical session 0: building the dash package}
+\begin{enumerate}
+\item Install build-essential debhelper devscripts\\
+  {\small \texttt{apt-get install build-essential debhelper devscripts}}
+  \hbr
+\item create a working directory, and get in it:\\
+  \begin{tabbing}
+    e.g. \= \texttt{mkdir \textasciitilde/src/\textsl{packagename} ; chdir \textasciitilde/src/\textsl{packagename}}\\
+    or   \> \texttt{mkdir \textasciitilde/debian ; chdir \textasciitilde/debian}
+  \end{tabbing}
+  
+\item grab a source package\\
+  \texttt{apt-get source dash}\\ 
+  {\small this needs you to have \texttt{deb-src} lines in your \texttt{/etc/apt/sources.list}}
+\item Build the package\\
+  {\small \texttt{cd dash-*\\ debuild -us -uc}}
+
+\item Check that it worked\\
+  {\small You should notice that we've got some new
+    files in the directory above us, in particular
+    there should now be a couple of \texttt{.deb}
+    files}
+\end{enumerate}
+
+Time to explain what everything means...
+\end{frame}
+
+\end{document}
