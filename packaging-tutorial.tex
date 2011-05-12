@@ -646,7 +646,8 @@ override_dh_auto_build:
   \item It is better to build packages in a clean \& minimal environment
     \begin{itemize}
     \item \textttc{pbuilder} -- helper to build packages in a \textsl{chroot}\\
-      Good documentation: \url{https://wiki.ubuntu.com/PbuilderHowto}
+      Good documentation: \url{https://wiki.ubuntu.com/PbuilderHowto}\\
+      (optimisation: \textttc{cowbuilder} \textttc{ccache} \textttc{distcc})
       \hbr
     \item \textttc{schroot} and \textttc{sbuild}: used on the Debian build daemons\\
       (not as easy to use as \texttt{pbuilder})
