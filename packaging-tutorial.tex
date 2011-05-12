@@ -43,17 +43,6 @@
   \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Practical session 0: simple rebuild of dash}
-\begin{frame}{Practical session 1: simple rebuild of dash}
-  \begin{enumerate}
-  \item install the packages we need
-  \item Create a working directory
-  \item Grab a simple source package
-  \item Build the package
-  \item Check that it worked
-  \end{enumerate}
-\end{frame}
-
 \section{Introduction}
 
 \subsection{Debian}
@@ -71,7 +60,7 @@
 		\item 3 main features:
 			\begin{itemize}
 				\item \textbf{Quality} -- culture of technical excellence\\
-					{\small\sl We release when it's ready}\\
+					{\small\sl We release when it's ready}
 					\hbr
 				\item \textbf{Freedom} -- devs and users bound by the \textsl{Social Contract}\\
 					Promoting the culture of Free Software since 1993
@@ -79,8 +68,6 @@
 				\item \textbf{Independence} -- no (single) company babysitting Debian\\
 					And open decision-making process (\textsl{do-ocracy} + \textsl{democracy})
 			\end{itemize}
-                        \br
-                \item \textbf{Amateur} in the best sense: done for the love of it
 	\end{itemize}
 \end{frame}
 
@@ -311,7 +298,7 @@ Files:
   \item Lists the Debian packaging changes
   \item Edited manually or with \texttt{dch}
   \item Special format to automatically close Debian or Ubuntu bugs\\
-    Debian: \texttt{Closes:~\#595268} ; Ubuntu: \texttt{LP:~\#616929}
+    Debian: \texttt{Closes:~\#595268}; Ubuntu: \texttt{LP:~\#616929}
   \item Installed as \texttt{/usr/share/doc/\textit{package}/changelog.Debian.gz}
   \end{itemize}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -577,7 +564,7 @@ build/mypackage::
     \hbr
   \item Easier to customize than CDBS
     \hbr
-  \item Doc: manpages (\texttt{debhelper(7)}, \texttt{dh(1)}) + slides from DebConf'9 talk\\
+  \item Doc: manpages (\texttt{debhelper(7)}, \texttt{dh(1)}) + slides from DebConf9 talk\\
     \url{http://kitenet.net/~joey/talks/debhelper/debhelper-slides.pdf}
     \br
     \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -656,7 +643,7 @@ override_dh_auto_build:
     \br
   \item Generate \texttt{.deb} files and a \texttt{.changes} file
     \begin{itemize}
-    \item \texttt{.changes}: describes what was built ; used to upload the package
+    \item \texttt{.changes}: describes what was built; used to upload the package
     \end{itemize}
   \end{itemize}
 \end{frame}
