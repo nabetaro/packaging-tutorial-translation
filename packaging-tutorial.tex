@@ -652,7 +652,8 @@ override_dh_auto_build:
       (optimisation: \textttc{cowbuilder} \textttc{ccache} \textttc{distcc})
       \hbr
     \item \textttc{schroot} and \textttc{sbuild}: used on the Debian build daemons\\
-      (not as easy to use as \texttt{pbuilder})
+      (not as simple as \texttt{pbuilder}, but allows LVM snapshots\\
+       see: \url{https://help.ubuntu.com/community/SbuildLVMHowto} )
     \end{itemize}
     \br
   \item Generate \texttt{.deb} files and a \texttt{.changes} file
