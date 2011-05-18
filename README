@@ -20,6 +20,13 @@ This tutorial is available on git.debian.org:
 Gitweb: http://git.debian.org/?p=users/lucas/packaging-tutorial.git
 or git clone git://git.debian.org/~lucas/packaging-tutorial.git
 
+Thanks
+------
+Many people have contributed to this tutorial, and it would not be
+possible to list them all there. In particular:
+- Phil Hands contributed to the slides while preparing a tutorial for UKUUG;
+  see http://www.ukuug.org/events/debian2011/
+
 Legal stuff
 -----------
 This tutorial is
