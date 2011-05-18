@@ -18,13 +18,13 @@
 \item Install build-essential debhelper devscripts\\
   {\small \texttt{apt-get install build-essential debhelper devscripts}}
   \hbr
-\item create a working directory, and get in it:\\
+\item Create a working directory, and get in it:\\
   \begin{tabbing}
     e.g. \= \texttt{mkdir \textasciitilde/src/\textsl{packagename} ; chdir \textasciitilde/src/\textsl{packagename}}\\
     or   \> \texttt{mkdir \textasciitilde/debian ; chdir \textasciitilde/debian}
   \end{tabbing}
   
-\item grab a source package\\
+\item Grab the \texttt{dash} source package\\
   \texttt{apt-get source dash}\\ 
   {\small this needs you to have \texttt{deb-src} lines in your \texttt{/etc/apt/sources.list}}
 \item Build the package\\
@@ -36,8 +36,6 @@
     there should now be a couple of \texttt{.deb}
     files}
 \end{enumerate}
-
-Time to explain what everything means...
 \end{frame}
 
 \end{document}
