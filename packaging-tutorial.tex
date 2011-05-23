@@ -298,6 +298,17 @@ Files:
 \begin{frame}[fragile]{debian/changelog}
   \begin{itemize}
   \item Lists the Debian packaging changes
+  \item Gives the current version of the package
+  \begin{center}
+    \begin{tikzpicture}
+	    \draw (0,0) node[above right] {\large 1.2.1.1-5};
+	    \draw [decorate,decoration={brace}] (2,0) -- (1.45,0) node[at start,below,text width=1.6cm,text centered] {\small  Debian revision};
+	    \draw [decorate,decoration={brace}] (1.4,0) -- (0,0) node[midway,below,text width=1.6cm,text centered] { \small Upstream version};
+\end{tikzpicture}
+\end{center}
+
+
+	  %%
   \item Edited manually or with \texttt{dch}
   \item Special format to automatically close Debian or Ubuntu bugs\\
     Debian: \texttt{Closes:~\#595268}; Ubuntu: \texttt{LP:~\#616929}
