@@ -23,13 +23,16 @@
     e.g. \= \texttt{mkdir -p \textasciitilde/src/\textsl{packagename} ; cd \textasciitilde/src/\textsl{packagename}}\\
     or   \> \texttt{mkdir \textasciitilde/debian ; cd \textasciitilde/debian}
   \end{tabbing}
+  \hbr
   
 \item Grab the \texttt{dash} source package\\
   \texttt{apt-get source dash}\\ 
   {\small this needs you to have \texttt{deb-src} lines in your \texttt{/etc/apt/sources.list}}
+  \hbr
 \item Build the package\\
   {\small \texttt{cd dash-*\\ debuild -us -uc}}
 
+  \hbr
 \item Check that it worked\\
   {\small You should notice that we've got some new
     files in the directory above us, in particular
