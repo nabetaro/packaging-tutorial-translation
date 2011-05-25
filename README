@@ -17,8 +17,8 @@ it is composed of four documents:
 Contributing to this tutorial
 -----------------------------
 This tutorial is available on git.debian.org:
-Gitweb: http://git.debian.org/?p=users/lucas/packaging-tutorial.git
-or git clone git://git.debian.org/~lucas/packaging-tutorial.git
+Gitweb: http://git.debian.org/?p=collab-maint/packaging-tutorial.git
+or git clone git://git.debian.org/collab-maint/packaging-tutorial.git
 
 Thanks
 ------
