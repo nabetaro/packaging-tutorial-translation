@@ -1,11 +1,11 @@
 Source: packaging-tutorial
 Section: doc
 Priority: extra
-Maintainer: Lucas Nussbaum <lucas@lucas-nussbaum.net>
+Maintainer: Lucas Nussbaum <lucas@debian.org>
 Build-Depends: debhelper (>= 7.0.50~), latex-make, latex-beamer, texlive, texlive-pictures
-Standards-Version: 3.9.1
-Vcs-Git: git://git.debian.org/~lucas/packaging-tutorial.git
-Vcs-Browser: http://git.debian.org/?p=users/lucas/packaging-tutorial.git;a=summary
+Standards-Version: 3.9.2
+Vcs-Git: git://git.debian.org/collab-maint/packaging-tutorial.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/packaging-tutorial.git;a=summary
 
 Package: packaging-tutorial
 Architecture: all
