@@ -6,7 +6,7 @@
 \hypersetup{pdftitle={Debian Packaging Tutorial},bookmarks}
 \title{Debian Packaging Tutorial}
 \author[]{Lucas Nussbaum\\{\small\texttt{lucas@debian.org}}}
-\date{\footnotesize version 0.1 - 2011-05-05}
+\date{\footnotesize version 0.1 - 2011-05-23}
 
 \begin{document}
 
@@ -55,8 +55,6 @@
 			\br
 		\item \textbf{Non-commercial}, built collaboratively by over 1,000 volunteers
 			\br
-		\item 30,000 binary packages; 12 ports (inc. 2 non-Linux); 120 derivatives
-			\br
 		\item 3 main features:
 			\begin{itemize}
 				\item \textbf{Quality} -- culture of technical excellence\\
@@ -73,14 +71,32 @@
 	\end{itemize}
 \end{frame}
 
+\subsection{Debian packages}
+\begin{frame}{Debian packages}
+\begin{itemize}
+\item \textbf{.deb} files (binary packages)
+	\br
+\item A very powerful and convenient way to distribute software to users
+	\br
+\item One of the two most common packages format (with RPM)
+	\br
+\item Universal:
+	\begin{itemize}
+		\item 30,000 binary packages in Debian\\
+			$\rightarrow$ most of the available free software is packaged in Debian!
+			\hbr
+		\item For 12 ports (architectures), including 2 non-Linux (Hurd; KFreeBSD)
+			\hbr
+		\item Also used by 120 Debian derivatives distributions
+	\end{itemize}
+\end{itemize}
+\end{frame}
 
 
 \subsection{The Deb package format}
 
 \begin{frame}[fragile]{The Deb package format}
   \begin{itemize}
-  \item One of the two most common packages format (with RPM)
-  \item A very powerful and convenient way to distribute software to users
   \item \texttt{.deb} file: an \texttt{ar} archive
     \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 $ ar tv wget_1.12-2.1_i386.deb
@@ -155,6 +171,35 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
       \useasboundingbox (-4,-6) rectangle (6,0); % hack hack hack
     \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\subsection{Rebuilding dash}
+\begin{frame}{Example: rebuilding dash}
+\begin{enumerate}
+\item Install build-essential, devscripts and debhelper (needed to build dash)\\
+  {\texttt{apt-get install build-essential devscripts debhelper}}
+  \hbr
+\item Create a working directory, and get in it:\\
+ \texttt{mkdir /tmp/w ; cd /tmp/w}
+  \hbr
+\item Grab the \texttt{dash} source package\\
+  \texttt{apt-get source dash}\\ 
+  {\small (This needs you to have \texttt{deb-src} lines in your \texttt{/etc/apt/sources.list})}
+  \hbr
+\item Build the package\\
+  {\texttt{cd dash-*\\ debuild -us -uc}}
+
+  \hbr
+\item Check that it worked
+	\begin{itemize}
+		\item  There are some new \texttt{.deb} files in the parent directory
+	\end{itemize}
+    \hbr
+\item Look at the \texttt{debian/} directory
+	\begin{itemize}
+		\item That's where the packaging work is done
+	\end{itemize}
+\end{enumerate}
 \end{frame}
 
 \section{Creating source packages}
@@ -1122,21 +1167,6 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
     \br
   \item Feedback: \href{mailto:lucas@debian.org}{\textbf{\texttt{lucas@debian.org}}}
   \end{itemize}
-\end{frame}
-
-\section{Practical session 0: simple rebuild of dash}
-\begin{frame}{Practical session 0: simple rebuild of dash}
-  \begin{enumerate}
-	\item Install build-essential debhelper devscripts
-    \br
-  \item Create a working directory, and get in it
-    \br
-  \item Grab the \texttt{dash} source package
-    \br
-  \item Build the package
-    \br
-  \item Check that it worked
-  \end{enumerate}
 \end{frame}
 
 \section{Practical session 2: packaging GNUjump}
