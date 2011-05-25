@@ -372,35 +372,6 @@ mpich2 (1.2.1.1-5) unstable; urgency=low
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{debian/copyright}
-  \hbr
-  \begin{itemize}
-  \item Copyright and license information for the source and the packaging
-  \item Traditionally written as a text file
-  \item New machine-readable format: \url{http://dep.debian.net/deps/dep5/}
-  \end{itemize}
-  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
-Format: <VERSIONED_FORMAT_URL>
-Upstream-Name: X Solitaire
-Source: ftp://ftp.example.com/pub/games
-
-Files: *
-Copyright: Copyright 1998 John Doe <jdoe@example.com>
-License: GPL-2+
- This program is free software; you can redistribute it
- [...]
- .
- On Debian systems, the full text of the GNU General Public
- License version 2 can be found in the file
- `/usr/share/common-licenses/GPL-2'.
-
-Files: debian/*
-Copyright: Copyright 1998 Jane Smith <jsmith@example.net>
-License:
- [LICENSE TEXT]
-\end{lstlisting}
-\end{frame}
-
 \begin{frame}[fragile]{debian/control}
   \hbr
   \begin{itemize}
@@ -748,6 +719,38 @@ override_dh_auto_build:
 \end{frame}
 
 \section{Advanced packaging topics}
+\subsection{debian/copyright}
+\begin{frame}[fragile]{debian/copyright}
+  \hbr
+  \begin{itemize}
+  \item Copyright and license information for the source and the packaging
+  \item Traditionally written as a text file
+  \item New machine-readable format: \url{http://dep.debian.net/deps/dep5/}
+  \end{itemize}
+  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+Format: <VERSIONED_FORMAT_URL>
+Upstream-Name: X Solitaire
+Source: ftp://ftp.example.com/pub/games
+
+Files: *
+Copyright: Copyright 1998 John Doe <jdoe@example.com>
+License: GPL-2+
+ This program is free software; you can redistribute it
+ [...]
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+Files: debian/*
+Copyright: Copyright 1998 Jane Smith <jsmith@example.net>
+License:
+ [LICENSE TEXT]
+\end{lstlisting}
+\end{frame}
+
+
+
 \subsection{Modifying the upstream source}
 \begin{frame}{Modifying the upstream source}
   Often needed:
