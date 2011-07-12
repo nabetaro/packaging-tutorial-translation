@@ -7,7 +7,7 @@ packaging-tutorial (0.2) unstable; urgency=low
     + Slight reorganization of the CDBS slide
     + Deep reorganization of the last part
 
- -- Lucas Nussbaum <lucas@debian.org>  Tue, 12 Jul 2011 10:47:53 +0200
+ -- Lucas Nussbaum <lucas@debian.org>  Tue, 12 Jul 2011 10:59:40 +0200
 
 packaging-tutorial (0.1) unstable; urgency=low
 
