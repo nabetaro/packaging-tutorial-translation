@@ -178,8 +178,9 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \subsection{Rebuilding dash}
 \begin{frame}{Example: rebuilding dash}
 \begin{enumerate}
-\item Install build-essential, devscripts and debhelper (needed to build dash)\\
-  {\texttt{apt-get install build-essential devscripts debhelper}}
+\item Install packages needed to build dash, and devscripts\\
+  {\texttt{apt-get build-dep dash}}\\
+  {\texttt{apt-get install --no-install-recommends devscripts}}
   \hbr
 \item Create a working directory, and get in it:\\
  \texttt{mkdir /tmp/debian-tutorial ; cd /tmp/debian-tutorial}
@@ -487,7 +488,7 @@ Description: retrieves files from the web
     \item Called from \texttt{debian/rules}
     \item Configurable using command parameters or files in \texttt{debian/}
     \end{itemize}
-    {\footnotesize \ttfamily dirs, \textsl{package}.docs, \textsl{package}.examples,
+    {\footnotesize \ttfamily \textsl{package}.docs, \textsl{package}.examples,
       \textsl{package}.install, \textsl{package}.manpages, \ldots} \hbr
   \item Third-party helpers for sets of packages: \textbf{python-support},
     \textbf{dh\_ocaml}, \ldots \hbr
@@ -560,14 +561,14 @@ binary: binary-indep binary-arch
     \hbr
   \item Second-level helpers that factor common functionality
     \begin{itemize}
-    \item Building with \texttt{./configure \&\& make \&\& make install} or CMake
-    \item Support for Perl, Python, Ruby, GNOME, KDE, Java, Haskell, \ldots
+    \item E.g building with \texttt{./configure \&\& make \&\& make install} or CMake
     \end{itemize}
     \hbr
   \item CDBS:
     \begin{itemize}
     \item Introduced in 2005, based on advanced \textsl{GNU make} magic
     \item Documentation: \texttt{/usr/share/doc/cdbs/}
+    \item Support for Perl, Python, Ruby, GNOME, KDE, Java, Haskell, \ldots
     \item But some people hate it:
       \begin{itemize}
       \item Sometimes difficult to customize package builds:\\
@@ -620,7 +621,7 @@ override_dh_auto_build:
   \hbr
   \begin{itemize}
   \item Mind shares:\\
-    Classic debhelper: 41\% \hskip 1em CDBS: 23\% \hskip 1em  dh: 34\%
+    Classic debhelper: 40\% \hskip 1em CDBS: 23\% \hskip 1em  dh: 36\%
     \hbr
   \item Which one should I learn?
     \begin{itemize}
@@ -951,18 +952,16 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
     \item Disappear
     \end{enumerate}
     \br
-  \item Adopt existing unmaintained packages (\textsl{orphaned packages})
-    \begin{itemize}
-    \item Many unmaintained packages in Debian
-    \item Including some that you use daily!
-    \end{itemize}
-    \br
-  \item Get involved in packaging teams
+  \item \textbf{Better} ways to contribute:
+	  \begin{itemize}
+		  \item Get involved in packaging teams
     \begin{itemize}
     \item Many teams that focus on set of packages, and need help
     \item List available at \url{http://wiki.debian.org/Teams}
     \item An excellent way to learn from more experienced contributors
     \end{itemize}
+    \br
+\item Adopt existing unmaintained packages (\textsl{orphaned packages})
     \br
   \item Bring new software to Debian
     \begin{itemize}
@@ -970,52 +969,34 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
     \item Are there alternatives already packaged in Debian?
     \end{itemize}
   \end{itemize}
-\end{frame}
 
-\subsection{More interested in Ubuntu?}
-\begin{frame}{More interested in Ubuntu?}
-  \begin{itemize}
-  \item Ubuntu mainly manages the divergence with Debian
-    \br
-  \item No real focus on specific packages\\
-    Instead, collaboration with Debian teams
-    \br
-  \item Usually recommend uploading new packages to Debian first\\
-    \url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages}
-    \br
-  \item Possibly a better plan:
-    \begin{itemize}
-    \item Get involved in a Debian team and act as a bridge with Ubuntu
-      \hbr
-    \item Help reduce divergence, triage bugs in Launchpad
-      \hbr
-    \item Many Debian tools can help:
-      \begin{itemize}
-      \item Ubuntu column on the Developer's packages overview
-      \item Ubuntu box on the Package Tracking System
-      \item Receive launchpad bugmail via the PTS
-      \end{itemize}
-    \end{itemize}
   \end{itemize}
 \end{frame}
 
 \subsection{Adopting orphaned packages}
 \begin{frame}{Adopting orphaned packages}
+      \hbr
   \begin{itemize}
-  \item Full list: \url{http://www.debian.org/devel/wnpp/}
+    \item Many unmaintained packages in Debian
+    \hbr
+  \item Full list + process: \url{http://www.debian.org/devel/wnpp/}
     \hbr
   \item Installed on your machine: \texttt{wnpp-alert}
     \hbr
   \item Different states:
     \begin{itemize}
+		    \small
     \item \textbf{O}rphaned: the package is unmaintained\\
       Feel free to adopt it
+      \hbr
     \item \textbf{RFA}: \textbf{R}equest \textbf{F}or \textbf{A}dopter\\
       Maintainer looking for adopter, but continues work in the meantime\\
       Feel free to adopt it. A mail to the current maintainer is polite
+      \hbr
     \item \textbf{ITA}: \textbf{I}ntent \textbf{T}o \textbf{A}dopt\\
       Someone intends to adopt the package\\
       You could propose your help!
+      \hbr
     \item \textbf{RFH}: \textbf{R}equest \textbf{F}or \textbf{H}elp\\
       The maintainer is looking for help
     \end{itemize}
@@ -1059,11 +1040,10 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \br
   You can get help from:
   \begin{itemize}
-  \item Other members of a packaging team: the best solution
+	  \item \textbf{Other members of a packaging team}
     \begin{itemize}
     \item They know the specifics of your package
     \item You can become a member of the team
-    \item See \url{http://wiki.debian.org/Teams}
     \end{itemize}
     \hbr
   \item The Debian Mentors group (if your package doesn't fit in a team)
@@ -1113,6 +1093,33 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
     \br
   \item \textbf{Maintainer/team centric}: Developer's Packages Overview (DDPO)\\
     \url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-maintainers@lists.alioth.debian.org}
+  \end{itemize}
+\end{frame}
+
+\subsection{More interested in Ubuntu?}
+\begin{frame}{More interested in Ubuntu?}
+  \begin{itemize}
+  \item Ubuntu mainly manages the divergence with Debian
+    \br
+  \item No real focus on specific packages\\
+    Instead, collaboration with Debian teams
+    \br
+  \item Usually recommend uploading new packages to Debian first\\
+    \url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages}
+    \br
+  \item Possibly a better plan:
+    \begin{itemize}
+    \item Get involved in a Debian team and act as a bridge with Ubuntu
+      \hbr
+    \item Help reduce divergence, triage bugs in Launchpad
+      \hbr
+    \item Many Debian tools can help:
+      \begin{itemize}
+      \item Ubuntu column on the Developer's packages overview
+      \item Ubuntu box on the Package Tracking System
+      \item Receive launchpad bugmail via the PTS
+      \end{itemize}
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
