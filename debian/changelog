@@ -1,3 +1,9 @@
+packaging-tutorial (0.3) unstable; urgency=low
+
+  * Merge practical sessions answers into the main document.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Fri, 26 Aug 2011 12:57:56 +0200
+
 packaging-tutorial (0.2) unstable; urgency=low
 
   * Improvements after tutorial at RMLL 2011:
