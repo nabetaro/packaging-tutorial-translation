@@ -7,12 +7,10 @@ This tutorial is an introduction to Debian packaging. It teaches prospective
 developers how to modify existing packages, how to create their own packages,
 and how to interact with the Debian community.
 
-it is composed of four documents:
-+ packaging-tutorial.{tex,pdf}: the tutorial itself
-+ pract1-grep.{tex,pdf}: a practical session about modifying the 'grep' package
-+ pract2-gnujump.{tex,pdf}: a practical session about packaging the 'gnujump'
-                            game from scratch
-+ pract3-java.{tex,pdf}: a practical session about packaging a Java library
+It includes a tutorial and three practical sessions:
+ - modifying the 'grep' package
+ - packaging the 'gnujump' game from scratch
+ - packaging a Java library
 
 Contributing to this tutorial
 -----------------------------
