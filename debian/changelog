@@ -1,3 +1,9 @@
+packaging-tutorial (0.4) UNRELEASED; urgency=low
+
+  * 
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sat, 03 Sep 2011 22:25:57 +0200
+
 packaging-tutorial (0.3) unstable; urgency=low
 
   * Merge practical sessions answers into the main document.
