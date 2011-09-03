@@ -497,7 +497,7 @@ Description: retrieves files from the web
 \end{frame}
 
 \begin{frame}[fragile]{debian/rules using debhelper (1/2)}
-  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 #!/usr/bin/make -f
 
 # Uncomment this to turn on verbose mode.
@@ -525,7 +525,7 @@ install: build
 \end{frame}
 
 \begin{frame}[fragile]{debian/rules using debhelper (2/2)}
-  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -578,7 +578,7 @@ binary: binary-indep binary-arch
     \end{itemize}
   \end{itemize}
   \seprule
-      \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+      \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 #!/usr/bin/make -f
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
