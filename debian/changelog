@@ -1,3 +1,26 @@
+packaging-tutorial (0.4) UNRELEASED; urgency=low
+
+  * 
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sat, 03 Sep 2011 22:25:57 +0200
+
+packaging-tutorial (0.3) unstable; urgency=low
+
+  * Merge practical sessions answers into the main document.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Fri, 26 Aug 2011 12:57:56 +0200
+
+packaging-tutorial (0.2) unstable; urgency=low
+
+  * Improvements after tutorial at RMLL 2011:
+    + Use apt-get build-dep to install dash's build dependencies
+      (works on Ubuntu too)
+    + Use --no-install-recommends when installing devscripts
+    + Slight reorganization of the CDBS slide
+    + Deep reorganization of the last part
+
+ -- Lucas Nussbaum <lucas@debian.org>  Tue, 12 Jul 2011 10:59:40 +0200
+
 packaging-tutorial (0.1) unstable; urgency=low
 
   * Initial Release.
