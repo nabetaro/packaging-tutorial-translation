@@ -12,7 +12,8 @@
 % po4a: command hypersetup {}
 % po4a: command tableofcontents []
 
-% po4a: command *mode
+% po4a: command mode 
+% po4a: command +usepackage {_}
 % po4a: command *usetheme
 % po4a: command *br
 % po4a: command *hbr
