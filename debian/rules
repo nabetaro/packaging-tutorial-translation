@@ -1,6 +1,26 @@
 #!/usr/bin/make -f
+
+LANGUAGES=fr
+
 %:
 	dh $@ 
 
+#translate source files before building pdf
+override_dh_auto_build:
+	po4a po4a/po4a.cfg --verbose
+	dh_auto_build
+
+#remove translated source files
+override_dh_clean:
+	dh_clean
+	for x in $(LANGUAGES) ; do \
+	  rm -f packaging-tutorial.$$x.tex debiantutorial.$$x.sty ; \
+	done
+
 override_dh_compress:
-	        dh_compress -X.pdf
+	dh_compress -X.pdf
+
+
+
+
+
