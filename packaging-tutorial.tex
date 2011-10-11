@@ -180,7 +180,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \begin{enumerate}
 \item Install packages needed to build dash, and devscripts\\
   {\texttt{apt-get build-dep dash}}\\
-  {\texttt{apt-get install --no-install-recommends devscripts}}
+  {\texttt{apt-get install -{}-no-install-recommends devscripts}}
   \hbr
 \item Create a working directory, and get in it:\\
  \texttt{mkdir /tmp/debian-tutorial ; cd /tmp/debian-tutorial}
@@ -1362,11 +1362,12 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 	\end{enumerate}
 	\hbr
 	\begin{itemize}
-		\item Check with \texttt{./configure --help}: the option to disable Perl regexp is \texttt{--disable-perl-regexp}
+	  \item Check with \texttt{./configure -{}-help}: the option to disable
+	    Perl regexp is \texttt{-{}-disable-perl-regexp}
 	\hbr
 		\item Edit \texttt{debian/rules} and find the \texttt{./configure} line
 	\hbr
-		\item Add \texttt{--disable-perl-regexp}
+		\item Add \texttt{-{}-disable-perl-regexp}
 	\hbr
 		\item Rebuild with \texttt{debuild} or \texttt{dpkg-buildpackage -us -uc}
 	\end{itemize}
@@ -1398,7 +1399,7 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \hbr
 Or not: reinstall the previous version of the package:
 \begin{itemize}
-	\item \texttt{apt-get install --reinstall grep=2.6.3-3} \textit{(= previous version)}
+	\item \texttt{apt-get install -{}-reinstall grep=2.6.3-3} \textit{(= previous version)}
 \end{itemize}
 \end{frame}
 
