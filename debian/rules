@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-LANGUAGES=fr
-
 %:
 	dh $@ 
 
@@ -13,9 +11,7 @@ override_dh_auto_build:
 #remove translated source files
 override_dh_clean:
 	dh_clean
-	for x in $(LANGUAGES) ; do \
-	  rm -f packaging-tutorial.$$x.tex debiantutorial.$$x.sty ; \
-	done
+	rm -f packaging-tutorial.*.tex debiantutorial.*.sty 
 
 override_dh_compress:
 	dh_compress -X.pdf
