@@ -1,8 +1,13 @@
 packaging-tutorial (0.4) UNRELEASED; urgency=low
 
-  * 
+  [ David Prévot ]
+  * po4a configuration for the translation process
 
- -- Lucas Nussbaum <lucas@debian.org>  Sat, 03 Sep 2011 22:25:57 +0200
+  [ Cédric Boutillier ]
+  * add French translation
+  * update debian/rules to translate documents at build time
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sun, 16 Oct 2011 23:45:57 +0200
 
 packaging-tutorial (0.3) unstable; urgency=low
 
