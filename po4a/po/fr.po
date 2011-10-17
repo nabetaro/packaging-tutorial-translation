@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2011-10-09 00:37+0300\n"
+"POT-Creation-Date: 2011-10-18 00:01+0300\n"
 "PO-Revision-Date: 2011-09-27 12:14+0200\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -20,34 +20,38 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 
 #. type: Plain text
-#: packaging-tutorial.tex:5
+#: packaging-tutorial.tex:4
 msgid "\\mode<presentation> \\usetheme{debian}"
 msgstr "\\mode<presentation> \\usetheme{debian}"
 
+#. Translators:
+#. change debiantutorial to debiantutorial.$lang to use translated file, and
+#. append to this string all commands to load localisation packages, e.g.:
+#. \\usepackage{debiantutorial.fr} \\usepackage[french]{babel} \\frenchsetup{...}
 #. type: Plain text
-#: packaging-tutorial.tex:5
+#: packaging-tutorial.tex:10
 msgid "\\usepackage{debiantutorial}"
 msgstr ""
 "\\usepackage{debiantutorial.fr} \\usepackage[french]{babel} \\frenchbsetup"
 "{og=«,fg=»}"
 
 #. type: title{#2}
-#: packaging-tutorial.tex:10
+#: packaging-tutorial.tex:15
 msgid "Debian Packaging Tutorial"
 msgstr "Tutoriel sur la construction de paquets Debian"
 
 #. type: date{#1}
-#: packaging-tutorial.tex:10
+#: packaging-tutorial.tex:15
 msgid "version 0.3 - 2011-08-26"
 msgstr "version 0.3 - 26 août 2011"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "About this tutorial"
 msgstr "À propos de ce tutoriel"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid ""
 "Goal: \\textbf{tell you what you really need to know about Debian packaging}"
 msgstr ""
@@ -55,73 +59,73 @@ msgstr ""
 "construction de paquets Debian}"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "Modify existing packages"
 msgstr "Modifier des paquets existants"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "Create your own packages"
 msgstr "Créer vos propres paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "Interact with the Debian community"
 msgstr "Interagir avec la communauté Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "Become a Debian power-user"
 msgstr "Devenir un utilisateur chevronné de Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "Covers the most important points, but is not complete"
 msgstr "Il couvre les points les plus importants mais n'est pas complet"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "You will need to read more documentation"
 msgstr "Vous devrez lire plus de documentation"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "Most of the content also applies to Debian derivatives distributions"
 msgstr "L'essentiel s'applique aussi aux distributions dérivées de Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:41
+#: packaging-tutorial.tex:46
 msgid "That includes Ubuntu"
 msgstr "en particulier à Ubuntu"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:45 debiantutorial.sty:41
+#: packaging-tutorial.tex:50 debiantutorial.sty:41
 msgid "Outline"
 msgstr "Plan"
 
 #. type: section{#2}
-#: packaging-tutorial.tex:47
+#: packaging-tutorial.tex:52
 msgid "Introduction"
 msgstr "Introduction"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:49 packaging-tutorial.tex:73
+#: packaging-tutorial.tex:54 packaging-tutorial.tex:78
 msgid "Debian"
 msgstr "Debian"
 
 #. type: textbf{#1}
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid "GNU/Linux distribution"
 msgstr "Distribution GNU/Linux"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid "1st major distro developed ``openly in the spirit of GNU''"
 msgstr ""
 "1\\iere distribution majeure développée « ouvertement dans l'esprit GNU»"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid ""
 "\\textbf{Non-commercial}, built collaboratively by over 1,000 volunteers"
 msgstr ""
@@ -129,12 +133,12 @@ msgstr ""
 "bénévoles"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid "3 main features:"
 msgstr "3 caractéristiques principales :"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid ""
 "\\textbf{Quality} -- culture of technical excellence\\\\ {\\small\\sl We "
 "release when it's ready}"
@@ -143,7 +147,7 @@ msgstr ""
 "publions quand c'est prêt}"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid ""
 "\\textbf{Freedom} -- devs and users bound by the \\textsl{Social Contract}\\"
 "\\ Promoting the culture of Free Software since 1993"
@@ -152,7 +156,7 @@ msgstr ""
 "{Contrat social}\\\\ Promotion de la culture du logiciel libre depuis 1993"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid ""
 "\\textbf{Independence} -- no (single) company babysitting Debian\\\\ And "
 "open decision-making process (\\textsl{do-ocracy} + \\textsl{democracy})"
@@ -162,38 +166,38 @@ msgstr ""
 "{démocratie})"
 
 #. type: itemize
-#: packaging-tutorial.tex:73
+#: packaging-tutorial.tex:78
 msgid "\\textbf{Amateur} in the best sense: done for the love of it"
 msgstr "\\textbf{Amateur} dans le bon sens du terme : fait avec amour"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "Debian packages"
 msgstr "Paquets Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "\\textbf{.deb} files (binary packages)"
 msgstr "Fichiers \\textbf{.deb} (paquets binaires)"
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "A very powerful and convenient way to distribute software to users"
 msgstr ""
 "Moyen puissant et pratique pour distribuer des logiciels aux utilisateurs "
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "One of the two most common packages format (with RPM)"
 msgstr "Un des deux formats de paquets les plus courants avec RPM"
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "Universal:"
 msgstr "Universel :"
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid ""
 "30,000 binary packages in Debian\\\\ $\\rightarrow$ most of the available "
 "free software is packaged in Debian!"
@@ -202,27 +206,27 @@ msgstr ""
 "logiciels libres sont empaquetés dans Debian !"
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "For 12 ports (architectures), including 2 non-Linux (Hurd; KFreeBSD)"
 msgstr "12 portages (architectures), dont 2 non Linux (Hurd et kFreeBSD)"
 
 #. type: itemize
-#: packaging-tutorial.tex:94
+#: packaging-tutorial.tex:99
 msgid "Also used by 120 Debian derivatives distributions"
 msgstr "Utilisé aussi par 120 distributions dérivées de Debian"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:97 packaging-tutorial.tex:122
+#: packaging-tutorial.tex:102 packaging-tutorial.tex:127
 msgid "The Deb package format"
 msgstr "Le format de paquet Deb"
 
 #. type: itemize
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid "\\texttt{.deb} file: an \\texttt{ar} archive"
 msgstr "Fichier \\texttt{.deb} : une archive \\texttt{ar}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -241,7 +245,7 @@ msgstr ""
 
 #.  $
 #. type: itemize
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid ""
 "\\texttt{debian-binary}: version of the deb file format, \\texttt"
 "{\"2.0\\textbackslash{}n\"}"
@@ -250,7 +254,7 @@ msgstr ""
 "{2.0\\textbackslash{}n} »"
 
 #. type: itemize
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid ""
 "\\texttt{control.tar.gz}: metadata about the package\\\\ {\\small \\texttt"
 "{\\textbf{control}, md5sums, (pre|post)(rm|inst), triggers, shlibs}, \\ldots}"
@@ -259,12 +263,12 @@ msgstr ""
 "{\\textbf{control}, md5sums, (pre|post)(rm|inst), triggers, shlibs}\\ldots}"
 
 #. type: itemize
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid "\\texttt{data.tar.gz}: data files of the package"
 msgstr "\\texttt{data.tar.gz} : fichiers de données du paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid ""
 "You could create your \\texttt{.deb} files manually\\\\ {\\footnotesize \\url"
 "{http://tldp.org/HOWTO/html\\_single/Debian-Binary-Package-Building-HOWTO/}}"
@@ -274,32 +278,32 @@ msgstr ""
 "Package-Building-HOWTO/}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid "But most people don't do it that way"
 msgstr "Mais la plupart des gens ne font pas comme ça"
 
 #. type: textbf{#1}
-#: packaging-tutorial.tex:122
+#: packaging-tutorial.tex:127
 msgid "This tutorial: create Debian packages, the Debian way"
 msgstr "Ce tutoriel : création de paquets Debian à la manière Debian"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:142
+#: packaging-tutorial.tex:147
 msgid "Tools you will need"
 msgstr "Outils dont vous avez besoin"
 
 #. type: itemize
-#: packaging-tutorial.tex:142
+#: packaging-tutorial.tex:147
 msgid "A Debian (or Ubuntu) system (with root access)"
 msgstr "Un système Debian (ou Ubuntu) (avec accès superutilisateur)"
 
 #. type: itemize
-#: packaging-tutorial.tex:142
+#: packaging-tutorial.tex:147
 msgid "Some packages:"
 msgstr "Quelques paquets :"
 
 #. type: itemize
-#: packaging-tutorial.tex:142
+#: packaging-tutorial.tex:147
 msgid ""
 "\\textbf{build-essential}: has dependencies on the packages that will be "
 "assumed to be available on the developers' machine (no need to specify them "
@@ -310,7 +314,7 @@ msgstr ""
 "\\texttt{Build-Depends} de votre paquet)"
 
 #. type: itemize
-#: packaging-tutorial.tex:142
+#: packaging-tutorial.tex:147
 msgid ""
 "includes a dependency on \\textbf{dpkg-dev}, which contains basic Debian-"
 "specific tools to create packages"
@@ -319,7 +323,7 @@ msgstr ""
 "à Debian pour créer des paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:142
+#: packaging-tutorial.tex:147
 msgid ""
 "\\textbf{devscripts}: contains many useful scripts for Debian maintainers"
 msgstr ""
@@ -327,7 +331,7 @@ msgstr ""
 "responsables Debian"
 
 #. type: frame
-#: packaging-tutorial.tex:150
+#: packaging-tutorial.tex:155
 msgid ""
 "Many other tools will also be mentioned later, such as \\textbf{debhelper}, "
 "\\textbf{cdbs}, \\textbf{quilt}, \\textbf{pbuilder}, \\textbf{sbuild}, "
@@ -340,14 +344,14 @@ msgstr ""
 "buildpackage}\\ldots\\\\ Installez-les quand vous en aurez besoin."
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:157
+#: packaging-tutorial.tex:162
 msgid "General packaging workflow"
 msgstr "Schéma général de la construction de paquets"
 
 #. 	\draw[arr,->] (bin) -- (-1,-6) node[pos=0.5,left] {upload (\textttc{dput})};
 #.  hack hack hack
 #. type: tikzpicture
-#: packaging-tutorial.tex:177
+#: packaging-tutorial.tex:182
 msgid ""
 "\\node[node1] (www) at (0, 0) {Web}; \\node[node1] (us) at (2.5, 0) "
 "{upstream source}; \\node[node1] (da) at (-2.5, 0) {Debian mirror}; \\node"
@@ -385,17 +389,17 @@ msgstr ""
 "\\useasboundingbox (-4,-6) rectangle (6,0);"
 
 #. type: subsection{#2}
-#: packaging-tutorial.tex:194
+#: packaging-tutorial.tex:199
 msgid "Rebuilding dash"
 msgstr "Reconstruction de dash"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:194
+#: packaging-tutorial.tex:199
 msgid "Example: rebuilding dash"
 msgstr "Exemple : reconstruction de dash"
 
 #. type: enumerate
-#: packaging-tutorial.tex:194
+#: packaging-tutorial.tex:199
 msgid ""
 "Install packages needed to build dash, and devscripts\\\\ {\\texttt{apt-get "
 "build-dep dash}}\\\\ {\\texttt{apt-get install -{}-no-install-recommends "
@@ -406,7 +410,7 @@ msgstr ""
 "install -{}-no-install-recommends devscripts} }"
 
 #. type: enumerate
-#: packaging-tutorial.tex:194
+#: packaging-tutorial.tex:199
 msgid ""
 "Create a working directory, and get in it:\\\\ \\texttt{mkdir /tmp/debian-"
 "tutorial ; cd /tmp/debian-tutorial}"
@@ -415,7 +419,7 @@ msgstr ""
 "tutorial ; cd /tmp/debian-tutorial}"
 
 #. type: enumerate
-#: packaging-tutorial.tex:194
+#: packaging-tutorial.tex:199
 msgid ""
 "Grab the \\texttt{dash} source package\\\\ \\texttt{apt-get source dash}\\\\ "
 "{\\small (This needs you to have \\texttt{deb-src} lines in your \\texttt{/"
@@ -426,47 +430,47 @@ msgstr ""
 "dans votre \\texttt{/etc/apt/sources.list})}"
 
 #. type: enumerate
-#: packaging-tutorial.tex:194
+#: packaging-tutorial.tex:199
 msgid "Build the package\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}}"
 msgstr "Construisez le paquet\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}}"
 
 #. type: enumerate
-#: packaging-tutorial.tex:207
+#: packaging-tutorial.tex:212
 msgid "Check that it worked"
 msgstr "Vérifiez que ça a fonctionné"
 
 #. type: itemize
-#: packaging-tutorial.tex:207
+#: packaging-tutorial.tex:212
 msgid "There are some new \\texttt{.deb} files in the parent directory"
 msgstr "Il y a de nouveaux fichiers \\texttt{.deb} dans le répertoire parent"
 
 #. type: enumerate
-#: packaging-tutorial.tex:207
+#: packaging-tutorial.tex:212
 msgid "Look at the \\texttt{debian/} directory"
 msgstr "Regardez le répertoire \\texttt{debian/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:207
+#: packaging-tutorial.tex:212
 msgid "That's where the packaging work is done"
 msgstr "C'est là que se fait le travail de construction du paquet"
 
 #. type: section{#2}
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Creating source packages"
 msgstr "Création des paquets source"
 
 #. type: subsection{#2}
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Source packages basics"
 msgstr "Notions de base sur les paquets source"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Source package"
 msgstr "Paquet source"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid ""
 "One source package can generate several binary packages\\\\ {\\small e.g the "
 "\\texttt{\\bfseries libtar} source generates the \\texttt{\\bfseries "
@@ -477,13 +481,13 @@ msgstr ""
 "\\texttt{\\bfseries libtar0} et \\texttt{\\bfseries libtar-dev}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Two kinds of packages: (if unsure, use non-native)"
 msgstr ""
 "Deux types de paquets : (si vous n'êtes pas sûr, utilisez « non natif »)"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid ""
 "Native packages: normally for Debian specific software (\\textsl{dpkg}, "
 "\\textsl{apt})"
@@ -492,66 +496,66 @@ msgstr ""
 "{dpkg}, \\textsl{apt}\\ldots)"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Non-native packages: software developed outside Debian"
 msgstr "Non natifs : logiciels développés hors de Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Main file: \\texttt{.dsc} (meta-data)"
 msgstr "Fichier principal : \\texttt{.dsc} (métadonnées)"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "Other files depending on the version of the source format"
 msgstr "Autres fichiers selon la version du format source"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "1.0 -- native: \\texttt{package\\_version.tar.gz}"
 msgstr "1.0 -- natif : \\texttt{paquet\\_version.tar.gz}"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "1.0 -- non-native:"
 msgstr "1.0 -- non natif :"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "\\texttt{pkg\\_ver.orig.tar.gz} : upstream source"
 msgstr "\\texttt{paquet\\_ver.orig.tar.gz} : sources amont"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "\\texttt{pkg\\_debver.diff.gz} : patch to add Debian-specific changes"
 msgstr ""
 "\\texttt{paquet\\_debver.diff.gz} : correctif avec des modifications "
 "spécifiques à Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "3.0 (quilt):"
 msgstr "3.0 (quilt) :"
 
 #. type: itemize
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "\\texttt{pkg\\_debver.debian.tar.gz} : tarball with the Debian changes"
 msgstr ""
 "\\texttt{paquet\\_debver.debian.tar.gz} : archive tar avec les modifications "
 "de Debian"
 
 #. type: frame
-#: packaging-tutorial.tex:245
+#: packaging-tutorial.tex:250
 msgid "(See \\texttt{dpkg-source(1)} for exact details)"
 msgstr "(Consultez \\texttt{dpkg-source(1)} pour les détails exacts.)"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:269
+#: packaging-tutorial.tex:274
 msgid "Source package example (wget\\_1.12-2.1.dsc)"
 msgstr "Exemple de paquet source (wget\\_1.12-2.1.dsc)"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:269
+#: packaging-tutorial.tex:274
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\small]\n"
@@ -597,53 +601,53 @@ msgstr ""
 " e93123c934e3c[..]2f380278c2 48308 wget_1.12-2.1.debian.tar.gz"
 
 #. type: subsection{#2}
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "Retrieving source packages"
 msgstr "Récupération des paquets source"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "Retrieving an existing source package"
 msgstr "Récupération d'un paquet source existant"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "From the Debian archive:"
 msgstr "À partir de l'archive Debian :"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "\\texttt{apt-get source \\textsl{package}}"
 msgstr "\\texttt{apt-get source \\textsl{paquet}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "\\texttt{apt-get source \\textsl{package=version}}"
 msgstr "\\texttt{apt-get source \\textsl{paquet=version}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "\\texttt{apt-get source \\textsl{package/release}}"
 msgstr "\\texttt{apt-get source \\textsl{paquet/distribution}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "(You need \\texttt{deb-src} lines in \\texttt{sources.list})"
 msgstr ""
 "(Vous avez besoin de lignes \\texttt{deb-src} dans \\texttt{sources.list})"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "From the Internet:"
 msgstr "Depuis Internet :"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "\\texttt{dget \\textsl{url-to.dsc}}"
 msgstr "\\texttt{dget \\textsl{url-vers.dsc}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid ""
 "\\texttt{dget http://snapshot.debian.org/archive/debian-archive/\\"
 "\\20090802T004153Z/debian/dists/bo/main/source/web/\\\\ wget\\_1.4.4-6.dsc}\\"
@@ -656,17 +660,17 @@ msgstr ""
 "tous les paquets de Debian depuis 2005)"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "From the (declared) version control system:"
 msgstr "Depuis le gestionnaire de versions (déclaré) :"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid "\\texttt{debcheckout \\textsl{package}}"
 msgstr "\\texttt{debcheckout \\textsl{paquet}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:297
+#: packaging-tutorial.tex:302
 msgid ""
 "Once downloaded, extract with \\texttt{dpkg-source -x \\textsl{file.dsc}}"
 msgstr ""
@@ -674,12 +678,12 @@ msgstr ""
 "{fichier.dsc}}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid "Creating a basic source package"
 msgstr "Création d'un paquet source de base"
 
 #. type: itemize
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid ""
 "Download the upstream source\\\\ (\\textsl{upstream source} = the one from "
 "the software's original developers)"
@@ -688,7 +692,7 @@ msgstr ""
 "celles fournies par les développeurs du logiciel)"
 
 #. type: itemize
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid ""
 "Rename to \\texttt{<\\textsl{source\\_package}>\\_<\\textsl{upstream"
 "\\_version}>.orig.tar.gz}\\\\ (example: \\texttt{simgrid\\_3.6.orig.tar.gz})"
@@ -697,12 +701,12 @@ msgstr ""
 "\\_amont}>.orig.tar.gz}\\\\ (exemple : \\texttt{simgrid\\_3.6.orig.tar.gz})"
 
 #. type: itemize
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid "Untar it"
 msgstr "Dépaquetez-la"
 
 #. type: itemize
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid ""
 "\\texttt{cd \\textsl{upstream\\_source} \\&\\& dh\\_make} (from the \\textbf"
 "{dh-make} package)"
@@ -711,7 +715,7 @@ msgstr ""
 "{dh-make})"
 
 #. type: itemize
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid ""
 "There are some alternatives to \\texttt{dh\\_make} for specific sets of "
 "packages: \\textbf{dh-make-perl}, \\textbf{dh-make-php}, \\ldots"
@@ -720,18 +724,18 @@ msgstr ""
 "spécifiques : \\textbf{dh-make-perl}, \\textbf{dh-make-php}\\ldots"
 
 #. type: itemize
-#: packaging-tutorial.tex:316
+#: packaging-tutorial.tex:321
 msgid "\\texttt{debian/} directory created, with a lot of files in it"
 msgstr ""
 "Un répertoire \\texttt{debian/} est créé, contenant de nombreux fichiers"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "Files in debian/"
 msgstr "Fichiers dans debian/"
 
 #. type: frame
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid ""
 "All the packaging work should be made by modifying files in \\texttt{debian/}"
 msgstr ""
@@ -739,89 +743,89 @@ msgstr ""
 "{debian/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "Main files:"
 msgstr "Fichiers principaux :"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "\\textbf{control} -- meta-data about the package (dependencies, etc)"
 msgstr "\\textbf{control} -- métadonnées sur le paquet (dépendances, etc.)"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "\\textbf{rules} -- specifies how to build the package"
 msgstr "\\textbf{rules} -- indique la manière de construire le paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "\\textbf{copyright} -- copyright information for the package"
 msgstr "\\textbf{copyright} -- informations de copyright du paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "\\textbf{changelog} -- history of the Debian package"
 msgstr "\\textbf{changelog} -- journal des modifications du paquet Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "Other files:"
 msgstr "Autres fichiers :"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "compat"
 msgstr "compat"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "watch"
 msgstr "watch"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "dh\\_install* targets\\\\ {\\small *.dirs, *.docs, *.manpages, \\ldots}"
 msgstr ""
 "configuration de dh\\_install* ({\\small *.dirs, *.docs, *.manpages\\ldots})"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "maintainer scripts\\\\ {\\small *.postinst, *.prerm, \\ldots}"
 msgstr "scripts du responsable ({\\small *.postinst, *.prerm\\ldots})"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "source/format"
 msgstr "source/format"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "patches/ -- if you need to modify the upstream sources"
 msgstr "patches/ -- si vous avez besoin de modifier les sources amont"
 
 #. type: itemize
-#: packaging-tutorial.tex:345
+#: packaging-tutorial.tex:350
 msgid "Several files use a format based on RFC 822 (mail headers)"
 msgstr ""
 "Plusieurs fichiers ont un format basé sur la RFC 822 (en-têtes de courriel)"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:357
+#: packaging-tutorial.tex:362
 msgid "debian/changelog"
 msgstr "debian/changelog"
 
 #. type: itemize
-#: packaging-tutorial.tex:357
+#: packaging-tutorial.tex:362
 msgid "Lists the Debian packaging changes"
 msgstr "Liste des modifications dans la construction du paquet Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:357
+#: packaging-tutorial.tex:362
 msgid "Gives the current version of the package"
 msgstr "Donne la version actuelle du paquet"
 
 #. type: tikzpicture
-#: packaging-tutorial.tex:357
+#: packaging-tutorial.tex:362
 msgid ""
 "\\draw (0,0) node[above right] {\\large 1.2.1.1-5}; \\draw [decorate,"
 "decoration={brace}] (2,0) -- (1.45,0) node[at start,below,text width=1.6cm,"
@@ -837,12 +841,12 @@ msgstr ""
 
 #. %
 #. type: itemize
-#: packaging-tutorial.tex:368
+#: packaging-tutorial.tex:373
 msgid "Edited manually or with \\texttt{dch}"
 msgstr "Édité à la main ou avec \\texttt{dch}"
 
 #. type: itemize
-#: packaging-tutorial.tex:368
+#: packaging-tutorial.tex:373
 msgid ""
 "Special format to automatically close Debian or Ubuntu bugs\\\\ Debian: "
 "\\texttt{Closes:~\\#595268}; Ubuntu: \\texttt{LP:~\\#616929}"
@@ -851,7 +855,7 @@ msgstr ""
 "\\texttt{Closes:~\\#595268}; Ubuntu : \\texttt{LP:~\\#616929}"
 
 #. type: itemize
-#: packaging-tutorial.tex:368
+#: packaging-tutorial.tex:373
 msgid ""
 "Installed as \\texttt{/usr/share/doc/\\textit{package}/changelog.Debian.gz}"
 msgstr ""
@@ -859,7 +863,7 @@ msgstr ""
 "Debian.gz}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:368
+#: packaging-tutorial.tex:373
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -871,7 +875,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:374
+#: packaging-tutorial.tex:379
 #, no-wrap
 msgid ""
 "  * Use /usr/bin/python instead of /usr/bin/python2.5. Allow\n"
@@ -889,33 +893,33 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:376
+#: packaging-tutorial.tex:381
 #, no-wrap
 msgid " -- Lucas Nussbaum <lucas@debian.org>  Wed, 15 Sep 2010 18:13:44 +0200"
 msgstr " -- Lucas Nussbaum <lucas@debian.org>  Wed, 15 Sep 2010 18:13:44 +0200"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 msgid "debian/control"
 msgstr "debian/control"
 
 #. type: itemize
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 msgid "Package metadata"
 msgstr "Métadonnées du paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 msgid "For the source package itself"
 msgstr "Pour le paquet source lui-même"
 
 #. type: itemize
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 msgid "For each binary package built from this source"
 msgstr "Pour chaque paquet binaire construit à partir de ce paquet source"
 
 #. type: itemize
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 msgid ""
 "Package name, section, priority, maintainer, uploaders, build-dependencies, "
 "dependencies, description, homepage, \\ldots"
@@ -924,7 +928,7 @@ msgstr ""
 "dépendances de construction, dépendances, description, page d'accueil\\ldots"
 
 #. type: itemize
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 msgid ""
 "Documentation: Debian Policy chapter 5\\\\ \\url{http://www.debian.org/doc/"
 "debian-policy/ch-controlfields.html}"
@@ -933,7 +937,7 @@ msgstr ""
 "doc/debian-policy/ch-controlfields.html}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:403
+#: packaging-tutorial.tex:408
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -959,7 +963,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:409
+#: packaging-tutorial.tex:414
 #, no-wrap
 msgid ""
 "Package: wget\n"
@@ -975,32 +979,32 @@ msgstr ""
 " Wget is a network utility to retrieve files from the Web"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "Architecture: all or any"
 msgstr "Architecture: « all » ou « any »"
 
 #. type: frame
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "Two kinds of binary packages:"
 msgstr "Deux types de paquets binaires :"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "Packages with different contents on each Debian architecture"
 msgstr "Paquets ayant un contenu différent selon l'architecture Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "Example: C program"
 msgstr "Exemple : programme C"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "\\texttt{Architecture:\\ any} in \\texttt{debian/control}"
 msgstr "\\texttt{Architecture:~any} dans \\texttt{debian/control}"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid ""
 "Or, if it only works on a subset of architectures:\\\\ \\texttt{Architecture:"
 "\\ amd64 i386 ia64 hurd-i386}"
@@ -1009,12 +1013,12 @@ msgstr ""
 "{Architecture:~amd64 i386 ia64 hurd-i386}"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "buildd.debian.org: builds all the other architectures for you on upload"
 msgstr "buildd.debian.org : construit les autres architectures à l'envoi"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid ""
 "Named \\texttt{\\textsl{package}\\_\\textsl{version}\\_\\textsl"
 "{architecture}.deb}"
@@ -1023,29 +1027,29 @@ msgstr ""
 "{architecture}.deb}"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "Packages with the same content on all architectures"
 msgstr "Paquets ayant le même contenu sur toutes les architectures"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "Example: Perl library"
 msgstr "Exemple : bibliothèque Perl"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid "\\texttt{Architecture:\\ all} in \\texttt{debian/control}"
 msgstr "\\texttt{Architecture:~all} dans \\texttt{debian/control}"
 
 #. type: itemize
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid ""
 "Named \\texttt{\\textsl{package}\\_\\textsl{version}\\_\\textbf{all}.deb}"
 msgstr ""
 "Nommé \\texttt{\\textsl{paquet}\\_\\textsl{version}\\_\\textbf{all}.deb}"
 
 #. type: frame
-#: packaging-tutorial.tex:438
+#: packaging-tutorial.tex:443
 msgid ""
 "A source package can generate a mix of \\texttt{Architecture:\\ any} and "
 "\\texttt{Architecture:\\ all} binary packages"
@@ -1054,22 +1058,22 @@ msgstr ""
 "{Architecture:~any} et \\texttt{Architecture:~all}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "debian/rules"
 msgstr "debian/rules"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "Makefile"
 msgstr "Makefile"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "Interface used to build Debian packages"
 msgstr "Interface utilisée pour construire des paquets Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid ""
 "Documented in Debian Policy, chapter 4.8\\\\ {\\small \\texttt{http://www."
 "debian.org/doc/debian-policy/ch-source.html\\#s-debianrules}}"
@@ -1078,24 +1082,24 @@ msgstr ""
 "www.debian.org/doc/debian-policy/ch-source.html\\#s-debianrules}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "Five required targets:"
 msgstr "Cinq cibles requises\\ :"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "\\texttt{build}: should perform all the configuration and compilation"
 msgstr ""
 "\\texttt{build} : doit effectuer toute la configuration et la compilation"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "\\texttt{binary, binary-arch, binary-indep}: build the binary packages"
 msgstr ""
 "\\texttt{binary, binary-arch, binary-indep} : créent les paquets binaires"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid ""
 "\\texttt{dpkg-buildpackage} will call \\texttt{binary} to build all the "
 "packages, or \\texttt{binary-arch} to build only the \\texttt{Architecture:"
@@ -1106,64 +1110,64 @@ msgstr ""
 "\\texttt{Architecture:~any}"
 
 #. type: itemize
-#: packaging-tutorial.tex:464
+#: packaging-tutorial.tex:469
 msgid "\\texttt{clean}: clean up the source directory"
 msgstr "\\texttt{clean} : nettoie le répertoire des sources"
 
 #. type: subsection{#2}
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Packaging helpers"
 msgstr "Assistants d'empaquetage"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Packaging helpers -- debhelper"
 msgstr "Assistants d'empaquetage -- debhelper"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "You could write shell code in \\texttt{debian/rules} directly"
 msgstr ""
 "Vous pourriez écrire du code shell dans le répertoire \\texttt{debian/rules}"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "See the \\texttt{adduser} package for example"
 msgstr "Voir le paquet \\texttt{adduser} par exemple"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid ""
 "Better practice (used by most packages): use a \\textsl{Packaging helper}"
 msgstr ""
-"Mieux : utilisez un \\textsl{assistant d'empaquetage} \\"
-"\\(déjà le cas pour la plupart des paquets)"
+"Mieux : utilisez un \\textsl{assistant d'empaquetage} \\\\(déjà le cas pour "
+"la plupart des paquets)"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Most popular one: \\textbf{debhelper} (used by 98\\% of packages)"
 msgstr ""
 "Le plus populaire : \\textbf{debhelper} (utilisé par 98~\\% des paquets)"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Goals:"
 msgstr "Objectifs :"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Factor the common tasks in standard tools used by all packages"
 msgstr ""
 "Centraliser les tâches courantes dans des outils normalisés qui seront "
 "utilisés par tous les paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Fix some packaging bugs once for all packages"
 msgstr "Corriger d'un coup des bogues de construction pour tous les paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid ""
 "{\\footnotesize dh\\_installdirs, dh\\_installchangelogs, dh\\_installdocs, "
 "dh\\_installexamples, dh\\_install, dh\\_installdebconf, dh\\_installinit, dh"
@@ -1176,18 +1180,18 @@ msgstr ""
 "\\_link, dh\\_strip, dh\\_compress, dh\\_fixperms, dh\\_perl\\ldots}"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Called from \\texttt{debian/rules}"
 msgstr "Appelé depuis \\texttt{debian/rules}"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid "Configurable using command parameters or files in \\texttt{debian/}"
 msgstr ""
 "Configurable avec des paramètres ou des fichiers dans \\texttt{debian/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid ""
 "{\\footnotesize \\ttfamily \\textsl{package}.docs, \\textsl{package}."
 "examples, \\textsl{package}.install, \\textsl{package}.manpages, \\ldots}"
@@ -1196,7 +1200,7 @@ msgstr ""
 "examples, \\textsl{package}.install, \\textsl{paquet}.manpages\\ldots}"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid ""
 "Third-party helpers for sets of packages: \\textbf{python-support}, \\textbf"
 "{dh\\_ocaml}, \\ldots"
@@ -1205,7 +1209,7 @@ msgstr ""
 "{dh\\_ocaml}\\ldots"
 
 #. type: itemize
-#: packaging-tutorial.tex:498
+#: packaging-tutorial.tex:503
 msgid ""
 "Gotcha: \\texttt{debian/compat}: Debhelper compatibility version (use \"7\")"
 msgstr ""
@@ -1213,12 +1217,12 @@ msgstr ""
 "»)"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:502
+#: packaging-tutorial.tex:507
 msgid "debian/rules using debhelper (1/2)"
 msgstr "debian/rules en utilisant debhelper (1/2)"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:502
+#: packaging-tutorial.tex:507
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
@@ -1230,7 +1234,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:505
+#: packaging-tutorial.tex:510
 #, no-wrap
 msgid ""
 "# Uncomment this to turn on verbose mode.\n"
@@ -1242,7 +1246,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:509
+#: packaging-tutorial.tex:514
 #, no-wrap
 msgid ""
 "build: \n"
@@ -1256,7 +1260,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:516
+#: packaging-tutorial.tex:521
 #, no-wrap
 msgid ""
 "clean: \n"
@@ -1276,7 +1280,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:524
+#: packaging-tutorial.tex:529
 #, no-wrap
 msgid ""
 "install: build\n"
@@ -1297,12 +1301,12 @@ msgstr ""
 "        $(MAKE) DESTDIR=$(CURDIR)/debian/packagename install"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:529
+#: packaging-tutorial.tex:534
 msgid "debian/rules using debhelper (2/2)"
 msgstr "debian/rules en utilisant debhelper (2/2)"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:529
+#: packaging-tutorial.tex:534
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
@@ -1312,7 +1316,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:532
+#: packaging-tutorial.tex:537
 #, no-wrap
 msgid ""
 "# Build architecture-independent files here.\n"
@@ -1324,7 +1328,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:551
+#: packaging-tutorial.tex:556
 #, no-wrap
 msgid ""
 "# Build architecture-dependent files here.\n"
@@ -1368,7 +1372,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:554
+#: packaging-tutorial.tex:559
 #, no-wrap
 msgid ""
 "binary: binary-indep binary-arch\n"
@@ -1378,22 +1382,22 @@ msgstr ""
 ".PHONY: build clean binary-indep binary-arch binary install configure"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "CDBS"
 msgstr "CDBS"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "With debhelper, still a lot of redundancy between packages"
 msgstr "Avec debhelper, restent beaucoup de redondances entre les paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "Second-level helpers that factor common functionality"
 msgstr "Assistants de second niveau incluant des fonctionnalités courantes"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid ""
 "E.g building with \\texttt{./configure \\&\\& make \\&\\& make install} or "
 "CMake"
@@ -1402,32 +1406,32 @@ msgstr ""
 "install}"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "CDBS:"
 msgstr "CDBS :"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "Introduced in 2005, based on advanced \\textsl{GNU make} magic"
 msgstr "Introduit en 2005, basé sur de la magie avancée \\textsl{GNU make}"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "Documentation: \\texttt{/usr/share/doc/cdbs/}"
 msgstr "Documentation : \\texttt{/usr/share/doc/cdbs/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "Support for Perl, Python, Ruby, GNOME, KDE, Java, Haskell, \\ldots"
 msgstr "Gestion de Perl, Python, Ruby, GNOME, KDE, Java, Haskell\\ldots"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "But some people hate it:"
 msgstr "Mais certaines personnes le détestent :"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid ""
 "Sometimes difficult to customize package builds:\\\\ \"\\textsl{twisty maze "
 "of makefiles and environment variables}\""
@@ -1436,14 +1440,14 @@ msgstr ""
 "makefiles et de variables d'environnement} »"
 
 #. type: itemize
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 msgid "Slower than plain debhelper (many useless calls to \\texttt{dh\\_*})"
 msgstr ""
 "Plus lent que d'utiliser uniquement debhelper (beaucoup d'appels inutiles à "
 "\\texttt{dh\\_*})"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:585
+#: packaging-tutorial.tex:590
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
@@ -1459,7 +1463,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:589
+#: packaging-tutorial.tex:594
 #, no-wrap
 msgid ""
 "# add an action after the build\n"
@@ -1473,33 +1477,33 @@ msgstr ""
 "      "
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 msgid "Dh (aka Debhelper 7, or dh7)"
 msgstr "Dh (aussi appelé Debhelper 7, ou dh7)"
 
 #. type: itemize
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 msgid "Introduced in 2008 as a \\textsl{CDBS killer}"
 msgstr "Introduit en 2008, avec l'objectif de remplacer CDBS"
 
 #. type: itemize
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 msgid "\\textbf{dh} command that calls \\texttt{dh\\_*}"
 msgstr "Commande \\textbf{dh} qui appelle \\texttt{dh\\_*}"
 
 #. type: itemize
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 msgid "Simple \\textsl{debian/rules}, listing only overrides"
 msgstr ""
 "Fichier \\textsl{debian/rules} simple, ne contenant que les redéfinitions"
 
 #. type: itemize
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 msgid "Easier to customize than CDBS"
 msgstr "Plus facile à personnaliser que CDBS"
 
 #. type: itemize
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 msgid ""
 "Doc: manpages (\\texttt{debhelper(7)}, \\texttt{dh(1)}) + slides from "
 "DebConf9 talk\\\\ \\url{http://kitenet.net/~joey/talks/debhelper/debhelper-"
@@ -1510,7 +1514,7 @@ msgstr ""
 "slides.pdf}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:610
+#: packaging-tutorial.tex:615
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -1526,7 +1530,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:613
+#: packaging-tutorial.tex:618
 #, no-wrap
 msgid ""
 "override_dh_auto_configure:\n"
@@ -1538,7 +1542,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:616
+#: packaging-tutorial.tex:621
 #, no-wrap
 msgid ""
 "override_dh_auto_build:\n"
@@ -1550,18 +1554,18 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:617
+#: packaging-tutorial.tex:622
 #, no-wrap
 msgid "    "
 msgstr "    "
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "Classic debhelper vs CDBS vs dh"
 msgstr "debhelper classique vs CDBS vs dh"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid ""
 "Mind shares:\\\\ Classic debhelper: 40\\% \\hskip 1em CDBS: 23\\% \\hskip "
 "1em dh: 36\\%"
@@ -1570,37 +1574,37 @@ msgstr ""
 "\\hskip 1em dh : 36~\\%"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "Which one should I learn?"
 msgstr "Lequel apprendre ?"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "Probably a bit of all of them"
 msgstr "Probablement un peu de chaque"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "You need to know debhelper to use dh and CDBS"
 msgstr "Vous devez connaître debhelper pour utiliser dh et CDBS"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "You might have to modify CDBS packages"
 msgstr "Vous pourriez avoir à modifier des paquets CDBS"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "Which one should I use for a new package?"
 msgstr "Lequel utiliser pour un nouveau paquet ?"
 
 #. type: itemize
-#: packaging-tutorial.tex:638
+#: packaging-tutorial.tex:643
 msgid "\\textbf{dh} (only solution with an increasing mind share)"
 msgstr "\\textbf{dh} (seule solution de plus en plus utilisée)"
 
 #. type: axis[#1]
-#: packaging-tutorial.tex:652
+#: packaging-tutorial.tex:657
 msgid ""
 "small,label style={font=\\footnotesize},xlabel={\\small Time},ylabel="
 "{\\small Market share (\\%)}, date coordinates in=x,height=4.85cm,width=9cm,"
@@ -1614,7 +1618,7 @@ msgstr ""
 "ymin=0"
 
 #. type: axis
-#: packaging-tutorial.tex:652
+#: packaging-tutorial.tex:657
 msgid ""
 "\\addplot[mark=none,blue,thick,style=densely dotted] table[x=date,y=dh] "
 "{cdbs-dh7.txt}; \\addplot[mark=none,red,thick,style=dashed] table[x=date,"
@@ -1627,17 +1631,17 @@ msgstr ""
 "{cdbs-dh7.txt}; \\legend{debhelper, dh, CDBS}"
 
 #. type: section{#2}
-#: packaging-tutorial.tex:661
+#: packaging-tutorial.tex:666
 msgid "Building and testing packages"
 msgstr "Construire et tester les paquets"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:661
+#: packaging-tutorial.tex:666
 msgid "Building packages"
 msgstr "Construire les paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:661
+#: packaging-tutorial.tex:666
 msgid ""
 "\\textttc{apt-get build-dep mypackage}\\\\ Installs the \\textsl{build-"
 "dependencies} (for a package in the archive)"
@@ -1646,30 +1650,30 @@ msgstr ""
 "{dépendances de construction} (pour un paquet dans l'archive)"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "\\textttc{debuild}: build, test with \\texttt{lintian}, sign with GPG"
 msgstr ""
 "\\textttc{debuild} : construire, tester avec \\texttt{lintian}, signer avec "
 "GPG"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "Also possible to call \\textttc{dpkg-buildpackage} directly"
 msgstr ""
 "Vous pouvez aussi faire appel directement à \\textttc{dpkg-buildpackage}"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "Usually with \\texttt{dpkg-buildpackage -us -uc}"
 msgstr "En général, avec \\texttt{dpkg-buildpackage -us -uc}"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "It is better to build packages in a clean \\& minimal environment"
 msgstr "Il vaut mieux construire les paquets dans un environnement minimal"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "\\textttc{pbuilder} -- helper to build packages in a \\textsl{chroot}\\\\ "
 "Good documentation: \\url{https://wiki.ubuntu.com/PbuilderHowto}\\\\ "
@@ -1681,7 +1685,7 @@ msgstr ""
 "\\textttc{distcc})"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "\\textttc{schroot} and \\textttc{sbuild}: used on the Debian build daemons\\"
 "\\ (not as simple as \\texttt{pbuilder}, but allows LVM snapshots\\\\ see: "
@@ -1693,12 +1697,12 @@ msgstr ""
 "SbuildLVMHowto} )"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "Generate \\texttt{.deb} files and a \\texttt{.changes} file"
 msgstr "Créer les fichiers \\texttt{.deb} et un fichier \\texttt{.changes}"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "\\texttt{.changes}: describes what was built; used to upload the package"
 msgstr ""
@@ -1706,12 +1710,12 @@ msgstr ""
 "paquet"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "Installing and testing packages"
 msgstr "Installation et test des paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "Install the package locally: \\textttc{debi} (will use \\texttt{.changes} to "
 "know what to install)"
@@ -1720,7 +1724,7 @@ msgstr ""
 "savoir quoi installer)"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "List the content of the package: \\texttt{{\\color{rouge}debc} ../"
 "mypackage<TAB>.changes}"
@@ -1729,7 +1733,7 @@ msgstr ""
 "monpaquet<TAB>.changes}"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "Compare the package with a previous version:\\\\ \\texttt{{\\color{rouge}"
 "debdiff} ../mypackage\\_1\\_*.changes ../mypackage\\_2\\_*.changes}\\\\ or "
@@ -1742,7 +1746,7 @@ msgstr ""
 "\\_1\\_*.dsc ../monpaquet\\_2\\_*.dsc}\\\\"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "Check the package with \\texttt{lintian} (static analyzer):\\\\ \\texttt"
 "{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ \\texttt{lintian -"
@@ -1753,14 +1757,14 @@ msgstr ""
 "i} : donne plus d'informations sur les erreurs"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid "Upload the package to Debian (\\textttc{dput}) (needs configuration)"
 msgstr ""
 "Envoyer le paquet dans Debian (\\textttc{dput}) (exige un peu de "
 "configuration)"
 
 #. type: itemize
-#: packaging-tutorial.tex:733
+#: packaging-tutorial.tex:738
 msgid ""
 "Manage a private Debian archive with \\textttc{reprepro}\\\\ Documentation: "
 "\\url{http://mirrorer.alioth.debian.org/}"
@@ -1769,13 +1773,13 @@ msgstr ""
 "Documentation : \\url{http://mirrorer.alioth.debian.org/}"
 
 #. type: subsection{#2}
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1253
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1258
 msgid "Practical session 1: modifying the grep package"
 msgstr "Travaux pratiques nº~1 : modifier le paquet grep"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1311
 msgid ""
 "Go to \\url{http://ftp.debian.org/debian/pool/main/g/grep/} and download "
 "version 2.6.3-3 of the package"
@@ -1784,32 +1788,32 @@ msgstr ""
 "téléchargez la version~2.6.3-3 du paquet"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1325
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1330
 msgid "Look at the files in \\texttt{debian/}."
 msgstr "Regardez les fichiers contenus dans \\texttt{debian/}."
 
 #. type: itemize
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1325
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1330
 msgid "How many binary packages are generated by this source package?"
 msgstr "Combien de paquets binaires sont engendrés par ce paquet source ?"
 
 #. type: itemize
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1325
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1330
 msgid "Which packaging helper does this package use?"
 msgstr "Quel assistant d'empaquetage ce paquet utilise-t-il ?"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1334
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1339
 msgid "Build the package"
 msgstr "Construisez le paquet"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1355
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1360
 msgid ""
 "We are now going to modify the package. Add a changelog entry and increase "
 "the version number."
@@ -1818,66 +1822,66 @@ msgstr ""
 "modifications et augmentez le numéro de version."
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1375
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1380
 msgid "Now disable perl-regexp support (it is a \\texttt{./configure} option)"
 msgstr ""
 "Désactivez maintenant la gestion des expressions rationnelles de Perl (c'est "
 "une option de \\texttt{./configure})"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1375
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1380
 msgid "Rebuild the package"
 msgstr "Reconstruisez le paquet"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1410
 msgid "Compare the original and the new package with debdiff"
 msgstr "Comparez le paquet d'origine et le nouveau avec debdiff"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1410
 msgid "Install the newly built package"
 msgstr "Installez le paquet nouvellement construit"
 
 #. type: enumerate
-#: packaging-tutorial.tex:733 packaging-tutorial.tex:1279
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:738 packaging-tutorial.tex:1284
+#: packaging-tutorial.tex:1410
 msgid "Cry if you messed up ;)"
 msgstr "Pleurez si vous vous êtes plantés ! ;)"
 
 #. type: section{#2}
-#: packaging-tutorial.tex:748
+#: packaging-tutorial.tex:753
 msgid "Advanced packaging topics"
 msgstr "Sujets avancés sur la construction de paquets"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:748
+#: packaging-tutorial.tex:753
 msgid "debian/copyright"
 msgstr "debian/copyright"
 
 #. type: itemize
-#: packaging-tutorial.tex:748
+#: packaging-tutorial.tex:753
 msgid "Copyright and license information for the source and the packaging"
 msgstr ""
 "Informations de copyright et de licence pour les sources et l'empaquetage"
 
 #. type: itemize
-#: packaging-tutorial.tex:748
+#: packaging-tutorial.tex:753
 msgid "Traditionally written as a text file"
 msgstr "Écrites traditionnellement dans un fichier texte"
 
 #. type: itemize
-#: packaging-tutorial.tex:748
+#: packaging-tutorial.tex:753
 msgid "New machine-readable format: \\url{http://dep.debian.net/deps/dep5/}"
 msgstr ""
 "Nouveau format en langage machine \\url{http://dep.debian.net/deps/dep5/}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:748
+#: packaging-tutorial.tex:753
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -1893,7 +1897,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:758
+#: packaging-tutorial.tex:763
 #, no-wrap
 msgid ""
 "Files: *\n"
@@ -1919,7 +1923,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:763
+#: packaging-tutorial.tex:768
 #, no-wrap
 msgid ""
 "Files: debian/*\n"
@@ -1933,63 +1937,63 @@ msgstr ""
 " [TEXTE DE LA LICENCE]"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Modifying the upstream source"
 msgstr "Modifier les sources amont"
 
 #. type: frame
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Often needed:"
 msgstr "Souvent nécessaire :"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Fix bugs or add customizations that are specific to Debian"
 msgstr ""
 "Pour corriger des bogues ou faire des modifications spécifiques à Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Backport fixes from a newer upstream release"
 msgstr "Rétroporter des corrections depuis une version amont plus récente"
 
 #. type: frame
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Several methods to do it:"
 msgstr "{P}lusieurs méthodes pour le faire : "
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Modifying the files directly"
 msgstr "Modifier directement les fichiers"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Simple"
 msgstr "Simple"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "But no way to track and document the changes"
 msgstr "Mais aucun moyen de suivre et de documenter les modifications"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Using patch systems"
 msgstr "En utilisant des systèmes de gestion de correctifs"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Eases contributing your changes to upstream"
 msgstr "Facilite l'intégration de vos modifications en amont"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid "Helps sharing the fixes with derivatives"
 msgstr "Aide à partager les corrections avec les dérivées"
 
 #. type: itemize
-#: packaging-tutorial.tex:794
+#: packaging-tutorial.tex:799
 msgid ""
 "Gives more exposure to the changes\\\\ \\url{http://patch-tracker.debian."
 "org/}"
@@ -1998,24 +2002,24 @@ msgstr ""
 "debian.org/}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "Patch systems"
 msgstr "Systèmes de gestion de correctifs"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "Principle: changes are stored as patches in \\texttt{debian/patches/}"
 msgstr ""
 "Principe : les modifications sont stockées sous forme de correctifs dans "
 "\\texttt{debian/patches/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "Applied and unapplied during build"
 msgstr "Correctifs appliqués et retirés lors de la construction"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid ""
 "Past: several implementations -- \\textsl{simple-patchsys} (\\textsl{cdbs}), "
 "\\textsl{dpatch}, \\textbf{\\textsl{quilt}}"
@@ -2024,39 +2028,39 @@ msgstr ""
 "{cdbs}), \\textsl{dpatch}, \\textbf{\\textsl{quilt}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "Each supports two \\texttt{debian/rules} targets:"
 msgstr "Chacune prend en charge deux cibles \\texttt{debian/rules} :"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "\\texttt{debian/rules patch}: apply all patches"
 msgstr "\\texttt{debian/rules patch} : appliquer tous les correctifs"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "\\texttt{debian/rules unpatch}: de-apply all patches"
 msgstr "\\texttt{debian/rules unpatch} : retirer tous les correctifs"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "More documentation: \\url{http://wiki.debian.org/debian/patches}"
 msgstr "Plus de documentation : \\url{http://wiki.debian.org/debian/patches}"
 
 #. type: textbf{#1}
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "New source package format with built-in patch system: 3.0 (quilt)"
 msgstr ""
-"Nouveau format de paquet source avec système de gestion de correctifs intégré : 3.0~"
-"(quilt)"
+"Nouveau format de paquet source avec système de gestion de correctifs "
+"intégré : 3.0~(quilt)"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid "Recommended solution"
 msgstr "Solution recommandée"
 
 #. type: itemize
-#: packaging-tutorial.tex:819
+#: packaging-tutorial.tex:824
 msgid ""
 "You need to learn \\textsl{quilt}\\\\ \\url{http://pkg-perl.alioth.debian."
 "org/howto/quilt.html}"
@@ -2065,17 +2069,17 @@ msgstr ""
 "org/howto/quilt.html}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:842
+#: packaging-tutorial.tex:847
 msgid "Documentation of patches"
 msgstr "Documentation des correctifs"
 
 #. type: itemize
-#: packaging-tutorial.tex:842
+#: packaging-tutorial.tex:847
 msgid "Standard headers at the beginning of the patch"
 msgstr "En-têtes normalisés au début du correctif"
 
 #. type: itemize
-#: packaging-tutorial.tex:842
+#: packaging-tutorial.tex:847
 msgid ""
 "Documented in DEP-3 - Patch Tagging Guidelines\\\\ \\url{http://dep.debian."
 "net/deps/dep3/}"
@@ -2084,13 +2088,13 @@ msgstr ""
 "de l'étiquetage d'un correctif)\\\\ \\url{http://dep.debian.net/deps/dep3/} "
 
 #. type: itemize
-#: packaging-tutorial.tex:842
+#: packaging-tutorial.tex:847
 msgid "All patches are published on \\url{http://patch-tracker.debian.org/}"
 msgstr ""
 "Tous les correctifs sont publiés sur \\url{http://patch-tracker.debian.org/}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:842
+#: packaging-tutorial.tex:847
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -2112,7 +2116,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:846
+#: packaging-tutorial.tex:851
 #, no-wrap
 msgid ""
 "--- a/src/widgets.c\n"
@@ -2124,17 +2128,17 @@ msgstr ""
 "@@ -101,9 +101,6 @@ struct {"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid "Doing things during installation and removal"
 msgstr "Faire des choses à l'installation, la suppression"
 
 #. type: itemize
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid "Decompressing the package is sometimes not enough"
 msgstr "Décompresser le paquet ne suffit pas toujours"
 
 #. type: itemize
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid ""
 "Create/remove system users, start/stop services, manage \\textsl"
 "{alternatives}"
@@ -2143,7 +2147,7 @@ msgstr ""
 "services, gérer des \\textsl{alternatives}"
 
 #. type: itemize
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid ""
 "Done in \\textsl{maintainer scripts}\\\\ \\texttt{preinst, postinst, prerm, "
 "postrm}"
@@ -2152,17 +2156,17 @@ msgstr ""
 "postinst, prerm, postrm}"
 
 #. type: itemize
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid "Snippets for common actions can be generated by debhelper"
 msgstr "debhelper peut créer des bribes pour les actions classiques"
 
 #. type: itemize
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid "Documentation:"
 msgstr "Documentation :"
 
 #. type: itemize
-#: packaging-tutorial.tex:866
+#: packaging-tutorial.tex:871
 msgid ""
 "Debian Policy Manual, chapter 6\\\\ {\\footnotesize \\url{http://www.debian."
 "org/doc/debian-policy/ch-maintainerscripts.html}}"
@@ -2171,7 +2175,7 @@ msgstr ""
 "doc/debian-policy/ch-maintainerscripts.html}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:882
+#: packaging-tutorial.tex:887
 msgid ""
 "Debian Developer's Reference, chapter 6.4\\\\ {\\scriptsize \\url{http://www."
 "debian.org/doc/developers-reference/best-pkging-practices.html}}"
@@ -2180,7 +2184,7 @@ msgstr ""
 "{http://www.debian.org/doc/developers-reference/best-pkging-practices.html}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:882
+#: packaging-tutorial.tex:887
 msgid ""
 "{\\footnotesize \\url{http://people.debian.org/~srivasta/MaintainerScripts."
 "html}}"
@@ -2189,36 +2193,36 @@ msgstr ""
 "html}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:882
+#: packaging-tutorial.tex:887
 msgid "Prompting the user"
 msgstr "Interagir avec l'utilisateur"
 
 #. type: itemize
-#: packaging-tutorial.tex:882
+#: packaging-tutorial.tex:887
 msgid "Must be done with \\textbf{debconf}"
 msgstr "Cela doit se faire avec \\textbf{debconf}"
 
 #. type: itemize
-#: packaging-tutorial.tex:882
+#: packaging-tutorial.tex:887
 msgid ""
 "Documentation: \\texttt{debconf-devel(7)} (\\texttt{debconf-doc} package)"
 msgstr ""
 "Documentation : \\texttt{debconf-devel(7)} (paquet \\texttt{debconf-doc})"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:888
+#: packaging-tutorial.tex:893
 msgid "Monitoring upstream versions"
 msgstr "Surveiller les versions amont"
 
 #. type: itemize
-#: packaging-tutorial.tex:888
+#: packaging-tutorial.tex:893
 msgid ""
 "Specify where to look in \\texttt{debian/watch} (see \\texttt{uscan(1)})"
 msgstr ""
 "Préciser dans \\texttt{debian/watch} où chercher (voir \\texttt{uscan(1)})"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:888
+#: packaging-tutorial.tex:893
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -2230,7 +2234,7 @@ msgstr ""
 "\n"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:891
+#: packaging-tutorial.tex:896
 #, no-wrap
 msgid ""
 "http://tmrc.mit.edu/mirror/twisted/Twisted/(\\d\\.\\d)/ \\\n"
@@ -2242,7 +2246,7 @@ msgstr ""
 "    "
 
 #. type: itemize
-#: packaging-tutorial.tex:905
+#: packaging-tutorial.tex:910
 msgid ""
 "Debian infrastructure that makes use of \\texttt{debian/watch}:\\\\ \\textbf"
 "{Debian External Health Status}\\\\ \\url{http://dehs.alioth.debian.org/}"
@@ -2252,7 +2256,7 @@ msgstr ""
 "{http://dehs.alioth.debian.org/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:905
+#: packaging-tutorial.tex:910
 msgid ""
 "Maintainer warned by emails sent to the Package Tracking System\\\\ \\url"
 "{http://packages.qa.debian.org/}"
@@ -2261,12 +2265,12 @@ msgstr ""
 "paquets\\\\ \\url{http://packages.qa.debian.org/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:905
+#: packaging-tutorial.tex:910
 msgid "\\texttt{uscan}: run a manual check"
 msgstr "\\texttt{uscan} : lancer une vérification à la main"
 
 #. type: itemize
-#: packaging-tutorial.tex:905
+#: packaging-tutorial.tex:910
 msgid ""
 "\\texttt{uupdate}: try to update your package to the latest upstream version"
 msgstr ""
@@ -2274,19 +2278,19 @@ msgstr ""
 "plus récente."
 
 #. type: subsection{#2}
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "Packaging with a VCS (SVN, Git \\& friends)"
 msgstr ""
 "Construire des paquets avec un gestionnaire de versions (Subversion, Git et "
 "compagnie)"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "Packaging with a VCS (SVN, Git, etc.)"
 msgstr "Avec un gestionnaire de versions (VCS)"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid ""
 "Several tools to help manage branches and tags for your packaging work:\\\\ "
 "\\texttt{svn-buildpackage}, \\texttt{git-buildpackage}"
@@ -2296,12 +2300,12 @@ msgstr ""
 "buildpackage}"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "Example: \\texttt{git-buildpackage}"
 msgstr "Exemple : \\texttt{git-buildpackage}"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid ""
 "\\texttt{upstream} branch to track upstream with \\texttt{upstream/\\textsl"
 "{version}} tags"
@@ -2310,24 +2314,24 @@ msgstr ""
 "étiquettes \\texttt{upstream/\\textsl{version}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "\\texttt{master} branch tracks the Debian package"
 msgstr "la branche \\texttt{master} suit le paquet Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "\\texttt{debian/\\textsl{version}} tags for each upload"
 msgstr "étiquettes \\texttt{debian/\\textsl{version}} pour chaque envoi"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid ""
 "\\texttt{pristine-tar} branch to be able to rebuild the upstream tarball"
 msgstr ""
 "branche \\texttt{pristine-tar} pour pouvoir reconstruire l'archive tar amont"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid ""
 "\\texttt{Vcs-*} fields in \\texttt{debian/control} to locate the repository"
 msgstr ""
@@ -2335,17 +2339,17 @@ msgstr ""
 "dépôt"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "\\url{http://wiki.debian.org/Alioth/Git}"
 msgstr "\\url{http://wiki.debian.org/Alioth/Git}"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid "\\url{http://wiki.debian.org/Alioth/Svn}"
 msgstr "\\url{http://wiki.debian.org/Alioth/Svn}"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -2359,7 +2363,7 @@ msgstr ""
 "  "
 
 #. type: lstlisting
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -2373,7 +2377,7 @@ msgstr ""
 "  "
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid ""
 "VCS-agnostic interface: \\texttt{debcheckout}, \\texttt{debcommit}, \\texttt"
 "{debrelease}\\\\"
@@ -2382,7 +2386,7 @@ msgstr ""
 "\\texttt{debrelease}\\\\"
 
 #. type: itemize
-#: packaging-tutorial.tex:943
+#: packaging-tutorial.tex:948
 msgid ""
 "\\texttt{debcheckout grep} $\\rightarrow$ checks out the source package from "
 "Git"
@@ -2390,111 +2394,111 @@ msgstr ""
 "\\texttt{debcheckout grep} : fait une copie du dépôt Git du paquet source"
 
 #. type: section{#2}
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Maintaining packages in Debian"
 msgstr "Maintenir des paquets dans Debian"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Several ways to contribute to Debian"
 msgstr "Plusieurs manières de contribuer à Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "\\textbf{Worst} way to contribute:"
 msgstr "\\textbf{La pire} manière de contribuer :"
 
 #. type: enumerate
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Package your own application"
 msgstr "Empaqueter votre propre application"
 
 #. type: enumerate
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Get it into Debian"
 msgstr "L'intégrer à Debian"
 
 #. type: enumerate
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Disappear"
 msgstr "Disparaître"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "\\textbf{Better} ways to contribute:"
 msgstr "\\textbf{Meilleures} manières de contribuer :"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Get involved in packaging teams"
 msgstr "S'impliquer dans des équipes Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Many teams that focus on set of packages, and need help"
 msgstr ""
 "Beaucoup d'équipes se concentrent sur un ensemble de paquets et elles ont "
 "besoin d'aide"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "List available at \\url{http://wiki.debian.org/Teams}"
 msgstr "Liste disponible sur \\url{http://wiki.debian.org/Teams}"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "An excellent way to learn from more experienced contributors"
 msgstr "Excellente façon d'apprendre de contributeurs plus expérimentés"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Adopt existing unmaintained packages (\\textsl{orphaned packages})"
 msgstr ""
 "Adopter des paquets existants non maintenus (\\textsl{paquets orphelins})"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Bring new software to Debian"
 msgstr "Apporter un nouveau logiciel à Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Only if it's interesting/useful enough, please"
 msgstr "S'il vous plaît, seulement s'il est intéressant ou utile"
 
 #. type: itemize
-#: packaging-tutorial.tex:972
+#: packaging-tutorial.tex:977
 msgid "Are there alternatives already packaged in Debian?"
 msgstr "Y a-t-il des alternatives déjà empaquetées pour Debian ?"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid "Adopting orphaned packages"
 msgstr "Adopter des paquets orphelins"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid "Many unmaintained packages in Debian"
 msgstr "Beaucoup de paquets non maintenus dans Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid "Full list + process: \\url{http://www.debian.org/devel/wnpp/}"
 msgstr ""
 "Liste complète et marche à suivre : \\url{http://www.debian.org/devel/wnpp/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid "Installed on your machine: \\texttt{wnpp-alert}"
 msgstr "Ceux installés sur votre  machine : \\texttt{wnpp-alert}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid "Different states:"
 msgstr "Différents états :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid ""
 "\\textbf{O}rphaned: the package is unmaintained\\\\ Feel free to adopt it"
 msgstr ""
@@ -2502,7 +2506,7 @@ msgstr ""
 "l'adopter"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid ""
 "\\textbf{RFA}: \\textbf{R}equest \\textbf{F}or \\textbf{A}dopter\\\\ "
 "Maintainer looking for adopter, but continues work in the meantime\\\\ Feel "
@@ -2514,7 +2518,7 @@ msgstr ""
 "responsable actuel est poli"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid ""
 "\\textbf{ITA}: \\textbf{I}ntent \\textbf{T}o \\textbf{A}dopt\\\\ Someone "
 "intends to adopt the package\\\\ You could propose your help!"
@@ -2524,7 +2528,7 @@ msgstr ""
 "proposer votre aide !"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid ""
 "\\textbf{RFH}: \\textbf{R}equest \\textbf{F}or \\textbf{H}elp\\\\ The "
 "maintainer is looking for help"
@@ -2533,14 +2537,14 @@ msgstr ""
 "d'aide) \\\\ Le responsable cherche de l'aide"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid "Some unmaintained packages not detected \\arr not orphaned yet"
 msgstr ""
 "Certains paquets non maintenus ne sont pas détectés \\arr pas encore "
 "officiellement orphelins"
 
 #. type: itemize
-#: packaging-tutorial.tex:1010
+#: packaging-tutorial.tex:1015
 msgid ""
 "When in doubt, ask \\texttt{debian-qa@lists.debian.org} \\\\ or \\texttt"
 "{\\#debian-qa} on \\texttt{irc.debian.org}"
@@ -2549,32 +2553,32 @@ msgstr ""
 "\\texttt{\\#debian-qa} sur \\texttt{irc.debian.org}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid "Getting your package in Debian"
 msgstr "Intégrer votre paquet dans Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid "You do not need any official status to get your package into Debian"
 msgstr "Aucun besoin d'un statut officiel pour intégrer ses paquet dans Debian"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid "Prepare a source package"
 msgstr "Préparez un paquet source"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid "Find a Debian Developer that will sponsor your package"
 msgstr "Trouvez un développeur Debian qui va parrainer votre paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid "Official status (when you are already experienced):"
 msgstr "Statut officiel (quand vous êtes expérimenté) :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid ""
 "\\textbf{Debian Maintainer (DM):}\\\\ Permission to upload your own packages"
 "\\\\ See \\url{http://wiki.debian.org/DebianMaintainer}"
@@ -2583,7 +2587,7 @@ msgstr ""
 "\\ Voir \\url{http://wiki.debian.org/DebianMaintainer}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1032
+#: packaging-tutorial.tex:1037
 msgid ""
 "\\textbf{Debian Developer (DD):}\\\\ Debian project members; can vote and "
 "upload any package"
@@ -2592,57 +2596,57 @@ msgstr ""
 "voter et envoyer n'importe quel paquet"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "Where to find help?"
 msgstr "Où trouver de l'aide ?"
 
 #. type: frame
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "Help you will need:"
 msgstr "L'aide dont vous avez besoin :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "Advice and answers to your questions, code reviews"
 msgstr "Conseils et réponses à vos questions, relecture de code"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "Sponsorship for your uploads, once your package is ready"
 msgstr "Parrainage pour les envois, une fois que votre paquet est prêt"
 
 #. type: frame
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "You can get help from:"
 msgstr "Vous pouvez obtenir de l'aide :"
 
 #. type: textbf{#1}
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "Other members of a packaging team"
 msgstr "Autres membres d'une équipe d'empaquetage : la meilleure solution"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "They know the specifics of your package"
 msgstr "Ils connaissent les spécificités de votre paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "You can become a member of the team"
 msgstr "Vous pouvez devenir membre d'une équipe"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "The Debian Mentors group (if your package doesn't fit in a team)"
 msgstr "Le groupe Debian Mentors (si votre paquet ne convient à aucune équipe)"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "\\url{http://wiki.debian.org/DebianMentorsFaq}"
 msgstr "\\url{http://wiki.debian.org/DebianMentorsFaq}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid ""
 "Mailing list: \\url{debian-mentors@lists.debian.org}\\\\ {\\small (also a "
 "good way to learn by accident)}"
@@ -2651,22 +2655,22 @@ msgstr ""
 "(une autre manière d'apprendre par hasard)}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "IRC: \\texttt{\\#debian-mentors} on \\texttt{irc.debian.org}"
 msgstr "IRC : \\texttt{\\#debian-mentors} sur \\texttt{irc.debian.org}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1059
+#: packaging-tutorial.tex:1064
 msgid "\\url{http://mentors.debian.net/}"
 msgstr "\\url{http://mentors.debian.net/}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1077
+#: packaging-tutorial.tex:1082
 msgid "Official documentation"
 msgstr "Documentation officielle"
 
 #. type: itemize
-#: packaging-tutorial.tex:1077
+#: packaging-tutorial.tex:1082
 msgid ""
 "Debian Developers' Corner\\\\ \\url{http://www.debian.org/devel/}\\\\ "
 "{\\small Links to many resources about Debian development}"
@@ -2675,7 +2679,7 @@ msgstr ""
 "{\\small Liens vers de nombreuses ressources sur le développement Debian}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1077
+#: packaging-tutorial.tex:1082
 msgid ""
 "Debian New Maintainers' Guide\\\\ \\url{http://www.debian.org/doc/maint-"
 "guide/}\\\\ {\\small An introduction to Debian packaging, but could use an "
@@ -2686,7 +2690,7 @@ msgstr ""
 "Debian, mais peut s'appliquer pour une mise à jour}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1077
+#: packaging-tutorial.tex:1082
 msgid ""
 "Debian Developer's Reference\\\\ \\url{http://www.debian.org/doc/developers-"
 "reference/}\\\\ {\\small Mostly about Debian procedures, but also some best "
@@ -2697,13 +2701,13 @@ msgstr ""
 "Debian, mais aussi quelques bonnes pratiques d'empaquetage (chapitre 6)}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1077
+#: packaging-tutorial.tex:1082
 msgid "Debian Policy\\\\ \\url{http://www.debian.org/doc/debian-policy/}\\\\"
 msgstr ""
 "La Charte Debian\\\\ \\url{http://www.debian.org/doc/debian-policy/}\\\\"
 
 #. type: itemize
-#: packaging-tutorial.tex:1083
+#: packaging-tutorial.tex:1088
 msgid ""
 "{\\small \\begin{itemize} \\item \\small All the requirements that every "
 "package must satisfy \\item \\small Specific policies for Perl, Java, "
@@ -2714,7 +2718,7 @@ msgstr ""
 "Python\\ldots \\end{itemize}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1088
+#: packaging-tutorial.tex:1093
 msgid ""
 "Ubuntu Packaging Guide\\\\ \\url{https://wiki.ubuntu.com/PackagingGuide}"
 msgstr ""
@@ -2722,12 +2726,12 @@ msgstr ""
 "PackagingGuide}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1098
+#: packaging-tutorial.tex:1103
 msgid "Debian dashboards for maintainers"
 msgstr "Tableau de bord Debian pour les responsables"
 
 #. type: itemize
-#: packaging-tutorial.tex:1098
+#: packaging-tutorial.tex:1103
 msgid ""
 "\\textbf{Source package centric}: Package Tracking System (PTS)\\\\ \\url"
 "{http://packages.qa.debian.org/dpkg}"
@@ -2737,7 +2741,7 @@ msgstr ""
 "dpkg}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1098
+#: packaging-tutorial.tex:1103
 msgid ""
 "\\textbf{Maintainer/team centric}: Developer's Packages Overview (DDPO)\\\\ "
 "\\url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-"
@@ -2749,17 +2753,17 @@ msgstr ""
 "debian.org}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "More interested in Ubuntu?"
 msgstr "Plus intéressé par Ubuntu ?"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Ubuntu mainly manages the divergence with Debian"
 msgstr "Ubuntu gère essentiellement les différences avec Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid ""
 "No real focus on specific packages\\\\ Instead, collaboration with Debian "
 "teams"
@@ -2768,7 +2772,7 @@ msgstr ""
 "avec les équipes Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid ""
 "Usually recommend uploading new packages to Debian first\\\\ \\url{https://"
 "wiki.ubuntu.com/UbuntuDevelopment/NewPackages}"
@@ -2777,62 +2781,62 @@ msgstr ""
 "Debian\\\\ \\url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Possibly a better plan:"
 msgstr "Peut-être une meilleure idée :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Get involved in a Debian team and act as a bridge with Ubuntu"
 msgstr "S'impliquer dans une équipe Debian et faire le lien avec Ubuntu"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Help reduce divergence, triage bugs in Launchpad"
 msgstr "Aider à diminuer les divergences, trier les bogues sur Launchpad"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Many Debian tools can help:"
 msgstr "Beaucoup d'outils Debian peuvent aider :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Ubuntu column on the Developer's packages overview"
 msgstr "Colonne Ubuntu sur l'aperçu des paquets du développeur"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Ubuntu box on the Package Tracking System"
 msgstr "Encart Ubuntu sur le système de suivi des paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:1125
+#: packaging-tutorial.tex:1130
 msgid "Receive launchpad bugmail via the PTS"
 msgstr "Recevoir les courriels de bogues Launchpad via le PTS"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "Conclusion"
 msgstr "Conclusion"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "You now have a full overview of Debian packaging"
 msgstr "Vous avez un aperçu complet de la construction de paquets Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "But you will need to read more documentation"
 msgstr "Mais vous devrez lire plus de documentation"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "Best practices have evolved over the years"
 msgstr "Les bonnes pratiques ont évolué avec le temps"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid ""
 "If not sure, use the \\textbf{dh} packaging helper, and the \\textbf{3.0 "
 "(quilt)} format"
@@ -2841,34 +2845,34 @@ msgstr ""
 "\\textbf{dh}, et le format \\textbf{3.0 (quilt)} "
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "Things that were not covered in this tutorial:"
 msgstr "Ce qui n'a pas été traité dans ce tutoriel :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "UCF -- manage user changes to configuration files when upgrading"
 msgstr ""
 "UCF -- gérer les changements par l'utilisateur de fichiers de configuration "
 "lors de la mise à jour"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "dpkg triggers -- group similar maintainer scripts actions together"
 msgstr "dpkg triggers -- regrouper les actions des scripts du responsable"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "Debian development organization:"
 msgstr "Organisation du développement Debian :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "Bug Tracking System (BTS)"
 msgstr "Bug Tracking System (BTS) : système de suivi des bogues"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid ""
 "Suites: stable, testing, unstable, experimental, security, *-updates, "
 "backports, \\ldots"
@@ -2877,27 +2881,27 @@ msgstr ""
 "backports\\ldots"
 
 #. type: itemize
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "Debian Blends -- subsets of Debian targeting specific groups"
 msgstr "Blends : ensembles de paquets visant des groupes spécifiques"
 
 #. type: centerline{#1}
-#: packaging-tutorial.tex:1156
+#: packaging-tutorial.tex:1161
 msgid "\\large Feedback: \\textbf{lucas@debian.org}"
 msgstr "\\large Vos retours à : \\textbf{lucas@debian.org}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1159
+#: packaging-tutorial.tex:1164
 msgid "Legal stuff"
 msgstr "Mentions légales"
 
 #. type: frame
-#: packaging-tutorial.tex:1162
+#: packaging-tutorial.tex:1167
 msgid "Copyright \\copyright 2011 Lucas Nussbaum -- lucas@debian.org"
 msgstr "Copyright \\copyright{} 2011 Lucas Nussbaum -- lucas@debian.org"
 
 #. type: frame
-#: packaging-tutorial.tex:1178
+#: packaging-tutorial.tex:1183
 msgid ""
 "{\\small \\textbf{This document is free software}: you can redistribute it "
 "and/or modify it under either (at your option): \\hbr \\begin{itemize} "
@@ -2918,12 +2922,12 @@ msgstr ""
 "{itemize} }"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1185
+#: packaging-tutorial.tex:1190
 msgid "Latest version \\& source code"
 msgstr "Dernière version et code source"
 
 #. type: itemize
-#: packaging-tutorial.tex:1185
+#: packaging-tutorial.tex:1190
 msgid ""
 "Latest version:\\\\ {\\footnotesize \\url{http://git.debian.org/?p=collab-"
 "maint/packaging-tutorial.git;a=blob\\_plain;f=packaging-tutorial.pdf;hb=refs/"
@@ -2934,12 +2938,12 @@ msgstr ""
 "pdf;hb=refs/heads/pdf}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1199
+#: packaging-tutorial.tex:1204
 msgid "Contribute:"
 msgstr "Contribuer :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1199
+#: packaging-tutorial.tex:1204
 msgid ""
 "{\\small \\texttt{git clone\\\\ git://git.debian.org/collab-maint/packaging-"
 "tutorial.git}}"
@@ -2948,19 +2952,19 @@ msgstr ""
 "tutorial.git}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1199
+#: packaging-tutorial.tex:1204
 msgid "{\\small \\texttt{apt-get source packaging-tutorial}}"
 msgstr "{\\small \\texttt{apt-get source packaging-tutorial}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1199
+#: packaging-tutorial.tex:1204
 msgid ""
 "{\\small \\url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}"
 msgstr ""
 "{\\small \\url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1199
+#: packaging-tutorial.tex:1204
 msgid ""
 "Feedback: \\href{mailto:lucas@debian.org}{\\textbf{\\texttt{lucas@debian."
 "org}}}"
@@ -2969,12 +2973,12 @@ msgstr ""
 "org}}}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid "Practical session 2: packaging GNUjump"
 msgstr "Travaux pratiques nº~2 : empaqueter GNUjump"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid ""
 "Download GNUjump 1.0.6 from \\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/"
 "gnujump-1.0.6.tar.gz}"
@@ -2983,64 +2987,64 @@ msgstr ""
 "gnujump-1.0.6.tar.gz}"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid "Create a Debian package for it"
 msgstr "Créez un paquet Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid "Install build-dependencies so that you can build the package"
 msgstr "Installez les dépendances de construction du paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid "Get a basic working package"
 msgstr "Vous obtenez un paquet de base fonctionnel"
 
 #. type: itemize
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid "Finish filling \\texttt{debian/control} and other files"
 msgstr "Terminez en remplissant \\texttt{debian/control} et d'autres fichiers"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1217 packaging-tutorial.tex:1423
+#: packaging-tutorial.tex:1222 packaging-tutorial.tex:1428
 msgid "Enjoy"
 msgstr "Profitez"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "Practical session 3: packaging a Java library"
 msgstr "Travaux pratiques nº~3 : une bibliothèque Java"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "Take a quick look at some documentation about Java packaging:\\\\"
 msgstr ""
 "Jetez un rapide coup d'œil sur la documentation pour la construction de "
 "paquets Java :\\\\"
 
 #. type: itemize
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "\\url{http://wiki.debian.org/Java}"
 msgstr "\\url{http://wiki.debian.org/Java}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "\\url{http://wiki.debian.org/Java/Packaging}"
 msgstr "\\url{http://wiki.debian.org/Java/Packaging}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "\\url{http://www.debian.org/doc/packaging-manuals/java-policy/}"
 msgstr "\\url{http://www.debian.org/doc/packaging-manuals/java-policy/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "\\url{http://pkg-java.alioth.debian.org/docs/tutorial.html}"
 msgstr "\\url{http://pkg-java.alioth.debian.org/docs/tutorial.html}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid ""
 "Paper and slides from a Debconf10 talk about javahelper:\\\\ {\\footnotesize "
 "\\url{http://pkg-java.alioth.debian.org/docs/debconf10-javahelper-paper."
@@ -3053,42 +3057,42 @@ msgstr ""
 "slides.pdf}}"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "Download IRClib from \\url{http://moepii.sourceforge.net/}"
 msgstr "Téléchargez IRClib sur \\url{http://moepii.sourceforge.net/}"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1242 packaging-tutorial.tex:1527
+#: packaging-tutorial.tex:1247 packaging-tutorial.tex:1532
 msgid "Package it"
 msgstr "Empaquetez-la"
 
 #. type: section{#2}
-#: packaging-tutorial.tex:1244
+#: packaging-tutorial.tex:1249
 msgid "Answers to practical sessions"
 msgstr "Solutions aux travaux pratiques"
 
 #. type: center
-#: packaging-tutorial.tex:1250
+#: packaging-tutorial.tex:1255
 msgid "\\LARGE Answers to"
 msgstr "\\LARGE Solutions aux"
 
 #. type: center
-#: packaging-tutorial.tex:1250
+#: packaging-tutorial.tex:1255
 msgid "[0.5em] practical sessions"
 msgstr "[0.5em] travaux pratiques"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1279
+#: packaging-tutorial.tex:1284
 msgid "Practical session: modifying the grep package"
 msgstr "Travaux pratiques nº~1 : modifier le paquet grep"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid "Fetching the source"
 msgstr "Récupérer les sources"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid ""
 "Use dget to download the \\texttt{.dsc} file:\\\\ {\\small \\texttt{dget "
 "http://cdn.debian.net/debian/pool/main/g/grep/grep\\_2.6.3-3.dsc}}"
@@ -3098,7 +3102,7 @@ msgstr ""
 "dsc}}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid ""
 "According to \\texttt{http://packages.qa.debian.org/grep}, \\texttt{grep} "
 "version 2.6.3-3 is currently in \\textsl{stable} (\\textsl{squeeze}). If you "
@@ -3115,32 +3119,32 @@ msgstr ""
 "sentez que vous avez de la chance : \\texttt{apt-get source grep}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid "The \\texttt{grep} source package is composed of three files:"
 msgstr "Le paquet source de \\texttt{grep} se compose de trois fichiers :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid "\\texttt{grep\\_2.6.3-3.dsc}"
 msgstr "\\texttt{grep\\_2.6.3-3.dsc}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid "\\texttt{grep\\_2.6.3-3.debian.tar.bz2}"
 msgstr "\\texttt{grep\\_2.6.3-3.debian.tar.bz2}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid "\\texttt{grep\\_2.6.3.orig.tar.bz2}"
 msgstr "\\texttt{grep\\_2.6.3.orig.tar.bz2}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid "This is typical of the \"3.0 (quilt)\" format."
 msgstr "C'est le cas typique du format « 3.0~(quilt) »"
 
 #. type: itemize
-#: packaging-tutorial.tex:1306
+#: packaging-tutorial.tex:1311
 msgid ""
 "If needed, uncompress the source with\\\\ \\texttt{dpkg-source -x grep"
 "\\_2.6.3-3.dsc}"
@@ -3149,12 +3153,12 @@ msgstr ""
 "x grep\\_2.6.3-3.dsc}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1325
+#: packaging-tutorial.tex:1330
 msgid "Looking around and building the package"
 msgstr "Faîtes le tour et construisez le paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:1325
+#: packaging-tutorial.tex:1330
 msgid ""
 "According to \\texttt{debian/control}, this package only generates one "
 "binary package, named \\texttt{grep}."
@@ -3163,7 +3167,7 @@ msgstr ""
 "binaire, nommé \\texttt{grep}."
 
 #. type: itemize
-#: packaging-tutorial.tex:1325
+#: packaging-tutorial.tex:1330
 msgid ""
 "According to \\texttt{debian/rules}, this package is typical of \\textsl"
 "{classic} debhelper packaging, without using \\textsl{CDBS} or \\textsl{dh}. "
@@ -3176,14 +3180,14 @@ msgstr ""
 "commandes \\texttt{dh\\_*} dans \\texttt{debian/rules}."
 
 #. type: itemize
-#: packaging-tutorial.tex:1334
+#: packaging-tutorial.tex:1339
 msgid "Use \\texttt{apt-get build-dep grep} to fetch the build-dependencies"
 msgstr ""
 "Utilisez la commande \\texttt{apt-get build-dep grep} pour installer les "
 "dépendances de construction"
 
 #. type: itemize
-#: packaging-tutorial.tex:1334
+#: packaging-tutorial.tex:1339
 msgid ""
 "Then \\texttt{debuild} or \\texttt{dpkg-buildpackage -us -uc} (Takes about 1 "
 "min)"
@@ -3192,12 +3196,12 @@ msgstr ""
 "1 min)"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1338
+#: packaging-tutorial.tex:1343
 msgid "Editing the changelog"
 msgstr "Éditer le journal des modifications"
 
 #. type: itemize
-#: packaging-tutorial.tex:1355
+#: packaging-tutorial.tex:1360
 msgid ""
 "\\texttt{debian/changelog} is a text file. You could edit it and add a new "
 "entry manually."
@@ -3206,7 +3210,7 @@ msgstr ""
 "ajouter une nouvelle entrée à la main."
 
 #. type: itemize
-#: packaging-tutorial.tex:1355
+#: packaging-tutorial.tex:1360
 msgid ""
 "Or you can use \\texttt{dch -i}, which will add an entry and open the editor"
 msgstr ""
@@ -3214,7 +3218,7 @@ msgstr ""
 "ouvrira un éditeur"
 
 #. type: itemize
-#: packaging-tutorial.tex:1355
+#: packaging-tutorial.tex:1360
 msgid ""
 "The name and email can be defined using the \\texttt{DEBFULLNAME} and "
 "\\texttt{DEBEMAIL} environment variables"
@@ -3223,13 +3227,13 @@ msgstr ""
 "d'environnement \\texttt{DEBFULLNAME} et \\texttt{DEBEMAIL}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1355
+#: packaging-tutorial.tex:1360
 msgid "After that, rebuild the package: a new version of the package is built"
 msgstr ""
 "Reconstruisez le paquet : une nouvelle version du paquet est construite"
 
 #. type: itemize
-#: packaging-tutorial.tex:1355
+#: packaging-tutorial.tex:1360
 msgid ""
 "Package versioning is detailed in section 5.6.12 of the Debian policy\\\\ "
 "\\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}"
@@ -3238,12 +3242,12 @@ msgstr ""
 "\\ \\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1359
+#: packaging-tutorial.tex:1364
 msgid "Disabling Perl regexp support and rebuilding"
 msgstr "Désactiver les expressions rationnelles Perl"
 
 #. type: itemize
-#: packaging-tutorial.tex:1375
+#: packaging-tutorial.tex:1380
 msgid ""
 "Check with \\texttt{./configure -{}-help}: the option to disable Perl regexp "
 "is \\texttt{-{}-disable-perl-regexp}"
@@ -3252,39 +3256,39 @@ msgstr ""
 "expressions rationnelles Perl est \\texttt{-{}-disable-perl-regexp}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1375
+#: packaging-tutorial.tex:1380
 msgid "Edit \\texttt{debian/rules} and find the \\texttt{./configure} line"
 msgstr ""
 "Éditez \\texttt{debian/rules} et cherchez la ligne \\texttt{./configure}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1375
+#: packaging-tutorial.tex:1380
 msgid "Add \\texttt{-{}-disable-perl-regexp}"
 msgstr "Ajoutez \\texttt{-{}-disable-perl-regexp}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1375
+#: packaging-tutorial.tex:1380
 msgid "Rebuild with \\texttt{debuild} or \\texttt{dpkg-buildpackage -us -uc}"
 msgstr ""
 "Reconstruisez avec \\texttt{debuild} ou \\texttt{dpkg-buildpackage -us -uc}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1379
+#: packaging-tutorial.tex:1384
 msgid "Comparing and testing the packages"
 msgstr "Comparer et tester les paquets"
 
 #. type: itemize
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:1410
 msgid "Compare the binary packages: \\texttt{debdiff ../*changes}"
 msgstr "Comparez les paquets binaires : \\texttt{debdiff ../*changes}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:1410
 msgid "Compare the source packages: \\texttt{debdiff ../*dsc}"
 msgstr "Comparez les paquets source : \\texttt{debdiff ../*dsc}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:1410
 msgid ""
 "Install the newly built package: \\texttt{debi}\\\\ Or \\texttt{dpkg -i ../"
 "grep\\_<TAB>}"
@@ -3293,17 +3297,17 @@ msgstr ""
 "{dpkg -i ../grep\\_<TAB>}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:1410
 msgid "\\texttt{grep -P foo} no longer works!"
 msgstr "\\texttt{grep -P foo} ne fonctionne plus !"
 
 #. type: frame
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:1410
 msgid "Or not: reinstall the previous version of the package:"
 msgstr "Ou pas : réinstallez la version précédente du paquet :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1405
+#: packaging-tutorial.tex:1410
 msgid ""
 "\\texttt{apt-get install -{}-reinstall grep=2.6.3-3} \\textit{(= previous "
 "version)}"
@@ -3312,44 +3316,44 @@ msgstr ""
 "précédente)}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1452 packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1457 packaging-tutorial.tex:1553
 msgid "Step by step\\ldots"
 msgstr "Pas à pas\\ldots"
 
 #. type: itemize
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 msgid ""
 "\\texttt{wget http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}"
 msgstr ""
 "\\texttt{wget http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 msgid "\\texttt{mv gnujump-1.0.6.tar.gz gnujump\\_1.0.6.orig.tar.gz}"
 msgstr "\\texttt{mv gnujump-1.0.6.tar.gz gnujump\\_1.0.6.orig.tar.gz}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 msgid "\\texttt{tar xf gnujump\\_1.0.6.orig.tar.gz}"
 msgstr "\\texttt{tar xf gnujump\\_1.0.6.orig.tar.gz}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 msgid "\\texttt{cd gnujump-1.0.6/}"
 msgstr "\\texttt{cd gnujump-1.0.6/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 msgid "\\texttt{dh\\_make}"
 msgstr "\\texttt{dh\\_make}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 msgid "Type of package: single binary (for now)"
 msgstr "Type de paquet : un seul binaire (pour l'instant)"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:1452
+#: packaging-tutorial.tex:1457
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\small]\n"
@@ -3377,12 +3381,12 @@ msgstr ""
 "gnujump.cron.d.ex   postrm.ex"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid "Step by step \\ldots (2)"
 msgstr "Pas à pas\\ldots (2)"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid ""
 "Look at \\texttt{debian/changelog}, \\texttt{debian/rules}, \\texttt{debian/"
 "control}\\\\ (auto-filled by \\textbf{dh\\_make})"
@@ -3391,7 +3395,7 @@ msgstr ""
 "control}\\\\ (remplis automatiquement par \\textbf{dh\\_make})"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid ""
 "In \\texttt{debian/control}:\\\\ \\texttt{Build-Depends: debhelper (>= "
 "7.0.50~), autotools-dev}\\\\ Lists the \\textsl{build-dependencies} = "
@@ -3402,20 +3406,20 @@ msgstr ""
 "= paquets nécessaires pour construire le paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid "Try to build the package as-is (thanks to \\textbf{dh} magic)"
 msgstr ""
 "Essayez de construire le paquet comme ça (grâce à la magie de \\textbf{dh})"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid "And add build-dependencies, until it builds"
 msgstr ""
 "Et ajoutez des dépendances de construction jusqu'à ce que la construction "
 "puisse se terminer"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid ""
 "Hint: use \\texttt{apt-cache search} and \\texttt{apt-file} to find the "
 "packages"
@@ -3424,12 +3428,12 @@ msgstr ""
 "chercher les paquets manquants"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid "Example:"
 msgstr "Exemple :"
 
 #. type: lstlisting
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 #, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\footnotesize]\n"
@@ -3445,7 +3449,7 @@ msgstr ""
 "configure: error: *** SDL version 1.2.0 not found!"
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid ""
 "$\\rightarrow$ Add \\textbf{libsdl1.2-dev} to Build-Depends and install it."
 msgstr ""
@@ -3453,18 +3457,18 @@ msgstr ""
 "installez-le."
 
 #. type: itemize
-#: packaging-tutorial.tex:1479
+#: packaging-tutorial.tex:1484
 msgid "Better: use \\textbf{pbuilder} to build in a clean environment"
 msgstr ""
 "Mieux : construction dans un environnement propre avec \\textbf{pbuilder}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "Step by step \\ldots (3)"
 msgstr "Pas à pas\\ldots (3)"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid ""
 "After installing \\texttt{libsdl1.2-dev, libsdl-image1.2-dev, libsdl-"
 "mixer1.2-dev}, the package builds fine."
@@ -3473,17 +3477,17 @@ msgstr ""
 "mixer1.2-dev}, le paquet se construit très bien."
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "Use \\texttt{debc} to list the content of the generated package."
 msgstr "Utilisez \\texttt{debc} pour lister le contenu du paquet créé."
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "Use \\texttt{debi} to install it and test it."
 msgstr "Utilisez \\texttt{debi} pour l'installer et le tester."
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid ""
 "Fill in \\texttt{debian/control} using \\url{http://www.debian.org/doc/"
 "debian-policy/ch-controlfields.html}"
@@ -3492,23 +3496,23 @@ msgstr ""
 "doc/debian-policy/ch-controlfields.html}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "Test the package with \\texttt{lintian}"
 msgstr "Testez le paquet avec \\texttt{lintian}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "Remove the files that you don't need in \\texttt{debian/}"
 msgstr ""
 "Supprimez les fichiers dont vous n'avez pas besoin dans \\texttt{debian/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "Compare your package with the one already packaged in Debian:"
 msgstr "Comparez votre paquet avec celui déjà empaqueté dans Debian :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid ""
 "It splits the data files to a second package, that is the same across all "
 "architectures ($\\rightarrow$ saves space in the Debian archive)"
@@ -3518,7 +3522,7 @@ msgstr ""
 "l'archive Debian)"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid ""
 "It installs a .desktop file (for the GNOME/KDE menus) and also integrates "
 "into the Debian menu"
@@ -3527,52 +3531,52 @@ msgstr ""
 "aussi dans le menu Debian"
 
 #. type: itemize
-#: packaging-tutorial.tex:1502
+#: packaging-tutorial.tex:1507
 msgid "It fixes a few minor problems using patches"
 msgstr "Il corrige de petits problèmes en utilisant des correctifs"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "\\texttt{apt-get install javahelper}"
 msgstr "\\texttt{apt-get install javahelper}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "Create a basic source package: \\texttt{jh\\_makepkg}"
 msgstr "Créez un paquet source de base : \\texttt{jh\\_makepkg}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "Library"
 msgstr "Bibliothèque"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "None"
 msgstr "Aucun"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "Default Free compiler/runtime"
 msgstr "Compilateur et exécution libres fournis par défaut"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "Look at and fix \\texttt{debian/*}"
 msgstr "Regardez et corrigez \\texttt{debian/*}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "\\texttt{dpkg-buildpackage -us -uc} or \\texttt{debuild}"
 msgstr "\\texttt{dpkg-buildpackage -us -uc} ou \\texttt{debuild}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "\\texttt{lintian}, \\texttt{debc}, etc."
 msgstr "\\texttt{lintian}, \\texttt{debc}, etc."
 
 #. type: itemize
-#: packaging-tutorial.tex:1548
+#: packaging-tutorial.tex:1553
 msgid "Compare your result with the \\texttt{libirclib-java} source package"
 msgstr "Comparez votre résultat avec le paquet source \\texttt{libirclib-java}"
 
