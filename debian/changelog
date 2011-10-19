@@ -1,3 +1,10 @@
+packaging-tutorial (0.5) UNRELEASED; urgency=low
+
+  [ Cédric Boutillier ]
+  * use changelog to determine automatically date and version
+
+ -- Lucas Nussbaum <lucas@debian.org>  Wed, 19 Oct 2011 02:07:32 +0200
+
 packaging-tutorial (0.4) unstable; urgency=low
 
   [ David Prévot ]
