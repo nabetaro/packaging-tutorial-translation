@@ -8,12 +8,24 @@
 %\\usepackage{debiantutorial.fr} \\usepackage[french]{babel} \\frenchsetup{...}
 \usepackage{debiantutorial}
 
+%variables replaced at build time with values from the changelog
+\newcommand{\version}{_VERSION_}
+\renewcommand{\year}{_YEAR_ }
+\renewcommand{\month}{_MONTH_}
+\renewcommand{\day}{_DAY_}
+
 \hypersetup{bookmarks}
 \title{Debian Packaging Tutorial}
 \author[]{Lucas Nussbaum\\{\small\texttt{lucas@debian.org}}}
-\date{\footnotesize version 0.4 - 2011-10-18}
+
+%Translators:
+%leave \\version unchanged: this will a variable containing the actual version
+%To translate the date, use \\today or a string containing \\year, \\month, \\day
+%(numeric values).
+\date{\footnotesize version \version{} -- \year-\month-\day}
 
 \begin{document}
+
 
 \frame{\titlepage}
 
