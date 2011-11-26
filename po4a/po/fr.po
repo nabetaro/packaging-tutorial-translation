@@ -2286,7 +2286,7 @@ msgid ""
 "\\texttt{uupdate}: try to update your package to the latest upstream version"
 msgstr ""
 "\\texttt{uupdate} : essayer de mettre à jour votre paquet vers la version la "
-"plus récente."
+"plus récente"
 
 #. type: subsection{#2}
 #: packaging-tutorial.tex:960
