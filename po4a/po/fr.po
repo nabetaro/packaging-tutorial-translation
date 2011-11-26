@@ -2698,7 +2698,7 @@ msgid ""
 msgstr ""
 "Guide du nouveau responsable Debian \\\\ \\url{http://www.debian.org/doc/"
 "maint-guide/}\\\\ {\\small Une introduction pour la construction de paquets "
-"Debian, mais peut s'appliquer pour une mise à jour}"
+"Debian (pas très à jour)}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1094
