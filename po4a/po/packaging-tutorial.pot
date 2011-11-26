@@ -35,6 +35,11 @@ msgstr ""
 msgid "Debian Packaging Tutorial"
 msgstr ""
 
+#. type: author{#2}
+#: packaging-tutorial.tex:20
+msgid "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
+msgstr ""
+
 #. Translators:
 #. leave \\version unchanged: this will a variable containing the actual version
 #. To translate the date, use \\today or a string containing \\year, \\month, \\day
