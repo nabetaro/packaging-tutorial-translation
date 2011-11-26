@@ -1410,7 +1410,7 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:750
-msgid "Generate \\texttt{.deb} files and a \\texttt{.changes} file"
+msgid "Generates \\texttt{.deb} files and a \\texttt{.changes} file"
 msgstr ""
 
 #. type: itemize

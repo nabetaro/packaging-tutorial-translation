@@ -1702,8 +1702,8 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:750
-msgid "Generate \\texttt{.deb} files and a \\texttt{.changes} file"
-msgstr "Créer les fichiers \\texttt{.deb} et un fichier \\texttt{.changes}"
+msgid "Generates \\texttt{.deb} files and a \\texttt{.changes} file"
+msgstr "Crée les fichiers \\texttt{.deb} et un fichier \\texttt{.changes}"
 
 #. type: itemize
 #: packaging-tutorial.tex:750
