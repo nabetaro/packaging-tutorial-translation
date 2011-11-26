@@ -1302,8 +1302,8 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:655
 msgid ""
-"Mind shares:\\\\ Classic debhelper: 40\\% \\hskip 1em CDBS: 23\\% \\hskip "
-"1em dh: 36\\%"
+"Mind shares:\\\\ Classic debhelper: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
+"1em dh: 41\\%"
 msgstr ""
 
 #. type: itemize

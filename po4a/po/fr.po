@@ -1571,11 +1571,11 @@ msgstr "debhelper classique vs CDBS vs dh"
 #. type: itemize
 #: packaging-tutorial.tex:655
 msgid ""
-"Mind shares:\\\\ Classic debhelper: 40\\% \\hskip 1em CDBS: 23\\% \\hskip "
-"1em dh: 36\\%"
+"Mind shares:\\\\ Classic debhelper: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
+"1em dh: 41\\%"
 msgstr ""
-"parts de marché :\\\\ debhelper classique : 40~\\% \\hskip 1em CDBS : 23~\\% "
-"\\hskip 1em dh : 36~\\%"
+"parts de marché :\\\\ debhelper classique : 36~\\% \\hskip 1em CDBS : 21~\\% "
+"\\hskip 1em dh : 41~\\%"
 
 #. type: itemize
 #: packaging-tutorial.tex:655
