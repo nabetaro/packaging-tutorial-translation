@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2011-10-19 01:23+0300\n"
+"POT-Creation-Date: 2011-11-26 11:41+0100\n"
 "PO-Revision-Date: 2011-09-27 12:14+0200\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
