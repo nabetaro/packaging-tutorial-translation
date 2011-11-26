@@ -1417,7 +1417,7 @@ msgstr "CDBS :"
 #. type: itemize
 #: packaging-tutorial.tex:602
 msgid "Introduced in 2005, based on advanced \\textsl{GNU make} magic"
-msgstr "Introduit en 2005, basé sur de la magie avancée \\textsl{GNU make}"
+msgstr "Introduit en 2005, basé sur de la magie avancée de \\textsl{GNU make}"
 
 #. type: itemize
 #: packaging-tutorial.tex:602
