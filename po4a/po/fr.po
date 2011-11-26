@@ -2586,7 +2586,7 @@ msgstr "Trouvez un développeur Debian qui va parrainer votre paquet"
 #. type: itemize
 #: packaging-tutorial.tex:1049
 msgid "Official status (when you are already experienced):"
-msgstr "Statut officiel (quand vous êtes expérimenté) :"
+msgstr "Statuts officiels (quand vous serez plus expérimenté) :"
 
 #. type: itemize
 #: packaging-tutorial.tex:1049
