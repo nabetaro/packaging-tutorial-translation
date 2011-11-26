@@ -724,7 +724,7 @@ msgid ""
 "There are some alternatives to \\texttt{dh\\_make} for specific sets of "
 "packages: \\textbf{dh-make-perl}, \\textbf{dh-make-php}, \\ldots"
 msgstr ""
-"Il existe des alternatives à \\texttt{dh\\_make} pour des jeux de paquets "
+"Il existe des alternatives à \\texttt{dh\\_make} pour des types de paquets "
 "spécifiques : \\textbf{dh-make-perl}, \\textbf{dh-make-php}\\ldots"
 
 #. type: itemize
@@ -1209,8 +1209,8 @@ msgid ""
 "Third-party helpers for sets of packages: \\textbf{python-support}, \\textbf"
 "{dh\\_ocaml}, \\ldots"
 msgstr ""
-"Assistants pour certains jeux de paquets : \\textbf{python-support}, \\textbf"
-"{dh\\_ocaml}\\ldots"
+"Assistants pour certains types de paquets : \\textbf{python-support}, "
+"\\textbf{dh\\_ocaml}\\ldots"
 
 #. type: itemize
 #: packaging-tutorial.tex:515
