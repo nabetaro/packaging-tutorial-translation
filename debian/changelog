@@ -3,7 +3,11 @@ packaging-tutorial (0.5) UNRELEASED; urgency=low
   [ Cédric Boutillier ]
   * use changelog to determine automatically date and version
 
- -- Lucas Nussbaum <lucas@debian.org>  Wed, 19 Oct 2011 02:07:32 +0200
+  [ Lucas Nussbaum ]
+  * Minor updates to french translation during preparation for Capitole du
+    Libre 2011.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Mon, 28 Nov 2011 08:57:35 +0100
 
 packaging-tutorial (0.4) unstable; urgency=low
 
