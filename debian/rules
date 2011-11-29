@@ -4,13 +4,6 @@
 	dh $@ 
 
 override_dh_auto_build:
-	#move the original source file in a safe place for replacement
-	mv packaging-tutorial.tex packaging-tutorial.tex.tmp
-	#insert version and date into the source
-	sed -e "s/_VERSION_/$(VERSION)/" -e "s/_YEAR_/$(YEAR)/" \
-		-e "s/_MONTH_/$(MONTH)/" -e "s/_DAY_/$(DAY)/" \
-		< packaging-tutorial.tex.tmp > packaging-tutorial.tex
-		
 	#translate source files before building pdf
 	po4a po4a/po4a.cfg --verbose
 	dh_auto_build
@@ -19,9 +12,6 @@ override_dh_clean:
 	dh_clean
 	#remove translated source files
 	rm -f packaging-tutorial.*.tex debiantutorial.*.sty
-	#restore the original source file
-	[ -f packaging-tutorial.tex.tmp ] && rm packaging-tutorial.tex || true
-	[ -f packaging-tutorial.tex.tmp ] && mv packaging-tutorial.tex.tmp packaging-tutorial.tex || true
 
 override_dh_compress:
 	dh_compress -X.pdf
