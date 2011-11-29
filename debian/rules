@@ -1,11 +1,5 @@
 #!/usr/bin/make -f
 
-#extract version number and date from Debian changelog
-VERSION := $(shell dpkg-parsechangelog | grep "^Version:" | cut -d\  -f2)
-YEAR    := $(shell dpkg-parsechangelog | grep "^Date:" | cut -d\  -f2-5 | date +"%Y")
-MONTH   := $(shell dpkg-parsechangelog | grep "^Date:" | cut -d\  -f2-5 | date +"%m")
-DAY    := $(shell dpkg-parsechangelog | grep "^Date:" | cut -d\  -f2-5 | date +"%d")
-
 %:
 	dh $@ 
 
@@ -32,7 +26,11 @@ override_dh_clean:
 override_dh_compress:
 	dh_compress -X.pdf
 
+#extract version number and date from Debian changelog
+VERSION := $(shell dpkg-parsechangelog | grep "^Version:" | cut -d\  -f2)
+YEAR    := $(shell dpkg-parsechangelog | grep "^Date:" | cut -d\  -f2-5 | date +"%Y")
+MONTH   := $(shell dpkg-parsechangelog | grep "^Date:" | cut -d\  -f2-5 | date +"%m")
+DAY    := $(shell dpkg-parsechangelog | grep "^Date:" | cut -d\  -f2-5 | date +"%d")
 
-
-
-
+update-version-date:
+	sed -i -e "s/.* % DATE - use debian\/rules update-version-date/\\\\date{\\\\footnotesize version $(VERSION) -- $(YEAR)-$(MONTH)-$(DAY)} \% DATE - use debian\/rules update-version-date/" packaging-tutorial.tex
