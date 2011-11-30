@@ -1712,7 +1712,7 @@ msgid ""
 msgstr ""
 "\\textttc{schroot} and \\textttc{sbuild} : utilisé sur les démons de "
 "construction Debian\\\\ (pas aussi simple que \\texttt{pbuilder}, mais "
-"permet des dépôts LVM\\\\ voir : \\url{https://help.ubuntu.com/community/"
+"permet des copies LVM\\\\ voir : \\url{https://help.ubuntu.com/community/"
 "SbuildLVMHowto} )"
 
 #. type: itemize
