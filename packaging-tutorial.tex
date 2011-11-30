@@ -829,7 +829,8 @@ License:
 	  \hbr
   \item You need to learn \textsl{quilt}\\
     \url{http://pkg-perl.alioth.debian.org/howto/quilt.html}
-    
+    \hbr
+  \item Patch-system-agnostic tool in \texttt{devscripts}: \texttt{edit-patch}
   \end{itemize}
   \end{itemize}
 \end{frame}
@@ -1484,7 +1485,7 @@ gnujump.cron.d.ex   postrm.ex
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step \ldots (2)}
+\begin{frame}[fragile]{Step by step\ldots (2)}
 \begin{itemize}
 	\item Look at \texttt{debian/changelog}, \texttt{debian/rules}, \texttt{debian/control}\\
 		(auto-filled by \textbf{dh\_make})
@@ -1511,7 +1512,7 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Step by step \ldots (3)}
+\begin{frame}{Step by step\ldots (3)}
 \begin{itemize}
 	\item After installing \texttt{libsdl1.2-dev, libsdl-image1.2-dev, libsdl-mixer1.2-dev}, the package builds fine.
 		\hbr
@@ -1601,8 +1602,76 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 \end{frame}
 
 \begin{frame}{Step by step\ldots}
-%\begin{itemize}
-%\end{itemize}
+\texttt{gem2deb net-ssh}:
+\begin{itemize}
+\item Downloads the gem from rubygems.org
+\item Creates a suitable .orig.tar.gz archive, and untar it
+\item Initializes a Debian source package based on the gem's metadata
+	\begin{itemize}
+		\item Named \texttt{ruby-\textsl{gemname}}
+	\end{itemize}
+\item Tries to build the Debian binary package (this might fail)
+\end{itemize}
+\br
+\texttt{dh\_ruby} (included in \textsl{gem2deb}) does the Ruby-specific tasks:
+\begin{itemize}
+	\item Build C extensions for each Ruby version
+	\item Copy files to their destination directory
+	\item Update shebangs in executable scripts
+	\item Run tests defined in \texttt{debian/ruby-tests.rb} or \texttt{debian/ruby-test-files.yaml}, as well as various other checks
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Step by step\ldots (2)}
+Improve the generated package:
+\begin{itemize}
+	\item Run \texttt{debclean} to clean the source tree. Look at \texttt{debian/}.
+		\hbr
+	\item \texttt{changelog} and \texttt{compat} should be correct
+		\hbr
+	\item Edit \texttt{debian/control}: uncomment \texttt{Homepage}, improve \texttt{Description}
+		\hbr
+	\item Write a proper \texttt{copyright} file based on the upstream files
+		\hbr
+	\item \texttt{ruby-net-ssh.docs}: install \texttt{README.rdoc}
+		\hbr
+	\item \texttt{ruby-tests.rb}: run the tests. In that case, it is enough to do:\\
+		\verb+$: << 'test' << 'lib' << '.'+\\
+		\verb+require 'test/test_all.rb'+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Step by step\ldots (3)}
+Build the package.
+It fails to build. There are two problems:
+\begin{itemize}
+	\item You need to disable the \texttt{gem} call in the test suite.\\
+	In \texttt{test/common.rb}, remove the \verb+gem "test-unit"+ line:
+		\begin{itemize}
+			\item \texttt{edit-patch disable-gem.patch}
+			\item Edit \texttt{test/common.rb}, remove the \texttt{gem} line. Exit the sub-shell
+			\item Describe the changes in \texttt{debian/changelog}
+			\item Document the patch in \texttt{debian/patches/disable-gem.patch}
+		\end{itemize}
+		\hbr
+
+	\item The package lacks a build-dependency on \texttt{ruby-mocha},
+		which is used by the test suite (you might need to build your
+		package in a clean environment, using \texttt{pbuilder}, to
+		reproduce that problem)
+
+		\begin{itemize}
+			\item Add \texttt{ruby-mocha} to the package's \texttt{Build-Depends}
+
+			\item \textsl{gem2deb} copies the dependencies
+				documented in the \textsl{gem} as comments in
+				\texttt{debian/control}, but \textsl{mocha} is
+				not listed as a development dependency by the
+				gem (that's a bug in the gem)
+		\end{itemize}
+\end{itemize}
+\hbr
+Compare your package with the \texttt{ruby-net-ssh} package in the Debian archive
 \end{frame}
 
 \end{document}
