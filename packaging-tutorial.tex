@@ -1251,6 +1251,27 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \end{enumerate}
 \end{frame}
 
+\section{Practical session 4: packaging a Ruby gem}
+\begin{frame}{Practical session 4: packaging a Ruby gem}
+\begin{enumerate}
+	\item Take a quick look at some documentation about Ruby packaging:\\
+		\begin{itemize}
+		\item \url{http://wiki.debian.org/Ruby}
+      \hbr
+		\item \url{http://wiki.debian.org/Teams/Ruby}
+      \hbr
+		\item \url{http://wiki.debian.org/Teams/Ruby/Packaging}
+      \hbr
+		\item \texttt{gem2deb(1)}, \texttt{dh\_ruby(1)} (in the \texttt{gem2deb} package)
+		\end{itemize}
+		\hbr
+	\item Create a basic Debian source package from the \texttt{net-ssh} gem:\\
+		\texttt{gem2deb net-ssh}
+	\hbr
+	\item Improve it so that it becomes a proper Debian package
+\end{enumerate}
+\end{frame}
+
 \section{Answers to practical sessions}
 
 \begin{frame}
@@ -1557,6 +1578,31 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 		\hbr
 	\item Compare your result with the \texttt{libirclib-java} source package
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Practical session 4: packaging a Ruby gem}
+\begin{enumerate}
+	\item Take a quick look at some documentation about Ruby packaging:\\
+		\begin{itemize}
+		\item \url{http://wiki.debian.org/Ruby}
+      \hbr
+		\item \url{http://wiki.debian.org/Teams/Ruby}
+      \hbr
+		\item \url{http://wiki.debian.org/Teams/Ruby/Packaging}
+      \hbr
+		\item \texttt{gem2deb(1)}, \texttt{dh\_ruby(1)} (in the \texttt{gem2deb} package)
+		\end{itemize}
+		\hbr
+	\item Create a basic Debian source package from the \texttt{net-ssh} gem:\\
+		\texttt{gem2deb net-ssh}
+	\hbr
+	\item Improve it so that it becomes a proper Debian package
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Step by step\ldots}
+%\begin{itemize}
+%\end{itemize}
 \end{frame}
 
 \end{document}
