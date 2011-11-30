@@ -413,11 +413,6 @@ msgstr "Exemple : reconstruction de dash"
 
 #. type: enumerate
 #: packaging-tutorial.tex:205
-#, fuzzy
-#| msgid ""
-#| "Install packages needed to build dash, and devscripts\\\\ {\\texttt{apt-"
-#| "get build-dep dash}}\\\\ {\\texttt{apt-get install -{}-no-install-"
-#| "recommends devscripts}}"
 msgid ""
 "Install packages needed to build dash, and devscripts\\\\ {\\texttt{sudo apt-"
 "get build-dep dash}\\\\ (requires \\texttt{deb-src} lines in \\texttt{/etc/"
@@ -425,7 +420,9 @@ msgid ""
 "recommends devscripts}}"
 msgstr ""
 "Installez les paquets nécessaires à la construction de dash, ainsi que "
-"devscripts \\\\ {\\texttt{apt-get build-dep dash} }\\\\ {\\texttt{apt-get "
+"devscripts \\\\ {\\texttt{apt-get build-dep dash}\\\\ (nécessite des "
+"lignes \\texttt{deb-src} dans \\texttt{/etc/"
+"apt/sources.list})}\\\\ {\\texttt{apt-get "
 "install -{}-no-install-recommends devscripts} }"
 
 #. type: enumerate
