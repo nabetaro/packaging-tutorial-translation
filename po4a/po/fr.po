@@ -181,7 +181,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:84
 msgid "\\textbf{Amateur} in the best sense: done for the love of it"
-msgstr "\\textbf{Amateur} dans le bon sens du terme : fait avec amour"
+msgstr "\\textbf{Amateur} dans le bon sens du terme : \\og fait avec amour \\fg"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:105
