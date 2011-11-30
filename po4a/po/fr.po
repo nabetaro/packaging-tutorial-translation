@@ -719,7 +719,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:327
 msgid "Untar it"
-msgstr "Dépaquetez-la"
+msgstr "Décompressez-la"
 
 #. type: itemize
 #: packaging-tutorial.tex:327
