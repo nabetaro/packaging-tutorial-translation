@@ -43,9 +43,10 @@ msgstr "Tutoriel : la construction de paquets Debian"
 #. type: author{#2}
 #: packaging-tutorial.tex:20
 msgid "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
-msgstr "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}\\\\[0.5em]"
-"Traduction française de\\\\ Cédric\\ Boutillier, Jean-Philippe\\ Mengual\\\\"
-"et l'équipe francophone de traduction"
+msgstr ""
+"Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}\\\\[0.5em]Traduction "
+"française de\\\\ Cédric\\ Boutillier, Jean-Philippe\\ Mengual\\\\et l'équipe "
+"francophone de traduction"
 
 #. Translators:
 #. leave \\version unchanged: this will a variable containing the actual version
