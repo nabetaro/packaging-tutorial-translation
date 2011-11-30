@@ -190,8 +190,8 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \begin{frame}{Example: rebuilding dash}
 \begin{enumerate}
 \item Install packages needed to build dash, and devscripts\\
-  {\texttt{apt-get build-dep dash}}\\
-  {\texttt{apt-get install -{}-no-install-recommends devscripts}}
+  {\texttt{sudo apt-get build-dep dash}\\ (requires \texttt{deb-src} lines in \texttt{/etc/apt/sources.list})}\\
+  {\texttt{sudo apt-get install -{}-no-install-recommends devscripts}}
   \hbr
 \item Create a working directory, and get in it:\\
  \texttt{mkdir /tmp/debian-tutorial ; cd /tmp/debian-tutorial}
