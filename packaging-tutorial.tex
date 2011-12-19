@@ -953,6 +953,31 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \end{itemize}
 \end{frame}
 
+\subsection{Backporting packages}
+\begin{frame}{Backporting packages}
+  \begin{itemize}
+  \item Goal: use a newer version of a package on an older system\\
+	  e.g use \textsl{mutt} from Debian \textsl{unstable} on Debian \textsl{stable}
+	\br
+  \item General idea:
+	  \begin{itemize}
+		\item Take the source package from Debian unstable
+		\hbr
+		\item Modify it so that it builds and works fine on Debian stable
+		\begin{itemize}
+			\item Sometimes trivial (no changes needed)
+			\item Sometimes difficult
+			\item Sometimes impossible (many unavailable dependencies)
+		\end{itemize}
+	\end{itemize}
+	\br
+   \item Some backports are provided and supported by the Debian project\\
+	   \url{http://backports.debian.org/}
+\end{itemize}
+\end{frame}
+
+
+
 \section{Maintaining packages in Debian}
 \subsection{Several ways to contribute to Debian}
 \begin{frame}{Several ways to contribute to Debian}
