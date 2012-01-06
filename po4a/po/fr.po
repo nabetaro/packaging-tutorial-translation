@@ -4,18 +4,22 @@
 # This file is distributed under the same license as the packaging-tutorial package.
 #
 # Jean-Philippe MENGUAL <mengualjeanphi@free.fr>, 2011.
-# Cédric Boutillier <cedric.boutillier@gmail.com>, 2011.
+# Cédric Boutillier <cedric.boutillier@gmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
 "POT-Creation-Date: 2011-11-30 09:04+0100\n"
-"PO-Revision-Date: 2011-09-27 12:14+0200\n"
+"PO-Revision-Date: 2012-01-06 23:10+0100\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"\">\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"\">\n"
+"\">\n"
+"\">\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 1.2\n"
 
@@ -56,7 +60,7 @@ msgstr ""
 #. type: date{#1}
 #: packaging-tutorial.tex:20
 msgid "version 0.5 -- 2011-11-29"
-msgstr ""
+msgstr "version 0.5 -- 29 novembre 2011"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -135,7 +139,7 @@ msgstr "Distribution GNU/Linux"
 #: packaging-tutorial.tex:84
 msgid "1st major distro developed ``openly in the spirit of GNU''"
 msgstr ""
-"1\\iere distribution majeure développée « ouvertement dans l'esprit GNU»"
+"1\\iere distribution majeure développée « ouvertement dans l'esprit GNU »"
 
 #. type: itemize
 #: packaging-tutorial.tex:84
@@ -157,7 +161,8 @@ msgid ""
 "release when it's ready}"
 msgstr ""
 "\\textbf{Qualité} -- culture de l'excellence technique\\\\ {\\small\\sl Nous "
-"publions quand c'est prêt}"
+"publions quand c'est prêt}\\textbf{Qualité} -- culture de l'excellence "
+"technique\\\\ {\\small\\sl Nous publions quand c'est prêt}"
 
 #. type: itemize
 #: packaging-tutorial.tex:84
@@ -181,7 +186,8 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:84
 msgid "\\textbf{Amateur} in the best sense: done for the love of it"
-msgstr "\\textbf{Amateur} dans le bon sens du terme : \\og fait avec amour \\fg"
+msgstr ""
+"\\textbf{Amateur} dans le bon sens du terme : \\og fait avec amour \\fg"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:105
@@ -420,10 +426,9 @@ msgid ""
 "recommends devscripts}}"
 msgstr ""
 "Installez les paquets nécessaires à la construction de dash, ainsi que "
-"devscripts \\\\ {\\texttt{apt-get build-dep dash}\\\\ (nécessite des "
-"lignes \\texttt{deb-src} dans \\texttt{/etc/"
-"apt/sources.list})}\\\\ {\\texttt{apt-get "
-"install -{}-no-install-recommends devscripts} }"
+"devscripts \\\\ {\\texttt{apt-get build-dep dash}\\\\ (nécessite des lignes "
+"\\texttt{deb-src} dans \\texttt{/etc/apt/sources.list})}\\\\ {\\texttt{apt-"
+"get install -{}-no-install-recommends devscripts} }"
 
 #. type: enumerate
 #: packaging-tutorial.tex:205
@@ -1144,7 +1149,7 @@ msgstr "Assistants d'empaquetage -- debhelper"
 #: packaging-tutorial.tex:509
 msgid "You could write shell code in \\texttt{debian/rules} directly"
 msgstr ""
-"Vous pourriez écrire du code shell dans le répertoire \\texttt{debian/rules}"
+"Vous pourriez écrire du code shell dans le fichier \\texttt{debian/rules}"
 
 #. type: itemize
 #: packaging-tutorial.tex:509
@@ -1801,8 +1806,8 @@ msgid ""
 "testing or unstable, use version 2.9-1 or 2.9-2 instead)"
 msgstr ""
 "Rendez-vous sur \\url{http://ftp.debian.org/debian/pool/main/g/grep/} et "
-"téléchargez la version~2.6.3-3 du paquet (avec Ubuntu 11.10 ou ultérieur,"
-" ou Debian testing ou unstable, utilisez à la place la version 2.9-1 ou 2.9-2)"
+"téléchargez la version~2.6.3-3 du paquet (avec Ubuntu 11.10 ou ultérieur, ou "
+"Debian testing ou unstable, utilisez à la place la version 2.9-1 ou 2.9-2)"
 
 #. type: enumerate
 #: packaging-tutorial.tex:746 packaging-tutorial.tex:1292
@@ -3402,6 +3407,7 @@ msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1492
+#| msgid "Step by step\\ldots (2)"
 msgid "Step by step \\ldots (2)"
 msgstr "Pas à pas\\ldots (2)"
 
@@ -3484,6 +3490,7 @@ msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1515
+#| msgid "Step by step\\ldots (3)"
 msgid "Step by step \\ldots (3)"
 msgstr "Pas à pas\\ldots (3)"
 
@@ -3599,6 +3606,225 @@ msgstr "\\texttt{lintian}, \\texttt{debc}, etc."
 #: packaging-tutorial.tex:1561
 msgid "Compare your result with the \\texttt{libirclib-java} source package"
 msgstr "Comparez votre résultat avec le paquet source \\texttt{libirclib-java}"
+
+#~ msgid ""
+#~ "Patch-system-agnostic tool in \\texttt{devscripts}: \\texttt{edit-patch}"
+#~ msgstr ""
+#~ "Outil indépendant du système de correctifs dans \\texttt{devscripts} : "
+#~ "\\texttt{edit-patch}"
+
+#~ msgid "Backporting packages"
+#~ msgstr "Rétroportage de paquets"
+
+#~ msgid ""
+#~ "Goal: use a newer version of a package on an older system\\\\ e.g use "
+#~ "\\textsl{mutt} from Debian \\textsl{unstable} on Debian \\textsl{stable}"
+#~ msgstr ""
+#~ "But : utiliser une nouvelle version du paquet sur un système plus ancien\\"
+#~ "\\ p.ex. utiliser \\textsl{mutt} de Debian \\textsl{unstable} sur Debian "
+#~ "\\textsl{stable}"
+
+#~ msgid "General idea:"
+#~ msgstr "Idée générale :"
+
+#~ msgid "Take the source package from Debian unstable"
+#~ msgstr "Prendre le paquet source de Debian unstable"
+
+#~ msgid "Modify it so that it builds and works fine on Debian stable"
+#~ msgstr ""
+#~ "Le modifier pour qu'il se construise et fonctionne correctement sur "
+#~ "Debian stable"
+
+#~ msgid "Sometimes trivial (no changes needed)"
+#~ msgstr "Parfois trivial (aucun changement nécéssaire)"
+
+#~ msgid "Sometimes difficult"
+#~ msgstr "Parfois difficile"
+
+#~ msgid "Sometimes impossible (many unavailable dependencies)"
+#~ msgstr "Parfois impossible (nombreuses dépendances indisponibles)"
+
+#~ msgid ""
+#~ "Some backports are provided and supported by the Debian project\\\\ \\url"
+#~ "{http://backports.debian.org/}"
+#~ msgstr ""
+#~ "Certains rétroportages sont fournis et maintenus par le projet Debian\\\\ "
+#~ "\\url{http://backports.debian.org/}"
+
+#~ msgid "Practical session 4: packaging a Ruby gem"
+#~ msgstr "Travaux pratiques nº~4 : empaqueter un « gem » Ruby"
+
+#~ msgid "Take a quick look at some documentation about Ruby packaging:\\\\"
+#~ msgstr ""
+#~ "Jetez un rapide coup d'œil sur la documentation pour la construction de "
+#~ "paquets Ruby :\\\\"
+
+#~ msgid "\\url{http://wiki.debian.org/Ruby}"
+#~ msgstr "\\url{http://wiki.debian.org/Ruby}"
+
+#~ msgid "\\url{http://wiki.debian.org/Teams/Ruby}"
+#~ msgstr "\\url{http://wiki.debian.org/Teams/Ruby}"
+
+#~ msgid "\\url{http://wiki.debian.org/Teams/Ruby/Packaging}"
+#~ msgstr "\\url{http://wiki.debian.org/Teams/Ruby/Packaging}"
+
+#~ msgid ""
+#~ "\\texttt{gem2deb(1)}, \\texttt{dh\\_ruby(1)} (in the \\texttt{gem2deb} "
+#~ "package)"
+#~ msgstr ""
+#~ "\\texttt{gem2deb(1)}, \\texttt{dh\\_ruby(1)} (dans le paquet \\texttt"
+#~ "{gem2deb})"
+
+#~ msgid ""
+#~ "Create a basic Debian source package from the \\texttt{net-ssh} gem:\\\\ "
+#~ "\\texttt{gem2deb net-ssh}"
+#~ msgstr ""
+#~ "Créez un paquet source Debian élémentaire à partir du gem \\texttt{net-"
+#~ "ssh} :\\\\ \\texttt{gem2deb net-ssh}"
+
+#~ msgid "Improve it so that it becomes a proper Debian package"
+#~ msgstr "Améliorez-le pour qu'il devienne un paquet Debian convenable"
+
+#~ msgid "\\texttt{gem2deb net-ssh}:"
+#~ msgstr "\\texttt{gem2deb net-ssh} :"
+
+#~ msgid "Downloads the gem from rubygems.org"
+#~ msgstr "Télécharge le gem depuis rubygems.org"
+
+#~ msgid "Creates a suitable .orig.tar.gz archive, and untar it"
+#~ msgstr "Crée une archive .orig.tar.gz convenable, et la décompresse"
+
+#~ msgid "Initializes a Debian source package based on the gem's metadata"
+#~ msgstr "Initialise un paquet source Debian basé sur les métadonnées du gem"
+
+#~ msgid "Named \\texttt{ruby-\\textsl{gemname}}"
+#~ msgstr "Nommé \\texttt{ruby-\\textsl{gemname}}"
+
+#~ msgid "Tries to build the Debian binary package (this might fail)"
+#~ msgstr "Essaie de construire le paquet binaire Debian (ceci peut échouer)"
+
+#~ msgid ""
+#~ "\\texttt{dh\\_ruby} (included in \\textsl{gem2deb}) does the Ruby-"
+#~ "specific tasks:"
+#~ msgstr ""
+#~ "\\texttt{dh\\_ruby} (inclus dans \\textsl{gem2deb}) effectue les tâches "
+#~ "spécifiques à Ruby :"
+
+#~ msgid "Build C extensions for each Ruby version"
+#~ msgstr "Construction d'extentions en C pour chaque version de Ruby"
+
+#~ msgid "Copy files to their destination directory"
+#~ msgstr "Copie des fichiers dans leur répertoire de destination"
+
+#~ msgid "Update shebangs in executable scripts"
+#~ msgstr ""
+#~ "Mise à jour des interpréteurs à utiliser (« shebangs ») pour les scripts "
+#~ "exécutables"
+
+#~ msgid ""
+#~ "Run tests defined in \\texttt{debian/ruby-tests.rb} or \\texttt{debian/"
+#~ "ruby-test-files.yaml}, as well as various other checks"
+#~ msgstr ""
+#~ "Exécution des tests définis dans \\texttt{debian/ruby-tests.rb} ou "
+#~ "\\texttt{debian/ruby-test-files.yaml}, ainsi que d'autres vérifications "
+#~ "diverses"
+
+#~ msgid "Improve the generated package:"
+#~ msgstr "Améliorez le paquet créé :"
+
+#~ msgid ""
+#~ "Run \\texttt{debclean} to clean the source tree. Look at \\texttt"
+#~ "{debian/}."
+#~ msgstr ""
+#~ "Exécutez \\texttt{debclean} pour nettoyer l'arborescence. Regardez "
+#~ "\\texttt{debian/}."
+
+#~ msgid "\\texttt{changelog} and \\texttt{compat} should be correct"
+#~ msgstr "\\texttt{changelog} et \\texttt{compat} devraient être corrects"
+
+#~ msgid ""
+#~ "Edit \\texttt{debian/control}: uncomment \\texttt{Homepage}, improve "
+#~ "\\texttt{Description}"
+#~ msgstr ""
+#~ "Éditez \\text{debian/control} : décommentez \\texttt{Homepage}, améliorez "
+#~ "\\texttt{Description}"
+
+#~ msgid "Write a proper \\texttt{copyright} file based on the upstream files"
+#~ msgstr ""
+#~ "Écrivez un fichier \\texttt{copyright} convenable se basant sur les "
+#~ "fichiers amont"
+
+#~ msgid "\\texttt{ruby-net-ssh.docs}: install \\texttt{README.rdoc}"
+#~ msgstr "\\texttt{ruby-net-ssh.docs} : installez \\texttt{README.rdoc}"
+
+#~ msgid ""
+#~ "\\texttt{ruby-tests.rb}: run the tests. In that case, it is enough to do:"
+#~ "\\\\ \\verb+$: << 'test' << 'lib' << '.'+\\\\ \\verb+require 'test/"
+#~ "test_all.rb'+"
+#~ msgstr ""
+#~ "\\texttt{ruby-tests.rb} : executer les tests. Dans ce cas, les lignes "
+#~ "suivantes suffisent : \\\\\n"
+#~ "\\verb+$: << 'test' << 'lib << '.'+\\\\\n"
+#~ "\\verb+require 'test/test_all.rb'+"
+
+#~ msgid "Build the package.  It fails to build. There are two problems:"
+#~ msgstr "Lancez la construction. Elle échoue pour deux raisons :"
+
+#~ msgid ""
+#~ "You need to disable the \\texttt{gem} call in the test suite.\\\\ In "
+#~ "\\texttt{test/common.rb}, remove the \\verb+gem \"test-unit\"+ line:"
+#~ msgstr ""
+#~ "Vous devez désactiver l'appel au \\texttt{gem} dans la batterie de tests."
+#~ "\\\\ Dans \\texttt{test/common.rb}, supprimez la ligne \\verb+gem \"test-"
+#~ "unit\"+ :"
+
+#~ msgid "\\texttt{edit-patch disable-gem.patch}"
+#~ msgstr "\\texttt{edit-patch desactiver-gem.patch}"
+
+#~ msgid ""
+#~ "Edit \\texttt{test/common.rb}, remove the \\texttt{gem} line. Exit the "
+#~ "sub-shell"
+#~ msgstr ""
+#~ "Éditez \\texttt{test/common.rb}, supprimer la ligne contenant \\texttt"
+#~ "{gem}. Quittez le sous-interpréteur"
+
+#~ msgid "Describe the changes in \\texttt{debian/changelog}"
+#~ msgstr "Décrivez les changements dans \\texttt{debian/changelog}"
+
+#~ msgid "Document the patch in \\texttt{debian/patches/disable-gem.patch}"
+#~ msgstr ""
+#~ "Documentez le correctif dans \\texttt{debian/patches/desactiver-gem.patch}"
+
+#~ msgid ""
+#~ "The package lacks a build-dependency on \\texttt{ruby-mocha}, which is "
+#~ "used by the test suite (you might need to build your package in a clean "
+#~ "environment, using \\texttt{pbuilder}, to reproduce that problem)"
+#~ msgstr ""
+#~ "Une dépendance de construction \\texttt{ruby-mocha} est manquante. Elle "
+#~ "est utilisée par la batterie de test (vous pouvez avoir besoin de "
+#~ "construire votre paquet dans un environnement propre avec \\texttt"
+#~ "{pbuilder} pour reproduire ce problème)"
+
+#~ msgid "Add \\texttt{ruby-mocha} to the package's \\texttt{Build-Depends}"
+#~ msgstr ""
+#~ "Ajoutez \\texttt{ruby-mocha} au champ \\texttt{Build-Depends} du paquet"
+
+#~ msgid ""
+#~ "\\textsl{gem2deb} copies the dependencies documented in the \\textsl{gem} "
+#~ "as comments in \\texttt{debian/control}, but \\textsl{mocha} is not "
+#~ "listed as a development dependency by the gem (that's a bug in the gem)"
+#~ msgstr ""
+#~ "\\textsl{gem2deb} copie les dépendances documentées dans le \\textsl{gem} "
+#~ "sous forme de commentaires dans \\texttt{debian/control}, mais \\textsl"
+#~ "{mocha} n'est pas dans la liste des dépendances de développement du gem "
+#~ "(c'est un bogue du gem)"
+
+#~ msgid ""
+#~ "Compare your package with the \\texttt{ruby-net-ssh} package in the "
+#~ "Debian archive"
+#~ msgstr ""
+#~ "Comparez votre paquet avec le paquet \\texttt{ruby-net-ssh} présent dans "
+#~ "l'archive Debian"
 
 #~ msgid "version \\version{} -- \\year-\\month-\\day"
 #~ msgstr "version \\version{} -- \\today"
