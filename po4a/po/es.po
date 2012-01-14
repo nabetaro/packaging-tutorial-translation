@@ -30,7 +30,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.4\n"
-"POT-Creation-Date: 2011-12-01 08:54+0100\n"
+"POT-Creation-Date: 2012-01-14 07:55+0100\n"
 "PO-Revision-Date: 2011-12-02 14:33+0100\n"
 "Last-Translator: Omar Campagne <ocampagne@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -73,10 +73,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-#, fuzzy
-#| msgid "version 0.4 - 2011-10-18"
-msgid "version 0.5 -- 2011-11-29"
-msgstr "versión 0.4 - 18/10/2011"
+msgid "version 0.5 -- 2012-01-14"
+msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -3194,14 +3192,14 @@ msgid "Package it"
 msgstr "Empaquételo"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 #, fuzzy
 #| msgid "Practical session 2: packaging GNUjump"
 msgid "Practical session 4: packaging a Ruby gem"
 msgstr "Ejercicio práctico 2: empaquetar GNUjump"
 
 #. type: enumerate
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 #, fuzzy
 #| msgid "Take a quick look at some documentation about Java packaging:\\\\"
 msgid "Take a quick look at some documentation about Ruby packaging:\\\\"
@@ -3209,42 +3207,42 @@ msgstr ""
 "Consulte brevemente la documentación sobre creación de paquetes de Java:\\\\"
 
 #. type: itemize
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 #, fuzzy
 #| msgid "\\url{http://wiki.debian.org/Java}"
 msgid "\\url{http://wiki.debian.org/Ruby}"
 msgstr "\\url{http://wiki.debian.org/Java}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 #, fuzzy
 #| msgid "\\url{http://wiki.debian.org/Java}"
 msgid "\\url{http://wiki.debian.org/Teams/Ruby}"
 msgstr "\\url{http://wiki.debian.org/Java}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 #, fuzzy
 #| msgid "\\url{http://wiki.debian.org/Java/Packaging}"
 msgid "\\url{http://wiki.debian.org/Teams/Ruby/Packaging}"
 msgstr "\\url{http://wiki.debian.org/Java/Packaging}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 msgid ""
 "\\texttt{gem2deb(1)}, \\texttt{dh\\_ruby(1)} (in the \\texttt{gem2deb} "
 "package)"
 msgstr ""
 
 #. type: enumerate
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 msgid ""
 "Create a basic Debian source package from the \\texttt{net-ssh} gem:\\\\ "
 "\\texttt{gem2deb net-ssh}"
 msgstr ""
 
 #. type: enumerate
-#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1628
+#: packaging-tutorial.tex:1300 packaging-tutorial.tex:1629
 msgid "Improve it so that it becomes a proper Debian package"
 msgstr ""
 
@@ -3507,7 +3505,7 @@ msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1512 packaging-tutorial.tex:1608
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Step by step\\ldots"
 msgstr "Paso a paso\\ldots"
 
@@ -3572,7 +3570,7 @@ msgstr ""
 "gnujump.cron.d.ex   postrm.ex"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1539 packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1539 packaging-tutorial.tex:1669
 #, fuzzy
 #| msgid "Step by step \\ldots (2)"
 msgid "Step by step\\ldots (2)"
@@ -3656,7 +3654,7 @@ msgstr ""
 "entorno limpio"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1562 packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1562 packaging-tutorial.tex:1683
 #, fuzzy
 #| msgid "Step by step \\ldots (3)"
 msgid "Step by step\\ldots (3)"
@@ -3774,101 +3772,101 @@ msgid "Compare your result with the \\texttt{libirclib-java} source package"
 msgstr "Compare sus resultados con el paquete fuente \\texttt{libirclib-java}"
 
 #. type: frame
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "\\texttt{gem2deb net-ssh}:"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Downloads the gem from rubygems.org"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Creates a suitable .orig.tar.gz archive, and untar it"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Initializes a Debian source package based on the gem's metadata"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Named \\texttt{ruby-\\textsl{gemname}}"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Tries to build the Debian binary package (this might fail)"
 msgstr ""
 
 #. type: frame
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid ""
 "\\texttt{dh\\_ruby} (included in \\textsl{gem2deb}) does the Ruby-specific "
 "tasks:"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Build C extensions for each Ruby version"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Copy files to their destination directory"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid "Update shebangs in executable scripts"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1649
+#: packaging-tutorial.tex:1650
 msgid ""
 "Run tests defined in \\texttt{debian/ruby-tests.rb} or \\texttt{debian/ruby-"
 "test-files.yaml}, as well as various other checks"
 msgstr ""
 
 #. type: frame
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 #, fuzzy
 #| msgid "Gives the current version of the package"
 msgid "Improve the generated package:"
 msgstr "Muestra la versión actual del paquete"
 
 #. type: itemize
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 msgid ""
 "Run \\texttt{debclean} to clean the source tree. Look at \\texttt{debian/}."
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 msgid "\\texttt{changelog} and \\texttt{compat} should be correct"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 msgid ""
 "Edit \\texttt{debian/control}: uncomment \\texttt{Homepage}, improve \\texttt"
 "{Description}"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 msgid "Write a proper \\texttt{copyright} file based on the upstream files"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 msgid "\\texttt{ruby-net-ssh.docs}: install \\texttt{README.rdoc}"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1668
+#: packaging-tutorial.tex:1669
 msgid ""
 "\\texttt{ruby-tests.rb}: run the tests. In that case, it is enough to do:\\"
 "\\ \\verb+$: << 'test' << 'lib' << '.'+\\\\ \\verb+require 'test/test_all."
@@ -3876,38 +3874,38 @@ msgid ""
 msgstr ""
 
 #. type: frame
-#: packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1683
 msgid "Build the package.  It fails to build. There are two problems:"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1683
 msgid ""
 "You need to disable the \\texttt{gem} call in the test suite.\\\\ In \\texttt"
 "{test/common.rb}, remove the \\verb+gem \"test-unit\"+ line:"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1683
 msgid "\\texttt{edit-patch disable-gem.patch}"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1683
 msgid ""
 "Edit \\texttt{test/common.rb}, remove the \\texttt{gem} line. Exit the sub-"
 "shell"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1683
 #, fuzzy
 #| msgid "Compare the binary packages: \\texttt{debdiff ../*changes}"
 msgid "Describe the changes in \\texttt{debian/changelog}"
 msgstr "Compare los paquetes binarios: \\texttt{debdiff ../*changes}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1682
+#: packaging-tutorial.tex:1683
 #, fuzzy
 #| msgid ""
 #| "Principle: changes are stored as patches in \\texttt{debian/patches/}"
@@ -3916,7 +3914,7 @@ msgstr ""
 "Principio: los cambios se guardan en parches en \\texttt{debian/patches/}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1687
+#: packaging-tutorial.tex:1688
 msgid ""
 "The package lacks a build-dependency on \\texttt{ruby-mocha}, which is used "
 "by the test suite (you might need to build your package in a clean "
@@ -3924,12 +3922,12 @@ msgid ""
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1690
+#: packaging-tutorial.tex:1691
 msgid "Add \\texttt{ruby-mocha} to the package's \\texttt{Build-Depends}"
 msgstr ""
 
 #. type: itemize
-#: packaging-tutorial.tex:1701
+#: packaging-tutorial.tex:1702
 msgid ""
 "\\textsl{gem2deb} copies the dependencies documented in the \\textsl{gem} as "
 "comments in \\texttt{debian/control}, but \\textsl{mocha} is not listed as a "
@@ -3937,7 +3935,7 @@ msgid ""
 msgstr ""
 
 #. type: frame
-#: packaging-tutorial.tex:1701
+#: packaging-tutorial.tex:1702
 #, fuzzy
 #| msgid "Compare your package with the one already packaged in Debian:"
 msgid ""

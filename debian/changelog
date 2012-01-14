@@ -1,13 +1,25 @@
-packaging-tutorial (0.5) UNRELEASED; urgency=low
-
-  [ Cédric Boutillier ]
-  * use changelog to determine automatically date and version
+packaging-tutorial (0.5) unstable; urgency=low
 
   [ Lucas Nussbaum ]
   * Minor updates to french translation during preparation for Capitole du
     Libre 2011.
+  * Add a debian/rules target to regenerate the version and the date in the
+    document.
+  * Use newer version of grep with recent debian/ubuntu releases due to the ld
+    --as-needed change.
+  * Do not mention patch-tracker twice.
+  * New practical session on gem2deb-based Ruby packaging.
+  * Add slide on backports.
+  * Initial import of spanish translation.
 
- -- Lucas Nussbaum <lucas@debian.org>  Mon, 28 Nov 2011 08:57:35 +0100
+  [ Cédric Boutillier ]
+  * Use changelog to determine automatically date and version
+  * Update French translation
+  * Add subsection for answer to practical session 4
+  * Update POT file
+  * (fr) proofread [Thomas Vincent]
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sat, 14 Jan 2012 07:59:53 +0100
 
 packaging-tutorial (0.4) unstable; urgency=low
 
