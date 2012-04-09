@@ -725,6 +725,10 @@ override_dh_auto_build:
   \item Go to \url{http://ftp.debian.org/debian/pool/main/g/grep/} and
     download version 2.6.3-3 of the package (if you use Ubuntu 11.10 or
     later, or Debian testing or unstable, use version 2.9-1 or 2.9-2 instead)
+    \begin{itemize}
+		   \item If the source package is not unpacked automatically, unpack it with
+			   \texttt{dpkg-source~-x~grep\_*.dsc}
+    \end{itemize}
 
   \item Look at the files in \texttt{debian/}.
     \begin{itemize}
