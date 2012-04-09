@@ -201,7 +201,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   {\small (This needs you to have \texttt{deb-src} lines in your \texttt{/etc/apt/sources.list})}
   \hbr
 \item Build the package\\
-  {\texttt{cd dash-*\\ debuild -us -uc}}
+  {\texttt{cd dash-*\\ debuild -us -uc}} ~~~(\texttt{-us -uc} disables signing the package with GPG)
 
   \hbr
 \item Check that it worked
