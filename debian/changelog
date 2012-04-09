@@ -1,3 +1,17 @@
+packaging-tutorial (0.6) unstable; urgency=low
+
+  * Explain -us -uc when building packages.
+  * Mention dch -i.
+  * Explain how to install build-deps using mk-build-deps.
+  * Explain how to unpack the source with dpkg-source -x.
+  * Improve title of VCS slide.
+  * Give example of package adoption.
+  * update po files
+  * update date in document
+  * update po files
+
+ -- Lucas Nussbaum <lucas@debian.org>  Mon, 09 Apr 2012 22:32:06 +0200
+
 packaging-tutorial (0.5) unstable; urgency=low
 
   [ Lucas Nussbaum ]
