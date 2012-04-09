@@ -671,7 +671,8 @@ override_dh_auto_build:
 \begin{frame}{Building packages}
   \begin{itemize}
   \item \textttc{apt-get build-dep mypackage}\\
-    Installs the \textsl{build-dependencies} (for a package in the archive)
+    Installs the \textsl{build-dependencies} (for a package already in Debian)\\
+    Or \textttc{mk-build-deps -ir} (inside the package source tree)
     
     \br
   \item \textttc{debuild}: build, test with \texttt{lintian}, sign with GPG
