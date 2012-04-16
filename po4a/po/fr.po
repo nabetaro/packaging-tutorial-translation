@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
 "POT-Creation-Date: 2012-04-09 22:29+0300\n"
-"PO-Revision-Date: 2012-01-09 11:31+0100\n"
+"PO-Revision-Date: 2012-04-15 17:40+0200\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -59,10 +59,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-#, fuzzy
-#| msgid "version 0.5 -- 2011-11-29"
 msgid "version 0.6 -- 2012-04-09"
-msgstr "version 0.5 -- 14 janvier 2012"
+msgstr "version 0.6 -- 9 avril 2012"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -453,12 +451,12 @@ msgstr ""
 
 #. type: enumerate
 #: packaging-tutorial.tex:205
-#, fuzzy
-#| msgid "Build the package\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}}"
 msgid ""
 "Build the package\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} ~~~(\\texttt"
 "{-us -uc} disables signing the package with GPG)"
-msgstr "Construisez le paquet\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}}"
+msgstr ""
+"Construisez le paquet\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} ~~~"
+"(\\texttt{-uc -uc} désactive la signature du paquet avec GPG)"
 
 #. type: enumerate
 #: packaging-tutorial.tex:218
@@ -868,15 +866,15 @@ msgstr ""
 #. %
 #. type: itemize
 #: packaging-tutorial.tex:382
-#, fuzzy
-#| msgid "Edited manually or with \\texttt{dch}"
 msgid "Edited manually or with \\textttc{dch}"
-msgstr "Édité à la main ou avec \\texttt{dch}"
+msgstr "Édité à la main ou avec \\textttc{dch}"
 
 #. type: itemize
 #: packaging-tutorial.tex:382
 msgid "Create a changelog entry for a new release: \\textttc{dch -i}"
 msgstr ""
+"Créer une entrée pour une nouvelle version dans le journal des "
+"modifications : \\textttc{dch -i}"
 
 #. type: itemize
 #: packaging-tutorial.tex:382
@@ -1675,17 +1673,14 @@ msgstr "Construire les paquets"
 
 #. type: itemize
 #: packaging-tutorial.tex:676
-#, fuzzy
-#| msgid ""
-#| "\\textttc{apt-get build-dep mypackage}\\\\ Installs the \\textsl{build-"
-#| "dependencies} (for a package in the archive)"
 msgid ""
 "\\textttc{apt-get build-dep mypackage}\\\\ Installs the \\textsl{build-"
 "dependencies} (for a package already in Debian)\\\\ Or \\textttc{mk-build-"
 "deps -ir} (inside the package source tree)"
 msgstr ""
 "\\textttc{apt-get build-dep monpaquet}\\\\ Installer les \\textsl"
-"{dépendances de construction} (pour un paquet dans l'archive)"
+"{dépendances de construction} (pour un paquet dans Debian)\\\\ Ou \\textttc"
+"{mk-build-deps -ir} (dans l'arborescence du paquet source)"
 
 #. type: itemize
 #: packaging-tutorial.tex:732
@@ -1833,6 +1828,8 @@ msgid ""
 "If the source package is not unpacked automatically, unpack it with \\texttt"
 "{dpkg-source~-x~grep\\_*.dsc}"
 msgstr ""
+"Si le paquet source n'est pas décompressé automatiquement, décompressez-le "
+"avec \\texttt{dpkg-source~-x~grep\\_*.dsc}"
 
 #. type: enumerate
 #: packaging-tutorial.tex:754 packaging-tutorial.tex:1373
@@ -2328,17 +2325,13 @@ msgstr ""
 
 #. type: subsection{#2}
 #: packaging-tutorial.tex:963
-#, fuzzy
-#| msgid "Packaging with a VCS (SVN, Git, etc.)"
 msgid "Packaging with a Version Control System (SVN, Git)"
-msgstr "Avec un gestionnaire de versions (VCS)"
+msgstr "Avec un gestionnaire de versions (SVN, Git)"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:963
-#, fuzzy
-#| msgid "From the (declared) version control system:"
 msgid "Packaging with a Version Control System"
-msgstr "Depuis le gestionnaire de versions (déclaré) :"
+msgstr "Empaqueter avec un gestionnaire de versions :"
 
 #. type: itemize
 #: packaging-tutorial.tex:963
@@ -2479,7 +2472,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:986
 msgid "Sometimes trivial (no changes needed)"
-msgstr "Parfois trivial (aucun changement nécéssaire)"
+msgstr "Parfois trivial (aucun changement nécessaire)"
 
 #. type: itemize
 #: packaging-tutorial.tex:986
@@ -2661,10 +2654,8 @@ msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1062
-#, fuzzy
-#| msgid "Adopting orphaned packages"
 msgid "Adopting a package: example"
-msgstr "Adopter des paquets orphelins"
+msgstr "Adopter un paquet : un exemple"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1062
@@ -2677,6 +2668,12 @@ msgid ""
 "Subject: ITA: verbiste -- French conjugator\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"From: Vous <vous@votredomaine>\n"
+"To: 640454@bugs.debian.org, control@bugs.debian.org\n"
+"Cc: Francois Marier <francois@debian.org>\n"
+"Subject: ITA: verbiste -- French conjugator\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1066
@@ -2687,6 +2684,10 @@ msgid ""
 "thanks\n"
 "\n"
 msgstr ""
+"retitle 640454 \\textbf{ITA}: verbiste -- French conjugator\n"
+"owner 640454 !\n"
+"thanks\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1068
@@ -2695,6 +2696,8 @@ msgid ""
 "Hi,\n"
 "\n"
 msgstr ""
+"Hi,\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1070
@@ -2703,6 +2706,8 @@ msgid ""
 "I am using verbiste and I am willing to take care of the package.\n"
 "\n"
 msgstr ""
+"I am using verbiste and I am willing to take care of the package.\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1072
@@ -2711,12 +2716,14 @@ msgid ""
 "Cheers,\n"
 "\n"
 msgstr ""
+"Cheers,\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1074
 #, no-wrap
 msgid "You"
-msgstr ""
+msgstr "Vous"
 
 #. type: itemize
 #: packaging-tutorial.tex:1081
@@ -2724,11 +2731,13 @@ msgid ""
 "Polite to contact the previous maintainer (especially if the package was "
 "RFAed, not orphaned)"
 msgstr ""
+"Il est poli de contacter le responsable précédent (surtout si le paquet "
+"était signalé comme cherchant un adoptant, et non comme orphelin)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1081
 msgid "Very good idea to contact the upstream project"
-msgstr ""
+msgstr "Contacter le projet amont est une très bonne idée"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1103
@@ -3924,7 +3933,7 @@ msgid ""
 "\\ \\verb+$: << 'test' << 'lib' << '.'+\\\\ \\verb+require 'test/test_all."
 "rb'+"
 msgstr ""
-"\\texttt{ruby-tests.rb} : executer les tests. Dans ce cas, les lignes "
+"\\texttt{ruby-tests.rb} : exécuter les tests. Dans ce cas, les lignes "
 "suivantes suffisent : \\\\\n"
 "\\verb+$: << 'test' << 'lib << '.'+\\\\\n"
 "\\verb+require 'test/test_all.rb'+"
