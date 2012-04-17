@@ -1040,7 +1040,7 @@ msgid ""
 "Or, if it only works on a subset of architectures:\\\\ \\texttt{Architecture:"
 "\\ amd64 i386 ia64 hurd-i386}"
 msgstr ""
-"Ou si ça ne fonctionne que sur certaines d'architectures :\\\\ \\texttt"
+"Ou si ça ne fonctionne que sur certaines architectures :\\\\ \\texttt"
 "{Architecture:~amd64 i386 ia64 hurd-i386}"
 
 #. type: itemize
@@ -3256,7 +3256,7 @@ msgstr "Empaquetez-la"
 #. type: frame{#2}
 #: packaging-tutorial.tex:1334 packaging-tutorial.tex:1663
 msgid "Practical session 4: packaging a Ruby gem"
-msgstr "Travaux pratiques nº~4 : empaqueter un « gem » Ruby"
+msgstr "Travaux pratiques nº~4 : empaqueter un gem Ruby"
 
 #. type: enumerate
 #: packaging-tutorial.tex:1334 packaging-tutorial.tex:1663
@@ -3396,7 +3396,7 @@ msgstr ""
 #. type: frame{#2}
 #: packaging-tutorial.tex:1419
 msgid "Looking around and building the package"
-msgstr "Faîtes le tour et construisez le paquet"
+msgstr "Faites le tour et construisez le paquet"
 
 #. type: itemize
 #: packaging-tutorial.tex:1419
