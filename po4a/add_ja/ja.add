@@ -1,0 +1,7 @@
+PO4A-HEADER:mode=before;position=\\end{document};beginboundary=NoT_In_ThE_DocUMEnt
+
+\section*{翻訳}
+\begin{frame}{翻訳}
+翻訳者
+\end{frame}
+\end{CJK}

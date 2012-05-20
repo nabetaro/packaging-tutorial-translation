@@ -1,0 +1,3 @@
+PO4A-HEADER:mode=after;position=\\begin{document};beginboundary=\\frame{\\titlepage}
+
+\begin{CJK}{UTF8}{goth}
