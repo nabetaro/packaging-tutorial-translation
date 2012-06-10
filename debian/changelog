@@ -1,3 +1,9 @@
+packaging-tutorial (0.7) UNRELEASED; urgency=low
+
+  * Add German translation. Closes: #672682.
+
+ -- Helge Kreutzmann <debian@helgefjell.de>  Sun, 10 Jun 2012 09:42:26 +0200
+
 packaging-tutorial (0.6) unstable; urgency=low
 
   * Explain -us -uc when building packages.
