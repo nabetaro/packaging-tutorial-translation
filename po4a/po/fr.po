@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2012-04-09 22:29+0300\n"
-"PO-Revision-Date: 2012-04-15 17:40+0200\n"
+"POT-Creation-Date: 2012-06-14 01:38+0300\n"
+"PO-Revision-Date: 2012-06-14 01:45+0200\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -107,7 +107,7 @@ msgstr "Vous devrez lire plus de documentation"
 
 #. type: itemize
 #: packaging-tutorial.tex:52
-msgid "Most of the content also applies to Debian derivatives distributions"
+msgid "Most of the content also applies to Debian derivative distributions"
 msgstr "L'essentiel s'applique aussi aux distributions dérivées de Debian"
 
 #. type: itemize
@@ -206,7 +206,7 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:105
-msgid "One of the two most common packages format (with RPM)"
+msgid "One of the two most common package formats (with RPM)"
 msgstr "Un des deux formats de paquets les plus courants avec RPM"
 
 #. type: itemize
@@ -230,7 +230,7 @@ msgstr "12 portages (architectures), dont 2 non Linux (Hurd et kFreeBSD)"
 
 #. type: itemize
 #: packaging-tutorial.tex:105
-msgid "Also used by 120 Debian derivatives distributions"
+msgid "Also used by 120 Debian derivative distributions"
 msgstr "Utilisé aussi par 120 distributions dérivées de Debian"
 
 #. type: frame{#2}
