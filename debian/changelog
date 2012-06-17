@@ -1,6 +1,10 @@
 packaging-tutorial (0.7) UNRELEASED; urgency=low
 
+  [ Helge Kreutzmann ]
   * Add German translation. Closes: #672682.
+
+  [ Stefano Zacchiroli ]
+  * LaTeX markup: turn \url{} into hyperlinks using hyperref
 
  -- Helge Kreutzmann <debian@helgefjell.de>  Sun, 10 Jun 2012 09:42:26 +0200
 
