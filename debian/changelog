@@ -5,6 +5,7 @@ packaging-tutorial (0.7) UNRELEASED; urgency=low
 
   [ Stefano Zacchiroli ]
   * LaTeX markup: turn \url{} into hyperlinks using hyperref
+  * DEP-5: point to the policy version of the standard
 
  -- Helge Kreutzmann <debian@helgefjell.de>  Sun, 10 Jun 2012 09:42:26 +0200
 
