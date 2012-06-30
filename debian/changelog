@@ -8,11 +8,6 @@ packaging-tutorial (0.7) UNRELEASED; urgency=low
   * LaTeX markup: remove unescaped \textbf{} within lstlisting
   * DEP-5: point to the policy version of the standard
 
-  [ Andreas Tille ]
-  * Drop slide about "The Deb package format" - it is not helpful for
-    beginners and I have seen way to much people who took explanations
-    like this as an excuse to package "the wrong way" (TM)
-
  -- Helge Kreutzmann <debian@helgefjell.de>  Sun, 10 Jun 2012 09:42:26 +0200
 
 packaging-tutorial (0.6) unstable; urgency=low
