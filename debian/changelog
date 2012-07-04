@@ -12,6 +12,7 @@ packaging-tutorial (0.7) unstable; urgency=low
   * Mention that fakeroot must be installed as well as devscripts.
     Closes: #659126.
   * es.po: unfuzzied a few strings that did not require language skills.
+  * Bump Standards-Version to 3.9.3. No changes needed.
 
  -- Lucas Nussbaum <lucas@debian.org>  Wed, 04 Jul 2012 11:47:13 +0200
 
