@@ -191,7 +191,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \begin{enumerate}
 \item Install packages needed to build dash, and devscripts\\
   {\texttt{sudo apt-get build-dep dash}\\ (requires \texttt{deb-src} lines in \texttt{/etc/apt/sources.list})}\\
-  {\texttt{sudo apt-get install -{}-no-install-recommends devscripts}}
+  {\texttt{sudo apt-get install -{}-no-install-recommends devscripts fakeroot}}
   \hbr
 \item Create a working directory, and get in it:\\
  \texttt{mkdir /tmp/debian-tutorial ; cd /tmp/debian-tutorial}

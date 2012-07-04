@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2012-07-03 06:19+0300\n"
+"POT-Creation-Date: 2012-07-04 09:47+0300\n"
 "PO-Revision-Date: 2012-06-29 05:27+0200\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -422,12 +422,12 @@ msgid ""
 "Install packages needed to build dash, and devscripts\\\\ {\\texttt{sudo apt-"
 "get build-dep dash}\\\\ (requires \\texttt{deb-src} lines in \\texttt{/etc/"
 "apt/sources.list})}\\\\ {\\texttt{sudo apt-get install -{}-no-install-"
-"recommends devscripts}}"
+"recommends devscripts fakeroot}}"
 msgstr ""
 "Installez les paquets nécessaires à la construction de dash, ainsi que "
 "devscripts \\\\ {\\texttt{apt-get build-dep dash}\\\\ (nécessite des lignes "
 "\\texttt{deb-src} dans \\texttt{/etc/apt/sources.list})}\\\\ {\\texttt{apt-"
-"get install -{}-no-install-recommends devscripts} }"
+"get install -{}-no-install-recommends devscripts fakeroot}}"
 
 #. type: enumerate
 #: packaging-tutorial.tex:205
