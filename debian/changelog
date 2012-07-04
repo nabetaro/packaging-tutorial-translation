@@ -9,6 +9,8 @@ packaging-tutorial (0.7) unstable; urgency=low
   * DEP-5: point to the policy version of the standard
 
   [ Lucas Nussbaum ]
+  * Drop the use of LATEXFILTER to ease possible backports of the package.
+    That script was renamed in latex-make 2.1.17-1. Closes: #676748.
   * Mention that fakeroot must be installed as well as devscripts.
     Closes: #659126.
   * es.po: unfuzzied a few strings that did not require language skills.
@@ -27,8 +29,6 @@ packaging-tutorial (0.6) unstable; urgency=low
   * update po files
   * update date in document
   * update po files
-  * Drop the use of LATEXFILTER to ease possible backports of the package.
-    That script was renamed in latex-make 2.1.17-1. Closes: #676748.
 
  -- Lucas Nussbaum <lucas@debian.org>  Mon, 09 Apr 2012 22:32:06 +0200
 
