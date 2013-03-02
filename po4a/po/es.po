@@ -3967,8 +3967,9 @@ msgid ""
 "rb'+"
 msgstr ""
 "\\texttt{ruby-tests.rb}: ejecute las comprobaciones. En este caso, basta "
-"hacer:\\\\ \\verb+$: << 'test' << 'lib' << '.'+\\\\ \\verb+require "
-"'test/test_all.rb'+"
+"hacer:\\\\\n"
+"\\verb+$: << 'test' << 'lib << '.'+\\\\\n"
+"\\verb+require 'test/test_all.rb'+"
 
 #. type: frame
 #: packaging-tutorial.tex:1717
