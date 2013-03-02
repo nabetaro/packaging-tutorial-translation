@@ -1,3 +1,11 @@
+packaging-tutorial (0.8) UNRELEASED; urgency=low
+
+  * Update spanish translation. Thanks to Omar Campagne. Closes: #681338
+  * Add improvements proposed by Helge Kreutzmann. Closes: #672683
+  * Add new mandatory targets in debian/rules. Thanks to Julien Cristau. Closes: #689287
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sat, 02 Mar 2013 19:14:32 +0100
+
 packaging-tutorial (0.7) unstable; urgency=low
 
   [ Helge Kreutzmann ]
