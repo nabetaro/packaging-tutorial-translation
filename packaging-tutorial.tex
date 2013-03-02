@@ -16,7 +16,7 @@
 %leave \\version unchanged: this will a variable containing the actual version
 %To translate the date, use \\today or a string containing \\year, \\month, \\day
 %(numeric values).
-\date{\footnotesize version 0.6 -- 2012-04-09} % DATE - use debian/rules update-version-date
+\date{\footnotesize version 0.8 -- 2013-03-02} % DATE - use debian/rules update-version-date
 
 \begin{document}
 
@@ -1696,6 +1696,11 @@ Improve the generated package:
 		\hbr
 	\item \texttt{ruby-net-ssh.docs}: install \texttt{README.rdoc}
 		\hbr
+%Translators:
+%This context is very sensitive to line length. If you
+%hit errors building the package around this line in your translated version
+%see, e.g. in the Spanish or German version for versions with explicit line
+%breaks for the translation
 	\item \texttt{ruby-tests.rb}: run the tests. In that case, it is enough to do:\\
 		\verb+$: << 'test' << 'lib' << '.'+\\
 		\verb+require 'test/test_all.rb'+
