@@ -1272,8 +1272,8 @@ You
 \section{Practical session 2: packaging GNUjump}
 \begin{frame}{Practical session 2: packaging GNUjump}
 \begin{enumerate}
-	\item Download GNUjump 1.0.6 from
-		\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+	\item Download GNUjump 1.0.8 from
+		\url{http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\br
 	\item Create a Debian package for it
 		\begin{itemize}
@@ -1501,8 +1501,8 @@ Or not: reinstall the previous version of the package:
 \subsection{Practical session 2: packaging GNUjump}
 \begin{frame}{Practical session 2: packaging GNUjump}
 \begin{enumerate}
-	\item Download GNUjump 1.0.6 from
-		\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+	\item Download GNUjump 1.0.8 from
+		\url{http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\br
 	\item Create a Debian package for it
 		\begin{itemize}
@@ -1518,13 +1518,13 @@ Or not: reinstall the previous version of the package:
 
 \begin{frame}[fragile]{Step by step\ldots}
 \begin{itemize}
-	\item \texttt{wget http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+	\item \texttt{wget http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\hbr
-	\item \texttt{mv gnujump-1.0.6.tar.gz gnujump\_1.0.6.orig.tar.gz}
+	\item \texttt{mv gnujump-1.0.8.tar.gz gnujump\_1.0.8.orig.tar.gz}
 		\hbr
-	\item \texttt{tar xf gnujump\_1.0.6.orig.tar.gz}
+	\item \texttt{tar xf gnujump\_1.0.8.orig.tar.gz}
 		\hbr
-	\item \texttt{cd gnujump-1.0.6/}
+	\item \texttt{cd gnujump-1.0.8/}
 		\hbr
 	\item \texttt{dh\_make}
 	\begin{itemize}
@@ -1532,7 +1532,7 @@ Or not: reinstall the previous version of the package:
 	\end{itemize}
 \end{itemize}
 \begin{lstlisting}[basicstyle=\ttfamily\small]
-gnujump-1.0.6$ ls debian/
+gnujump-1.0.8$ ls debian/
 changelog           gnujump.default.ex   preinst.ex
 compat              gnujump.doc-base.EX  prerm.ex
 control             init.d.ex            README.Debian
