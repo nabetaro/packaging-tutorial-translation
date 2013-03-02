@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2012-07-04 09:47+0300\n"
+"POT-Creation-Date: 2013-03-02 19:42+0100\n"
 "PO-Revision-Date: 2012-06-29 05:27+0200\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -59,8 +59,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-msgid "version 0.6 -- 2012-04-09"
-msgstr "version 0.6 -- 9 avril 2012"
+msgid "version 0.8 -- 2013-03-02"
+msgstr "version 0.8 -- 2013-03-02"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -546,12 +546,12 @@ msgstr "1.0 -- non natif :"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
-msgid "\\texttt{pkg\\_ver.orig.tar.gz} : upstream source"
+msgid "\\texttt{pkg\\_ver.orig.tar.gz}: upstream source"
 msgstr "\\texttt{paquet\\_ver.orig.tar.gz} : sources amont"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
-msgid "\\texttt{pkg\\_debver.diff.gz} : patch to add Debian-specific changes"
+msgid "\\texttt{pkg\\_debver.diff.gz}: patch to add Debian-specific changes"
 msgstr ""
 "\\texttt{paquet\\_debver.diff.gz} : correctif avec des modifications "
 "spécifiques à Debian"
@@ -563,7 +563,7 @@ msgstr "3.0 (quilt) :"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
-msgid "\\texttt{pkg\\_debver.debian.tar.gz} : tarball with the Debian changes"
+msgid "\\texttt{pkg\\_debver.debian.tar.gz}: tarball with the Debian changes"
 msgstr ""
 "\\texttt{paquet\\_debver.debian.tar.gz} : archive tar avec les modifications "
 "de Debian"
@@ -962,7 +962,7 @@ msgstr ""
 #: packaging-tutorial.tex:417
 msgid ""
 "Documentation: Debian Policy chapter 5\\\\ \\url{http://www.debian.org/doc/"
-"debian-policy/ch-controlfields.html}"
+"debian-policy/ch-controlfields}"
 msgstr ""
 "Documentation : la Charte Debian, chapitre 5\\\\ \\url{http://www.debian.org/"
 "doc/debian-policy/ch-controlfields.html}"
@@ -1107,21 +1107,23 @@ msgstr "Interface utilisée pour construire des paquets Debian"
 #: packaging-tutorial.tex:478
 msgid ""
 "Documented in Debian Policy, chapter 4.8\\\\ {\\small \\url{http://www."
-"debian.org/doc/debian-policy/ch-source.html\\#s-debianrules}}"
+"debian.org/doc/debian-policy/ch-source\\#s-debianrules}}"
 msgstr ""
 "Documenté dans la Charte Debian, chapitre 4.8\\\\ {\\small \\url{http://www."
-"debian.org/doc/debian-policy/ch-source.html\\#s-debianrules}}"
+"debian.org/doc/debian-policy/ch-source\\#s-debianrules}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:478
-msgid "Five required targets:"
-msgstr "Cinq cibles requises\\ :"
+msgid "Tequired targets:"
+msgstr "Cibles requises\\ :"
 
 #. type: itemize
 #: packaging-tutorial.tex:478
-msgid "\\texttt{build}: should perform all the configuration and compilation"
+msgid ""
+"\\texttt{build, build-arch, build-indep}: should perform all the "
+"configuration and compilation"
 msgstr ""
-"\\texttt{build} : doit effectuer toute la configuration et la compilation"
+"\\texttt{build, build-arch, build-indep} : doit effectuer toute la configuration et la compilation"
 
 #. type: itemize
 #: packaging-tutorial.tex:478
@@ -2218,10 +2220,10 @@ msgstr "Documentation :"
 #: packaging-tutorial.tex:887
 msgid ""
 "Debian Policy Manual, chapter 6\\\\ {\\footnotesize \\url{http://www.debian."
-"org/doc/debian-policy/ch-maintainerscripts.html}}"
+"org/doc/debian-policy/ch-maintainerscripts}}"
 msgstr ""
 "La Charte Debian, chapitre 6\\\\ {\\footnotesize \\url{http://www.debian.org/"
-"doc/debian-policy/ch-maintainerscripts.html}}"
+"doc/debian-policy/ch-maintainerscripts}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:903
@@ -2779,10 +2781,10 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1104
 msgid ""
-"\\textbf{Debian Developer (DD):}\\\\ Debian project members; can vote and "
+"\\textbf{Debian Developer (DD):}\\\\ Debian project member; can vote and "
 "upload any package"
 msgstr ""
-"\\textbf{Debian Developer (DD) :}\\\\ Membres du projet Debian \\\\ Peuvent "
+"\\textbf{Debian Developer (DD) :}\\\\ Membre du projet Debian \\\\ Peuvent "
 "voter et envoyer n'importe quel paquet"
 
 #. type: frame{#2}
@@ -3087,8 +3089,8 @@ msgstr "Mentions légales"
 
 #. type: frame
 #: packaging-tutorial.tex:1234
-msgid "Copyright \\copyright 2011 Lucas Nussbaum -- lucas@debian.org"
-msgstr "Copyright \\copyright{} 2011 Lucas Nussbaum -- lucas@debian.org"
+msgid "Copyright \\copyright 2011--2013 Lucas Nussbaum -- lucas@debian.org"
+msgstr "Copyright \\copyright{} 2011--2013 Lucas Nussbaum -- lucas@debian.org"
 
 #. type: frame
 #: packaging-tutorial.tex:1250
@@ -3480,10 +3482,10 @@ msgstr ""
 #: packaging-tutorial.tex:1450
 msgid ""
 "Package versioning is detailed in section 5.6.12 of the Debian policy\\\\ "
-"\\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}"
+"\\url{http://www.debian.org/doc/debian-policy/ch-controlfields}"
 msgstr ""
 "Le système des versions est décrit à la section 5.6.12 de la Charte Debian\\"
-"\\ \\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}"
+"\\ \\url{http://www.debian.org/doc/debian-policy/ch-controlfields}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1454
@@ -3626,7 +3628,7 @@ msgstr ""
 "gnujump.cron.d.ex   postrm.ex"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1574 packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1574 packaging-tutorial.tex:1709
 msgid "Step by step\\ldots (2)"
 msgstr "Pas à pas\\ldots (2)"
 
@@ -3708,7 +3710,7 @@ msgstr ""
 "Mieux : construction dans un environnement propre avec \\textbf{pbuilder}"
 
 #. type: frame{#2}
-#: packaging-tutorial.tex:1597 packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1597 packaging-tutorial.tex:1723
 msgid "Step by step\\ldots (3)"
 msgstr "Pas à pas\\ldots (3)"
 
@@ -3735,10 +3737,10 @@ msgstr "Utilisez \\texttt{debi} pour l'installer et le tester."
 #: packaging-tutorial.tex:1597
 msgid ""
 "Fill in \\texttt{debian/control} using \\url{http://www.debian.org/doc/"
-"debian-policy/ch-controlfields.html}"
+"debian-policy/ch-controlfields}"
 msgstr ""
 "Remplissez \\texttt{debian/control} en utilisant \\url{http://www.debian.org/"
-"doc/debian-policy/ch-controlfields.html}"
+"doc/debian-policy/ch-controlfields}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1597
@@ -3891,12 +3893,17 @@ msgstr ""
 "{debian/ruby-test-files.yaml}, ainsi que d'autres vérifications diverses"
 
 #. type: frame
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid "Improve the generated package:"
 msgstr "Améliorez le paquet créé :"
 
+#. Translators:
+#. This context is very sensitive to line length. If you
+#. hit errors building the package around this line in your translated version
+#. see, e.g. in the Spanish or German version for versions with explicit line
+#. breaks for the translation
 #. type: itemize
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid ""
 "Run \\texttt{debclean} to clean the source tree. Look at \\texttt{debian/}."
 msgstr ""
@@ -3904,12 +3911,12 @@ msgstr ""
 "{debian/}."
 
 #. type: itemize
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid "\\texttt{changelog} and \\texttt{compat} should be correct"
 msgstr "\\texttt{changelog} et \\texttt{compat} devraient être corrects"
 
 #. type: itemize
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid ""
 "Edit \\texttt{debian/control}: uncomment \\texttt{Homepage}, improve \\texttt"
 "{Description}"
@@ -3918,19 +3925,19 @@ msgstr ""
 "\\texttt{Description}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid "Write a proper \\texttt{copyright} file based on the upstream files"
 msgstr ""
 "Écrivez un fichier \\texttt{copyright} convenable se basant sur les fichiers "
 "amont"
 
 #. type: itemize
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid "\\texttt{ruby-net-ssh.docs}: install \\texttt{README.rdoc}"
 msgstr "\\texttt{ruby-net-ssh.docs} : installez \\texttt{README.rdoc}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1704
+#: packaging-tutorial.tex:1709
 msgid ""
 "\\texttt{ruby-tests.rb}: run the tests. In that case, it is enough to do:\\"
 "\\ \\verb+$: << 'test' << 'lib' << '.'+\\\\ \\verb+require 'test/test_all."
@@ -3942,12 +3949,12 @@ msgstr ""
 "\\verb+require 'test/test_all.rb'+"
 
 #. type: frame
-#: packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1723
 msgid "Build the package.  It fails to build. There are two problems:"
 msgstr "Lancez la construction. Elle échoue pour deux raisons :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1723
 msgid ""
 "You need to disable the \\texttt{gem} call in the test suite.\\\\ In \\texttt"
 "{test/common.rb}, remove the \\verb+gem \"test-unit\"+ line:"
@@ -3957,12 +3964,12 @@ msgstr ""
 "\"+ :"
 
 #. type: itemize
-#: packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1723
 msgid "\\texttt{edit-patch disable-gem.patch}"
 msgstr "\\texttt{edit-patch desactiver-gem.patch}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1723
 msgid ""
 "Edit \\texttt{test/common.rb}, remove the \\texttt{gem} line. Exit the sub-"
 "shell"
@@ -3971,18 +3978,18 @@ msgstr ""
 "Quittez le sous-interpréteur"
 
 #. type: itemize
-#: packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1723
 msgid "Describe the changes in \\texttt{debian/changelog}"
 msgstr "Décrivez les changements dans \\texttt{debian/changelog}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1718
+#: packaging-tutorial.tex:1723
 msgid "Document the patch in \\texttt{debian/patches/disable-gem.patch}"
 msgstr ""
 "Documentez le correctif dans \\texttt{debian/patches/desactiver-gem.patch}"
 
 #. type: itemize
-#: packaging-tutorial.tex:1723
+#: packaging-tutorial.tex:1728
 msgid ""
 "The package lacks a build-dependency on \\texttt{ruby-mocha}, which is used "
 "by the test suite (you might need to build your package in a clean "
@@ -3994,13 +4001,13 @@ msgstr ""
 "reproduire ce problème)"
 
 #. type: itemize
-#: packaging-tutorial.tex:1726
+#: packaging-tutorial.tex:1731
 msgid "Add \\texttt{ruby-mocha} to the package's \\texttt{Build-Depends}"
 msgstr ""
 "Ajoutez \\texttt{ruby-mocha} au champ \\texttt{Build-Depends} du paquet"
 
 #. type: itemize
-#: packaging-tutorial.tex:1737
+#: packaging-tutorial.tex:1742
 msgid ""
 "\\textsl{gem2deb} copies the dependencies documented in the \\textsl{gem} as "
 "comments in \\texttt{debian/control}, but \\textsl{mocha} is not listed as a "
@@ -4012,7 +4019,7 @@ msgstr ""
 "(c'est un bogue du gem)"
 
 #. type: frame
-#: packaging-tutorial.tex:1737
+#: packaging-tutorial.tex:1742
 msgid ""
 "Compare your package with the \\texttt{ruby-net-ssh} package in the Debian "
 "archive"
