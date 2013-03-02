@@ -3239,6 +3239,10 @@ msgid "Update shebangs in executable scripts"
 msgstr ""
 
 #. type: itemize
+# Not to translators: This context is very sensitive to line length. If you
+# hit errors building the package around this line in your translated version
+# see, e.g. in the Spanish or German version for versions with explicit line
+# breaks for the translation
 #: packaging-tutorial.tex:1685
 msgid ""
 "Run tests defined in \\texttt{debian/ruby-tests.rb} or "

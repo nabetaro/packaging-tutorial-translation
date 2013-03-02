@@ -239,14 +239,14 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
       \hbr
     \item 1.0 -- non-native:
       \begin{itemize}
-      \item \texttt{pkg\_ver.orig.tar.gz} : upstream source
-      \item \texttt{pkg\_debver.diff.gz} : patch to add Debian-specific changes
+      \item \texttt{pkg\_ver.orig.tar.gz}: upstream source
+      \item \texttt{pkg\_debver.diff.gz}: patch to add Debian-specific changes
       \end{itemize}
       \hbr
     \item 3.0 (quilt):
       \begin{itemize}
-      \item \texttt{pkg\_ver.orig.tar.gz} : upstream source
-      \item \texttt{pkg\_debver.debian.tar.gz} : tarball with the Debian changes
+      \item \texttt{pkg\_ver.orig.tar.gz}: upstream source
+      \item \texttt{pkg\_debver.debian.tar.gz}: tarball with the Debian changes
       \end{itemize}
     \end{itemize}
   \end{itemize}
@@ -402,7 +402,7 @@ mpich2 (1.2.1.1-5) unstable; urgency=low
   \item Package name, section, priority, maintainer, uploaders,
     build-dependencies, dependencies, description, homepage, \ldots \hbr
   \item Documentation: Debian Policy chapter 5\\
-    \url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
+    \url{http://www.debian.org/doc/debian-policy/ch-controlfields}
   \end{itemize}
   \seprule
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -458,7 +458,7 @@ Description: retrieves files from the web
   \item Interface used to build Debian packages
     \br
   \item Documented in Debian Policy, chapter 4.8\\
-    {\small \url{http://www.debian.org/doc/debian-policy/ch-source.html\#s-debianrules}}
+    {\small \url{http://www.debian.org/doc/debian-policy/ch-source\#s-debianrules}}
     \br
   \item Five required targets:
     \begin{itemize}
@@ -883,7 +883,7 @@ Last-Update: 2010-03-29
   \item Documentation:
     \begin{itemize}
     \item Debian Policy Manual, chapter 6\\
-      {\footnotesize \url{http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html}}
+      {\footnotesize \url{http://www.debian.org/doc/debian-policy/ch-maintainerscripts}}
       
       \hbr
     \item Debian Developer's Reference, chapter 6.4\\
@@ -1097,7 +1097,7 @@ You
 			See \url{http://wiki.debian.org/DebianMaintainer}
 			\hbr
 		\item \textbf{Debian Developer (DD):}\\
-			Debian project members; can vote and upload any package
+			Debian project member; can vote and upload any package
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -1229,7 +1229,7 @@ You
 \subsection{Legal stuff}
 \begin{frame}{Legal stuff}
 
-  Copyright \copyright 2011 Lucas Nussbaum -- lucas@debian.org
+  Copyright \copyright 2011--2013 Lucas Nussbaum -- lucas@debian.org
   \br
 
   {\small 
@@ -1444,7 +1444,7 @@ You
 		\item After that, rebuild the package: a new version of the package is built
 	\hbr
 		\item Package versioning is detailed in section 5.6.12 of the Debian policy\\
-			\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
+			\url{http://www.debian.org/doc/debian-policy/ch-controlfields}
 	\end{itemize}
 \end{frame}
 
@@ -1580,7 +1580,7 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 		\hbr
 	\item Use \texttt{debi} to install it and test it.
 		\hbr
-	\item Fill in \texttt{debian/control} using \url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
+	\item Fill in \texttt{debian/control} using \url{http://www.debian.org/doc/debian-policy/ch-controlfields}
 		\hbr
 	\item Test the package with \texttt{lintian}
 		\hbr
