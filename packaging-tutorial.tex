@@ -717,7 +717,8 @@ override_dh_auto_build:
     \br
   \item Check the package with \texttt{lintian} (static analyzer):\\
     \texttt{{\color{rouge}lintian} ../mypackage<TAB>.changes}\\
-    \texttt{lintian -i}: gives more information about the errors \br
+    \texttt{lintian -i}: gives more information about the errors \\
+    \texttt{lintian -EviIL +pedantic}: shows more problems\br
   \item Upload the package to Debian (\textttc{dput}) (needs configuration) \br
   \item Manage a private Debian archive with \textttc{reprepro}\\
     Documentation: \url{http://mirrorer.alioth.debian.org/}
@@ -1158,7 +1159,7 @@ You
     \hbr
     
   \item Ubuntu Packaging Guide\\
-    \url{https://wiki.ubuntu.com/PackagingGuide}
+    \url{http://developer.ubuntu.com/resources/tools/packaging/}
   \end{itemize}
 \end{frame}
 
@@ -1255,25 +1256,27 @@ You
   }
 \end{frame}
 
-\subsection{Latest version \& source code}
-\begin{frame}{Latest version \& source code}
-  \begin{itemize}
-  \item Latest version:\\
-    {\footnotesize \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git;a=blob\_plain;f=packaging-tutorial.pdf;hb=refs/heads/pdf}}
-  \end{itemize}
-  
-  \begin{itemize}
-  \item Contribute:
-	  \begin{itemize}
-		  \item  {\small \texttt{git clone\\ git://git.debian.org/collab-maint/packaging-tutorial.git}}
-    \hbr
-    \item {\small \texttt{apt-get source packaging-tutorial}}
-    \hbr
-    \item {\small \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}
-    \end{itemize}
-    \br
-  \item Feedback: \href{mailto:lucas@debian.org}{\textbf{\texttt{lucas@debian.org}}}
-  \end{itemize}
+\subsection{Contribute to this tutorial}
+\begin{frame}{Contribute to this tutorial}
+	\begin{itemize}
+		\item Contribute:
+			\begin{itemize}
+				\item {\small \texttt{apt-get source packaging-tutorial}}
+					\hbr
+				\item  {\small \texttt{debcheckout packaging-tutorial}}
+					\hbr
+				\item  {\small \texttt{git clone\\ git://git.debian.org/collab-maint/packaging-tutorial.git}}
+					\hbr
+				\item {\small \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}
+			\end{itemize}
+			\br
+		\item Feedback:
+			\begin{itemize}
+				\item \href{mailto:lucas@debian.org}{\textbf{\texttt{mailto:lucas@debian.org}}}
+					\hbr
+				\item {\small \texttt{reportbug packaging-tutorial}}
+			\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \section{Practical session 2: packaging GNUjump}
@@ -1587,16 +1590,34 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 		\hbr
 	\item Use \texttt{debi} to install it and test it.
 		\hbr
-	\item Fill in \texttt{debian/control} using \url{http://www.debian.org/doc/debian-policy/ch-controlfields}
-		\hbr
 	\item Test the package with \texttt{lintian}
+		\begin{itemize}
+			\item While not a strict requirement, it is recommended that packages uploaded to Debian are \textsl{lintian-clean}
 		\hbr
-	\item Remove the files that you don't need in \texttt{debian/}
+			\item More problems can be listed using \texttt{lintian -EviIL +pedantic}
 		\hbr
+			\item Some hints:
+				\begin{itemize}
+					\item Remove the files that you don't need in \texttt{debian/}
+		\hbr
+					\item Fill in \texttt{debian/control}
+						\hbr
+					\item Install the executable to \texttt{/usr/games} by overriding \texttt{dh\_auto\_configure}
+		\hbr
+					\item Use \textsl{hardening} compiler flags to increase security.\\ See \url{http://wiki.debian.org/Hardening}
+				\end{itemize}
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Step by step\ldots (4)}
+		\begin{itemize}
 	\item Compare your package with the one already packaged in Debian:
 		\begin{itemize}
 			\item It splits the data files to a second package, that is the same across all architectures ($\rightarrow$ saves space in the Debian archive)
+				\hbr
 			\item It installs a .desktop file (for the GNOME/KDE menus) and also integrates into the Debian menu
+				\hbr
 			\item It fixes a few minor problems using patches
 		\end{itemize}
 \end{itemize}
