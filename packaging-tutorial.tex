@@ -139,7 +139,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   \item Some packages:
     \begin{itemize}
     \item \textbf{build-essential}: has dependencies on the packages that will
-      be assumed to be available on the developers' machine (no need to specify
+      be assumed to be available on the developer's machine (no need to specify
       them in the \texttt{Build-Depends:} control field of your package)
       \begin{itemize}
       \item includes a dependency on \textbf{dpkg-dev}, which contains basic
@@ -235,9 +235,9 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
     \hbr
   \item Other files depending on the version of the source format
     \begin{itemize}
-    \item 1.0 -- native: \texttt{package\_version.tar.gz}
+    \item 1.0 or 3.0 (native): \texttt{package\_version.tar.gz}
       \hbr
-    \item 1.0 -- non-native:
+    \item 1.0 (non-native):
       \begin{itemize}
       \item \texttt{pkg\_ver.orig.tar.gz}: upstream source
       \item \texttt{pkg\_debver.diff.gz}: patch to add Debian-specific changes
@@ -317,7 +317,11 @@ Files:
     \hbr
   \item Untar it
     \hbr
-  \item \texttt{cd \textsl{upstream\_source} \&\& dh\_make} (from the \textbf{dh-make} package)
+  \item Rename the directory to \texttt{<\textsl{source\_package}>-<\textsl{upstream\_version}>}\\
+	  (example: \texttt{simgrid-3.6})
+    \hbr
+  \item \texttt{cd \texttt{<\textsl{source\_package}>-<\textsl{upstream\_version}>} \&\& dh\_make}\\
+	  (from the \textbf{dh-make} package)
     \hbr
   \item There are some alternatives to \texttt{dh\_make} for specific sets of
     packages: \textbf{dh-make-perl}, \textbf{dh-make-php}, \ldots \hbr
