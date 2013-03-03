@@ -28,3 +28,6 @@ override_dh_compress:
 
 update-version-date:
 	sed -i -e "s/.* % DATE - use debian\/rules update-version-date/\\\\date{\\\\footnotesize version $(VERSION) -- $(YEAR)-$(MONTH)-$(DAY)} \% DATE - use debian\/rules update-version-date/" packaging-tutorial.tex
+
+po-call:
+	cd po4a && podebconf-report-po --postpone /tmp/po --notdebconf --call
