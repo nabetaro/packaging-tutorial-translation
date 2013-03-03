@@ -1,10 +1,24 @@
-packaging-tutorial (0.8) UNRELEASED; urgency=low
+packaging-tutorial (0.8) unstable; urgency=low
 
   * Update spanish translation. Thanks to Omar Campagne. Closes: #681338
   * Add improvements proposed by Helge Kreutzmann. Closes: #672683
-  * Add new mandatory targets in debian/rules. Thanks to Julien Cristau. Closes: #689287
+  * Add new mandatory targets in debian/rules. Thanks to Julien Cristau.
+    Closes: #689287
+  * Fix ES translation to make the package build again.
+  * Re-add note to translators.
+  * Fix what I could fix in DE, FR, ES translations.
+  * Add doc-base entries for .es and .de. Closes: #680180
+  * debian/copyright: Document copyright of the Debian logo. Closes: #685904
+  * Fix gnujump URL. Thanks Henning Sprang and Stéphane Kanschine.
+    Closes: #685359
+  * Check for wrong version in .tex during build
+  * Clarify that mk-build-deps is useful if package not uploaded yet.
+    Closes: #702119
+  * Include many fixes from Francesco Poli. Closes: #686594
+  * Mention Debian Maintainer Dashboard.
+  * Integrate more fixes from Francesco Poli. Closes: #695534
 
- -- Lucas Nussbaum <lucas@debian.org>  Sat, 02 Mar 2013 19:14:32 +0100
+ -- Lucas Nussbaum <lucas@debian.org>  Sun, 03 Mar 2013 11:50:43 +0100
 
 packaging-tutorial (0.7) unstable; urgency=low
 
