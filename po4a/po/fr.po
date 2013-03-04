@@ -4,12 +4,12 @@
 # This file is distributed under the same license as the packaging-tutorial package.
 #
 # Jean-Philippe MENGUAL <mengualjeanphi@free.fr>, 2011.
-# Cédric Boutillier <cedric.boutillier@gmail.com>, 2011, 2012.
+# Cédric Boutillier <cedric.boutillier@gmail.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
 "POT-Creation-Date: 2013-03-03 11:51+0100\n"
-"PO-Revision-Date: 2012-06-29 05:27+0200\n"
+"PO-Revision-Date: 2013-03-04 08:23+0100\n"
 "Last-Translator: Cédric Boutillier <cedric.boutillier@gmail.com>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -59,10 +59,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-#, fuzzy
-#| msgid "version 0.8 -- 2013-03-02"
 msgid "version 0.8 -- 2013-03-03"
-msgstr "version 0.8 -- 2013-03-02"
+msgstr "version 0.8 -- 3 mars 2013"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -324,18 +322,13 @@ msgstr "Quelques paquets :"
 
 #. type: itemize
 #: packaging-tutorial.tex:153
-#, fuzzy
-#| msgid ""
-#| "\\textbf{build-essential}: has dependencies on the packages that will be "
-#| "assumed to be available on the developers' machine (no need to specify "
-#| "them in the \\texttt{Build-Depends:} control field of your package)"
 msgid ""
 "\\textbf{build-essential}: has dependencies on the packages that will be "
 "assumed to be available on the developer's machine (no need to specify them "
 "in the \\texttt{Build-Depends:} control field of your package)"
 msgstr ""
 "\\textbf{build-essential} : dépend de paquets supposés disponibles sur la "
-"machine des développeurs (inutile de les indiquer dans le champ de contrôle "
+"machine du développeur (inutile de les indiquer dans le champ de contrôle "
 "\\texttt{Build-Depends} de votre paquet)"
 
 #. type: itemize
@@ -463,7 +456,7 @@ msgid ""
 "{-us -uc} disables signing the package with GPG)"
 msgstr ""
 "Construisez le paquet\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} ~~~"
-"(\\texttt{-uc -uc} désactive la signature du paquet avec GPG)"
+"(\\texttt{-us -uc} désactive la signature du paquet avec GPG)"
 
 #. type: enumerate
 #: packaging-tutorial.tex:218
@@ -543,17 +536,13 @@ msgstr "Autres fichiers selon la version du format source"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
-#, fuzzy
-#| msgid "1.0 -- native: \\texttt{package\\_version.tar.gz}"
 msgid "1.0 or 3.0 (native): \\texttt{package\\_version.tar.gz}"
-msgstr "1.0 -- natif : \\texttt{paquet\\_version.tar.gz}"
+msgstr "1.0 ou 3.0 (natif) : \\texttt{paquet\\_version.tar.gz}"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
-#, fuzzy
-#| msgid "1.0 -- non-native:"
 msgid "1.0 (non-native):"
-msgstr "1.0 -- non natif :"
+msgstr "1.0 (non natif) :"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
@@ -742,30 +731,21 @@ msgstr "Décompressez-la"
 
 #. type: itemize
 #: packaging-tutorial.tex:331
-#, fuzzy
-#| msgid ""
-#| "Rename to \\texttt{<\\textsl{source\\_package}>\\_<\\textsl{upstream"
-#| "\\_version}>.orig.tar.gz}\\\\ (example: \\texttt{simgrid\\_3.6.orig.tar."
-#| "gz})"
 msgid ""
 "Rename the directory to \\texttt{<\\textsl{source\\_package}>-<\\textsl"
 "{upstream\\_version}>}\\\\ (example: \\texttt{simgrid-3.6})"
 msgstr ""
-"Renommez-la en \\texttt{<\\textsl{paquet\\_source}>\\_<\\textsl{version"
-"\\_amont}>.orig.tar.gz}\\\\ (exemple : \\texttt{simgrid\\_3.6.orig.tar.gz})"
+"Renommez le répertoire en \\texttt{<\\textsl{paquet\\_source}>-<\\textsl"
+"{version\\_amont}>}\\\\ (exemple : \\texttt{simgrid-3.6})"
 
 #. type: itemize
 #: packaging-tutorial.tex:331
-#, fuzzy
-#| msgid ""
-#| "\\texttt{cd \\textsl{upstream\\_source} \\&\\& dh\\_make} (from the "
-#| "\\textbf{dh-make} package)"
 msgid ""
 "\\texttt{cd \\texttt{<\\textsl{source\\_package}>-<\\textsl{upstream"
 "\\_version}>} \\&\\& dh\\_make}\\\\ (from the \\textbf{dh-make} package)"
 msgstr ""
-"\\texttt{cd \\textsl{sources\\_amont} \\&\\& dh\\_make} (du paquet \\textbf"
-"{dh-make})"
+"\\texttt{cd <\\textsl{paquet\\_source}>-<\\textsl{version\\_amont}> \\&\\& dh"
+"\\_make} (du paquet \\textbf{dh-make})"
 
 #. type: itemize
 #: packaging-tutorial.tex:331
@@ -1260,7 +1240,7 @@ msgid ""
 "examples, \\textsl{package}.install, \\textsl{package}.manpages, \\ldots}"
 msgstr ""
 "{\\footnotesize \\ttfamily dirs, \\textsl{paquet}.docs, \\textsl{paquet}."
-"examples, \\textsl{package}.install, \\textsl{paquet}.manpages\\ldots}"
+"examples, \\textsl{paquet}.install, \\textsl{paquet}.manpages\\ldots}"
 
 #. type: itemize
 #: packaging-tutorial.tex:516
@@ -1705,11 +1685,6 @@ msgstr "Construire les paquets"
 
 #. type: itemize
 #: packaging-tutorial.tex:680
-#, fuzzy
-#| msgid ""
-#| "\\textttc{apt-get build-dep mypackage}\\\\ Installs the \\textsl{build-"
-#| "dependencies} (for a package already in Debian)\\\\ Or \\textttc{mk-build-"
-#| "deps -ir} (inside the package source tree)"
 msgid ""
 "\\textttc{apt-get build-dep mypackage}\\\\ Installs the \\textsl{build-"
 "dependencies} (for a package already in Debian)\\\\ Or \\textttc{mk-build-"
@@ -1717,7 +1692,7 @@ msgid ""
 msgstr ""
 "\\textttc{apt-get build-dep monpaquet}\\\\ Installer les \\textsl"
 "{dépendances de construction} (pour un paquet dans Debian)\\\\ Ou \\textttc"
-"{mk-build-deps -ir} (dans l'arborescence du paquet source)"
+"{mk-build-deps -ir} (pour un paquet pas encore envoyé dans Debian)"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -1761,7 +1736,7 @@ msgid ""
 "\\ (not as simple as \\texttt{pbuilder}, but allows LVM snapshots\\\\ see: "
 "\\url{https://help.ubuntu.com/community/SbuildLVMHowto} )"
 msgstr ""
-"\\textttc{schroot} and \\textttc{sbuild} : utilisé sur les démons de "
+"\\textttc{schroot} et \\textttc{sbuild} : utilisé sur les démons de "
 "construction Debian\\\\ (pas aussi simple que \\texttt{pbuilder}, mais "
 "permet des copies LVM\\\\ voir : \\url{https://help.ubuntu.com/community/"
 "SbuildLVMHowto} )"
@@ -1817,11 +1792,6 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:737
-#, fuzzy
-#| msgid ""
-#| "Check the package with \\texttt{lintian} (static analyzer):\\\\ \\texttt"
-#| "{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ \\texttt{lintian -"
-#| "i}: gives more information about the errors"
 msgid ""
 "Check the package with \\texttt{lintian} (static analyzer):\\\\ \\texttt"
 "{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ \\texttt{lintian -"
@@ -1830,7 +1800,8 @@ msgid ""
 msgstr ""
 "Vérifier le paquet avec \\texttt{lintian} (analyseur statique) :\\\\ \\texttt"
 "{{\\color{rouge}lintian} ../monpaquet<TAB>.changes}\\\\ \\texttt{lintian -"
-"i} : donne plus d'informations sur les erreurs"
+"i} : donne plus d'informations sur les erreurs \\\\ \\texttt{lintian -EviIL "
+"+pedantic} : montre encore plus de problèmes"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -2952,15 +2923,12 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:1165
-#, fuzzy
-#| msgid ""
-#| "Ubuntu Packaging Guide\\\\ \\url{https://wiki.ubuntu.com/PackagingGuide}"
 msgid ""
 "Ubuntu Packaging Guide\\\\ \\url{http://developer.ubuntu.com/resources/tools/"
 "packaging/}"
 msgstr ""
-"Guide d'empaquetage d'Ubuntu\\\\ \\url{https://wiki.ubuntu.com/"
-"PackagingGuide}"
+"Guide d'empaquetage d'Ubuntu\\\\ \\url{http://developer.ubuntu.com/resources/"
+"tools/packaging/}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1178
@@ -2995,6 +2963,9 @@ msgid ""
 "\\textbf{TODO-list oriented}: Debian Maintainer Dashboard (DMD)\\\\ \\url"
 "{http://udd.debian.org/dmd.cgi}"
 msgstr ""
+"\\textbf{Pour une vision en liste de tâches} : tableau de bord du "
+"responsable Debian (DMD : Debian Maintainer Dashboard)\\\\ \\url{http://udd."
+"debian.org/dmd.cgi}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1205
@@ -3167,10 +3138,8 @@ msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1281
-#, fuzzy
-#| msgid "About this tutorial"
 msgid "Contribute to this tutorial"
-msgstr "À propos de ce tutoriel"
+msgstr "Contribuer à ce tutoriel"
 
 #. type: itemize
 #: packaging-tutorial.tex:1281
@@ -3184,10 +3153,8 @@ msgstr "{\\small \\texttt{apt-get source packaging-tutorial}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1281
-#, fuzzy
-#| msgid "{\\small \\texttt{apt-get source packaging-tutorial}}"
 msgid "{\\small \\texttt{debcheckout packaging-tutorial}}"
-msgstr "{\\small \\texttt{apt-get source packaging-tutorial}}"
+msgstr "{\\small \\texttt{debcheckout packaging-tutorial}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1281
@@ -3208,26 +3175,18 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1281
 msgid "Feedback:"
-msgstr ""
+msgstr "Retour :"
 
 #. type: itemize
 #: packaging-tutorial.tex:1281
-#, fuzzy
-#| msgid ""
-#| "Feedback: \\href{mailto:lucas@debian.org}{\\textbf{\\texttt{lucas@debian."
-#| "org}}}"
 msgid ""
 "\\href{mailto:lucas@debian.org}{\\textbf{\\texttt{mailto:lucas@debian.org}}}"
-msgstr ""
-"Vos retours : \\href{mailto:lucas@debian.org}{\\textbf{\\texttt{lucas@debian."
-"org}}}"
+msgstr "\\href{mailto:lucas@debian.org}{\\textbf{\\texttt{lucas@debian.org}}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1281
-#, fuzzy
-#| msgid "{\\small \\texttt{apt-get source packaging-tutorial}}"
 msgid "{\\small \\texttt{reportbug packaging-tutorial}}"
-msgstr "{\\small \\texttt{apt-get source packaging-tutorial}}"
+msgstr "{\\small \\texttt{reportbug packaging-tutorial}}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1299 packaging-tutorial.tex:1528
@@ -3236,16 +3195,12 @@ msgstr "Travaux pratiques nº~2 : empaqueter GNUjump"
 
 #. type: enumerate
 #: packaging-tutorial.tex:1299 packaging-tutorial.tex:1528
-#, fuzzy
-#| msgid ""
-#| "Download GNUjump 1.0.6 from \\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/"
-#| "gnujump-1.0.6.tar.gz}"
 msgid ""
 "Download GNUjump 1.0.8 from \\url{http://ftp.gnu.org/gnu/gnujump/"
 "gnujump-1.0.8.tar.gz}"
 msgstr ""
-"Téléchargez GNUjump~1.0.6 depuis \\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/"
-"gnujump-1.0.6.tar.gz}"
+"Téléchargez GNUjump~1.0.8 depuis \\url{http://ftp.gnu.org/gnu/gnujump/"
+"gnujump-1.0.8.tar.gz}"
 
 #. type: enumerate
 #: packaging-tutorial.tex:1299 packaging-tutorial.tex:1528
@@ -3638,33 +3593,23 @@ msgstr "Pas à pas\\ldots"
 
 #. type: itemize
 #: packaging-tutorial.tex:1557
-#, fuzzy
-#| msgid ""
-#| "\\texttt{wget http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}"
 msgid "\\texttt{wget http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}"
-msgstr ""
-"\\texttt{wget http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}"
+msgstr "\\texttt{wget http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1557
-#, fuzzy
-#| msgid "\\texttt{mv gnujump-1.0.6.tar.gz gnujump\\_1.0.6.orig.tar.gz}"
 msgid "\\texttt{mv gnujump-1.0.8.tar.gz gnujump\\_1.0.8.orig.tar.gz}"
-msgstr "\\texttt{mv gnujump-1.0.6.tar.gz gnujump\\_1.0.6.orig.tar.gz}"
+msgstr "\\texttt{mv gnujump-1.0.8.tar.gz gnujump\\_1.0.8.orig.tar.gz}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1557
-#, fuzzy
-#| msgid "\\texttt{tar xf gnujump\\_1.0.6.orig.tar.gz}"
 msgid "\\texttt{tar xf gnujump\\_1.0.8.orig.tar.gz}"
-msgstr "\\texttt{tar xf gnujump\\_1.0.6.orig.tar.gz}"
+msgstr "\\texttt{tar xf gnujump\\_1.0.8.orig.tar.gz}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1557
-#, fuzzy
-#| msgid "\\texttt{cd gnujump-1.0.6/}"
 msgid "\\texttt{cd gnujump-1.0.8/}"
-msgstr "\\texttt{cd gnujump-1.0.6/}"
+msgstr "\\texttt{cd gnujump-1.0.8/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1557
@@ -3678,19 +3623,7 @@ msgstr "Type de paquet : un seul binaire (pour l'instant)"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1557
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[basicstyle=\\ttfamily\\small]\n"
-#| "gnujump-1.0.6$ ls debian/\n"
-#| "changelog           gnujump.default.ex   preinst.ex\n"
-#| "compat              gnujump.doc-base.EX  prerm.ex\n"
-#| "control             init.d.ex            README.Debian\n"
-#| "copyright           manpage.1.ex         README.source\n"
-#| "docs                manpage.sgml.ex      rules\n"
-#| "emacsen-install.ex  manpage.xml.ex       source\n"
-#| "emacsen-remove.ex   menu.ex              watch.ex\n"
-#| "emacsen-startup.ex  postinst.ex\n"
-#| "gnujump.cron.d.ex   postrm.ex"
+#, no-wrap
 msgid ""
 "[basicstyle=\\ttfamily\\small]\n"
 "gnujump-1.0.8$ ls debian/\n"
@@ -3705,7 +3638,7 @@ msgid ""
 "gnujump.cron.d.ex   postrm.ex"
 msgstr ""
 "[basicstyle=\\ttfamily\\small]\n"
-"gnujump-1.0.6$ ls debian/\n"
+"gnujump-1.0.8$ ls debian/\n"
 "changelog           gnujump.default.ex   preinst.ex\n"
 "compat              gnujump.doc-base.EX  prerm.ex\n"
 "control             init.d.ex            README.Debian\n"
@@ -3833,29 +3766,28 @@ msgid ""
 "While not a strict requirement, it is recommended that packages uploaded to "
 "Debian are \\textsl{lintian-clean}"
 msgstr ""
+"absence de problèmes signalés par \\texttt{lintian} recommandée (même si pas "
+"strictement nécessaire) pour les paquets envoyés dans Debian"
 
 #. type: itemize
 #: packaging-tutorial.tex:1612
 msgid "More problems can be listed using \\texttt{lintian -EviIL +pedantic}"
-msgstr ""
+msgstr "Détection de plus de problèmes : \\texttt{lintian -EviIL +pedantic}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1612
 msgid "Some hints:"
-msgstr ""
+msgstr "Quelques indices :"
 
 #. type: itemize
 #: packaging-tutorial.tex:1612
 msgid "Remove the files that you don't need in \\texttt{debian/}"
-msgstr ""
-"Supprimez les fichiers dont vous n'avez pas besoin dans \\texttt{debian/}"
+msgstr "Supprimez les fichiers inutiles dans \\texttt{debian/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1612
-#, fuzzy
-#| msgid "\\texttt{Architecture:\\ all} in \\texttt{debian/control}"
 msgid "Fill in \\texttt{debian/control}"
-msgstr "\\texttt{Architecture:~all} dans \\texttt{debian/control}"
+msgstr "Remplissez \\texttt{debian/control}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1612
@@ -3863,6 +3795,8 @@ msgid ""
 "Install the executable to \\texttt{/usr/games} by overriding \\texttt{dh"
 "\\_auto\\_configure}"
 msgstr ""
+"Installez l'exécutable dans \\texttt{/usr/games} en surchargeant \texttt{dh"
+"\\_auto\\_configure}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1612
@@ -3870,13 +3804,13 @@ msgid ""
 "Use \\textsl{hardening} compiler flags to increase security.\\\\ See \\url"
 "{http://wiki.debian.org/Hardening}"
 msgstr ""
+"Utilisez les attributs de consolidation du compilateur pour augmenter la "
+"sécurité.\\\\ Consultez \\url{http://wiki.debian.org/Hardening}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1625
-#, fuzzy
-#| msgid "Step by step\\ldots (2)"
 msgid "Step by step\\ldots (4)"
-msgstr "Pas à pas\\ldots (2)"
+msgstr "Pas à pas\\ldots (4)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1625
