@@ -1179,7 +1179,7 @@ msgstr ""
 #: packaging-tutorial.tex:482
 #, fuzzy
 #| msgid "Five required targets:"
-msgid "Tequired targets:"
+msgid "Required targets:"
 msgstr "Cinco tareas («targets») obligatorias:"
 
 #. type: itemize

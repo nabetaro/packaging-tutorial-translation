@@ -1123,7 +1123,7 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:482
-msgid "Tequired targets:"
+msgid "Required targets:"
 msgstr "Cibles requises\\ :"
 
 #. type: itemize

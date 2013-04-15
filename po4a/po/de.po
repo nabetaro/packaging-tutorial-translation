@@ -1108,10 +1108,9 @@ msgstr ""
 "Dokumentiert in den Debian-Richtlinien, Kapitel 4.8\\\\ {\\small \\url"
 "{http://www.debian.org/doc/debian-policy/ch-source\\#s-debianrules}}"
 
-# FIXME Tequired -> Required
 #. type: itemize
 #: packaging-tutorial.tex:482
-msgid "Tequired targets:"
+msgid "Required targets:"
 msgstr "Benötigte Ziele:"
 
 #. type: itemize
