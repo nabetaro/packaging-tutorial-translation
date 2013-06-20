@@ -106,7 +106,7 @@
 
 \subsection{The Deb package format}
 
-\begin{frame}[fragile]{The Deb package format}
+\begin{frame}[fragile=singleslide]{The Deb package format}
   \begin{itemize}
   \item \texttt{.deb} file: an \texttt{ar} archive
     \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -254,7 +254,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   (See \texttt{dpkg-source(1)} for exact details)
 \end{frame}
 
-\begin{frame}[fragile]{Source package example (wget\_1.12-2.1.dsc)}
+\begin{frame}[fragile=singleslide]{Source package example (wget\_1.12-2.1.dsc)}
   \begin{lstlisting}[basicstyle=\ttfamily\small]
 Format: 3.0 (quilt)
 Source: wget
@@ -358,7 +358,7 @@ Files:
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{debian/changelog}
+\begin{frame}[fragile=singleslide]{debian/changelog}
   \begin{itemize}
   \item Lists the Debian packaging changes
   \item Gives the current version of the package
@@ -394,7 +394,7 @@ mpich2 (1.2.1.1-5) unstable; urgency=low
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{debian/control}
+\begin{frame}[fragile=singleslide]{debian/control}
   \hbr
   \begin{itemize}
   \item Package metadata
@@ -454,7 +454,7 @@ Description: retrieves files from the web
   A source package can generate a mix of \texttt{Architecture:\ any} and \texttt{Architecture:\ all} binary packages
 \end{frame}
 
-\begin{frame}[fragile]{debian/rules}
+\begin{frame}[fragile=singleslide]{debian/rules}
   \hbr
   \begin{itemize}
   \item Makefile
@@ -514,7 +514,7 @@ Description: retrieves files from the web
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{debian/rules using debhelper (1/2)}
+\begin{frame}[fragile=singleslide]{debian/rules using debhelper (1/2)}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 #!/usr/bin/make -f
 
@@ -542,7 +542,7 @@ install: build
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{debian/rules using debhelper (2/2)}
+\begin{frame}[fragile=singleslide]{debian/rules using debhelper (2/2)}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 
 # Build architecture-independent files here.
@@ -572,7 +572,7 @@ binary: binary-indep binary-arch
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{CDBS}
+\begin{frame}[fragile=singleslide]{CDBS}
   \hbr
   \begin{itemize}
   \item With debhelper, still a lot of redundancy between packages
@@ -607,7 +607,7 @@ build/mypackage::
       \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Dh (aka Debhelper 7, or dh7)}
+\begin{frame}[fragile=singleslide]{Dh (aka Debhelper 7, or dh7)}
   \begin{itemize}
   \item Introduced in 2008 as a \textsl{CDBS killer}
     \hbr
@@ -759,7 +759,7 @@ override_dh_auto_build:
 
 \section{Advanced packaging topics}
 \subsection{debian/copyright}
-\begin{frame}[fragile]{debian/copyright}
+\begin{frame}[fragile=singleslide]{debian/copyright}
   \hbr
   \begin{itemize}
   \item Copyright and license information for the source and the packaging
@@ -849,7 +849,7 @@ License:
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Documentation of patches}
+\begin{frame}[fragile=singleslide]{Documentation of patches}
   \begin{itemize}
 	  \item Standard headers at the beginning of the patch
     \br
@@ -906,7 +906,7 @@ Last-Update: 2010-03-29
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Monitoring upstream versions}
+\begin{frame}[fragile=singleslide]{Monitoring upstream versions}
   \begin{itemize}
   \item Specify where to look in \texttt{debian/watch} (see \texttt{uscan(1)})
     \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -930,7 +930,7 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
 \end{frame}
 
 \subsection{Packaging with a Version Control System (SVN, Git)}
-\begin{frame}[fragile]{Packaging with a Version Control System}
+\begin{frame}[fragile=singleslide]{Packaging with a Version Control System}
   \begin{itemize}
   \item Several tools to help manage branches and tags for your packaging work:\\
     \texttt{svn-buildpackage}, \texttt{git-buildpackage}
@@ -1059,7 +1059,7 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Adopting a package: example}
+\begin{frame}[fragile=singleslide]{Adopting a package: example}
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 From: You <you@yourdomain>
 To: 640454@bugs.debian.org, control@bugs.debian.org
@@ -1526,7 +1526,7 @@ Or not: reinstall the previous version of the package:
 \centerline{\includegraphics[width=5cm]{figs/gnujump.png}}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots}
+\begin{frame}[fragile=singleslide]{Step by step\ldots}
 \begin{itemize}
 	\item \texttt{wget http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\hbr
@@ -1555,7 +1555,7 @@ gnujump.cron.d.ex   postrm.ex
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots (2)}
+\begin{frame}[fragile=singleslide]{Step by step\ldots (2)}
 \begin{itemize}
 	\item Look at \texttt{debian/changelog}, \texttt{debian/rules}, \texttt{debian/control}\\
 		(auto-filled by \textbf{dh\_make})
@@ -1711,7 +1711,7 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots (2)}
+\begin{frame}[fragile=singleslide]{Step by step\ldots (2)}
 Improve the generated package:
 \begin{itemize}
 	\item Run \texttt{debclean} to clean the source tree. Look at \texttt{debian/}.
@@ -1735,7 +1735,7 @@ Improve the generated package:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots (3)}
+\begin{frame}[fragile=singleslide]{Step by step\ldots (3)}
 Build the package.
 It fails to build. There are two problems:
 \begin{itemize}
