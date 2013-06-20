@@ -30,7 +30,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.6\n"
-"POT-Creation-Date: 2013-03-03 11:51+0100\n"
+"POT-Creation-Date: 2013-06-20 18:47+0300\n"
 "PO-Revision-Date: 2012-07-12 14:01+0200\n"
 "Last-Translator: Omar Campagne <ocampagne@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -73,10 +73,8 @@ msgstr "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-#, fuzzy
-#| msgid "version 0.8 -- 2013-03-02"
-msgid "version 0.8 -- 2013-03-03"
-msgstr "version 0.8 -- 2013-03-02"
+msgid "version 0.9 -- 2013-06-20"
+msgstr "version 0.9 -- 2013-06-20"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -201,8 +199,8 @@ msgid ""
 "open decision-making process (\\textsl{do-ocracy} + \\textsl{democracy})"
 msgstr ""
 "\\textbf{Independencia} -- ninguna (única) compañía controla Debian\\\\ "
-"Proceso abierto de toma de decisiones (\\textsl{voluntariedad} + \\textsl"
-"{democracia})"
+"Proceso abierto de toma de decisiones (\\textsl{voluntariedad} + "
+"\\textsl{democracia})"
 
 #. type: itemize
 #: packaging-tutorial.tex:84
@@ -291,21 +289,22 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:133
 msgid ""
-"\\texttt{debian-binary}: version of the deb file format, \\texttt"
-"{\"2.0\\textbackslash{}n\"}"
+"\\texttt{debian-binary}: version of the deb file format, "
+"\\texttt{\"2.0\\textbackslash{}n\"}"
 msgstr ""
-"\\texttt{debian-binary}: versión del formato de fichero «deb», \\texttt"
-"{\"2.0\\textbackslash{}n\"}"
+"\\texttt{debian-binary}: versión del formato de fichero «deb», "
+"\\texttt{\"2.0\\textbackslash{}n\"}"
 
 #. type: itemize
 #: packaging-tutorial.tex:133
 msgid ""
-"\\texttt{control.tar.gz}: metadata about the package\\\\ {\\small \\texttt"
-"{\\textbf{control}, md5sums, (pre|post)(rm|inst), triggers, shlibs}, \\ldots}"
+"\\texttt{control.tar.gz}: metadata about the package\\\\ {\\small "
+"\\texttt{\\textbf{control}, md5sums, (pre|post)(rm|inst), triggers, shlibs}, "
+"\\ldots}"
 msgstr ""
-"\\texttt{control.tar.gz}: Metadatos del paquete\\\\ {\\small \\texttt"
-"{\\textbf{control}, sumas de control md5, (pre|post)(rm|inst), accionadores, "
-"bibliotecas compartidas}, \\ldots}"
+"\\texttt{control.tar.gz}: Metadatos del paquete\\\\ {\\small "
+"\\texttt{\\textbf{control}, sumas de control md5, (pre|post)(rm|inst), "
+"accionadores, bibliotecas compartidas}, \\ldots}"
 
 #. type: itemize
 #: packaging-tutorial.tex:133
@@ -315,8 +314,9 @@ msgstr "\\texttt{data.tar.gz}: Ficheros de datos del paquete"
 #. type: itemize
 #: packaging-tutorial.tex:133
 msgid ""
-"You could create your \\texttt{.deb} files manually\\\\ {\\footnotesize \\url"
-"{http://tldp.org/HOWTO/html\\_single/Debian-Binary-Package-Building-HOWTO/}}"
+"You could create your \\texttt{.deb} files manually\\\\ {\\footnotesize "
+"\\url{http://tldp.org/HOWTO/html\\_single/Debian-Binary-Package-Building-"
+"HOWTO/}}"
 msgstr ""
 "Puede crear sus propios ficheros \\texttt{.deb} manualmente\\\\ "
 "{\\footnotesize \\url{http://tldp.org/HOWTO/html\\_single/Debian-Binary-"
@@ -404,38 +404,39 @@ msgstr "Etapas generales en la creación de paquetes"
 #: packaging-tutorial.tex:188
 msgid ""
 "\\node[node1] (www) at (0, 0) {Web}; \\node[node1] (us) at (2.5, 0) "
-"{upstream source}; \\node[node1] (da) at (-2.5, 0) {Debian mirror}; \\node"
-"[node1] (sp) at (0, -2) {source package}; \\draw[arr,<-,dashed,thick] (sp) "
-"-- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\\small\\sl] "
-"{where most of the manual work is done}; \\node[node1] (bin) at (0, -4) {one "
-"or several binary packages}; \\draw[arr,<-,dashed,thick] (bin) -- (3.5,-4) "
-"node[right,text centered,font=\\small\\ttfamily\\sl] {.deb\\normalfont}; "
-"\\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh\\_make}; \\draw"
-"[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get source}; \\draw"
-"[arr,->] (www) -- (sp) node[pos=0.5,left,command] {dget}; \\draw[arr,->] "
-"(sp) -- (bin) node[pos=0.5,right,text width=6cm] {\\textttc{debuild} (build "
-"and test with \\textttc{lintian}) or \\textttc{dpkg-buildpackage}}; \\draw"
-"[arr,->] (bin) -- (1,-6) node[pos=0.5,right] {install (\\textttc{debi})}; "
-"\\draw[transparent] (bin) -- (-1,-6) node[pos=0.5,left,opaque] {upload "
-"(\\textttc{dput})}; \\draw[arr,->,rounded corners] (bin) -- (-1,-6) -- "
-"(-4.5,-6) -- (-4.5,0) -- (da); \\useasboundingbox (-4,-6) rectangle (6,0);"
-msgstr ""
-"\\node[node1] (www) at (0, 0) {Red}; \\node[node1] (us) at (2.5, 0) {Código "
-"fuente original}; \\node[node1] (da) at (-2.5, 0) {Réplica de Debian}; \\node"
-"[node1] (sp) at (0, -2) {Paquete fuente}; \\draw[arr,<-,dashed,thick] (sp) "
-"-- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\\small\\sl] "
-"{Donde se realiza casi toda la parte manual}; \\node[node1] (bin) at (0, -4) "
-"{Uno o varios paquetes binarios}; \\draw[arr,<-,dashed,thick] (bin) -- "
+"{upstream source}; \\node[node1] (da) at (-2.5, 0) {Debian mirror}; "
+"\\node[node1] (sp) at (0, -2) {source package}; \\draw[arr,<-,dashed,thick] "
+"(sp) -- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\\small"
+"\\sl] {where most of the manual work is done}; \\node[node1] (bin) at (0, "
+"-4) {one or several binary packages}; \\draw[arr,<-,dashed,thick] (bin) -- "
 "(3.5,-4) node[right,text centered,font=\\small\\ttfamily\\sl] {.deb"
 "\\normalfont}; \\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh"
 "\\_make}; \\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get "
 "source}; \\draw[arr,->] (www) -- (sp) node[pos=0.5,left,command] {dget}; "
-"\\draw[arr,->] (sp) -- (bin) node[pos=0.5,right,text width=6cm] {\\textttc"
-"{debuild} (Construir y comprobar con \\textttc{lintian}) o \\textttc{dpkg-"
-"buildpackage}}; \\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,right] "
-"{Instalación (\\textttc{debi})}; \\draw[transparent] (bin) -- (-1,-6) node"
-"[pos=0.5,left,opaque] {Envío del paquete (\\textttc{dput})}; \\draw[arr,->,"
-"rounded corners] (bin) -- (-1,-6) -- (-4.5,-6) -- (-4.5,0) -- (da); "
+"\\draw[arr,->] (sp) -- (bin) node[pos=0.5,right,text width=6cm] "
+"{\\textttc{debuild} (build and test with \\textttc{lintian}) or "
+"\\textttc{dpkg-buildpackage}}; \\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,"
+"right] {install (\\textttc{debi})}; \\draw[transparent] (bin) -- (-1,-6) "
+"node[pos=0.5,left,opaque] {upload (\\textttc{dput})}; \\draw[arr,->,rounded "
+"corners] (bin) -- (-1,-6) -- (-4.5,-6) -- (-4.5,0) -- (da); "
+"\\useasboundingbox (-4,-6) rectangle (6,0);"
+msgstr ""
+"\\node[node1] (www) at (0, 0) {Red}; \\node[node1] (us) at (2.5, 0) {Código "
+"fuente original}; \\node[node1] (da) at (-2.5, 0) {Réplica de Debian}; "
+"\\node[node1] (sp) at (0, -2) {Paquete fuente}; \\draw[arr,<-,dashed,thick] "
+"(sp) -- (2.5,-2) node[right=0cm,text width=2.98cm,text centered,font=\\small"
+"\\sl] {Donde se realiza casi toda la parte manual}; \\node[node1] (bin) at "
+"(0, -4) {Uno o varios paquetes binarios}; \\draw[arr,<-,dashed,thick] (bin) "
+"-- (3.5,-4) node[right,text centered,font=\\small\\ttfamily\\sl] {.deb"
+"\\normalfont}; \\draw[arr,->] (us) -- (sp) node[pos=0.5,right,command] {dh"
+"\\_make}; \\draw[arr,->] (da) -- (sp) node[pos=0.5,left,command] {apt-get "
+"source}; \\draw[arr,->] (www) -- (sp) node[pos=0.5,left,command] {dget}; "
+"\\draw[arr,->] (sp) -- (bin) node[pos=0.5,right,text width=6cm] "
+"{\\textttc{debuild} (Construir y comprobar con \\textttc{lintian}) o "
+"\\textttc{dpkg-buildpackage}}; \\draw[arr,->] (bin) -- (1,-6) node[pos=0.5,"
+"right] {Instalación (\\textttc{debi})}; \\draw[transparent] (bin) -- (-1,-6) "
+"node[pos=0.5,left,opaque] {Envío del paquete (\\textttc{dput})}; \\draw[arr,-"
+">,rounded corners] (bin) -- (-1,-6) -- (-4.5,-6) -- (-4.5,0) -- (da); "
 "\\useasboundingbox (-4,-6) rectangle (6,0);"
 
 #. type: subsection{#2}
@@ -453,9 +454,9 @@ msgstr "Ejemplo: reconstruir dash"
 #, fuzzy
 #| msgid ""
 #| "Install packages needed to build dash, and devscripts\\\\ {\\texttt{sudo "
-#| "apt-get build-dep dash}\\\\ (requires \\texttt{deb-src} lines in \\texttt"
-#| "{/etc/apt/sources.list})}\\\\ {\\texttt{sudo apt-get install -{}-no-"
-#| "install-recommends devscripts}}"
+#| "apt-get build-dep dash}\\\\ (requires \\texttt{deb-src} lines in "
+#| "\\texttt{/etc/apt/sources.list})}\\\\ {\\texttt{sudo apt-get install -{}-"
+#| "no-install-recommends devscripts}}"
 msgid ""
 "Install packages needed to build dash, and devscripts\\\\ {\\texttt{sudo apt-"
 "get build-dep dash}\\\\ (requires \\texttt{deb-src} lines in \\texttt{/etc/"
@@ -490,11 +491,11 @@ msgstr ""
 #. type: enumerate
 #: packaging-tutorial.tex:205
 msgid ""
-"Build the package\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} ~~~(\\texttt"
-"{-us -uc} disables signing the package with GPG)"
+"Build the package\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} "
+"~~~(\\texttt{-us -uc} disables signing the package with GPG)"
 msgstr ""
-"Construya el paquete\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} ~~~"
-"(\\texttt{-us -uc} desactiva el firmado de paquetes con GPG)"
+"Construya el paquete\\\\ {\\texttt{cd dash-*\\\\ debuild -us -uc}} "
+"~~~(\\texttt{-us -uc} desactiva el firmado de paquetes con GPG)"
 
 #. type: enumerate
 #: packaging-tutorial.tex:218
@@ -534,8 +535,8 @@ msgstr "Paquete fuente"
 #. type: itemize
 #: packaging-tutorial.tex:256
 msgid ""
-"One source package can generate several binary packages\\\\ {\\small e.g the "
-"\\texttt{\\bfseries libtar} source generates the \\texttt{\\bfseries "
+"One source package can generate several binary packages\\\\ {\\small e.g. "
+"the \\texttt{\\bfseries libtar} source generates the \\texttt{\\bfseries "
 "libtar0} and \\texttt{\\bfseries libtar-dev} binary packages}"
 msgstr ""
 "Un paquete fuente puede generar varios paquetes binarios\\\\ {\\small Por "
@@ -553,8 +554,8 @@ msgid ""
 "Native packages: normally for Debian specific software (\\textsl{dpkg}, "
 "\\textsl{apt})"
 msgstr ""
-"Paquetes nativos: habitualmente es software específico de Debian (\\textsl"
-"{dpkg}, \\textsl{apt})"
+"Paquetes nativos: habitualmente es software específico de Debian "
+"(\\textsl{dpkg}, \\textsl{apt})"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
@@ -776,8 +777,8 @@ msgstr "Abra el archivo tar"
 #| "\\_version}>.orig.tar.gz}\\\\ (example: \\texttt{simgrid\\_3.6.orig.tar."
 #| "gz})"
 msgid ""
-"Rename the directory to \\texttt{<\\textsl{source\\_package}>-<\\textsl"
-"{upstream\\_version}>}\\\\ (example: \\texttt{simgrid-3.6})"
+"Rename the directory to \\texttt{<\\textsl{source\\_package}>-<"
+"\\textsl{upstream\\_version}>}\\\\ (example: \\texttt{simgrid-3.6})"
 msgstr ""
 "Renómbrelo a \\texttt{<\\textsl{paquete\\_fuente}>\\_<\\textsl{versión"
 "\\_original}>.orig.tar.gz}\\\\ (ejemplo: \\texttt{simgrid\\_3.6.orig.tar.gz})"
@@ -829,7 +830,7 @@ msgstr "Ficheros principales:"
 
 #. type: itemize
 #: packaging-tutorial.tex:360
-msgid "\\textbf{control} -- meta-data about the package (dependencies, etc)"
+msgid "\\textbf{control} -- meta-data about the package (dependencies, etc.)"
 msgstr "\\textbf{control} -- Metadatos del paquete (dependencias, etc)"
 
 #. type: itemize
@@ -911,15 +912,15 @@ msgstr "Muestra la versión actual del paquete"
 msgid ""
 "\\draw (0,0) node[above right] {\\large 1.2.1.1-5}; \\draw [decorate,"
 "decoration={brace}] (2,0) -- (1.45,0) node[at start,below,text width=1.6cm,"
-"text centered] {\\small Debian revision}; \\draw [decorate,decoration="
-"{brace}] (1.4,0) -- (0,0) node[midway,below,text width=1.6cm,text centered] "
-"{ \\small Upstream version};"
+"text centered] {\\small Debian revision}; \\draw [decorate,"
+"decoration={brace}] (1.4,0) -- (0,0) node[midway,below,text width=1.6cm,text "
+"centered] { \\small Upstream version};"
 msgstr ""
 "\\draw (0,0) node[above right] {\\large 1.2.1.1-5}; \\draw [decorate,"
 "decoration={brace}] (2,0) -- (1.45,0) node[at start,below,text width=1.6cm,"
-"text centered] {\\small Revisión de Debian}; \\draw [decorate,decoration="
-"{brace}] (1.4,0) -- (0,0) node[midway,below,text width=1.6cm,text centered] "
-"{ \\small Versión de la fuente original};"
+"text centered] {\\small Revisión de Debian}; \\draw [decorate,"
+"decoration={brace}] (1.4,0) -- (0,0) node[midway,below,text width=1.6cm,text "
+"centered] { \\small Versión de la fuente original};"
 
 #. %
 #. type: itemize
@@ -1100,8 +1101,8 @@ msgid ""
 "Or, if it only works on a subset of architectures:\\\\ \\texttt{Architecture:"
 "\\ amd64 i386 ia64 hurd-i386}"
 msgstr ""
-"O, si solo funciona con un subconjunto de arquitecturas:\\\\ \\texttt"
-"{Architecture:\\ amd64 i386 ia64 hurd-i386}"
+"O, si solo funciona con un subconjunto de arquitecturas:\\\\ "
+"\\texttt{Architecture:\\ amd64 i386 ia64 hurd-i386}"
 
 #. type: itemize
 #: packaging-tutorial.tex:456
@@ -1113,11 +1114,11 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:456
 msgid ""
-"Named \\texttt{\\textsl{package}\\_\\textsl{version}\\_\\textsl"
-"{architecture}.deb}"
+"Named \\texttt{\\textsl{package}\\_\\textsl{version}\\_"
+"\\textsl{architecture}.deb}"
 msgstr ""
-"Creado como \\texttt{\\textsl{paquete}\\_\\textsl{versión}\\_\\textsl"
-"{arquitectura}.deb}"
+"Creado como \\texttt{\\textsl{paquete}\\_\\textsl{versión}\\_"
+"\\textsl{arquitectura}.deb}"
 
 #. type: itemize
 #: packaging-tutorial.tex:456
@@ -1172,8 +1173,8 @@ msgid ""
 "Documented in Debian Policy, chapter 4.8\\\\ {\\small \\url{http://www."
 "debian.org/doc/debian-policy/ch-source\\#s-debianrules}}"
 msgstr ""
-"Documentado en el capítulo 4.8 de Normas de Debian\\\\ {\\small \\texttt"
-"{http://www.debian.org/doc/debian-policy/ch-source\\#s-debianrules}}"
+"Documentado en el capítulo 4.8 de Normas de Debian\\\\ {\\small "
+"\\texttt{http://www.debian.org/doc/debian-policy/ch-source\\#s-debianrules}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:482
@@ -1305,8 +1306,8 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:516
 msgid ""
-"Third-party helpers for sets of packages: \\textbf{python-support}, \\textbf"
-"{dh\\_ocaml}, \\ldots"
+"Third-party helpers for sets of packages: \\textbf{python-support}, "
+"\\textbf{dh\\_ocaml}, \\ldots"
 msgstr ""
 "Otros asistentes para conjuntos específicos de paquetes: \\textbf{python-"
 "support}, \\textbf{dh\\_ocaml}, \\ldots"
@@ -1501,8 +1502,12 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:603
+#, fuzzy
+#| msgid ""
+#| "E.g building with \\texttt{./configure \\&\\& make \\&\\& make install} "
+#| "or CMake"
 msgid ""
-"E.g building with \\texttt{./configure \\&\\& make \\&\\& make install} or "
+"E.g. building with \\texttt{./configure \\&\\& make \\&\\& make install} or "
 "CMake"
 msgstr ""
 "Esto es, construir con \\texttt{./configure \\&\\& make \\&\\& make install} "
@@ -1540,8 +1545,9 @@ msgid ""
 "Sometimes difficult to customize package builds:\\\\ \"\\textsl{twisty maze "
 "of makefiles and environment variables}\""
 msgstr ""
-"A veces es difícil personalizar la construcción del paquete \\\\ \"\\textsl"
-"{un conjunto complejo de ficheros «Makefile» y variables de entorno}\""
+"A veces es difícil personalizar la construcción del paquete \\\\ "
+"\"\\textsl{un conjunto complejo de ficheros «Makefile» y variables de "
+"entorno}\""
 
 #. type: itemize
 #: packaging-tutorial.tex:603
@@ -1711,15 +1717,17 @@ msgstr "\\textbf{dh} (la única solución con una aceptación creciente)"
 #. type: axis[#1]
 #: packaging-tutorial.tex:670
 msgid ""
-"small,label style={font=\\footnotesize},xlabel={\\small Time},ylabel="
-"{\\small Market share (\\%)}, date coordinates in=x,height=4.85cm,width=9cm,"
-"xticklabel={\\month/\\year}, legend style={font=\\footnotesize,at={(1.02,1)},"
-"anchor=north west},max space between ticks=82,try min ticks=5,ymin=0"
+"small,label style={font=\\footnotesize},xlabel={\\small Time},"
+"ylabel={\\small Market share (\\%)}, date coordinates in=x,height=4.85cm,"
+"width=9cm,xticklabel={\\month/\\year}, legend style={font=\\footnotesize,"
+"at={(1.02,1)},anchor=north west},max space between ticks=82,try min ticks=5,"
+"ymin=0"
 msgstr ""
-"small,label style={font=\\footnotesize},xlabel={\\small Time},ylabel="
-"{\\small Market share (\\%)}, date coordinates in=x,height=4.85cm,width=9cm,"
-"xticklabel={\\month/\\year}, legend style={font=\\footnotesize,at={(1.02,1)},"
-"anchor=north west},max space between ticks=82,try min ticks=5,ymin=0"
+"small,label style={font=\\footnotesize},xlabel={\\small Time},"
+"ylabel={\\small Market share (\\%)}, date coordinates in=x,height=4.85cm,"
+"width=9cm,xticklabel={\\month/\\year}, legend style={font=\\footnotesize,"
+"at={(1.02,1)},anchor=north west},max space between ticks=82,try min ticks=5,"
+"ymin=0"
 
 #. type: axis
 #: packaging-tutorial.tex:670
@@ -1756,9 +1764,10 @@ msgid ""
 "dependencies} (for a package already in Debian)\\\\ Or \\textttc{mk-build-"
 "deps -ir} (for a package not uploaded yet)"
 msgstr ""
-"\\textttc{apt-get build-dep mi-paquete}\\\\ Instala las \\textsl"
-"{dependencias de construcción} (para un paquete en el archivo de Debian)\\\\ "
-"O \\textttc{mk-build-deps -ir} (dentro del árbol de fuentes del paquete)"
+"\\textttc{apt-get build-dep mi-paquete}\\\\ Instala las "
+"\\textsl{dependencias de construcción} (para un paquete en el archivo de "
+"Debian)\\\\ O \\textttc{mk-build-deps -ir} (dentro del árbol de fuentes del "
+"paquete)"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -1789,10 +1798,10 @@ msgid ""
 "Good documentation: \\url{https://wiki.ubuntu.com/PbuilderHowto}\\\\ "
 "(optimization: \\textttc{cowbuilder} \\textttc{ccache} \\textttc{distcc})"
 msgstr ""
-"\\textttc{pbuilder} -- Asistente de construcción de paquetes en una \\textsl"
-"{«jaula» chroot}\\\\ Buena documentación: \\url{https://wiki.ubuntu.com/"
-"PbuilderHowto}\\\\ (optimización: \\textttc{cowbuilder} \\textttc{ccache} "
-"\\textttc{distcc})"
+"\\textttc{pbuilder} -- Asistente de construcción de paquetes en una "
+"\\textsl{«jaula» chroot}\\\\ Buena documentación: \\url{https://wiki.ubuntu."
+"com/PbuilderHowto}\\\\ (optimización: \\textttc{cowbuilder} "
+"\\textttc{ccache} \\textttc{distcc})"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -1858,18 +1867,18 @@ msgstr ""
 #: packaging-tutorial.tex:737
 #, fuzzy
 #| msgid ""
-#| "Check the package with \\texttt{lintian} (static analyzer):\\\\ \\texttt"
-#| "{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ \\texttt{lintian -"
-#| "i}: gives more information about the errors"
+#| "Check the package with \\texttt{lintian} (static analyzer):\\\\ "
+#| "\\texttt{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ "
+#| "\\texttt{lintian -i}: gives more information about the errors"
 msgid ""
-"Check the package with \\texttt{lintian} (static analyzer):\\\\ \\texttt"
-"{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ \\texttt{lintian -"
-"i}: gives more information about the errors \\\\ \\texttt{lintian -EviIL "
-"+pedantic}: shows more problems"
+"Check the package with \\texttt{lintian} (static analyzer):\\\\ "
+"\\texttt{{\\color{rouge}lintian} ../mypackage<TAB>.changes}\\\\ "
+"\\texttt{lintian -i}: gives more information about the errors \\\\ "
+"\\texttt{lintian -EviIL +pedantic}: shows more problems"
 msgstr ""
-"Compruebe el paquete con \\texttt{lintian} (análisis estático):\\\\ \\texttt"
-"{{\\color{rouge}lintian} ../mi-paquete<TAB>.changes}\\\\ \\texttt{lintian -"
-"i}: Ofrece más información de fallos"
+"Compruebe el paquete con \\texttt{lintian} (análisis estático):\\\\ "
+"\\texttt{{\\color{rouge}lintian} ../mi-paquete<TAB>.changes}\\\\ "
+"\\texttt{lintian -i}: Ofrece más información de fallos"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -1906,8 +1915,8 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:737
 msgid ""
-"If the source package is not unpacked automatically, unpack it with \\texttt"
-"{dpkg-source~-x~grep\\_*.dsc}"
+"If the source package is not unpacked automatically, unpack it with "
+"\\texttt{dpkg-source~-x~grep\\_*.dsc}"
 msgstr ""
 "Si el paquete no se desempaqueta de forma automática, utilice \\texttt{dpkg-"
 "source~-x~grep\\_*.dsc}"
@@ -2161,8 +2170,8 @@ msgid ""
 "Past: several implementations -- \\textsl{simple-patchsys} (\\textsl{cdbs}), "
 "\\textsl{dpatch}, \\textbf{\\textsl{quilt}}"
 msgstr ""
-"Pasado: varias implementaciones -- \\textsl{simple-patchsys} (\\textsl"
-"{cdbs}), \\textsl{dpatch}, \\textbf{\\textsl{quilt}}"
+"Pasado: varias implementaciones -- \\textsl{simple-patchsys} "
+"(\\textsl{cdbs}), \\textsl{dpatch}, \\textbf{\\textsl{quilt}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:851
@@ -2279,8 +2288,8 @@ msgstr "A veces no basta con descomprimir el paquete"
 #. type: itemize
 #: packaging-tutorial.tex:892
 msgid ""
-"Create/remove system users, start/stop services, manage \\textsl"
-"{alternatives}"
+"Create/remove system users, start/stop services, manage "
+"\\textsl{alternatives}"
 msgstr ""
 "Crear/eliminar usuarios del sistema, iniciar/detener servicios, gestionar el "
 "sistema de \\textsl{alternativas}"
@@ -2359,8 +2368,8 @@ msgstr "Supervisar las versiones del desarrollador original"
 msgid ""
 "Specify where to look in \\texttt{debian/watch} (see \\texttt{uscan(1)})"
 msgstr ""
-"Especifique dónde mirar en \\texttt{debian/watch} (consulte \\texttt{uscan"
-"(1)})"
+"Especifique dónde mirar en \\texttt{debian/watch} (consulte "
+"\\texttt{uscan(1)})"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:914
@@ -2389,21 +2398,23 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:931
 msgid ""
-"Debian infrastructure that makes use of \\texttt{debian/watch}:\\\\ \\textbf"
-"{Debian External Health Status}\\\\ \\url{http://dehs.alioth.debian.org/}"
+"Debian infrastructure that makes use of \\texttt{debian/watch}:\\\\ "
+"\\textbf{Debian External Health Status}\\\\ \\url{http://dehs.alioth.debian."
+"org/}"
 msgstr ""
-"La infraestructura de Debian utiliza \\texttt{debian/watch}:\\\\ \\textbf"
-"{Debian External Health Status}\\\\ \\url{http://dehs.alioth.debian.org/}"
+"La infraestructura de Debian utiliza \\texttt{debian/watch}:\\\\ "
+"\\textbf{Debian External Health Status}\\\\ \\url{http://dehs.alioth.debian."
+"org/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:931
 msgid ""
-"Maintainer warned by emails sent to the Package Tracking System\\\\ \\url"
-"{http://packages.qa.debian.org/}"
+"Maintainer warned by emails sent to the Package Tracking System\\\\ "
+"\\url{http://packages.qa.debian.org/}"
 msgstr ""
 "Se notifica al responsable del paquete mediante correos electrónicos al "
-"sistema de seguimiento de paquetes («Package Tracking System»)\\\\ \\url"
-"{http://packages.qa.debian.org/}"
+"sistema de seguimiento de paquetes («Package Tracking System»)\\\\ "
+"\\url{http://packages.qa.debian.org/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:931
@@ -2446,8 +2457,8 @@ msgstr "Ejemplo: \\texttt{git-buildpackage}"
 #. type: itemize
 #: packaging-tutorial.tex:969
 msgid ""
-"\\texttt{upstream} branch to track upstream with \\texttt{upstream/\\textsl"
-"{version}} tags"
+"\\texttt{upstream} branch to track upstream with \\texttt{upstream/"
+"\\textsl{version}} tags"
 msgstr ""
 "La rama \\texttt{upstream} contiene los cambios de la fuente original de "
 "software mediante etiquetas \\texttt{upstream/\\textsl{versión}}"
@@ -2489,28 +2500,26 @@ msgstr "\\url{http://wiki.debian.org/Alioth/Svn}"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:969
-#, no-wrap
 msgid ""
-"[basicstyle=\\ttfamily\\footnotesize]\n"
-"Vcs-Browser: http://git.debian.org/?p=devscripts/devscripts.git\n"
-"Vcs-Git: git://git.debian.org/devscripts/devscripts.git\n"
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/devscripts.git\n"
+"Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git\n"
 "  "
 msgstr ""
-"[basicstyle=\\ttfamily\\footnotesize]\n"
-"Vcs-Browser: http://git.debian.org/?p=devscripts/devscripts.git\n"
-"Vcs-Git: git://git.debian.org/devscripts/devscripts.git\n"
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/devscripts.git\n"
+"Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git\n"
 "  "
 
 #. type: lstlisting
 #: packaging-tutorial.tex:969
-#, no-wrap
 msgid ""
-"[basicstyle=\\ttfamily\\footnotesize]\n"
+"[basicstyle=\\ttfamily\\scriptsize]\n"
 "Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/\n"
 "Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl\n"
 "  "
 msgstr ""
-"[basicstyle=\\ttfamily\\footnotesize]\n"
+"[basicstyle=\\ttfamily\\scriptsize]\n"
 "Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/\n"
 "Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl\n"
 "  "
@@ -2518,11 +2527,11 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:969
 msgid ""
-"VCS-agnostic interface: \\texttt{debcheckout}, \\texttt{debcommit}, \\texttt"
-"{debrelease}\\\\"
+"VCS-agnostic interface: \\texttt{debcheckout}, \\texttt{debcommit}, "
+"\\texttt{debrelease}\\\\"
 msgstr ""
-"Interfaz independiente del sistema de control de versiones: \\texttt"
-"{debcheckout}, \\texttt{debcommit}, \\texttt{debrelease}\\\\"
+"Interfaz independiente del sistema de control de versiones: "
+"\\texttt{debcheckout}, \\texttt{debcommit}, \\texttt{debrelease}\\\\"
 
 #. type: itemize
 #: packaging-tutorial.tex:969
@@ -2541,13 +2550,13 @@ msgstr "Adaptación de paquetes a una publicación anterior"
 #. type: itemize
 #: packaging-tutorial.tex:992
 msgid ""
-"Goal: use a newer version of a package on an older system\\\\ e.g use "
+"Goal: use a newer version of a package on an older system\\\\ e.g. use "
 "\\textsl{mutt} from Debian \\textsl{unstable} on Debian \\textsl{stable}"
 msgstr ""
 "Objetivo: utilizar una versión más reciente de un paquete en un sistema más "
-"antiguo\\\\ Por ejemplo, utilizar \\textsl{mutt} de la publicación \\textsl"
-"{unstable} («inestable») de Debian en la publicación \\textsl{stable} "
-"(«estable»)"
+"antiguo\\\\ Por ejemplo, utilizar \\textsl{mutt} de la publicación "
+"\\textsl{unstable} («inestable») de Debian en la publicación "
+"\\textsl{stable} («estable»)"
 
 #. type: itemize
 #: packaging-tutorial.tex:992
@@ -2584,8 +2593,8 @@ msgstr "A veces imposible (muchas dependencias no disponibles)"
 #. type: itemize
 #: packaging-tutorial.tex:992
 msgid ""
-"Some backports are provided and supported by the Debian project\\\\ \\url"
-"{http://backports.debian.org/}"
+"Some backports are provided and supported by the Debian project\\\\ "
+"\\url{http://backports.debian.org/}"
 msgstr ""
 "El proyecto Debian proporciona y mantiene algunas adaptaciones a "
 "publicaciones anteriores\\\\ \\url{http://backports.debian.org/}"
@@ -2741,11 +2750,11 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1061
 msgid ""
-"When in doubt, ask \\texttt{debian-qa@lists.debian.org} \\\\ or \\texttt"
-"{\\#debian-qa} on \\texttt{irc.debian.org}"
+"When in doubt, ask \\texttt{debian-qa@lists.debian.org} \\\\ or "
+"\\texttt{\\#debian-qa} on \\texttt{irc.debian.org}"
 msgstr ""
-"Si duda, pregunte en \\texttt{debian-qa@lists.debian.org} \\\\ o \\texttt"
-"{\\#debian-qa} en \\texttt{irc.debian.org}"
+"Si duda, pregunte en \\texttt{debian-qa@lists.debian.org} \\\\ o "
+"\\texttt{\\#debian-qa} en \\texttt{irc.debian.org}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1068
@@ -2772,19 +2781,13 @@ msgstr ""
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1072
-#, fuzzy, no-wrap
-#| msgid ""
-#| "retitle 640454 \\textbf{ITA}: verbiste -- French conjugator\n"
-#| "owner 640454 !\n"
-#| "thanks\n"
-#| "\n"
 msgid ""
 "retitle 640454 ITA: verbiste -- French conjugator\n"
 "owner 640454 !\n"
 "thanks\n"
 "\n"
 msgstr ""
-"retitle 640454 \\textbf{ITA}: verbiste -- French conjugator\n"
+"retitle 640454 ITA: verbiste -- French conjugator\n"
 "owner 640454¡ !\n"
 "thanks\n"
 "\n"
@@ -3033,8 +3036,8 @@ msgstr "Interfaces para desarrolladores de Debian"
 #. type: itemize
 #: packaging-tutorial.tex:1178
 msgid ""
-"\\textbf{Source package centric}: Package Tracking System (PTS)\\\\ \\url"
-"{http://packages.qa.debian.org/dpkg}"
+"\\textbf{Source package centric}: Package Tracking System (PTS)\\\\ "
+"\\url{http://packages.qa.debian.org/dpkg}"
 msgstr ""
 "\\textbf{Centrado en el paquete fuente}:Sistema de seguimiento de paquetes "
 "(PTS)\\\\ \\url{http://packages.qa.debian.org/dpkg}"
@@ -3053,8 +3056,8 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1178
 msgid ""
-"\\textbf{TODO-list oriented}: Debian Maintainer Dashboard (DMD)\\\\ \\url"
-"{http://udd.debian.org/dmd.cgi}"
+"\\textbf{TODO-list oriented}: Debian Maintainer Dashboard (DMD)\\\\ "
+"\\url{http://udd.debian.org/dmd.cgi}"
 msgstr ""
 
 #. type: frame{#2}
@@ -3082,8 +3085,8 @@ msgid ""
 "Usually recommend uploading new packages to Debian first\\\\ \\url{https://"
 "wiki.ubuntu.com/UbuntuDevelopment/NewPackages}"
 msgstr ""
-"Habitualmente, recomiende enviar nuevos paquetes primero a Debian \\\\ \\url"
-"{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages}"
+"Habitualmente, recomiende enviar nuevos paquetes primero a Debian \\\\ "
+"\\url{https://wiki.ubuntu.com/UbuntuDevelopment/NewPackages}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1205
@@ -3151,8 +3154,8 @@ msgid ""
 "If not sure, use the \\textbf{dh} packaging helper, and the \\textbf{3.0 "
 "(quilt)} format"
 msgstr ""
-"Si no está seguro, utilice el asistente de creación de paquetes \\textbf"
-"{dh}, y el formato \\textbf{3.0 (quilt)}"
+"Si no está seguro, utilice el asistente de creación de paquetes "
+"\\textbf{dh}, y el formato \\textbf{3.0 (quilt)}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1236
@@ -3220,8 +3223,8 @@ msgid ""
 "Software Foundation, either version 3 of the License, or (at your option) "
 "any later version.\\\\ \\url{http://www.gnu.org/licenses/gpl.html} \\br "
 "\\item The terms of the Creative Commons Attribution-ShareAlike 3.0 Unported "
-"License.\\\\ \\url{http://creativecommons.org/licenses/by-sa/3.0/} \\end"
-"{itemize} }"
+"License.\\\\ \\url{http://creativecommons.org/licenses/by-sa/3.0/} "
+"\\end{itemize} }"
 msgstr ""
 "{\\small \\textbf{Este documento es software libre}: puede redistribuirlo y/"
 "o modificarlo bajo ambas (a su elección): \\hbr \\begin{itemize} \\item Los "
@@ -3426,8 +3429,8 @@ msgid ""
 "\\texttt{gem2deb(1)}, \\texttt{dh\\_ruby(1)} (in the \\texttt{gem2deb} "
 "package)"
 msgstr ""
-"\\texttt{gem2deb(1)}, \\texttt{dh\\_ruby(1)} (en el paquete \\texttt"
-"{gem2deb})"
+"\\texttt{gem2deb(1)}, \\texttt{dh\\_ruby(1)} (en el paquete "
+"\\texttt{gem2deb})"
 
 #. type: enumerate
 #: packaging-tutorial.tex:1345 packaging-tutorial.tex:1692
@@ -3478,8 +3481,9 @@ msgid ""
 "Use dget to download the \\texttt{.dsc} file:\\\\ {\\small \\texttt{dget "
 "http://cdn.debian.net/debian/pool/main/g/grep/grep\\_2.6.3-3.dsc}}"
 msgstr ""
-"Utilice dget para descargar el fichero \\texttt{.dsc}:\\\\ {\\small \\texttt"
-"{dget http://cdn.debian.net/debian/pool/main/g/grep/grep\\_2.6.3-3.dsc}}"
+"Utilice dget para descargar el fichero \\texttt{.dsc}:\\\\ {\\small "
+"\\texttt{dget http://cdn.debian.net/debian/pool/main/g/grep/grep\\_2.6.3-3."
+"dsc}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1411
@@ -3501,10 +3505,11 @@ msgid ""
 msgstr ""
 "Según \\texttt{http://packages.qa.debian.org/grep}, la versión 2.6.3-3 "
 "\\texttt{grep} se encuentra actualmente en la publicación \\textsl{estable} "
-"(\\textsl{squeeze}). Si tiene líneas \\texttt{deb-src} para \\textsl"
-"{squeeze} en su fichero \\texttt{/etc/apt/sources.list}, puede utilizar:\\\\ "
-"\\texttt{apt-get source grep=2.6.3-3}\\\\ o \\texttt{apt-get source grep/"
-"stable}\\\\ o, si la suerte le acompaña: \\texttt{apt-get source grep}"
+"(\\textsl{squeeze}). Si tiene líneas \\texttt{deb-src} para "
+"\\textsl{squeeze} en su fichero \\texttt{/etc/apt/sources.list}, puede "
+"utilizar:\\\\ \\texttt{apt-get source grep=2.6.3-3}\\\\ o \\texttt{apt-get "
+"source grep/stable}\\\\ o, si la suerte le acompaña: \\texttt{apt-get source "
+"grep}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1411
@@ -3557,15 +3562,15 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1430
 msgid ""
-"According to \\texttt{debian/rules}, this package is typical of \\textsl"
-"{classic} debhelper packaging, without using \\textsl{CDBS} or \\textsl{dh}. "
-"One can see the various calls to \\texttt{dh\\_*} commands in \\texttt"
-"{debian/rules}."
+"According to \\texttt{debian/rules}, this package is typical of "
+"\\textsl{classic} debhelper packaging, without using \\textsl{CDBS} or "
+"\\textsl{dh}. One can see the various calls to \\texttt{dh\\_*} commands in "
+"\\texttt{debian/rules}."
 msgstr ""
 "De acuerdo a \\texttt{debian/rules}, este paquete es típico del asistente "
 "\\textsl{clásico} debhelper, sin utilizar \\textsl{CDBS} o \\textsl{dh}. Se "
-"pueden ver las múltiples invocaciones a órdenes \\texttt{dh\\_*} en \\texttt"
-"{debian/rules}."
+"pueden ver las múltiples invocaciones a órdenes \\texttt{dh\\_*} en "
+"\\texttt{debian/rules}."
 
 #. type: itemize
 #: packaging-tutorial.tex:1439
@@ -3943,8 +3948,8 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1612
 msgid ""
-"Use \\textsl{hardening} compiler flags to increase security.\\\\ See \\url"
-"{http://wiki.debian.org/Hardening}"
+"Use \\textsl{hardening} compiler flags to increase security.\\\\ See "
+"\\url{http://wiki.debian.org/Hardening}"
 msgstr ""
 
 #. type: frame{#2}
@@ -4088,8 +4093,8 @@ msgid ""
 "Run tests defined in \\texttt{debian/ruby-tests.rb} or \\texttt{debian/ruby-"
 "test-files.yaml}, as well as various other checks"
 msgstr ""
-"Realiza comprobaciones definidas en \\texttt{debian/ruby-tests.rb} o \\texttt"
-"{debian/ruby-test-files.yaml}, así como otras comprobaciones"
+"Realiza comprobaciones definidas en \\texttt{debian/ruby-tests.rb} o "
+"\\texttt{debian/ruby-test-files.yaml}, así como otras comprobaciones"
 
 #. type: frame
 #: packaging-tutorial.tex:1737
@@ -4117,11 +4122,11 @@ msgstr "\\texttt{changelog} y \\texttt{compat} deben ser correctas"
 #. type: itemize
 #: packaging-tutorial.tex:1737
 msgid ""
-"Edit \\texttt{debian/control}: uncomment \\texttt{Homepage}, improve \\texttt"
-"{Description}"
+"Edit \\texttt{debian/control}: uncomment \\texttt{Homepage}, improve "
+"\\texttt{Description}"
 msgstr ""
-"Edite \\texttt{debian/control}: elimine la marca de comentario de \\texttt"
-"{Homepage}, mejore el campo \\texttt{Description}"
+"Edite \\texttt{debian/control}: elimine la marca de comentario de "
+"\\texttt{Homepage}, mejore el campo \\texttt{Description}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1737
@@ -4155,8 +4160,8 @@ msgstr "Construya el paquete. El proceso falla. Hay dos problemas:"
 #. type: itemize
 #: packaging-tutorial.tex:1751
 msgid ""
-"You need to disable the \\texttt{gem} call in the test suite.\\\\ In \\texttt"
-"{test/common.rb}, remove the \\verb+gem \"test-unit\"+ line:"
+"You need to disable the \\texttt{gem} call in the test suite.\\\\ In "
+"\\texttt{test/common.rb}, remove the \\verb+gem \"test-unit\"+ line:"
 msgstr ""
 "Debe desactivar la invocación \\texttt{gem} del conjunto de pruebas.\\\\ En "
 "\\texttt{test/common.rb}, elimine la línea \\verb+gem \"test-unit\"+:"
@@ -4210,10 +4215,10 @@ msgid ""
 "comments in \\texttt{debian/control}, but \\textsl{mocha} is not listed as a "
 "development dependency by the gem (that's a bug in the gem)"
 msgstr ""
-"\\textsl{gem2deb} copia las dependencias documentadas en el fichero \\textsl"
-"{gem} como comentarios a \\texttt{debian/control}, pero el fichero gem no "
-"incluye \\textsl{mocha} como dependencia de construcción (es un fallo en el "
-"fichero gem)"
+"\\textsl{gem2deb} copia las dependencias documentadas en el fichero "
+"\\textsl{gem} como comentarios a \\texttt{debian/control}, pero el fichero "
+"gem no incluye \\textsl{mocha} como dependencia de construcción (es un fallo "
+"en el fichero gem)"
 
 #. type: frame
 #: packaging-tutorial.tex:1770
