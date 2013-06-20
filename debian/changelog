@@ -1,3 +1,24 @@
+packaging-tutorial (0.9) UNRELEASED; urgency=low
+
+  [ Helge Kreutzmann ]
+  * Unfuzzy strings
+
+  [ Cédric Boutillier ]
+  * (fr) update translation [proofread by Baptiste, JP Guillonneau]
+  * (fr) proofread [Philippe Piette]
+
+  [ Lucas Nussbaum ]
+  * Update translation files
+  * Add a debian/rule target to warn translators.
+  * Fix typo. Reported by William King.
+  * Add build-dependencies on texlive-lang-{german,spanish,french}. Closes: #712357
+  * Fix minor typo. Patch from Simon Ruderich.
+  * More minor fixes from Simon Ruderich.
+  * Use fragile=singleslide for a faster build. Closes: #702608
+  * Update URLs to devscripts Vcs. Spotted by Niels Thykier. Closes: #704194
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Thu, 20 Jun 2013 18:46:19 +0200
+
 packaging-tutorial (0.8) unstable; urgency=low
 
   * Update spanish translation. Thanks to Omar Campagne. Closes: #681338
