@@ -2788,7 +2788,7 @@ msgid ""
 "\n"
 msgstr ""
 "retitle 640454 ITA: verbiste -- French conjugator\n"
-"owner 640454¡ !\n"
+"owner 640454 !\n"
 "thanks\n"
 "\n"
 
