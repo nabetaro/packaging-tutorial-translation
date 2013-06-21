@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-03 11:51+0100\n"
+"POT-Creation-Date: 2013-06-20 18:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-msgid "version 0.8 -- 2013-03-03"
+msgid "version 0.9 -- 2013-06-20"
 msgstr ""
 
 #. type: frame{#2}
@@ -415,9 +415,10 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:256
 msgid ""
-"One source package can generate several binary packages\\\\ {\\small e.g the "
-"\\texttt{\\bfseries libtar} source generates the \\texttt{\\bfseries "
-"libtar0} and \\texttt{\\bfseries libtar-dev} binary packages}"
+"One source package can generate several binary packages\\\\ {\\small "
+"e.g. the \\texttt{\\bfseries libtar} source generates the "
+"\\texttt{\\bfseries libtar0} and \\texttt{\\bfseries libtar-dev} binary "
+"packages}"
 msgstr ""
 
 #. type: itemize
@@ -654,7 +655,7 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:360
-msgid "\\textbf{control} -- meta-data about the package (dependencies, etc)"
+msgid "\\textbf{control} -- meta-data about the package (dependencies, etc.)"
 msgstr ""
 
 #. type: itemize
@@ -1189,7 +1190,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:603
 msgid ""
-"E.g building with \\texttt{./configure \\&\\& make \\&\\& make install} or "
+"E.g. building with \\texttt{./configure \\&\\& make \\&\\& make install} or "
 "CMake"
 msgstr ""
 
@@ -1982,9 +1983,10 @@ msgstr ""
 #: packaging-tutorial.tex:969
 #, no-wrap
 msgid ""
-"[basicstyle=\\ttfamily\\footnotesize]\n"
-"Vcs-Browser: http://git.debian.org/?p=devscripts/devscripts.git\n"
-"Vcs-Git: git://git.debian.org/devscripts/devscripts.git\n"
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: "
+"http://anonscm.debian.org/gitweb/?p=collab-maint/devscripts.git\n"
+"Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git\n"
 "  "
 msgstr ""
 
@@ -1992,7 +1994,7 @@ msgstr ""
 #: packaging-tutorial.tex:969
 #, no-wrap
 msgid ""
-"[basicstyle=\\ttfamily\\footnotesize]\n"
+"[basicstyle=\\ttfamily\\scriptsize]\n"
 "Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/\n"
 "Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl\n"
 "  "
@@ -2020,7 +2022,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:992
 msgid ""
-"Goal: use a newer version of a package on an older system\\\\ e.g use "
+"Goal: use a newer version of a package on an older system\\\\ e.g. use "
 "\\textsl{mutt} from Debian \\textsl{unstable} on Debian \\textsl{stable}"
 msgstr ""
 
