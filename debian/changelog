@@ -1,3 +1,10 @@
+packaging-tutorial (0.10) UNRELEASED; urgency=low
+
+  [ Helge Kreutzmann ]
+  * Two minor translation corrections 
+
+ -- Helge Kreutzmann <debian@helgefjell.de>  Sat, 22 Jun 2013 20:20:02 +0200
+
 packaging-tutorial (0.9) unstable; urgency=low
 
   [ Helge Kreutzmann ]

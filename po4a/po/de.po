@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.8+git\n"
 "POT-Creation-Date: 2013-06-20 18:47+0300\n"
-"PO-Revision-Date: 2013-03-26 18:45+0100\n"
+"PO-Revision-Date: 2013-06-22 20:18+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "Language: \n"
@@ -873,7 +873,7 @@ msgstr "Manuell oder mit \\textttc{dch} bearbeiten"
 #: packaging-tutorial.tex:386
 msgid "Create a changelog entry for a new release: \\textttc{dch -i}"
 msgstr ""
-"Änderungsprotokolleintrag für die neue Veröffentlichung erzeugen: "
+"Changelog-Eintrag für die neue Veröffentlichung erzeugen: "
 "\\textttc{dch -i}"
 
 #. type: itemize
@@ -3806,7 +3806,7 @@ msgid ""
 "\\url{http://wiki.debian.org/Hardening}"
 msgstr ""
 "Verwendung von \\textsl{Härtungs}-Compiler-Schalter für bessere Sicherheit. "
-"Siehe \\url {http://wiki.debian.org/Hardening}"
+"Siehe \\url{http://wiki.debian.org/Hardening}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1625
