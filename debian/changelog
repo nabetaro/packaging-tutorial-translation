@@ -1,3 +1,76 @@
+packaging-tutorial (0.10) UNRELEASED; urgency=low
+
+  [ Helge Kreutzmann ]
+  * Two minor translation corrections 
+
+ -- Helge Kreutzmann <debian@helgefjell.de>  Sat, 22 Jun 2013 20:20:02 +0200
+
+packaging-tutorial (0.9) unstable; urgency=low
+
+  [ Helge Kreutzmann ]
+  * Unfuzzy strings
+
+  [ Cédric Boutillier ]
+  * (fr) update translation [proofread by Baptiste, JP Guillonneau]
+  * (fr) proofread [Philippe Piette]
+
+  [ Lucas Nussbaum ]
+  * Update translation files
+  * Add a debian/rule target to warn translators.
+  * Fix typo. Reported by William King.
+  * Add build-dependencies on texlive-lang-{german,spanish,french}.
+    Closes: #712357
+  * Fix minor typo. Patch from Simon Ruderich.
+  * More minor fixes from Simon Ruderich.
+  * Use fragile=singleslide for a faster build. Patch from Simon Ruderich.
+    Closes: #702608
+  * Update URLs to devscripts Vcs. Spotted by Niels Thykier. Closes: #704194
+  * Manually unfuzzy french, german and spanish translations.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Thu, 20 Jun 2013 18:46:19 +0200
+
+packaging-tutorial (0.8) unstable; urgency=low
+
+  * Update spanish translation. Thanks to Omar Campagne. Closes: #681338
+  * Add improvements proposed by Helge Kreutzmann. Closes: #672683
+  * Add new mandatory targets in debian/rules. Thanks to Julien Cristau.
+    Closes: #689287
+  * Fix ES translation to make the package build again.
+  * Re-add note to translators.
+  * Fix what I could fix in DE, FR, ES translations.
+  * Add doc-base entries for .es and .de. Closes: #680180
+  * debian/copyright: Document copyright of the Debian logo. Closes: #685904
+  * Fix gnujump URL. Thanks Henning Sprang and Stéphane Kanschine.
+    Closes: #685359
+  * Check for wrong version in .tex during build
+  * Clarify that mk-build-deps is useful if package not uploaded yet.
+    Closes: #702119
+  * Include many fixes from Francesco Poli. Closes: #686594
+  * Mention Debian Maintainer Dashboard.
+  * Integrate more fixes from Francesco Poli. Closes: #695534
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sun, 03 Mar 2013 11:50:43 +0100
+
+packaging-tutorial (0.7) unstable; urgency=low
+
+  [ Helge Kreutzmann ]
+  * Add German translation. Closes: #672682.
+
+  [ Stefano Zacchiroli ]
+  * LaTeX markup: turn \url{} into hyperlinks using hyperref
+  * LaTeX markup: remove unescaped \textbf{} within lstlisting
+  * DEP-5: point to the policy version of the standard
+
+  [ Lucas Nussbaum ]
+  * Drop the use of LATEXFILTER to ease possible backports of the package.
+    That script was renamed in latex-make 2.1.17-1. Closes: #676748.
+  * Mention that fakeroot must be installed as well as devscripts.
+    Closes: #659126.
+  * es.po: unfuzzied a few strings that did not require language skills.
+  * Bump Standards-Version to 3.9.3. No changes needed.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Wed, 04 Jul 2012 11:47:13 +0200
+
 packaging-tutorial (0.6) unstable; urgency=low
 
   * Explain -us -uc when building packages.

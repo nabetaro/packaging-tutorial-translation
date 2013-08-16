@@ -18,7 +18,7 @@
 %leave \\version unchanged: this will a variable containing the actual version
 %To translate the date, use \\today or a string containing \\year, \\month, \\day
 %(numeric values).
-\date{\footnotesize version 0.6 -- 2012-04-09} % DATE - use debian/rules update-version-date
+\date{\footnotesize version 0.9 -- 2013-06-20} % DATE - use debian/rules update-version-date
 
 
 \frame{\titlepage}
@@ -106,7 +106,7 @@
 
 \subsection{The Deb package format}
 
-\begin{frame}[fragile]{The Deb package format}
+\begin{frame}[fragile=singleslide]{The Deb package format}
   \begin{itemize}
   \item \texttt{.deb} file: an \texttt{ar} archive
     \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -139,7 +139,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   \item Some packages:
     \begin{itemize}
     \item \textbf{build-essential}: has dependencies on the packages that will
-      be assumed to be available on the developers' machine (no need to specify
+      be assumed to be available on the developer's machine (no need to specify
       them in the \texttt{Build-Depends:} control field of your package)
       \begin{itemize}
       \item includes a dependency on \textbf{dpkg-dev}, which contains basic
@@ -191,7 +191,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \begin{enumerate}
 \item Install packages needed to build dash, and devscripts\\
   {\texttt{sudo apt-get build-dep dash}\\ (requires \texttt{deb-src} lines in \texttt{/etc/apt/sources.list})}\\
-  {\texttt{sudo apt-get install -{}-no-install-recommends devscripts}}
+  {\texttt{sudo apt-get install -{}-no-install-recommends devscripts fakeroot}}
   \hbr
 \item Create a working directory, and get in it:\\
  \texttt{mkdir /tmp/debian-tutorial ; cd /tmp/debian-tutorial}
@@ -221,7 +221,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
 \begin{frame}{Source package}
   \begin{itemize}
   \item One source package can generate several binary packages\\
-    {\small e.g the \texttt{\bfseries libtar} source generates the
+    {\small e.g. the \texttt{\bfseries libtar} source generates the
       \texttt{\bfseries libtar0} and \texttt{\bfseries libtar-dev} binary
       packages} \hbr
   \item Two kinds of packages: (if unsure, use non-native)
@@ -235,18 +235,18 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
     \hbr
   \item Other files depending on the version of the source format
     \begin{itemize}
-    \item 1.0 -- native: \texttt{package\_version.tar.gz}
+    \item 1.0 or 3.0 (native): \texttt{package\_version.tar.gz}
       \hbr
-    \item 1.0 -- non-native:
+    \item 1.0 (non-native):
       \begin{itemize}
-      \item \texttt{pkg\_ver.orig.tar.gz} : upstream source
-      \item \texttt{pkg\_debver.diff.gz} : patch to add Debian-specific changes
+      \item \texttt{pkg\_ver.orig.tar.gz}: upstream source
+      \item \texttt{pkg\_debver.diff.gz}: patch to add Debian-specific changes
       \end{itemize}
       \hbr
     \item 3.0 (quilt):
       \begin{itemize}
-      \item \texttt{pkg\_ver.orig.tar.gz} : upstream source
-      \item \texttt{pkg\_debver.debian.tar.gz} : tarball with the Debian changes
+      \item \texttt{pkg\_ver.orig.tar.gz}: upstream source
+      \item \texttt{pkg\_debver.debian.tar.gz}: tarball with the Debian changes
       \end{itemize}
     \end{itemize}
   \end{itemize}
@@ -254,7 +254,7 @@ rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz
   (See \texttt{dpkg-source(1)} for exact details)
 \end{frame}
 
-\begin{frame}[fragile]{Source package example (wget\_1.12-2.1.dsc)}
+\begin{frame}[fragile=singleslide]{Source package example (wget\_1.12-2.1.dsc)}
   \begin{lstlisting}[basicstyle=\ttfamily\small]
 Format: 3.0 (quilt)
 Source: wget
@@ -317,7 +317,11 @@ Files:
     \hbr
   \item Untar it
     \hbr
-  \item \texttt{cd \textsl{upstream\_source} \&\& dh\_make} (from the \textbf{dh-make} package)
+  \item Rename the directory to \texttt{<\textsl{source\_package}>-<\textsl{upstream\_version}>}\\
+	  (example: \texttt{simgrid-3.6})
+    \hbr
+  \item \texttt{cd \texttt{<\textsl{source\_package}>-<\textsl{upstream\_version}>} \&\& dh\_make}\\
+	  (from the \textbf{dh-make} package)
     \hbr
   \item There are some alternatives to \texttt{dh\_make} for specific sets of
     packages: \textbf{dh-make-perl}, \textbf{dh-make-php}, \ldots \hbr
@@ -332,7 +336,7 @@ Files:
   \begin{itemize}
   \item Main files:
     \begin{itemize}
-    \item \textbf{control} -- meta-data about the package (dependencies, etc)
+    \item \textbf{control} -- meta-data about the package (dependencies, etc.)
     \item \textbf{rules} -- specifies how to build the package
     \item \textbf{copyright} -- copyright information for the package
     \item \textbf{changelog} -- history of the Debian package
@@ -354,7 +358,7 @@ Files:
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{debian/changelog}
+\begin{frame}[fragile=singleslide]{debian/changelog}
   \begin{itemize}
   \item Lists the Debian packaging changes
   \item Gives the current version of the package
@@ -390,7 +394,7 @@ mpich2 (1.2.1.1-5) unstable; urgency=low
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{debian/control}
+\begin{frame}[fragile=singleslide]{debian/control}
   \hbr
   \begin{itemize}
   \item Package metadata
@@ -402,7 +406,7 @@ mpich2 (1.2.1.1-5) unstable; urgency=low
   \item Package name, section, priority, maintainer, uploaders,
     build-dependencies, dependencies, description, homepage, \ldots \hbr
   \item Documentation: Debian Policy chapter 5\\
-    \url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
+    \url{http://www.debian.org/doc/debian-policy/ch-controlfields}
   \end{itemize}
   \seprule
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -450,7 +454,7 @@ Description: retrieves files from the web
   A source package can generate a mix of \texttt{Architecture:\ any} and \texttt{Architecture:\ all} binary packages
 \end{frame}
 
-\begin{frame}[fragile]{debian/rules}
+\begin{frame}[fragile=singleslide]{debian/rules}
   \hbr
   \begin{itemize}
   \item Makefile
@@ -458,11 +462,11 @@ Description: retrieves files from the web
   \item Interface used to build Debian packages
     \br
   \item Documented in Debian Policy, chapter 4.8\\
-    {\small \texttt{http://www.debian.org/doc/debian-policy/ch-source.html\#s-debianrules}}
+    {\small \url{http://www.debian.org/doc/debian-policy/ch-source\#s-debianrules}}
     \br
-  \item Five required targets:
+  \item Required targets:
     \begin{itemize}
-    \item \texttt{build}: should perform all the configuration and compilation
+    \item \texttt{build, build-arch, build-indep}: should perform all the configuration and compilation
       \hbr
     \item \texttt{binary, binary-arch, binary-indep}: build the binary packages
       \begin{itemize}
@@ -510,7 +514,7 @@ Description: retrieves files from the web
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{debian/rules using debhelper (1/2)}
+\begin{frame}[fragile=singleslide]{debian/rules using debhelper (1/2)}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 #!/usr/bin/make -f
 
@@ -538,7 +542,7 @@ install: build
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{debian/rules using debhelper (2/2)}
+\begin{frame}[fragile=singleslide]{debian/rules using debhelper (2/2)}
   \begin{lstlisting}[basicstyle=\ttfamily\footnotesize,escapeinside=\{\}]
 
 # Build architecture-independent files here.
@@ -568,14 +572,14 @@ binary: binary-indep binary-arch
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{CDBS}
+\begin{frame}[fragile=singleslide]{CDBS}
   \hbr
   \begin{itemize}
   \item With debhelper, still a lot of redundancy between packages
     \hbr
   \item Second-level helpers that factor common functionality
     \begin{itemize}
-    \item E.g building with \texttt{./configure \&\& make \&\& make install} or CMake
+    \item E.g. building with \texttt{./configure \&\& make \&\& make install} or CMake
     \end{itemize}
     \hbr
   \item CDBS:
@@ -603,7 +607,7 @@ build/mypackage::
       \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Dh (aka Debhelper 7, or dh7)}
+\begin{frame}[fragile=singleslide]{Dh (aka Debhelper 7, or dh7)}
   \begin{itemize}
   \item Introduced in 2008 as a \textsl{CDBS killer}
     \hbr
@@ -672,7 +676,7 @@ override_dh_auto_build:
   \begin{itemize}
   \item \textttc{apt-get build-dep mypackage}\\
     Installs the \textsl{build-dependencies} (for a package already in Debian)\\
-    Or \textttc{mk-build-deps -ir} (inside the package source tree)
+    Or \textttc{mk-build-deps -ir} (for a package not uploaded yet)
     
     \br
   \item \textttc{debuild}: build, test with \texttt{lintian}, sign with GPG
@@ -713,7 +717,8 @@ override_dh_auto_build:
     \br
   \item Check the package with \texttt{lintian} (static analyzer):\\
     \texttt{{\color{rouge}lintian} ../mypackage<TAB>.changes}\\
-    \texttt{lintian -i}: gives more information about the errors \br
+    \texttt{lintian -i}: gives more information about the errors \\
+    \texttt{lintian -EviIL +pedantic}: shows more problems\br
   \item Upload the package to Debian (\textttc{dput}) (needs configuration) \br
   \item Manage a private Debian archive with \textttc{reprepro}\\
     Documentation: \url{http://mirrorer.alioth.debian.org/}
@@ -754,16 +759,17 @@ override_dh_auto_build:
 
 \section{Advanced packaging topics}
 \subsection{debian/copyright}
-\begin{frame}[fragile]{debian/copyright}
+\begin{frame}[fragile=singleslide]{debian/copyright}
   \hbr
   \begin{itemize}
   \item Copyright and license information for the source and the packaging
   \item Traditionally written as a text file
-  \item New machine-readable format: \url{http://dep.debian.net/deps/dep5/}
+  \item New machine-readable format:
+    {\small\url{http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/}}
   \end{itemize}
   \seprule
-  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
-Format: <VERSIONED_FORMAT_URL>
+  \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: X Solitaire
 Source: ftp://ftp.example.com/pub/games
 
@@ -843,7 +849,7 @@ License:
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Documentation of patches}
+\begin{frame}[fragile=singleslide]{Documentation of patches}
   \begin{itemize}
 	  \item Standard headers at the beginning of the patch
     \br
@@ -882,7 +888,7 @@ Last-Update: 2010-03-29
   \item Documentation:
     \begin{itemize}
     \item Debian Policy Manual, chapter 6\\
-      {\footnotesize \url{http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html}}
+      {\footnotesize \url{http://www.debian.org/doc/debian-policy/ch-maintainerscripts}}
       
       \hbr
     \item Debian Developer's Reference, chapter 6.4\\
@@ -900,7 +906,7 @@ Last-Update: 2010-03-29
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Monitoring upstream versions}
+\begin{frame}[fragile=singleslide]{Monitoring upstream versions}
   \begin{itemize}
   \item Specify where to look in \texttt{debian/watch} (see \texttt{uscan(1)})
     \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
@@ -924,7 +930,7 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
 \end{frame}
 
 \subsection{Packaging with a Version Control System (SVN, Git)}
-\begin{frame}[fragile]{Packaging with a Version Control System}
+\begin{frame}[fragile=singleslide]{Packaging with a Version Control System}
   \begin{itemize}
   \item Several tools to help manage branches and tags for your packaging work:\\
     \texttt{svn-buildpackage}, \texttt{git-buildpackage}
@@ -943,11 +949,11 @@ http://tmrc.mit.edu/mirror/twisted/Twisted/(\d\.\d)/ \
 		\item \url{http://wiki.debian.org/Alioth/Svn}
 	\end{itemize}
 \end{itemize}
-  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
-Vcs-Browser: http://git.debian.org/?p=devscripts/devscripts.git
-Vcs-Git: git://git.debian.org/devscripts/devscripts.git
+  \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/devscripts.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git
   \end{lstlisting}
-  \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+  \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/
 Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \end{lstlisting}
@@ -965,7 +971,7 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
 \begin{frame}{Backporting packages}
   \begin{itemize}
   \item Goal: use a newer version of a package on an older system\\
-	  e.g use \textsl{mutt} from Debian \textsl{unstable} on Debian \textsl{stable}
+	  e.g. use \textsl{mutt} from Debian \textsl{unstable} on Debian \textsl{stable}
 	\br
   \item General idea:
 	  \begin{itemize}
@@ -1053,14 +1059,14 @@ Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Adopting a package: example}
+\begin{frame}[fragile=singleslide]{Adopting a package: example}
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
 From: You <you@yourdomain>
 To: 640454@bugs.debian.org, control@bugs.debian.org
 Cc: Francois Marier <francois@debian.org>
 Subject: ITA: verbiste -- French conjugator
 
-retitle 640454 \textbf{ITA}: verbiste -- French conjugator
+retitle 640454 ITA: verbiste -- French conjugator
 owner 640454 !
 thanks
 
@@ -1096,7 +1102,7 @@ You
 			See \url{http://wiki.debian.org/DebianMaintainer}
 			\hbr
 		\item \textbf{Debian Developer (DD):}\\
-			Debian project members; can vote and upload any package
+			Debian project member; can vote and upload any package
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -1153,7 +1159,7 @@ You
     \hbr
     
   \item Ubuntu Packaging Guide\\
-    \url{https://wiki.ubuntu.com/PackagingGuide}
+    \url{http://developer.ubuntu.com/resources/tools/packaging/}
   \end{itemize}
 \end{frame}
 
@@ -1164,6 +1170,9 @@ You
     \br
   \item \textbf{Maintainer/team centric}: Developer's Packages Overview (DDPO)\\
     \url{http://qa.debian.org/developer.php?login=pkg-ruby-extras-maintainers@lists.alioth.debian.org}
+    \br
+  \item \textbf{TODO-list oriented}: Debian Maintainer Dashboard (DMD)\\
+    \url{http://udd.debian.org/dmd.cgi}
   \end{itemize}
 \end{frame}
 
@@ -1228,7 +1237,7 @@ You
 \subsection{Legal stuff}
 \begin{frame}{Legal stuff}
 
-  Copyright \copyright 2011 Lucas Nussbaum -- lucas@debian.org
+  Copyright \copyright 2011--2013 Lucas Nussbaum -- lucas@debian.org
   \br
 
   {\small 
@@ -1247,32 +1256,34 @@ You
   }
 \end{frame}
 
-\subsection{Latest version \& source code}
-\begin{frame}{Latest version \& source code}
-  \begin{itemize}
-  \item Latest version:\\
-    {\footnotesize \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git;a=blob\_plain;f=packaging-tutorial.pdf;hb=refs/heads/pdf}}
-  \end{itemize}
-  
-  \begin{itemize}
-  \item Contribute:
-	  \begin{itemize}
-		  \item  {\small \texttt{git clone\\ git://git.debian.org/collab-maint/packaging-tutorial.git}}
-    \hbr
-    \item {\small \texttt{apt-get source packaging-tutorial}}
-    \hbr
-    \item {\small \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}
-    \end{itemize}
-    \br
-  \item Feedback: \href{mailto:lucas@debian.org}{\textbf{\texttt{lucas@debian.org}}}
-  \end{itemize}
+\subsection{Contribute to this tutorial}
+\begin{frame}{Contribute to this tutorial}
+	\begin{itemize}
+		\item Contribute:
+			\begin{itemize}
+				\item {\small \texttt{apt-get source packaging-tutorial}}
+					\hbr
+				\item  {\small \texttt{debcheckout packaging-tutorial}}
+					\hbr
+				\item  {\small \texttt{git clone\\ git://git.debian.org/collab-maint/packaging-tutorial.git}}
+					\hbr
+				\item {\small \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}
+			\end{itemize}
+			\br
+		\item Feedback:
+			\begin{itemize}
+				\item \href{mailto:lucas@debian.org}{\textbf{\texttt{mailto:lucas@debian.org}}}
+					\hbr
+				\item {\small \texttt{reportbug packaging-tutorial}}
+			\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \section{Practical session 2: packaging GNUjump}
 \begin{frame}{Practical session 2: packaging GNUjump}
 \begin{enumerate}
-	\item Download GNUjump 1.0.6 from
-		\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+	\item Download GNUjump 1.0.8 from
+		\url{http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\br
 	\item Create a Debian package for it
 		\begin{itemize}
@@ -1380,7 +1391,7 @@ You
 	\item Use dget to download the \texttt{.dsc} file:\\
 		{\small \texttt{dget http://cdn.debian.net/debian/pool/main/g/grep/grep\_2.6.3-3.dsc}}
 		\hbr
-	\item According to \texttt{http://packages.qa.debian.org/grep}, \texttt{grep} version 2.6.3-3 is currently in \textsl{stable} (\textsl{squeeze}). If you have \texttt{deb-src} lines for \textsl{squeeze} in your \texttt{/etc/apt/sources.list}, you can use:\\
+	\item According to \url{http://packages.qa.debian.org/grep}, \texttt{grep} version 2.6.3-3 is currently in \textsl{stable} (\textsl{squeeze}). If you have \texttt{deb-src} lines for \textsl{squeeze} in your \texttt{/etc/apt/sources.list}, you can use:\\
 		\texttt{apt-get source grep=2.6.3-3}\\
 		or \texttt{apt-get source grep/stable}\\
 		or, if you feel lucky: \texttt{apt-get source grep}
@@ -1443,7 +1454,7 @@ You
 		\item After that, rebuild the package: a new version of the package is built
 	\hbr
 		\item Package versioning is detailed in section 5.6.12 of the Debian policy\\
-			\url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
+			\url{http://www.debian.org/doc/debian-policy/ch-controlfields}
 	\end{itemize}
 \end{frame}
 
@@ -1500,8 +1511,8 @@ Or not: reinstall the previous version of the package:
 \subsection{Practical session 2: packaging GNUjump}
 \begin{frame}{Practical session 2: packaging GNUjump}
 \begin{enumerate}
-	\item Download GNUjump 1.0.6 from
-		\url{http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+	\item Download GNUjump 1.0.8 from
+		\url{http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\br
 	\item Create a Debian package for it
 		\begin{itemize}
@@ -1515,15 +1526,15 @@ Or not: reinstall the previous version of the package:
 \centerline{\includegraphics[width=5cm]{figs/gnujump.png}}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots}
+\begin{frame}[fragile=singleslide]{Step by step\ldots}
 \begin{itemize}
-	\item \texttt{wget http://ftp.gnu.org/gnu/gnujump/1.0.6/gnujump-1.0.6.tar.gz}
+	\item \texttt{wget http://ftp.gnu.org/gnu/gnujump/gnujump-1.0.8.tar.gz}
 		\hbr
-	\item \texttt{mv gnujump-1.0.6.tar.gz gnujump\_1.0.6.orig.tar.gz}
+	\item \texttt{mv gnujump-1.0.8.tar.gz gnujump\_1.0.8.orig.tar.gz}
 		\hbr
-	\item \texttt{tar xf gnujump\_1.0.6.orig.tar.gz}
+	\item \texttt{tar xf gnujump\_1.0.8.orig.tar.gz}
 		\hbr
-	\item \texttt{cd gnujump-1.0.6/}
+	\item \texttt{cd gnujump-1.0.8/}
 		\hbr
 	\item \texttt{dh\_make}
 	\begin{itemize}
@@ -1531,7 +1542,7 @@ Or not: reinstall the previous version of the package:
 	\end{itemize}
 \end{itemize}
 \begin{lstlisting}[basicstyle=\ttfamily\small]
-gnujump-1.0.6$ ls debian/
+gnujump-1.0.8$ ls debian/
 changelog           gnujump.default.ex   preinst.ex
 compat              gnujump.doc-base.EX  prerm.ex
 control             init.d.ex            README.Debian
@@ -1544,7 +1555,7 @@ gnujump.cron.d.ex   postrm.ex
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots (2)}
+\begin{frame}[fragile=singleslide]{Step by step\ldots (2)}
 \begin{itemize}
 	\item Look at \texttt{debian/changelog}, \texttt{debian/rules}, \texttt{debian/control}\\
 		(auto-filled by \textbf{dh\_make})
@@ -1579,16 +1590,34 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 		\hbr
 	\item Use \texttt{debi} to install it and test it.
 		\hbr
-	\item Fill in \texttt{debian/control} using \url{http://www.debian.org/doc/debian-policy/ch-controlfields.html}
-		\hbr
 	\item Test the package with \texttt{lintian}
+		\begin{itemize}
+			\item While not a strict requirement, it is recommended that packages uploaded to Debian are \textsl{lintian-clean}
 		\hbr
-	\item Remove the files that you don't need in \texttt{debian/}
+			\item More problems can be listed using \texttt{lintian -EviIL +pedantic}
 		\hbr
+			\item Some hints:
+				\begin{itemize}
+					\item Remove the files that you don't need in \texttt{debian/}
+		\hbr
+					\item Fill in \texttt{debian/control}
+						\hbr
+					\item Install the executable to \texttt{/usr/games} by overriding \texttt{dh\_auto\_configure}
+		\hbr
+					\item Use \textsl{hardening} compiler flags to increase security.\\ See \url{http://wiki.debian.org/Hardening}
+				\end{itemize}
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Step by step\ldots (4)}
+		\begin{itemize}
 	\item Compare your package with the one already packaged in Debian:
 		\begin{itemize}
 			\item It splits the data files to a second package, that is the same across all architectures ($\rightarrow$ saves space in the Debian archive)
+				\hbr
 			\item It installs a .desktop file (for the GNOME/KDE menus) and also integrates into the Debian menu
+				\hbr
 			\item It fixes a few minor problems using patches
 		\end{itemize}
 \end{itemize}
@@ -1682,7 +1711,7 @@ $\rightarrow$ Add \textbf{libsdl1.2-dev} to Build-Depends and install it.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots (2)}
+\begin{frame}[fragile=singleslide]{Step by step\ldots (2)}
 Improve the generated package:
 \begin{itemize}
 	\item Run \texttt{debclean} to clean the source tree. Look at \texttt{debian/}.
@@ -1695,13 +1724,18 @@ Improve the generated package:
 		\hbr
 	\item \texttt{ruby-net-ssh.docs}: install \texttt{README.rdoc}
 		\hbr
+%Translators:
+%This context is very sensitive to line length. If you
+%hit errors building the package around this line in your translated version
+%see, e.g. in the Spanish or German version for versions with explicit line
+%breaks for the translation
 	\item \texttt{ruby-tests.rb}: run the tests. In that case, it is enough to do:\\
 		\verb+$: << 'test' << 'lib' << '.'+\\
 		\verb+require 'test/test_all.rb'+
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Step by step\ldots (3)}
+\begin{frame}[fragile=singleslide]{Step by step\ldots (3)}
 Build the package.
 It fails to build. There are two problems:
 \begin{itemize}
