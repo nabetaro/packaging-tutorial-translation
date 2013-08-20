@@ -1181,6 +1181,60 @@ You
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Using the Debian Bug Tracking System (BTS)}
+\begin{itemize}
+\item A quite unique way to manage bugs
+\begin{itemize}
+\item Web interface to view bugs
+\item Email interface to make changes to bugs
+\end{itemize}
+\hbr
+\item Adding information to bugs:
+	\begin{itemize}
+		\item Write to \texttt{123456@bugs.debian.org} (does not include the submitter, you need to add \texttt{123456-submitter@bugs.debian.org})
+	\end{itemize}
+\hbr
+\item Changing bug status:
+\begin{itemize}
+\item Send commands to \texttt{control@bugs.debian.org}
+\item Command-line interface: \texttt{bts} command in \texttt{devscripts}
+\item Documentation: \url{http://www.debian.org/Bugs/server-control}
+\end{itemize}
+\hbr
+\item Reporting bugs: use \texttt{reportbug}
+\begin{itemize}
+\item Normally used with a local mail server: install \texttt{ssmtp} or \texttt{nullmailer}
+\item Or use \texttt{reportbug -\@-template}, then send (manually) to \texttt{submit@bugs.debian.org}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Using the BTS: examples}
+\begin{itemize}
+\item Sending an email to the bug and the submitter:\\
+	\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\#10}
+\hbr
+\item Tagging and changing the severity:\\
+	\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=680227\#10}
+\hbr
+\item Reassigning, changing the severity, retitling \ldots: \\
+	\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\#93}
+\begin{itemize}
+	\item \texttt{notfound}, \texttt{found}, \texttt{notfixed}, \texttt{fixed} are for \textbf{version-tracking} \\
+	See \url{https://wiki.debian.org/HowtoUseBTS\#Version\_tracking}
+\end{itemize}
+\hbr
+\item Using usertags: \url{http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=42;bug=642267}\\
+	See \url{https://wiki.debian.org/bugs.debian.org/usertags}
+\hbr
+\item BTS Documentation:
+\begin{itemize}
+\item \url{http://www.debian.org/Bugs/}
+\item \url{https://wiki.debian.org/HowtoUseBTS}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
 \subsection{More interested in Ubuntu?}
 \begin{frame}{More interested in Ubuntu?}
   \begin{itemize}
@@ -1229,7 +1283,6 @@ You
 		\hbr
 	\item Debian development organization:
 		\begin{itemize}
-			\item Bug Tracking System (BTS)
 			\item Suites: stable, testing, unstable, experimental, security, *-updates, backports, \ldots
 			\item Debian Blends -- subsets of Debian targeting specific groups
 		\end{itemize}
