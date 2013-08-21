@@ -1109,6 +1109,34 @@ You
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Things to check before asking for sponsorship}
+\begin{itemize}
+	\item Debian puts \textbf{a lot of focus on quality}
+\hbr
+\item Generally, \textbf{sponsors are hard to find and busy}
+\begin{itemize}
+\item Make sure your package is ready before asking for sponsorship
+\end{itemize}
+\hbr
+\item Things to check:
+\begin{itemize}
+\item Avoid missing build-dependencies: make sure that your package build fine in a clean \textsl{sid} \textsl{chroot}
+\begin{itemize}
+\item Using \texttt{pbuilder} is recommended
+\end{itemize}
+\hbr
+\item Run \texttt{lintian -EviIL +pedantic} on your package
+\begin{itemize}
+\item Errors must be fixed, all other problems should be fixed
+\end{itemize}
+\hbr
+\item Do extensive testing of your package, of course
+\end{itemize}
+\hbr
+\item In doubt, ask for help
+\end{itemize}
+\end{frame}
+
 \subsection{Where to find help?}
 \begin{frame}{Where to find help?}
 	\hbr
