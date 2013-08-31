@@ -1489,8 +1489,8 @@ msgstr ""
 #: packaging-tutorial.tex:603
 msgid "Slower than plain debhelper (many useless calls to \\texttt{dh\\_*})"
 msgstr ""
-"Plus lent que la seule utilisation de debhelper (beaucoup d'appels inutiles "
-"à \\texttt{dh\\_*})"
+"Plus lent que l'utilisation seule de debhelper (beaucoup d'appels inutiles à "
+"\\texttt{dh\\_*})"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:603
@@ -2623,7 +2623,7 @@ msgstr "Différents états :"
 msgid ""
 "\\textbf{O}rphaned: the package is unmaintained\\\\ Feel free to adopt it"
 msgstr ""
-"\\textbf{O}rphelin : le paquet n'est pas maintenu\\\\ Adoptez le s'il vous "
+"\\textbf{O}rphelin : le paquet n'est pas maintenu\\\\ Adoptez-le s'il vous "
 "sied"
 
 #. type: itemize
@@ -2635,7 +2635,7 @@ msgid ""
 msgstr ""
 "\\textbf{RFA} : \\textbf{R}equest \\textbf{F}or \\textbf{A}dopter (cherche "
 "un adoptant)\\\\ Le responsable cherche un adoptant, mais il continue son "
-"travail en attendant\\\\ Adoptez le s'il vous sied. L'envoi d'un courriel au "
+"travail en attendant\\\\ Adoptez-le s'il vous sied. L'envoi d'un courriel au "
 "responsable actuel est poli"
 
 #. type: itemize
@@ -3652,7 +3652,7 @@ msgid ""
 "\\texttt{apt-get source grep/stable}\\\\ or, if you feel lucky: \\texttt{apt-"
 "get source grep}"
 msgstr ""
-"D'après \\url{http://packages.qa.debian.org/grep}, \\texttt{grep} version "
+"D'après \\url{http://packages.qa.debian.org/grep}, \\texttt{grep} la version "
 "2.6.3-3 est actuellement dans \\textsl{stable} (\\textsl{squeeze}). Si vous "
 "avez les lignes \\texttt{deb-src}, pour \\textsl{squeeze} dans votre "
 "\\texttt{/etc/apt/sources.list}, utilisez :\\\\ \\texttt{apt-get source "
