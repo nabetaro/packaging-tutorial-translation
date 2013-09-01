@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.8+git\n"
-"POT-Creation-Date: 2013-08-21 15:08+0300\n"
-"PO-Revision-Date: 2013-06-22 20:18+0200\n"
+"POT-Creation-Date: 2013-08-21 22:48+0300\n"
+"PO-Revision-Date: 2013-09-01 11:48+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "Language: \n"
@@ -36,11 +36,10 @@ msgstr "Debian-Paketier-Anleitung"
 
 #. type: author{#2}
 #: packaging-tutorial.tex:14
-#, fuzzy
-#| msgid "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
 msgid ""
 "Lucas Nussbaum\\\\{\\small\\texttt{packaging-tutorial@packages.debian.org}}"
-msgstr "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
+msgstr ""
+"Lucas Nussbaum\\\\{\\small\\texttt{packaging-tutorial@packages.debian.org}}"
 
 #. Translators:
 #. leave \\version unchanged: this will a variable containing the actual version
@@ -49,10 +48,8 @@ msgstr "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-#, fuzzy
-#| msgid "version 0.9 -- 2013-06-20"
 msgid "version 0.10 -- 2013-08-20"
-msgstr "version 0.9 -- 2013-06-20"
+msgstr "version 0.10 -- 2013-08-20"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -2778,11 +2775,13 @@ msgid ""
 "Submit an \\textbf{ITP} bug (\\textbf{I}ntend \\textbf{T}o \\textbf{P}"
 "ackage) using \\texttt{reportbug wnpp}"
 msgstr ""
+"Reichen Sie mit \\texttt{reportbug wnpp} einen \\textbf{ITP}-Fehler "
+"(\\textbf{I}ntend \\textbf{T}o \\textbf{P}ackage) ein"
 
 #. type: enumerate
 #: packaging-tutorial.tex:1111
 msgid "Prepare a source package"
-msgstr "Ein Quellpaket vorbereiten"
+msgstr "Bereiten Sie ein Quellpaket vor"
 
 #. type: enumerate
 #: packaging-tutorial.tex:1111
@@ -2791,10 +2790,8 @@ msgstr "Finden Sie einen Debian-Entwickler, der Ihr Paket sponsern wird"
 
 #. type: itemize
 #: packaging-tutorial.tex:1111
-#, fuzzy
-#| msgid "Official status (when you are already experienced):"
 msgid "Official status (when you are an experienced package maintainer):"
-msgstr "Offizieller Status (wenn Sie bereits erfahren sind):"
+msgstr "Offizieller Status (wenn Sie ein erfahrener Paketbetreuer sind):"
 
 # FIXME Kein Eintrag auf www.debian.org (wg. Übersetzung?)
 #. type: itemize
@@ -2818,27 +2815,27 @@ msgstr ""
 #. type: frame{#2}
 #: packaging-tutorial.tex:1139
 msgid "Things to check before asking for sponsorship"
-msgstr ""
+msgstr "Zu Prüfendes, bevor Sie nach Sponsoren fragen:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Debian puts \\textbf{a lot of focus on quality}"
-msgstr ""
+msgstr "Debian legt \\textbf{viel Wert auf Qualität}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Generally, \\textbf{sponsors are hard to find and busy}"
-msgstr ""
+msgstr "Typischerweise sind \\textbf{Sponsoren schwer zu finden und beschäftigt}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Make sure your package is ready before asking for sponsorship"
-msgstr ""
+msgstr "Stellen Sie sicher, dass Ihr Paket bereit ist, bevor Sie Sponsoren fragen"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Things to check:"
-msgstr ""
+msgstr "Dinge, die geprüft werden sollten:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
@@ -2846,35 +2843,33 @@ msgid ""
 "Avoid missing build-dependencies: make sure that your package build fine in "
 "a clean \\textsl{sid} \\textsl{chroot}"
 msgstr ""
+"Vermeiden Sie fehlende build-dependencies: Stellen Sie sicher, dass Ihr Paket "
+"problemlos in einer sauberen \\textsl{sid} \\textsl{chroot} baut"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Using \\texttt{pbuilder} is recommended"
-msgstr ""
+msgstr "Verwendung von \\texttt{pbuilder} wird empfohlen"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
-#, fuzzy
-#| msgid "More problems can be listed using \\texttt{lintian -EviIL +pedantic}"
 msgid "Run \\texttt{lintian -EviIL +pedantic} on your package"
-msgstr ""
-"Weitere Probleme können mit \\texttt{lintian -EviIL +pedantic} aufgelistet "
-"werden"
+msgstr "Führen Sie für Ihr Paket \\texttt{lintian -EviIL +pedantic} aus"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Errors must be fixed, all other problems should be fixed"
-msgstr ""
+msgstr "Fehler müssen, alle anderen Probleme sollten behoben werden"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Do extensive testing of your package, of course"
-msgstr ""
+msgstr "Testen Sie natürlich Ihr Paket ausführlich"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "In doubt, ask for help"
-msgstr ""
+msgstr "Im Zweifelsfall fragen Sie nach Hilfe"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1174
@@ -2908,18 +2903,14 @@ msgstr "Anderen Mitgliedern eines Paketierungsteams"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
-#, fuzzy
-#| msgid "List available at \\url{http://wiki.debian.org/Teams}"
 msgid "List of teams: \\url{http://wiki.debian.org/Teams}"
-msgstr "Liste verfügbar unter \\url{http://wiki.debian.org/Teams}"
+msgstr "Liste von Teams: \\url{http://wiki.debian.org/Teams}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
-#, fuzzy
-#| msgid "The Debian Mentors group (if your package doesn't fit in a team)"
 msgid ""
 "The \\textbf{Debian Mentors group} (if your package does not fit in a team)"
-msgstr "Der Debian-Mentors-Gruppe (falls Ihr Paket in kein Team passt)"
+msgstr "Der \\textbf{Debian-Mentors-Gruppe} (falls Ihr Paket in kein Team passt)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
@@ -2947,42 +2938,35 @@ msgstr "\\url{http://mentors.debian.net/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
-#, fuzzy
-#| msgid "\\url{http://mentors.debian.net/}"
 msgid "Documentation: \\url{http://mentors.debian.net/intro-maintainers}"
-msgstr "\\url{http://mentors.debian.net/}"
+msgstr "Dokumentation: \\url{http://mentors.debian.net/intro-maintainers}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
 msgid "\\textbf{Localized mailing lists} (get help in your language)"
-msgstr ""
+msgstr "\\textbf{Lokalisierte Mailinglisten} (Hilfe in Ihrer Sprache erhalten)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
 msgid ""
 "\\texttt{debian-devel-\\{french,italian,portuguese,spanish\\}@lists.d.o}"
 msgstr ""
+"\\texttt{debian-devel-\\{french,italian,portuguese,spanish\\}@lists.d.o}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
-#, fuzzy
-#| msgid "Full list + process: \\url{http://www.debian.org/devel/wnpp/}"
 msgid "Full list: \\url{https://lists.debian.org/devel.html}"
-msgstr "Komplette Liste und Prozess: \\url{http://www.debian.org/devel/wnpp/}"
+msgstr "Komplette Liste: \\url{https://lists.debian.org/devel.html}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
-#, fuzzy
-#| msgid "Full list + process: \\url{http://www.debian.org/devel/wnpp/}"
 msgid "Or users lists: \\url{https://lists.debian.org/users.html}"
-msgstr "Komplette Liste und Prozess: \\url{http://www.debian.org/devel/wnpp/}"
+msgstr "Unsere Benutzerlisten: \\url{https://lists.debian.org/users.html}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1192
-#, fuzzy
-#| msgid "Documentation:"
 msgid "More documentation"
-msgstr "Dokumentation:"
+msgstr "Weitere Dokumentation"
 
 #. type: itemize
 #: packaging-tutorial.tex:1192
@@ -3077,30 +3061,28 @@ msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1245
-#, fuzzy
-#| msgid "Bug Tracking System (BTS)"
 msgid "Using the Debian Bug Tracking System (BTS)"
-msgstr "Fehlerdatenbank (BTS)"
+msgstr "Die Fehlerdatenbank (BTS) benutzen"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "A quite unique way to manage bugs"
-msgstr ""
+msgstr "Eine recht einzigartige Art, Fehler handzuhaben"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "Web interface to view bugs"
-msgstr ""
+msgstr "Web-Oberfläche zum Betrachten von Fehlern"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "Email interface to make changes to bugs"
-msgstr ""
+msgstr "E-Mail-Schnittstelle, um Fehler zu verändern"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "Adding information to bugs:"
-msgstr ""
+msgstr "Informationen zu Fehlern hinzufügen:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
@@ -3108,39 +3090,35 @@ msgid ""
 "Write to \\texttt{123456@bugs.debian.org} (does not include the submitter, "
 "you need to add \\texttt{123456-submitter@bugs.debian.org})"
 msgstr ""
+"Schreiben Sie an \\texttt{123456@bugs.debian.org} (geht nicht an "
+"Einreichenden, Sie müssen \\texttt{123456-submitter@bugs.debian.org} "
+"hinzufügen)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "Changing bug status:"
-msgstr ""
+msgstr "Fehlerstatus ändern:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "Send commands to \\texttt{control@bugs.debian.org}"
-msgstr ""
+msgstr "Schicken Sie Befehle an \\texttt{control@bugs.debian.org}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
-#, fuzzy
-#| msgid ""
-#| "VCS-agnostic interface: \\texttt{debcheckout}, \\texttt{debcommit}, "
-#| "\\texttt{debrelease}\\\\"
 msgid "Command-line interface: \\texttt{bts} command in \\texttt{devscripts}"
 msgstr ""
-"VCS-unabhängige Schnittstelle: \\texttt{debcheckout}, \\texttt{debcommit}, "
-"\\texttt{debrelease}\\\\"
+"Befehlszeilen-Schnittstelle: \\texttt{bts}-Befehl in \\texttt{devscripts}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
-#, fuzzy
-#| msgid "More documentation: \\url{http://wiki.debian.org/debian/patches}"
 msgid "Documentation: \\url{http://www.debian.org/Bugs/server-control}"
-msgstr "Weitere Dokumentation: \\url{http://wiki.debian.org/debian/patches}"
+msgstr "Dokumentation: \\url{http://www.debian.org/Bugs/server-control}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
 msgid "Reporting bugs: use \\texttt{reportbug}"
-msgstr ""
+msgstr "Fehler berichten: verwenden Sie \\texttt{reportbug}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
@@ -3148,6 +3126,8 @@ msgid ""
 "Normally used with a local mail server: install \\texttt{ssmtp} or "
 "\\texttt{nullmailer}"
 msgstr ""
+"Normalerweise mit lokalem E-Mail-Server verwandt: installieren Sie "
+"\\texttt{ssmtp} oder \\texttt{nullmailer}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1245
@@ -3155,11 +3135,13 @@ msgid ""
 "Or use \\texttt{reportbug -\\@-template}, then send (manually) to "
 "\\texttt{submit@bugs.debian.org}"
 msgstr ""
+"Alternativ verwenden Sie \\texttt{reportbug -\\@-template}, schicken Sie dann "
+"(manuell) an \\texttt{submit@bugs.debian.org}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1271
 msgid "Using the BTS: examples"
-msgstr ""
+msgstr "Das BTS verwenden: Beispiele"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3167,6 +3149,8 @@ msgid ""
 "Sending an email to the bug and the submitter:\\\\ \\url{http://bugs.debian."
 "org/cgi-bin/bugreport.cgi?bug=680822\\#10}"
 msgstr ""
+"Eine E-Mail an den Fehler und den Einreichenden senden:\\\\ \\url{http://bugs."
+"debian.org/cgi-bin/bugreport.cgi?bug=680822\\#10}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3174,6 +3158,8 @@ msgid ""
 "Tagging and changing the severity:\\\\ \\url{http://bugs.debian.org/cgi-bin/"
 "bugreport.cgi?bug=680227\\#10}"
 msgstr ""
+"Markieren und Schweregrad ändern:\\\\ \\url{http://bugs.debian.org/cgi-bin/"
+"bugreport.cgi?bug=680227\\#10}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3181,6 +3167,8 @@ msgid ""
 "Reassigning, changing the severity, retitling \\ldots: \\\\ \\url{http://"
 "bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\\#93}"
 msgstr ""
+"Neuzuweisen, Schweregrad ändern, umbenennen \\ldots: \\\\ \\url{http://"
+"bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\\#93}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3189,6 +3177,9 @@ msgid ""
 "for \\textbf{version-tracking} \\\\ See \\url{https://wiki.debian.org/"
 "HowtoUseBTS\\#Version\\_tracking}"
 msgstr ""
+"\\texttt{notfound}, \\texttt{found}, \\texttt{notfixed}, \\texttt{fixed} sind "
+"für \\textbf{Version-Nachverfolgung} \\\\ Siehe \\url{https://wiki.debian.org/"
+"HowtoUseBTS\\#Version\\_tracking}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3196,27 +3187,23 @@ msgid ""
 "Using usertags: \\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=42;"
 "bug=642267}\\\\ See \\url{https://wiki.debian.org/bugs.debian.org/usertags}"
 msgstr ""
+"Usertags verwenden: \\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=42;"
+"bug=642267}\\\\ Siehe \\url{https://wiki.debian.org/bugs.debian.org/usertags}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
-#, fuzzy
-#| msgid "Documentation:"
 msgid "BTS Documentation:"
-msgstr "Dokumentation:"
+msgstr "BTS-Dokumentation:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
-#, fuzzy
-#| msgid "\\url{http://wiki.debian.org/Ruby}"
 msgid "\\url{http://www.debian.org/Bugs/}"
-msgstr "\\url{http://wiki.debian.org/Ruby}"
+msgstr "\\url{http://www.debian.org/Bugs/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
-#, fuzzy
-#| msgid "\\url{http://wiki.debian.org/Alioth/Svn}"
 msgid "\\url{https://wiki.debian.org/HowtoUseBTS}"
-msgstr "\\url{http://wiki.debian.org/Alioth/Svn}"
+msgstr "\\url{https://wiki.debian.org/HowtoUseBTS}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1298
@@ -3286,8 +3273,6 @@ msgstr "Erhalten Sie Launchpad-Fehler-E-Mails über das PTS"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1328
-#, fuzzy
-#| msgid "Conclusion"
 msgid "Conclusions"
 msgstr "Fazit"
 
@@ -3352,10 +3337,8 @@ msgstr "Debian Blends -- Teilmenge von Debian, gezielt für bestimmte Gruppen"
 
 #. type: centerline{#1}
 #: packaging-tutorial.tex:1328
-#, fuzzy
-#| msgid "\\large Feedback: \\textbf{lucas@debian.org}"
 msgid "\\large Feedback: \\textbf{packaging-tutorial@packages.debian.org}"
-msgstr "\\large Rückmeldungen: \\textbf{lucas@debian.org}"
+msgstr "\\large Rückmeldungen: \\textbf{packaging-tutorial@packages.debian.org}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1331
@@ -3426,42 +3409,32 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
-#, fuzzy
-#| msgid ""
-#| "{\\small \\url{http://git.debian.org/?p=collab-maint/packaging-tutorial."
-#| "git}}"
 msgid "{\\small Open bugs: \\url{bugs.debian.org/src:packaging-tutorial}}"
-msgstr ""
-"{\\small \\url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}"
+msgstr "{\\small Offene Fehler: \\url{bugs.debian.org/src:packaging-tutorial}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
-#, fuzzy
-#| msgid "Feedback:"
 msgid "Provide feedback:"
-msgstr "Rückmeldung:"
+msgstr "Rückmeldung geben:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
-#, fuzzy
-#| msgid ""
-#| "\\href{mailto:lucas@debian.org}{\\textbf{\\texttt{mailto:lucas@debian."
-#| "org}}}"
 msgid ""
 "\\href{mailto:packaging-tutorial@packages.debian.org}"
 "{\\textbf{\\texttt{mailto:packaging-tutorial@packages.debian.org}}}"
 msgstr ""
-"\\href{mailto:lucas@debian.org}{\\textbf{\\texttt{mailto:lucas@debian.org}}}"
+"\\href{mailto:packaging-tutorial@packages.debian.org}"
+"{\\textbf{\\texttt{mailto:packaging-tutorial@packages.debian.org}}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
 msgid "{\\small What should be added to this tutorial?}"
-msgstr ""
+msgstr "{\\small Was sollte zu dieser Anleitung hinzugefügt werden?}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
 msgid "{\\small What should be improved?}"
-msgstr ""
+msgstr "{\\small Was sollte verbessert werden?}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
