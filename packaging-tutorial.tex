@@ -12,13 +12,13 @@
 
 \hypersetup{bookmarks}
 \title{Debian Packaging Tutorial}
-\author[]{Lucas Nussbaum\\{\small\texttt{lucas@debian.org}}}
+\author[]{Lucas Nussbaum\\{\small\texttt{packaging-tutorial@packages.debian.org}}}
 
 %Translators:
 %leave \\version unchanged: this will a variable containing the actual version
 %To translate the date, use \\today or a string containing \\year, \\month, \\day
 %(numeric values).
-\date{\footnotesize version 0.9 -- 2013-06-20} % DATE - use debian/rules update-version-date
+\date{\footnotesize version 0.10 -- 2013-08-20} % DATE - use debian/rules update-version-date
 
 
 \frame{\titlepage}
@@ -1090,12 +1090,14 @@ You
 \begin{itemize}
 \item You do not need any official status to get your package into Debian
 	\begin{enumerate}
+		\item Submit an \textbf{ITP} bug (\textbf{I}ntend \textbf{T}o \textbf{P}ackage) using \texttt{reportbug wnpp}
+			\hbr
 		\item Prepare a source package
 			\hbr
 		\item Find a Debian Developer that will sponsor your package
 	\end{enumerate}
 \br
-\item Official status (when you are already experienced):
+\item Official status (when you are an experienced package maintainer):
 	\begin{itemize}
 		\item \textbf{Debian Maintainer (DM):}\\
 			Permission to upload your own packages\\
@@ -1107,35 +1109,71 @@ You
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Things to check before asking for sponsorship}
+\begin{itemize}
+	\item Debian puts \textbf{a lot of focus on quality}
+\hbr
+\item Generally, \textbf{sponsors are hard to find and busy}
+\begin{itemize}
+\item Make sure your package is ready before asking for sponsorship
+\end{itemize}
+\hbr
+\item Things to check:
+\begin{itemize}
+\item Avoid missing build-dependencies: make sure that your package build fine in a clean \textsl{sid} \textsl{chroot}
+\begin{itemize}
+\item Using \texttt{pbuilder} is recommended
+\end{itemize}
+\hbr
+\item Run \texttt{lintian -EviIL +pedantic} on your package
+\begin{itemize}
+\item Errors must be fixed, all other problems should be fixed
+\end{itemize}
+\hbr
+\item Do extensive testing of your package, of course
+\end{itemize}
+\hbr
+\item In doubt, ask for help
+\end{itemize}
+\end{frame}
+
 \subsection{Where to find help?}
 \begin{frame}{Where to find help?}
+	\hbr
   Help you will need:
   \begin{itemize}
   \item Advice and answers to your questions, code reviews
   \item Sponsorship for your uploads, once your package is ready
   \end{itemize}
-  \br
+  \hbr
   You can get help from:
   \begin{itemize}
 	  \item \textbf{Other members of a packaging team}
     \begin{itemize}
-    \item They know the specifics of your package
-    \item You can become a member of the team
+    \item List of teams: \url{http://wiki.debian.org/Teams}
     \end{itemize}
     \hbr
-  \item The Debian Mentors group (if your package doesn't fit in a team)
+  \item The \textbf{Debian Mentors group} (if your package does not fit in a team)
     \begin{itemize}
     \item \url{http://wiki.debian.org/DebianMentorsFaq}
     \item Mailing list: \url{debian-mentors@lists.debian.org}\\
 	    {\small (also a good way to learn by accident)}
     \item IRC: \texttt{\#debian-mentors} on \texttt{irc.debian.org}
     \item \url{http://mentors.debian.net/}
+    \item Documentation: \url{http://mentors.debian.net/intro-maintainers}
     \end{itemize}
+    \hbr
+  \item \textbf{Localized mailing lists} (get help in your language)
+    \begin{itemize}
+  \item \texttt{debian-devel-\{french,italian,portuguese,spanish\}@lists.d.o}
+  \item Full list: \url{https://lists.debian.org/devel.html}
+  \item Or users lists: \url{https://lists.debian.org/users.html}
+  \end{itemize}
   \end{itemize}
 \end{frame}
 
-\subsection{Official documentation}
-\begin{frame}{Official documentation}
+\subsection{More documentation}
+\begin{frame}{More documentation}
   \begin{itemize}
   \item Debian Developers' Corner\\
     \url{http://www.debian.org/devel/}\\
@@ -1163,6 +1201,7 @@ You
   \end{itemize}
 \end{frame}
 
+\subsection{Debian dashboards for maintainers}
 \begin{frame}{Debian dashboards for maintainers}
   \begin{itemize}
 	  \item \textbf{Source package centric}: Package Tracking System (PTS)\\
@@ -1174,6 +1213,60 @@ You
   \item \textbf{TODO-list oriented}: Debian Maintainer Dashboard (DMD)\\
     \url{http://udd.debian.org/dmd.cgi}
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Using the Debian Bug Tracking System (BTS)}
+\begin{itemize}
+\item A quite unique way to manage bugs
+\begin{itemize}
+\item Web interface to view bugs
+\item Email interface to make changes to bugs
+\end{itemize}
+\hbr
+\item Adding information to bugs:
+	\begin{itemize}
+		\item Write to \texttt{123456@bugs.debian.org} (does not include the submitter, you need to add \texttt{123456-submitter@bugs.debian.org})
+	\end{itemize}
+\hbr
+\item Changing bug status:
+\begin{itemize}
+\item Send commands to \texttt{control@bugs.debian.org}
+\item Command-line interface: \texttt{bts} command in \texttt{devscripts}
+\item Documentation: \url{http://www.debian.org/Bugs/server-control}
+\end{itemize}
+\hbr
+\item Reporting bugs: use \texttt{reportbug}
+\begin{itemize}
+\item Normally used with a local mail server: install \texttt{ssmtp} or \texttt{nullmailer}
+\item Or use \texttt{reportbug -\@-template}, then send (manually) to \texttt{submit@bugs.debian.org}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Using the BTS: examples}
+\begin{itemize}
+\item Sending an email to the bug and the submitter:\\
+	\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\#10}
+\hbr
+\item Tagging and changing the severity:\\
+	\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=680227\#10}
+\hbr
+\item Reassigning, changing the severity, retitling \ldots: \\
+	\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\#93}
+\begin{itemize}
+	\item \texttt{notfound}, \texttt{found}, \texttt{notfixed}, \texttt{fixed} are for \textbf{version-tracking} \\
+	See \url{https://wiki.debian.org/HowtoUseBTS\#Version\_tracking}
+\end{itemize}
+\hbr
+\item Using usertags: \url{http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=42;bug=642267}\\
+	See \url{https://wiki.debian.org/bugs.debian.org/usertags}
+\hbr
+\item BTS Documentation:
+\begin{itemize}
+\item \url{http://www.debian.org/Bugs/}
+\item \url{https://wiki.debian.org/HowtoUseBTS}
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \subsection{More interested in Ubuntu?}
@@ -1203,9 +1296,9 @@ You
   \end{itemize}
 \end{frame}
 
-\section{Conclusion}
-\subsection{Conclusion}
-\begin{frame}{Conclusion}
+\section{Conclusions}
+\subsection{Conclusions}
+\begin{frame}{Conclusions}
   \begin{itemize}
   \item You now have a full overview of Debian packaging
     \br
@@ -1224,14 +1317,13 @@ You
 		\hbr
 	\item Debian development organization:
 		\begin{itemize}
-			\item Bug Tracking System (BTS)
 			\item Suites: stable, testing, unstable, experimental, security, *-updates, backports, \ldots
 			\item Debian Blends -- subsets of Debian targeting specific groups
 		\end{itemize}
 		\end{itemize}
   \end{itemize}
   \vfill
-  \centerline{\large Feedback: \textbf{lucas@debian.org}}
+  \centerline{\large Feedback: \textbf{packaging-tutorial@packages.debian.org}}
 \end{frame}
 
 \subsection{Legal stuff}
@@ -1268,11 +1360,17 @@ You
 				\item  {\small \texttt{git clone\\ git://git.debian.org/collab-maint/packaging-tutorial.git}}
 					\hbr
 				\item {\small \url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}
+					\hbr
+				\item {\small Open bugs: \url{bugs.debian.org/src:packaging-tutorial}}
 			\end{itemize}
 			\br
-		\item Feedback:
+		\item Provide feedback:
 			\begin{itemize}
-				\item \href{mailto:lucas@debian.org}{\textbf{\texttt{mailto:lucas@debian.org}}}
+				\item \href{mailto:packaging-tutorial@packages.debian.org}{\textbf{\texttt{mailto:packaging-tutorial@packages.debian.org}}}
+				\begin{itemize}
+					\item {\small What should be added to this tutorial?}
+				\item {\small What should be improved?}
+				\end{itemize}
 					\hbr
 				\item {\small \texttt{reportbug packaging-tutorial}}
 			\end{itemize}
