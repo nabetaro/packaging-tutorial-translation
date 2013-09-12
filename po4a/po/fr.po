@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2013-08-21 17:29+0300\n"
+"POT-Creation-Date: 2013-09-12 08:39+0200\n"
 "PO-Revision-Date: 2013-08-21 18:01+0200\n"
 "Last-Translator: Cédric Boutillier <boutil@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -60,8 +60,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-msgid "version 0.10 -- 2013-08-20"
-msgstr "version 0.10 -- 2013-08-20"
+msgid "version 0.10 -- 2013-09-12"
+msgstr "version 0.10 -- 2013-09-12"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -1613,11 +1613,11 @@ msgstr "debhelper classique vs CDBS vs dh"
 #. type: itemize
 #: packaging-tutorial.tex:656
 msgid ""
-"Mind shares:\\\\ Classic debhelper: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
-"1em dh: 41\\%"
+"Mind shares:\\\\ Classic debhelper: 27\\% \\hskip 1em CDBS: 18\\% \\hskip "
+"1em dh: 54\\%"
 msgstr ""
-"Parts de marché :\\\\ debhelper classique : 36~\\% \\hskip 1em CDBS : 21~\\% "
-"\\hskip 1em dh : 41~\\%"
+"Parts de marché :\\\\ debhelper classique : 27~\\% \\hskip 1em CDBS : 18~\\% "
+"\\hskip 1em dh : 54~\\%"
 
 #. type: itemize
 #: packaging-tutorial.tex:656

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.8+git\n"
-"POT-Creation-Date: 2013-08-21 22:48+0300\n"
+"POT-Creation-Date: 2013-09-12 08:39+0200\n"
 "PO-Revision-Date: 2013-09-01 11:48+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
@@ -48,8 +48,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-msgid "version 0.10 -- 2013-08-20"
-msgstr "version 0.10 -- 2013-08-20"
+msgid "version 0.10 -- 2013-09-12"
+msgstr "version 0.10 -- 2013-09-12"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -1602,11 +1602,11 @@ msgstr "Klassischer Debhelper vs. CDBS vs. dh"
 #. type: itemize
 #: packaging-tutorial.tex:656
 msgid ""
-"Mind shares:\\\\ Classic debhelper: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
-"1em dh: 41\\%"
+"Mind shares:\\\\ Classic debhelper: 27\\% \\hskip 1em CDBS: 18\\% \\hskip "
+"1em dh: 54\\%"
 msgstr ""
-"Marktanteil:\\\\ Klassischer Debhelper: 36\\% \\hskip 1em CDBS: 21\\% "
-"\\hskip 1em Dh: 41\\%"
+"Marktanteil:\\\\ Klassischer Debhelper: 27\\% \\hskip 1em CDBS: 18\\% "
+"\\hskip 1em Dh: 54\\%"
 
 #. type: itemize
 #: packaging-tutorial.tex:656
@@ -2825,12 +2825,14 @@ msgstr "Debian legt \\textbf{viel Wert auf Qualität}"
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Generally, \\textbf{sponsors are hard to find and busy}"
-msgstr "Typischerweise sind \\textbf{Sponsoren schwer zu finden und beschäftigt}"
+msgstr ""
+"Typischerweise sind \\textbf{Sponsoren schwer zu finden und beschäftigt}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Make sure your package is ready before asking for sponsorship"
-msgstr "Stellen Sie sicher, dass Ihr Paket bereit ist, bevor Sie Sponsoren fragen"
+msgstr ""
+"Stellen Sie sicher, dass Ihr Paket bereit ist, bevor Sie Sponsoren fragen"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
@@ -2843,8 +2845,8 @@ msgid ""
 "Avoid missing build-dependencies: make sure that your package build fine in "
 "a clean \\textsl{sid} \\textsl{chroot}"
 msgstr ""
-"Vermeiden Sie fehlende build-dependencies: Stellen Sie sicher, dass Ihr Paket "
-"problemlos in einer sauberen \\textsl{sid} \\textsl{chroot} baut"
+"Vermeiden Sie fehlende build-dependencies: Stellen Sie sicher, dass Ihr "
+"Paket problemlos in einer sauberen \\textsl{sid} \\textsl{chroot} baut"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
@@ -2910,7 +2912,8 @@ msgstr "Liste von Teams: \\url{http://wiki.debian.org/Teams}"
 #: packaging-tutorial.tex:1174
 msgid ""
 "The \\textbf{Debian Mentors group} (if your package does not fit in a team)"
-msgstr "Der \\textbf{Debian-Mentors-Gruppe} (falls Ihr Paket in kein Team passt)"
+msgstr ""
+"Der \\textbf{Debian-Mentors-Gruppe} (falls Ihr Paket in kein Team passt)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
@@ -3135,8 +3138,8 @@ msgid ""
 "Or use \\texttt{reportbug -\\@-template}, then send (manually) to "
 "\\texttt{submit@bugs.debian.org}"
 msgstr ""
-"Alternativ verwenden Sie \\texttt{reportbug -\\@-template}, schicken Sie dann "
-"(manuell) an \\texttt{submit@bugs.debian.org}"
+"Alternativ verwenden Sie \\texttt{reportbug -\\@-template}, schicken Sie "
+"dann (manuell) an \\texttt{submit@bugs.debian.org}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1271
@@ -3149,8 +3152,8 @@ msgid ""
 "Sending an email to the bug and the submitter:\\\\ \\url{http://bugs.debian."
 "org/cgi-bin/bugreport.cgi?bug=680822\\#10}"
 msgstr ""
-"Eine E-Mail an den Fehler und den Einreichenden senden:\\\\ \\url{http://bugs."
-"debian.org/cgi-bin/bugreport.cgi?bug=680822\\#10}"
+"Eine E-Mail an den Fehler und den Einreichenden senden:\\\\ \\url{http://"
+"bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\\#10}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3167,8 +3170,8 @@ msgid ""
 "Reassigning, changing the severity, retitling \\ldots: \\\\ \\url{http://"
 "bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\\#93}"
 msgstr ""
-"Neuzuweisen, Schweregrad ändern, umbenennen \\ldots: \\\\ \\url{http://"
-"bugs.debian.org/cgi-bin/bugreport.cgi?bug=680822\\#93}"
+"Neuzuweisen, Schweregrad ändern, umbenennen \\ldots: \\\\ \\url{http://bugs."
+"debian.org/cgi-bin/bugreport.cgi?bug=680822\\#93}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3177,9 +3180,9 @@ msgid ""
 "for \\textbf{version-tracking} \\\\ See \\url{https://wiki.debian.org/"
 "HowtoUseBTS\\#Version\\_tracking}"
 msgstr ""
-"\\texttt{notfound}, \\texttt{found}, \\texttt{notfixed}, \\texttt{fixed} sind "
-"für \\textbf{Version-Nachverfolgung} \\\\ Siehe \\url{https://wiki.debian.org/"
-"HowtoUseBTS\\#Version\\_tracking}"
+"\\texttt{notfound}, \\texttt{found}, \\texttt{notfixed}, \\texttt{fixed} "
+"sind für \\textbf{Version-Nachverfolgung} \\\\ Siehe \\url{https://wiki."
+"debian.org/HowtoUseBTS\\#Version\\_tracking}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3187,8 +3190,9 @@ msgid ""
 "Using usertags: \\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=42;"
 "bug=642267}\\\\ See \\url{https://wiki.debian.org/bugs.debian.org/usertags}"
 msgstr ""
-"Usertags verwenden: \\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?msg=42;"
-"bug=642267}\\\\ Siehe \\url{https://wiki.debian.org/bugs.debian.org/usertags}"
+"Usertags verwenden: \\url{http://bugs.debian.org/cgi-bin/bugreport.cgi?"
+"msg=42;bug=642267}\\\\ Siehe \\url{https://wiki.debian.org/bugs.debian.org/"
+"usertags}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1271
@@ -3338,7 +3342,8 @@ msgstr "Debian Blends -- Teilmenge von Debian, gezielt für bestimmte Gruppen"
 #. type: centerline{#1}
 #: packaging-tutorial.tex:1328
 msgid "\\large Feedback: \\textbf{packaging-tutorial@packages.debian.org}"
-msgstr "\\large Rückmeldungen: \\textbf{packaging-tutorial@packages.debian.org}"
+msgstr ""
+"\\large Rückmeldungen: \\textbf{packaging-tutorial@packages.debian.org}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1331
