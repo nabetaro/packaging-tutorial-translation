@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2013-09-11 23:32+0900\n"
-"PO-Revision-Date: 2013-09-11 23:32+0900\n"
+"POT-Creation-Date: 2013-09-12 22:53+0900\n"
+"PO-Revision-Date: 2013-09-12 22:53+0900\n"
 "Last-Translator: KURASAWA Nozomu (nabetaro) <nabetaro@debian.or.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -31,15 +31,16 @@ msgstr "\\mode<presentation> \\usetheme{debian}"
 #: packaging-tutorial.tex:10
 msgid "\\usepackage{debiantutorial}"
 msgstr ""
-"\\usepackage{debiantutorial.ja}\\usepackage{CJKutf8}\\hypersetup{unicode}"
+"\\usepackage{debiantutorial."
+"ja}\\usepackage{CJKutf8}\\hypersetup{unicode}\\usepackage{CJKspace}"
 
 #. type: title{#2}
-#: packaging-tutorial.tex:16
+#: packaging-tutorial.tex:14
 msgid "Debian Packaging Tutorial"
-msgstr "Debian パッケージングチュートリアル"
+msgstr "Debian Packaging Tutorial"
 
 #. type: author{#2}
-#: packaging-tutorial.tex:16
+#: packaging-tutorial.tex:14
 msgid ""
 "Lucas Nussbaum\\\\{\\small\\texttt{packaging-tutorial@packages.debian.org}}"
 msgstr ""
@@ -51,7 +52,7 @@ msgstr ""
 #. (numeric values).
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
-#: packaging-tutorial.tex:22
+#: packaging-tutorial.tex:20
 msgid "version 0.10 -- 2013-08-20"
 msgstr "version 0.10 -- 2013-08-20"
 
