@@ -235,6 +235,18 @@ msgstr "Формат пакетов deb"
 msgid "\\texttt{.deb} file: an \\texttt{ar} archive"
 msgstr "Файл \\texttt{.deb}: архив \\texttt{ar}"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:133
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"$ ar tv wget_1.12-2.1_i386.deb\n"
+"rw-r--r-- 0/0      4 Sep  5 15:43 2010 debian-binary\n"
+"rw-r--r-- 0/0   2403 Sep  5 15:43 2010 control.tar.gz\n"
+"rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz\n"
+"    "
+msgstr ""
+
 #.  $
 #. type: itemize
 #: packaging-tutorial.tex:133
@@ -556,6 +568,32 @@ msgstr "(Детали см. в \\texttt{dpkg-source(1)})"
 msgid "Source package example (wget\\_1.12-2.1.dsc)"
 msgstr "Пример пакета с исходным кодом (wget\\_1.12-2.1.dsc)"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:280
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\small]\n"
+"Format: 3.0 (quilt)\n"
+"Source: wget\n"
+"Binary: wget\n"
+"Architecture: any\n"
+"Version: 1.12-2.1\n"
+"Maintainer: Noel Kothe <noel@debian.org>\n"
+"Homepage: http://www.gnu.org/software/wget/\n"
+"Standards-Version: 3.8.4\n"
+"Build-Depends: debhelper (>> 5.0.0), gettext, texinfo,\n"
+" libssl-dev (>= 0.9.8), dpatch, info2man\n"
+"Checksums-Sha1: \n"
+" 50d4ed2441e67[..]1ee0e94248 2464747 wget_1.12.orig.tar.gz\n"
+" d4c1c8bbe431d[..]dd7cef3611 48308 wget_1.12-2.1.debian.tar.gz\n"
+"Checksums-Sha256: \n"
+" 7578ed0974e12[..]dcba65b572 2464747 wget_1.12.orig.tar.gz\n"
+" 1e9b0c4c00eae[..]89c402ad78 48308 wget_1.12-2.1.debian.tar.gz\n"
+"Files: \n"
+" 141461b9c04e4[..]9d1f2abf83 2464747 wget_1.12.orig.tar.gz\n"
+" e93123c934e3c[..]2f380278c2 48308 wget_1.12-2.1.debian.tar.gz"
+msgstr ""
+
 #. type: subsection{#2}
 #: packaging-tutorial.tex:308
 msgid "Retrieving source packages"
@@ -834,6 +872,33 @@ msgstr ""
 "Устанавливается как \\texttt{/usr/share/doc/\\textit{package}/changelog."
 "Debian.gz}"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:386
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"mpich2 (1.2.1.1-5) unstable; urgency=low\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:392
+#, no-wrap
+msgid ""
+"  * Use /usr/bin/python instead of /usr/bin/python2.5. Allow\n"
+"    to drop dependency on python2.5.  Closes: #595268\n"
+"  * Make /usr/bin/mpdroot setuid. This is the default after\n"
+"    the installation of mpich2 from source, too. LP: #616929\n"
+"    + Add corresponding lintian override.\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:394
+#, no-wrap
+msgid " -- Lucas Nussbaum <lucas@debian.org>  Wed, 15 Sep 2010 18:13:44 +0200"
+msgstr ""
+
 #. type: frame{#2}
 #: packaging-tutorial.tex:421
 msgid "debian/control"
@@ -871,6 +936,33 @@ msgid ""
 msgstr ""
 "Документация: Политика Debian, глава 5\\\\ \\url{http://www.debian.org/doc/"
 "debian-policy/ch-controlfields}"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:421
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"Source: wget\n"
+"Section: web\n"
+"Priority: important\n"
+"Maintainer: Noel Kothe <noel@debian.org>\n"
+"Build-Depends: debhelper (>> 5.0.0), gettext, texinfo,\n"
+" libssl-dev (>= 0.9.8), dpatch, info2man\n"
+"Standards-Version: 3.8.4\n"
+"Homepage: http://www.gnu.org/software/wget/\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:427
+#, no-wrap
+msgid ""
+"Package: wget\n"
+"Architecture: any\n"
+"Depends: ${shlibs:Depends}, ${misc:Depends}\n"
+"Description: retrieves files from the web\n"
+" Wget is a network utility to retrieve files from the Web"
+msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:456
@@ -1120,10 +1212,114 @@ msgstr ""
 msgid "debian/rules using debhelper (1/2)"
 msgstr "debian/rules, использующий debhelper (1/2)"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:520
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
+"#!/usr/bin/make -f\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:523
+#, no-wrap
+msgid ""
+"# Uncomment this to turn on verbose mode.\n"
+"#export DH_VERBOSE=1\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:527
+#, no-wrap
+msgid ""
+"build: \n"
+"        $(MAKE)\n"
+"        #docbook-to-man debian/packagename.sgml > packagename.1\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:534
+#, no-wrap
+msgid ""
+"clean: \n"
+"        dh_testdir\n"
+"        dh_testroot\n"
+"        rm -f build-stamp configure-stamp\n"
+"        $(MAKE) clean\n"
+"        dh_clean \n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:542
+#, no-wrap
+msgid ""
+"install: build\n"
+"        dh_testdir\n"
+"        dh_testroot\n"
+"        dh_clean -k \n"
+"        dh_installdirs\n"
+"        # Add here commands to install the package into debian/packagename.\n"
+"        $(MAKE) DESTDIR=$(CURDIR)/debian/packagename install"
+msgstr ""
+
 #. type: frame{#2}
 #: packaging-tutorial.tex:547
 msgid "debian/rules using debhelper (2/2)"
 msgstr "debian/rules, использующий debhelper (2/2)"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:547
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:550
+#, no-wrap
+msgid ""
+"# Build architecture-independent files here.\n"
+"binary-indep: build install\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:569
+#, no-wrap
+msgid ""
+"# Build architecture-dependent files here.\n"
+"binary-arch: build install\n"
+"        dh_testdir\n"
+"        dh_testroot\n"
+"        dh_installchangelogs \n"
+"        dh_installdocs\n"
+"        dh_installexamples\n"
+"        dh_install\n"
+"        dh_installman\n"
+"        dh_link\n"
+"        dh_strip\n"
+"        dh_compress\n"
+"        dh_fixperms\n"
+"        dh_installdeb\n"
+"        dh_shlibdeps\n"
+"        dh_gencontrol\n"
+"        dh_md5sums\n"
+"        dh_builddeb\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:572
+#, no-wrap
+msgid ""
+"binary: binary-indep binary-arch\n"
+".PHONY: build clean binary-indep binary-arch binary install configure"
+msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:603
@@ -1192,6 +1388,27 @@ msgstr ""
 "Медленнее, чем обычный debhelper (множество бесполезных вызовов \\texttt{dh"
 "\\_*})"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:603
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
+"#!/usr/bin/make -f\n"
+"include /usr/share/cdbs/1/rules/debhelper.mk\n"
+"include /usr/share/cdbs/1/class/autotools.mk\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:607
+#, no-wrap
+msgid ""
+"# add an action after the build\n"
+"build/mypackage::\n"
+"    /bin/bash debian/scripts/foo.sh\n"
+"      "
+msgstr ""
+
 #. type: frame{#2}
 #: packaging-tutorial.tex:628
 msgid "Dh (aka Debhelper 7, or dh7)"
@@ -1228,6 +1445,41 @@ msgstr ""
 "Документация: справочные страницы (\\texttt{debhelper(7)}, \\texttt{dh(1)}) "
 "+ слайды с выступления на DebConf9\\\\ \\url{http://kitenet.net/~joey/talks/"
 "debhelper/debhelper-slides.pdf}"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:628
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"#!/usr/bin/make -f\n"
+"%:\n"
+"    dh $@\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:631
+#, no-wrap
+msgid ""
+"override_dh_auto_configure:\n"
+"     dh_auto_configure -- --with-kitchen-sink\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:634
+#, no-wrap
+msgid ""
+"override_dh_auto_build:\n"
+"     make world\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:635
+#, no-wrap
+msgid "    "
+msgstr ""
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:656
@@ -1573,6 +1825,43 @@ msgstr ""
 "Новый машиночитаемый формат: {\\small\\url{http://www.debian.org/doc/"
 "packaging-manuals/copyright-format/1.0/}}"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:775
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/\n"
+"Upstream-Name: X Solitaire\n"
+"Source: ftp://ftp.example.com/pub/games\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:785
+#, no-wrap
+msgid ""
+"Files: *\n"
+"Copyright: Copyright 1998 John Doe <jdoe@example.com>\n"
+"License: GPL-2+\n"
+" This program is free software; you can redistribute it\n"
+" [...]\n"
+" .\n"
+" On Debian systems, the full text of the GNU General Public\n"
+" License version 2 can be found in the file\n"
+" `/usr/share/common-licenses/GPL-2'.\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:790
+#, no-wrap
+msgid ""
+"Files: debian/*\n"
+"Copyright: Copyright 1998 Jane Smith <jsmith@example.net>\n"
+"License:\n"
+" [LICENSE TEXT]"
+msgstr ""
+
 #. type: frame{#2}
 #: packaging-tutorial.tex:821
 msgid "Modifying the upstream source"
@@ -1733,6 +2022,29 @@ msgstr ""
 "Документированы в DEP-3 - Руководство по тегам заплат\\\\ \\url{http://dep."
 "debian.net/deps/dep3/}"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:868
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"Description: Fix widget frobnication speeds\n"
+" Frobnicating widgets too quickly tended to cause explosions.\n"
+"Forwarded: http://lists.example.com/2010/03/1234.html\n"
+"Author: John Doe <johndoe-guest@users.alioth.debian.org>\n"
+"Applied-Upstream: 1.2, http://bzr.foo.com/frobnicator/revision/123\n"
+"Last-Update: 2010-03-29\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:872
+#, no-wrap
+msgid ""
+"--- a/src/widgets.c\n"
+"+++ b/src/widgets.c\n"
+"@@ -101,9 +101,6 @@ struct {"
+msgstr ""
+
 #. type: frame{#2}
 #: packaging-tutorial.tex:892
 msgid "Doing things during installation and removal"
@@ -1825,6 +2137,24 @@ msgid ""
 "Specify where to look in \\texttt{debian/watch} (see \\texttt{uscan(1)})"
 msgstr ""
 "В файле \\texttt{debian/watch} укажите где искать (см. \\texttt{uscan(1)})"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:914
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"version=3\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:917
+#, no-wrap
+msgid ""
+"http://tmrc.mit.edu/mirror/twisted/Twisted/(\\d\\.\\d)/ \\\n"
+"  Twisted-([\\d\\.]*)\\.tar\\.bz2\n"
+"    "
+msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:931
@@ -1928,6 +2258,26 @@ msgstr "\\url{http://wiki.debian.org/Alioth/Git}"
 #: packaging-tutorial.tex:969
 msgid "\\url{http://wiki.debian.org/Alioth/Svn}"
 msgstr "\\url{http://wiki.debian.org/Alioth/Svn}"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:969
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/devscripts.git\n"
+"Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git\n"
+"  "
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:969
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/\n"
+"Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl\n"
+"  "
+msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:969
@@ -2162,6 +2512,58 @@ msgstr ""
 #: packaging-tutorial.tex:1068
 msgid "Adopting a package: example"
 msgstr "Усыновление пакета: пример"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1068
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"From: You <you@yourdomain>\n"
+"To: 640454@bugs.debian.org, control@bugs.debian.org\n"
+"Cc: Francois Marier <francois@debian.org>\n"
+"Subject: ITA: verbiste -- French conjugator\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1072
+#, no-wrap
+msgid ""
+"retitle 640454 ITA: verbiste -- French conjugator\n"
+"owner 640454 !\n"
+"thanks\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1074
+#, no-wrap
+msgid ""
+"Hi,\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1076
+#, no-wrap
+msgid ""
+"I am using verbiste and I am willing to take care of the package.\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1078
+#, no-wrap
+msgid ""
+"Cheers,\n"
+"\n"
+msgstr ""
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1080
+#, no-wrap
+msgid "You"
+msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:1087
@@ -3302,6 +3704,23 @@ msgstr "\\texttt{dh\\_make}"
 msgid "Type of package: single binary (for now)"
 msgstr "Тип пакета: один двоичный (сейчас)"
 
+#. type: lstlisting
+#: packaging-tutorial.tex:1655
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\small]\n"
+"gnujump-1.0.8$ ls debian/\n"
+"changelog           gnujump.default.ex   preinst.ex\n"
+"compat              gnujump.doc-base.EX  prerm.ex\n"
+"control             init.d.ex            README.Debian\n"
+"copyright           manpage.1.ex         README.source\n"
+"docs                manpage.sgml.ex      rules\n"
+"emacsen-install.ex  manpage.xml.ex       source\n"
+"emacsen-remove.ex   menu.ex              watch.ex\n"
+"emacsen-startup.ex  postinst.ex\n"
+"gnujump.cron.d.ex   postrm.ex"
+msgstr ""
+
 #. type: frame{#2}
 #: packaging-tutorial.tex:1682 packaging-tutorial.tex:1835
 msgid "Step by step\\ldots (2)"
@@ -3351,6 +3770,17 @@ msgstr ""
 #: packaging-tutorial.tex:1682
 msgid "Example:"
 msgstr "Пример:"
+
+#. type: lstlisting
+#: packaging-tutorial.tex:1682
+#, no-wrap
+msgid ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"checking for sdl-config... no\n"
+"checking for SDL - version >= 1.2.0... no\n"
+"[...]\n"
+"configure: error: *** SDL version 1.2.0 not found!"
+msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:1682
