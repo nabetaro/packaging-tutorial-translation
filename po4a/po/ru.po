@@ -1574,7 +1574,7 @@ msgid ""
 "dependencies} (for a package already in Debian)\\\\ Or \\textttc{mk-build-"
 "deps -ir} (for a package not uploaded yet)"
 msgstr ""
-"\\textttc{apt-get build-dep мой_пакет}\\\\ Устанавливает зависимости для "
+"\\textttc{apt-get build-dep мой\\_пакет}\\\\ Устанавливает зависимости для "
 "сборки (\\textsl{build-dependencies}) (для пакета, уже включённого в "
 "Debian)\\\\ Либо \\textttc{mk-build-deps -ir} (для пакета, который пока не "
 "загружен)"
@@ -1658,7 +1658,7 @@ msgid ""
 "List the content of the package: \\texttt{{\\color{rouge}debc} ../"
 "mypackage<TAB>.changes}"
 msgstr ""
-"Список содержимого пакета: \\texttt{{\\color{rouge}debc} ../мой_пакет<TAB>."
+"Список содержимого пакета: \\texttt{{\\color{rouge}debc} ../мой\\_пакет<TAB>."
 "changes}"
 
 #. type: itemize
@@ -1670,9 +1670,9 @@ msgid ""
 "\\_1\\_*.dsc ../mypackage\\_2\\_*.dsc}\\\\"
 msgstr ""
 "Сравнить пакет с предыдущей версией:\\\\ \\texttt{{\\color{rouge}debdiff} ../"
-"мой_пакет\\_1\\_*.changes ../мой_пакет\\_2\\_*.changes}\\\\ или сравнить с "
-"исходным кодом:\\\\ \\texttt{{\\color{rouge}debdiff} ../мой_пакет\\_1\\_*."
-"dsc ../мой_пакет\\_2\\_*.dsc}\\\\"
+"мой\\_пакет\\_1\\_*.changes ../мой\\_пакет\\_2\\_*.changes}\\\\ или сравнить с "
+"исходным кодом:\\\\ \\texttt{{\\color{rouge}debdiff} ../мой\\_пакет\\_1\\_*."
+"dsc ../мой\\_пакет\\_2\\_*.dsc}\\\\"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -1683,7 +1683,7 @@ msgid ""
 "\\texttt{lintian -EviIL +pedantic}: shows more problems"
 msgstr ""
 "Проверить пакет с помощью \\texttt{lintian} (статический анализатор):\\\\ "
-"\\texttt{{\\color{rouge}lintian} ../мой_пакет<TAB>.changes}\\\\ "
+"\\texttt{{\\color{rouge}lintian} ../мой\\_пакет<TAB>.changes}\\\\ "
 "\\texttt{lintian -i}: выдаёт дополнительную информацию об ошибках \\\\ "
 "\\texttt{lintian -EviIL +pedantic}: показывает больше проблем"
 
@@ -3979,7 +3979,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1811
 msgid "Named \\texttt{ruby-\\textsl{gemname}}"
-msgstr "Имеет имя \\texttt{ruby-\\textsl{имя_gem}}"
+msgstr "Имеет имя \\texttt{ruby-\\textsl{имя\\_gem}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1811
