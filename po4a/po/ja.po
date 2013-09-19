@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2013-09-14 20:52+0900\n"
-"PO-Revision-Date: 2013-09-14 20:52+0900\n"
+"POT-Creation-Date: 2013-09-19 07:44+0900\n"
+"PO-Revision-Date: 2013-09-15 23:35+0900\n"
 "Last-Translator: KURASAWA Nozomu (nabetaro) <nabetaro@debian.or.jp>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -31,13 +31,13 @@ msgstr "\\mode<presentation> \\usetheme{debian}"
 #: packaging-tutorial.tex:10
 msgid "\\usepackage{debiantutorial}"
 msgstr ""
-"\\usepackage{debiantutorial."
-"ja}\\usepackage{CJKutf8}\\hypersetup{unicode}\\usepackage{CJKspace}"
+"\\usepackage{debiantutorial.ja}\\hypersetup{unicode}\\usepackage[whole]"
+"{bxcjkjatype}"
 
 #. type: title{#2}
 #: packaging-tutorial.tex:14
 msgid "Debian Packaging Tutorial"
-msgstr "Debian Packaging Tutorial"
+msgstr "Debian パッケージングチュートリアル"
 
 #. type: author{#2}
 #: packaging-tutorial.tex:14
@@ -132,7 +132,8 @@ msgstr "GNU/Linux ディストリビューション"
 #: packaging-tutorial.tex:84
 msgid "1st major distro developed ``openly in the spirit of GNU''"
 msgstr ""
-"「GNU の精神でオープンに」開発している第一のメジャーディストリビューション"
+"「GNU の精神でオープンに」開発している\\\\第一のメジャーディストリビューショ"
+"ン"
 
 #. type: itemize
 #: packaging-tutorial.tex:84
