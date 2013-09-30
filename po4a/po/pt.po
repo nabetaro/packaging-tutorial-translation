@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.10\n"
 "POT-Creation-Date: 2013-09-12 08:39+0200\n"
-"PO-Revision-Date: 2013-09-25 21:54+0100\n"
+"PO-Revision-Date: 2013-09-30 11:16+0100\n"
 "Last-Translator: Américo Monteiro <a_monteiro@gmx.com>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -50,10 +50,8 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-#, fuzzy
-#| msgid "version 0.10 -- 2013-08-20"
 msgid "version 0.10 -- 2013-09-12"
-msgstr "versão 0.10 -- 2013-08-20"
+msgstr "versão 0.10 -- 2013-09-12"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:52
@@ -248,6 +246,12 @@ msgid ""
 "rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz\n"
 "    "
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"$ ar tv wget_1.12-2.1_i386.deb\n"
+"rw-r--r-- 0/0      4 Sep  5 15:43 2010 debian-binary\n"
+"rw-r--r-- 0/0   2403 Sep  5 15:43 2010 control.tar.gz\n"
+"rw-r--r-- 0/0 751613 Sep  5 15:43 2010 data.tar.gz\n"
+"    "
 
 #.  $
 #. type: itemize
@@ -492,6 +496,9 @@ msgid ""
 "the \\texttt{\\bfseries libtar} source generates the \\texttt{\\bfseries "
 "libtar0} and \\texttt{\\bfseries libtar-dev} binary packages}"
 msgstr ""
+"Um pacote fonte pode gerar vários pacotes binários\\\\ {\\small ex, a fonte "
+"\\texttt{\\bfseries libtar} gera pacotes binários \\texttt{\\bfseries "
+"libtar0} e \\texttt{\\bfseries libtar-dev}"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
@@ -590,6 +597,26 @@ msgid ""
 " 141461b9c04e4[..]9d1f2abf83 2464747 wget_1.12.orig.tar.gz\n"
 " e93123c934e3c[..]2f380278c2 48308 wget_1.12-2.1.debian.tar.gz"
 msgstr ""
+"[basicstyle=\\ttfamily\\small]\n"
+"Format: 3.0 (quilt)\n"
+"Source: wget\n"
+"Binary: wget\n"
+"Architecture: any\n"
+"Version: 1.12-2.1\n"
+"Maintainer: Noel Kothe <noel@debian.org>\n"
+"Homepage: http://www.gnu.org/software/wget/\n"
+"Standards-Version: 3.8.4\n"
+"Build-Depends: debhelper (>> 5.0.0), gettext, texinfo,\n"
+" libssl-dev (>= 0.9.8), dpatch, info2man\n"
+"Checksums-Sha1: \n"
+" 50d4ed2441e67[..]1ee0e94248 2464747 wget_1.12.orig.tar.gz\n"
+" d4c1c8bbe431d[..]dd7cef3611 48308 wget_1.12-2.1.debian.tar.gz\n"
+"Checksums-Sha256: \n"
+" 7578ed0974e12[..]dcba65b572 2464747 wget_1.12.orig.tar.gz\n"
+" 1e9b0c4c00eae[..]89c402ad78 48308 wget_1.12-2.1.debian.tar.gz\n"
+"Files: \n"
+" 141461b9c04e4[..]9d1f2abf83 2464747 wget_1.12.orig.tar.gz\n"
+" e93123c934e3c[..]2f380278c2 48308 wget_1.12-2.1.debian.tar.gz"
 
 #. type: subsection{#2}
 #: packaging-tutorial.tex:308
@@ -873,6 +900,9 @@ msgid ""
 "mpich2 (1.2.1.1-5) unstable; urgency=low\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"mpich2 (1.2.1.1-5) unstable; urgency=low\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:392
@@ -885,12 +915,18 @@ msgid ""
 "    + Add corresponding lintian override.\n"
 "\n"
 msgstr ""
+"  * Use /usr/bin/python instead of /usr/bin/python2.5. Allow\n"
+"    to drop dependency on python2.5.  Closes: #595268\n"
+"  * Make /usr/bin/mpdroot setuid. This is the default after\n"
+"    the installation of mpich2 from source, too. LP: #616929\n"
+"    + Add corresponding lintian override.\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:394
 #, no-wrap
 msgid " -- Lucas Nussbaum <lucas@debian.org>  Wed, 15 Sep 2010 18:13:44 +0200"
-msgstr ""
+msgstr " -- Lucas Nussbaum <lucas@debian.org>  Wed, 15 Sep 2010 18:13:44 +0200"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:421
@@ -946,6 +982,16 @@ msgid ""
 "Homepage: http://www.gnu.org/software/wget/\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"Source: wget\n"
+"Section: web\n"
+"Priority: important\n"
+"Maintainer: Noel Kothe <noel@debian.org>\n"
+"Build-Depends: debhelper (>> 5.0.0), gettext, texinfo,\n"
+" libssl-dev (>= 0.9.8), dpatch, info2man\n"
+"Standards-Version: 3.8.4\n"
+"Homepage: http://www.gnu.org/software/wget/\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:427
@@ -957,6 +1003,11 @@ msgid ""
 "Description: retrieves files from the web\n"
 " Wget is a network utility to retrieve files from the Web"
 msgstr ""
+"Package: wget\n"
+"Architecture: any\n"
+"Depends: ${shlibs:Depends}, ${misc:Depends}\n"
+"Description: retrieves files from the web\n"
+" Wget is a network utility to retrieve files from the Web"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:456
@@ -1215,6 +1266,9 @@ msgid ""
 "#!/usr/bin/make -f\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
+"#!/usr/bin/make -f\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:523
@@ -1224,6 +1278,9 @@ msgid ""
 "#export DH_VERBOSE=1\n"
 "\n"
 msgstr ""
+"# Uncomment this to turn on verbose mode.\n"
+"#export DH_VERBOSE=1\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:527
@@ -1234,6 +1291,10 @@ msgid ""
 "        #docbook-to-man debian/packagename.sgml > packagename.1\n"
 "\n"
 msgstr ""
+"build: \n"
+"        $(MAKE)\n"
+"        #docbook-to-man debian/packagename.sgml > packagename.1\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:534
@@ -1247,6 +1308,13 @@ msgid ""
 "        dh_clean \n"
 "\n"
 msgstr ""
+"clean: \n"
+"        dh_testdir\n"
+"        dh_testroot\n"
+"        rm -f build-stamp configure-stamp\n"
+"        $(MAKE) clean\n"
+"        dh_clean \n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:542
@@ -1260,6 +1328,13 @@ msgid ""
 "        # Add here commands to install the package into debian/packagename.\n"
 "        $(MAKE) DESTDIR=$(CURDIR)/debian/packagename install"
 msgstr ""
+"install: build\n"
+"        dh_testdir\n"
+"        dh_testroot\n"
+"        dh_clean -k \n"
+"        dh_installdirs\n"
+"        # Add here commands to install the package into debian/packagename.\n"
+"        $(MAKE) DESTDIR=$(CURDIR)/debian/packagename install"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:547
@@ -1273,6 +1348,8 @@ msgid ""
 "[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:550
@@ -1282,6 +1359,9 @@ msgid ""
 "binary-indep: build install\n"
 "\n"
 msgstr ""
+"# Build architecture-independent files here.\n"
+"binary-indep: build install\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:569
@@ -1307,6 +1387,25 @@ msgid ""
 "        dh_builddeb\n"
 "\n"
 msgstr ""
+"# Build architecture-dependent files here.\n"
+"binary-arch: build install\n"
+"        dh_testdir\n"
+"        dh_testroot\n"
+"        dh_installchangelogs \n"
+"        dh_installdocs\n"
+"        dh_installexamples\n"
+"        dh_install\n"
+"        dh_installman\n"
+"        dh_link\n"
+"        dh_strip\n"
+"        dh_compress\n"
+"        dh_fixperms\n"
+"        dh_installdeb\n"
+"        dh_shlibdeps\n"
+"        dh_gencontrol\n"
+"        dh_md5sums\n"
+"        dh_builddeb\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:572
@@ -1315,6 +1414,8 @@ msgid ""
 "binary: binary-indep binary-arch\n"
 ".PHONY: build clean binary-indep binary-arch binary install configure"
 msgstr ""
+"binary: binary-indep binary-arch\n"
+".PHONY: build clean binary-indep binary-arch binary install configure"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:603
@@ -1391,6 +1492,11 @@ msgid ""
 "include /usr/share/cdbs/1/class/autotools.mk\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize,escapeinside=\\{\\}]\n"
+"#!/usr/bin/make -f\n"
+"include /usr/share/cdbs/1/rules/debhelper.mk\n"
+"include /usr/share/cdbs/1/class/autotools.mk\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:607
@@ -1401,6 +1507,10 @@ msgid ""
 "    /bin/bash debian/scripts/foo.sh\n"
 "      "
 msgstr ""
+"# add an action after the build\n"
+"build/mypackage::\n"
+"    /bin/bash debian/scripts/foo.sh\n"
+"      "
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:628
@@ -1448,6 +1558,11 @@ msgid ""
 "    dh $@\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"#!/usr/bin/make -f\n"
+"%:\n"
+"    dh $@\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:631
@@ -1457,6 +1572,9 @@ msgid ""
 "     dh_auto_configure -- --with-kitchen-sink\n"
 "\n"
 msgstr ""
+"override_dh_auto_configure:\n"
+"     dh_auto_configure -- --with-kitchen-sink\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:634
@@ -1466,12 +1584,15 @@ msgid ""
 "     make world\n"
 "\n"
 msgstr ""
+"override_dh_auto_build:\n"
+"     make world\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:635
 #, no-wrap
 msgid "    "
-msgstr ""
+msgstr "    "
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:656
@@ -1480,16 +1601,12 @@ msgstr "debhelper clássico contra CDBS contra dh"
 
 #. type: itemize
 #: packaging-tutorial.tex:656
-#, fuzzy
-#| msgid ""
-#| "Mind shares:\\\\ Classic debhelper: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
-#| "1em dh: 41\\%"
 msgid ""
 "Mind shares:\\\\ Classic debhelper: 27\\% \\hskip 1em CDBS: 18\\% \\hskip "
 "1em dh: 54\\%"
 msgstr ""
-"Mind shares:\\\\ debhelper clássico: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
-"1em dh: 41\\%"
+"Mind shares:\\\\ debhelper clássico: 27\\% \\hskip 1em CDBS: 18\\% \\hskip "
+"1em dh: 54\\%"
 
 #. type: itemize
 #: packaging-tutorial.tex:656
@@ -1823,6 +1940,11 @@ msgid ""
 "Source: ftp://ftp.example.com/pub/games\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/\n"
+"Upstream-Name: X Solitaire\n"
+"Source: ftp://ftp.example.com/pub/games\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:785
@@ -1839,6 +1961,16 @@ msgid ""
 " `/usr/share/common-licenses/GPL-2'.\n"
 "\n"
 msgstr ""
+"Files: *\n"
+"Copyright: Copyright 1998 John Doe <jdoe@example.com>\n"
+"License: GPL-2+\n"
+" This program is free software; you can redistribute it\n"
+" [...]\n"
+" .\n"
+" On Debian systems, the full text of the GNU General Public\n"
+" License version 2 can be found in the file\n"
+" `/usr/share/common-licenses/GPL-2'.\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:790
@@ -1849,6 +1981,10 @@ msgid ""
 "License:\n"
 " [LICENSE TEXT]"
 msgstr ""
+"Files: debian/*\n"
+"Copyright: Copyright 1998 Jane Smith <jsmith@example.net>\n"
+"License:\n"
+" [LICENSE TEXT]"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:821
@@ -2024,6 +2160,14 @@ msgid ""
 "Last-Update: 2010-03-29\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"Description: Fix widget frobnication speeds\n"
+" Frobnicating widgets too quickly tended to cause explosions.\n"
+"Forwarded: http://lists.example.com/2010/03/1234.html\n"
+"Author: John Doe <johndoe-guest@users.alioth.debian.org>\n"
+"Applied-Upstream: 1.2, http://bzr.foo.com/frobnicator/revision/123\n"
+"Last-Update: 2010-03-29\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:872
@@ -2033,6 +2177,9 @@ msgid ""
 "+++ b/src/widgets.c\n"
 "@@ -101,9 +101,6 @@ struct {"
 msgstr ""
+"--- a/src/widgets.c\n"
+"+++ b/src/widgets.c\n"
+"@@ -101,9 +101,6 @@ struct {"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:892
@@ -2137,6 +2284,9 @@ msgid ""
 "version=3\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"version=3\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:917
@@ -2146,6 +2296,9 @@ msgid ""
 "  Twisted-([\\d\\.]*)\\.tar\\.bz2\n"
 "    "
 msgstr ""
+"http://tmrc.mit.edu/mirror/twisted/Twisted/(\\d\\.\\d)/ \\\n"
+"  Twisted-([\\d\\.]*)\\.tar\\.bz2\n"
+"    "
 
 #. type: itemize
 #: packaging-tutorial.tex:931
@@ -2257,6 +2410,10 @@ msgid ""
 "Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git\n"
 "  "
 msgstr ""
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/devscripts.git\n"
+"Vcs-Git: git://anonscm.debian.org/collab-maint/devscripts.git\n"
+"  "
 
 #. type: lstlisting
 #: packaging-tutorial.tex:969
@@ -2267,6 +2424,10 @@ msgid ""
 "Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl\n"
 "  "
 msgstr ""
+"[basicstyle=\\ttfamily\\scriptsize]\n"
+"Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libwww-perl/\n"
+"Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libwww-perl\n"
+"  "
 
 #. type: itemize
 #: packaging-tutorial.tex:969
@@ -2477,10 +2638,9 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:1061
-#, fuzzy
-#| msgid "Adopt existing unmaintained packages (\\textsl{orphaned packages})"
 msgid "Some unmaintained packages not detected \\arr not orphaned yet"
-msgstr "Adoptar pacotes não mantidos existentes (\\textsl{pacotes órfãos})"
+msgstr ""
+"Alguns pacotes não mantidos e não detectados \\arr ainda não estão órfãos"
 
 #. type: itemize
 #: packaging-tutorial.tex:1061
@@ -2507,6 +2667,12 @@ msgid ""
 "Subject: ITA: verbiste -- French conjugator\n"
 "\n"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"From: You <you@yourdomain>\n"
+"To: 640454@bugs.debian.org, control@bugs.debian.org\n"
+"Cc: Francois Marier <francois@debian.org>\n"
+"Subject: ITA: verbiste -- French conjugator\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1072
@@ -2517,6 +2683,10 @@ msgid ""
 "thanks\n"
 "\n"
 msgstr ""
+"retitle 640454 ITA: verbiste -- French conjugator\n"
+"owner 640454 !\n"
+"thanks\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1074
@@ -2525,6 +2695,8 @@ msgid ""
 "Hi,\n"
 "\n"
 msgstr ""
+"Hi,\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1076
@@ -2533,6 +2705,8 @@ msgid ""
 "I am using verbiste and I am willing to take care of the package.\n"
 "\n"
 msgstr ""
+"I am using verbiste and I am willing to take care of the package.\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1078
@@ -2541,12 +2715,14 @@ msgid ""
 "Cheers,\n"
 "\n"
 msgstr ""
+"Cheers,\n"
+"\n"
 
 #. type: lstlisting
 #: packaging-tutorial.tex:1080
 #, no-wrap
 msgid "You"
-msgstr ""
+msgstr "You"
 
 #. type: itemize
 #: packaging-tutorial.tex:1087
@@ -2618,27 +2794,28 @@ msgstr ""
 #. type: frame{#2}
 #: packaging-tutorial.tex:1139
 msgid "Things to check before asking for sponsorship"
-msgstr ""
+msgstr "Coisas a verificar antes de pedir patrocínio"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Debian puts \\textbf{a lot of focus on quality}"
-msgstr ""
+msgstr "Debian tem \\textbf{muita atenção à qualidade}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Generally, \\textbf{sponsors are hard to find and busy}"
 msgstr ""
+"Geralmente, os \\textbf{patrocinadores são difíceis de encontrar e ocupados}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Make sure your package is ready before asking for sponsorship"
-msgstr ""
+msgstr "Certifique-se que o seu pacote está pronto antes de pedir patrocinador"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Things to check:"
-msgstr ""
+msgstr "Coisas a verificar:"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
@@ -2646,34 +2823,35 @@ msgid ""
 "Avoid missing build-dependencies: make sure that your package build fine in "
 "a clean \\textsl{sid} \\textsl{chroot}"
 msgstr ""
+"Evite dependências de compilação em falta: certifique-se que o seu pacote "
+"compila bem num \\textsl{chroot} de \\textsl{sid} limpo"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Using \\texttt{pbuilder} is recommended"
-msgstr ""
+msgstr "É recomendado usar o \\texttt{pbuilder}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
-#, fuzzy
-#| msgid "More problems can be listed using \\texttt{lintian -EviIL +pedantic}"
 msgid "Run \\texttt{lintian -EviIL +pedantic} on your package"
-msgstr ""
-"Mais problemas podem ser listados usando \\texttt{lintian -EviIL +pedantic}"
+msgstr "Corra \\texttt{lintian -EviIL +pedantic} no seu pacote"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Errors must be fixed, all other problems should be fixed"
 msgstr ""
+"Os erros têm de ser corrigidos, todos os outros problemas devem ser "
+"corrigidos"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "Do extensive testing of your package, of course"
-msgstr ""
+msgstr "E claro, faça testes intensivos do seu pacote"
 
 #. type: itemize
 #: packaging-tutorial.tex:1139
 msgid "In doubt, ask for help"
-msgstr ""
+msgstr "Em dúvidas, peça ajuda"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1174
@@ -2714,14 +2892,10 @@ msgstr "Lista de equipas: \\url{http://wiki.debian.org/Teams}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
-#, fuzzy
-#| msgid ""
-#| "The \\textbf{Debian Mentors group} (if your package doesn't fit in a team)"
 msgid ""
 "The \\textbf{Debian Mentors group} (if your package does not fit in a team)"
 msgstr ""
-"O \\textbf{Grupo de Mentores de Debian} (se o seu pacote não encaixar numa "
-"equipa)"
+"O \\textbf{Debian Mentors group} (se o seu pacote não encaixar numa equipa)"
 
 #. type: itemize
 #: packaging-tutorial.tex:1174
@@ -3221,20 +3395,13 @@ msgstr ""
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
-#, fuzzy
-#| msgid ""
-#| "{\\small \\url{http://git.debian.org/?p=collab-maint/packaging-tutorial."
-#| "git}}"
 msgid "{\\small Open bugs: \\url{bugs.debian.org/src:packaging-tutorial}}"
-msgstr ""
-"{\\small \\url{http://git.debian.org/?p=collab-maint/packaging-tutorial.git}}"
+msgstr "{\\small Bugs abertos: \\url{bugs.debian.org/src:packaging-tutorial}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
-#, fuzzy
-#| msgid "Feedback:"
 msgid "Provide feedback:"
-msgstr "Comentários de retorno (Feedback):"
+msgstr "Forneça comentários de retorno (Feedback):"
 
 #. type: itemize
 #: packaging-tutorial.tex:1379
@@ -3704,6 +3871,17 @@ msgid ""
 "emacsen-startup.ex  postinst.ex\n"
 "gnujump.cron.d.ex   postrm.ex"
 msgstr ""
+"[basicstyle=\\ttfamily\\small]\n"
+"gnujump-1.0.8$ ls debian/\n"
+"changelog           gnujump.default.ex   preinst.ex\n"
+"compat              gnujump.doc-base.EX  prerm.ex\n"
+"control             init.d.ex            README.Debian\n"
+"copyright           manpage.1.ex         README.source\n"
+"docs                manpage.sgml.ex      rules\n"
+"emacsen-install.ex  manpage.xml.ex       source\n"
+"emacsen-remove.ex   menu.ex              watch.ex\n"
+"emacsen-startup.ex  postinst.ex\n"
+"gnujump.cron.d.ex   postrm.ex"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1682 packaging-tutorial.tex:1835
@@ -3764,6 +3942,11 @@ msgid ""
 "[...]\n"
 "configure: error: *** SDL version 1.2.0 not found!"
 msgstr ""
+"[basicstyle=\\ttfamily\\footnotesize]\n"
+"checking for sdl-config... no\n"
+"checking for SDL - version >= 1.2.0... no\n"
+"[...]\n"
+"configure: error: *** SDL version 1.2.0 not found!"
 
 #. type: itemize
 #: packaging-tutorial.tex:1682
