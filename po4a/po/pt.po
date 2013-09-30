@@ -498,7 +498,7 @@ msgid ""
 msgstr ""
 "Um pacote fonte pode gerar vários pacotes binários\\\\ {\\small ex, a fonte "
 "\\texttt{\\bfseries libtar} gera pacotes binários \\texttt{\\bfseries "
-"libtar0} e \\texttt{\\bfseries libtar-dev}"
+"libtar0} e \\texttt{\\bfseries libtar-dev}}"
 
 #. type: itemize
 #: packaging-tutorial.tex:256
