@@ -1,3 +1,15 @@
+packaging-tutorial (0.11) unstable; urgency=low
+
+  * Add Russian translation from Lev Lamberov <l.lamberov@gmail.com>.
+  * Add build-depend on texlive-lang-cyrillic.
+  * Russian translation update after review from debian-l10n-russian.
+  * Add doc-base file for Russian.
+  * Add Portuguese translation. Closes: #724782
+  * Minor fixes in portuguese translation to make it build.
+  * Add a README for translators.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Tue, 29 Oct 2013 20:40:55 +0100
+
 packaging-tutorial (0.10) unstable; urgency=low
 
   [ Lucas Nussbaum ]
