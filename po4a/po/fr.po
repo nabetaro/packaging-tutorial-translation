@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2013-09-12 08:39+0200\n"
+"POT-Creation-Date: 2013-10-29 20:42+0100\n"
 "PO-Revision-Date: 2013-08-21 18:01+0200\n"
 "Last-Translator: Cédric Boutillier <boutil@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -60,7 +60,9 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-msgid "version 0.10 -- 2013-09-12"
+#, fuzzy
+#| msgid "version 0.10 -- 2013-09-12"
+msgid "version 0.11 -- 2013-10-29"
 msgstr "version 0.10 -- 2013-09-12"
 
 #. type: frame{#2}

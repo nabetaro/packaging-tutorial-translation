@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: package-tutorial 0.10\n"
-"POT-Creation-Date: 2013-09-12 08:39+0200\n"
+"POT-Creation-Date: 2013-10-29 20:42+0100\n"
 "PO-Revision-Date: 2013-09-16 16:07+0200\n"
 "Last-Translator: Lev Lamberov <l.lamberov@gmail.com>\n"
 "Language-Team: ru <debian-l10n-russian@lists.debian.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 #: packaging-tutorial.tex:20
 #, fuzzy
 #| msgid "version 0.10 -- 2013-08-20"
-msgid "version 0.10 -- 2013-09-12"
+msgid "version 0.11 -- 2013-10-29"
 msgstr "version 0.10 -- 2013-08-20"
 
 #. type: frame{#2}
@@ -1141,8 +1141,7 @@ msgstr "Цели:"
 #. type: itemize
 #: packaging-tutorial.tex:516
 msgid "Factor the common tasks in standard tools used by all packages"
-msgstr ""
-"Решить общие задачи стандартными средствами, для всех пакетов"
+msgstr "Решить общие задачи стандартными средствами, для всех пакетов"
 
 #. type: itemize
 #: packaging-tutorial.tex:516
@@ -1172,8 +1171,7 @@ msgstr "Вызывается из \\texttt{debian/rules}"
 #. type: itemize
 #: packaging-tutorial.tex:516
 msgid "Configurable using command parameters or files in \\texttt{debian/}"
-msgstr ""
-"Настройка через параметры команды или файлы в \\texttt{debian/}"
+msgstr "Настройка через параметры команды или файлы в \\texttt{debian/}"
 
 #. type: itemize
 #: packaging-tutorial.tex:516
@@ -1622,8 +1620,7 @@ msgstr "Создаёт файлы \\texttt{.deb} и файл \\texttt{.changes}"
 #: packaging-tutorial.tex:737
 msgid ""
 "\\texttt{.changes}: describes what was built; used to upload the package"
-msgstr ""
-"\\texttt{.changes}: описывает, что было собрано; для загрузки пакета"
+msgstr "\\texttt{.changes}: описывает, что было собрано; для загрузки пакета"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:737
@@ -1702,9 +1699,8 @@ msgid ""
 "testing or unstable, use version 2.9-1 or 2.9-2 instead)"
 msgstr ""
 "Перейдите по адресу \\url{http://ftp.debian.org/debian/pool/main/g/grep/} и "
-"скачайте версию 2.6.3-3 (если вы используете Ubuntu 11.10 или "
-"новее, либо Debian testing или unstable, используйте 2.9-1 или "
-"2.9-2)"
+"скачайте версию 2.6.3-3 (если вы используете Ubuntu 11.10 или новее, либо "
+"Debian testing или unstable, используйте 2.9-1 или 2.9-2)"
 
 #. type: itemize
 #: packaging-tutorial.tex:737
@@ -2190,8 +2186,8 @@ msgid ""
 "Several tools to help manage branches and tags for your packaging work:\\\\ "
 "\\texttt{svn-buildpackage}, \\texttt{git-buildpackage}"
 msgstr ""
-"Инструменты, помогающие управлять ветками и тегам вашей работы по "
-"созданию пакетов:\\\\ \\texttt{svn-buildpackage}, \\texttt{git-buildpackage}"
+"Инструменты, помогающие управлять ветками и тегам вашей работы по созданию "
+"пакетов:\\\\ \\texttt{svn-buildpackage}, \\texttt{git-buildpackage}"
 
 #. type: itemize
 #: packaging-tutorial.tex:969
@@ -2221,17 +2217,14 @@ msgstr "Теги \\texttt{debian/\\textsl{version}} для каждой загр
 #: packaging-tutorial.tex:969
 msgid ""
 "\\texttt{pristine-tar} branch to be able to rebuild the upstream tarball"
-msgstr ""
-"Ветка \\texttt{pristine-tar} для сборки "
-"tarball из основной ветки"
+msgstr "Ветка \\texttt{pristine-tar} для сборки tarball из основной ветки"
 
 #. type: itemize
 #: packaging-tutorial.tex:969
 msgid ""
 "\\texttt{Vcs-*} fields in \\texttt{debian/control} to locate the repository"
 msgstr ""
-"Поля \\texttt{Vcs-*} в \\texttt{debian/control} для определения "
-"репозитория"
+"Поля \\texttt{Vcs-*} в \\texttt{debian/control} для определения репозитория"
 
 #. type: itemize
 #: packaging-tutorial.tex:969
@@ -2478,8 +2471,7 @@ msgstr ""
 #. type: itemize
 #: packaging-tutorial.tex:1061
 msgid "Some unmaintained packages not detected \\arr not orphaned yet"
-msgstr ""
-"Ряд несопровождаемых пакетов ещё не обнаружен \\arr не осиротели"
+msgstr "Ряд несопровождаемых пакетов ещё не обнаружен \\arr не осиротели"
 
 #. type: itemize
 #: packaging-tutorial.tex:1061
@@ -2487,8 +2479,8 @@ msgid ""
 "When in doubt, ask \\texttt{debian-qa@lists.debian.org} \\\\ or "
 "\\texttt{\\#debian-qa} on \\texttt{irc.debian.org}"
 msgstr ""
-"Спрашивайте на \\texttt{debian-qa@lists."
-"debian.org} \\\\ или в \\texttt{\\#debian-qa} на \\texttt{irc.debian.org}"
+"Спрашивайте на \\texttt{debian-qa@lists.debian.org} \\\\ или в "
+"\\texttt{\\#debian-qa} на \\texttt{irc.debian.org}"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1068
@@ -3121,7 +3113,8 @@ msgstr ""
 #: packaging-tutorial.tex:1328
 msgid "dpkg triggers -- group similar maintainer scripts actions together"
 msgstr ""
-"переключатели dpkg -- группируют вместе схожие сценарии действий сопровождающих"
+"переключатели dpkg -- группируют вместе схожие сценарии действий "
+"сопровождающих"
 
 #. type: itemize
 #: packaging-tutorial.tex:1328
@@ -3521,8 +3514,8 @@ msgid ""
 "Then \\texttt{debuild} or \\texttt{dpkg-buildpackage -us -uc} (Takes about 1 "
 "min)"
 msgstr ""
-"Далее, \\texttt{debuild} или \\texttt{dpkg-buildpackage -us -uc} (Занимает "
-"1 минуту)"
+"Далее, \\texttt{debuild} или \\texttt{dpkg-buildpackage -us -uc} (Занимает 1 "
+"минуту)"
 
 #. type: frame{#2}
 #: packaging-tutorial.tex:1541

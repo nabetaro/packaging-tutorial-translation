@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.8+git\n"
-"POT-Creation-Date: 2013-09-12 08:39+0200\n"
+"POT-Creation-Date: 2013-10-29 20:42+0100\n"
 "PO-Revision-Date: 2013-09-01 11:48+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
@@ -48,7 +48,9 @@ msgstr ""
 #.  DATE - use debian/rules update-version-date
 #. type: date{#1}
 #: packaging-tutorial.tex:20
-msgid "version 0.10 -- 2013-09-12"
+#, fuzzy
+#| msgid "version 0.10 -- 2013-09-12"
+msgid "version 0.11 -- 2013-10-29"
 msgstr "version 0.10 -- 2013-09-12"
 
 #. type: frame{#2}
