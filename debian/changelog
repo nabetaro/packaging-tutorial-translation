@@ -1,9 +1,37 @@
-packaging-tutorial (0.10) UNRELEASED; urgency=low
+packaging-tutorial (0.11) unstable; urgency=low
+
+  * Add Russian translation from Lev Lamberov <l.lamberov@gmail.com>.
+  * Add build-depend on texlive-lang-cyrillic.
+  * Russian translation update after review from debian-l10n-russian.
+  * Add doc-base file for Russian.
+  * Add Portuguese translation. Closes: #724782
+  * Minor fixes in portuguese translation to make it build.
+  * Add a README for translators.
+
+ -- Lucas Nussbaum <lucas@debian.org>  Tue, 29 Oct 2013 20:40:55 +0100
+
+packaging-tutorial (0.10) unstable; urgency=low
+
+  [ Lucas Nussbaum ]
+  * Change contact email to packaging-tutorial@p.d.o.
+  * Mention ITP bugs.
+  * Added documentation about the BTS.
+  * Mention localized lists (Closes: #719925).
+  * Update version in .tex.
+  * Add slide: checklist before asking for sponsorship.
+  * Improve 'Contribute' slide.
+  * Update .po / .pot files.
+  * Update CDBS/dh stats.
 
   [ Helge Kreutzmann ]
+  * Fix two minor translation issues
   * Update German translation
 
- -- Helge Kreutzmann <debian@helgefjell.de>  Sat, 22 Jun 2013 20:20:02 +0200
+  [ Cédric Boutillier ]
+  * update French translation
+  * proofread [ Jean-Pierre Giraud ]
+
+ -- Lucas Nussbaum <lucas@debian.org>  Thu, 12 Sep 2013 08:21:00 +0200
 
 packaging-tutorial (0.9) unstable; urgency=low
 

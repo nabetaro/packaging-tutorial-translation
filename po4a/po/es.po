@@ -30,7 +30,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packaging-tutorial 0.6\n"
-"POT-Creation-Date: 2013-08-21 15:08+0300\n"
+"POT-Creation-Date: 2013-10-29 20:42+0100\n"
 "PO-Revision-Date: 2012-07-12 14:01+0200\n"
 "Last-Translator: Omar Campagne <ocampagne@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -78,7 +78,7 @@ msgstr "Lucas Nussbaum\\\\{\\small\\texttt{lucas@debian.org}}"
 #: packaging-tutorial.tex:20
 #, fuzzy
 #| msgid "version 0.9 -- 2013-06-20"
-msgid "version 0.10 -- 2013-08-20"
+msgid "version 0.11 -- 2013-10-29"
 msgstr "version 0.9 -- 2013-06-20"
 
 #. type: frame{#2}
@@ -1683,11 +1683,11 @@ msgstr "debhelper clásico vs CDBS vs dh"
 #. type: itemize
 #: packaging-tutorial.tex:656
 msgid ""
-"Mind shares:\\\\ Classic debhelper: 36\\% \\hskip 1em CDBS: 21\\% \\hskip "
-"1em dh: 41\\%"
+"Mind shares:\\\\ Classic debhelper: 27\\% \\hskip 1em CDBS: 18\\% \\hskip "
+"1em dh: 54\\%"
 msgstr ""
-"Aceptación:\\\\ debhelper clásico: 36\\% \\hskip 1em CDBS: 21\\% \\hskip 1em "
-"dh: 41\\%"
+"Aceptación:\\\\ debhelper clásico: 27\\% \\hskip 1em CDBS: 18\\% \\hskip 1em "
+"dh: 54\\%"
 
 #. type: itemize
 #: packaging-tutorial.tex:656
